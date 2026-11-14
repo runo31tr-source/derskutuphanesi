@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ders Kütüphanesi</title>
-<meta name="theme-color" content="#2f6bff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#2f6bff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="Ders Kütüphanesi: 1-12. sınıflar için ücretsiz konu anlatımları, sorular, denemeler ve çalışma araçları.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
@@ -121,6 +121,18 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 .box.kaz{border-left:4px solid var(--green)}.box.kaz ul{margin:4px 0 0;padding-left:20px;line-height:1.7}
 .sharebox b{display:block;margin-bottom:8px}.codeta{width:100%;font-family:ui-monospace,Consolas,monospace;font-size:13px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);word-break:break-all;resize:vertical}
 .lb{display:grid;gap:2px}.lbrow{display:grid;grid-template-columns:44px 44px 1fr auto auto;gap:10px;align-items:center;padding:10px 6px;border-bottom:1px solid var(--line)}.lbrow:last-child{border-bottom:0}.lbrow.me{background:color-mix(in srgb,var(--blue) 10%,transparent);border-radius:12px}.lbrank{font-size:22px;font-weight:900;text-align:center}.lbav{font-size:30px}.lbname small,.lbval small{display:block;color:var(--mute);font-size:12px}.lbval{text-align:right}.lbval b{font-size:20px}
+.rform select,.rform input,.rform textarea{min-width:0;max-width:100%}.rform label{min-width:0}
+[data-theme=dark] .send,[data-theme=dark] .ftab.on{color:#0b1020}
+[data-dys="1"] body{letter-spacing:.04em;word-spacing:.12em;line-height:1.85;font-family:Verdana,Tahoma,Arial,sans-serif}
+[data-hc="1"]{--mute:#2b2f38;--line:#7a8191}[data-hc="1"][data-theme=dark]{--mute:#dde3ee;--line:#8a94aa}[data-hc="1"] a{text-decoration-thickness:2px}
+[data-rm="1"] *,[data-rm="1"] *::before,[data-rm="1"] *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.welcome{border:2px dashed var(--blue)}.gpick{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}.recbox{text-decoration:none}
+.certban{display:flex;gap:14px;align-items:center;border-left:6px solid #f59e0b}.certban .send{margin-top:8px}
+.cert{display:grid;place-items:center;padding:20px}.certin{width:min(900px,100%);aspect-ratio:1.414;border:14px double #c8a24a;border-radius:10px;background:linear-gradient(135deg,#fffdf5,#fff7e0);color:#3b2f12;display:grid;place-content:center;text-align:center;padding:40px;gap:6px}.certlogo{font-weight:900;color:#8a6d1f}.certin h1{font-size:clamp(28px,5vw,52px);letter-spacing:.12em;margin:6px 0;color:#7a5b10}.certname{font-size:clamp(26px,4.5vw,44px);font-weight:900;border-bottom:2px solid #c8a24a;padding:4px 30px;margin:6px auto}.certin p{font-size:18px;max-width:620px;margin:6px auto}.certfoot{display:flex;justify-content:space-between;gap:20px;margin-top:20px;font-weight:700;flex-wrap:wrap}
+@media print{.cert{padding:0}.certin{border-color:#a8862f}}
+.rtab{width:100%;border-collapse:collapse}.rtab th,.rtab td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line)}.rtab th{font-size:14px;color:var(--mute)}
+.faq summary{cursor:pointer}.faq p{margin:10px 0 0}.installbox{display:flex;gap:14px;align-items:center;border-left:6px solid var(--green)}.tile.exam{gap:2px;border-top:5px solid #ef4444}
+.clsrep summary{cursor:pointer;line-height:1.6}.clsrep[open] summary{margin-bottom:10px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute);font-weight:700;margin-top:6px}.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.gbox{display:grid;justify-items:center;gap:6px;text-align:center}.gbox h3{margin:6px 0 0}.gbox select{font:inherit;font-weight:700;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 .gring{width:160px;height:160px;border-radius:50%;display:grid;place-items:center}.gin{width:126px;height:126px;border-radius:50%;background:var(--card);display:grid;place-content:center;text-align:center}.gin b{font-size:34px;line-height:1}.gin small{color:var(--mute);font-weight:700}
@@ -178,7 +190,7 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 </div></header>
 <main id="app"></main>
 <form name="sorun-bildir" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="tur"><input name="konu"><textarea name="aciklama"></textarea><input name="iletisim"></form>
-<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 1.9</div></footer>
+<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a> · <a href="#yardim">Yardım</a> · <a href="#gizlilik">Gizlilik</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 2.0</div></footer>
 <button id="top" class="totop" type="button" aria-label="Yukarı çık">↑</button>
 
 <script>
@@ -2767,6 +2779,12 @@ function about(){
   <div class="about"><div class="ico">🌙</div><h3>Koyu Tema</h3>Gece çalışırken gözlerini yormayan koyu görünüm.</div>
   <div class="about"><div class="ico">📝</div><h3>Deneme Sınavı</h3>Süreli test çöz, puanını ve yanlışlarını gör.</div>
   <div class="about"><div class="ico">⏱️</div><h3>Pomodoro</h3>Odaklanarak çalışmak için çalışma-mola sayacı.</div>
+  <div class="about"><div class="ico">🧠</div><h3>Akıllı Tekrar</h3>Unutmak üzere olduğun konular doğru zamanda karşına çıkar.</div>
+  <div class="about"><div class="ico">🎬</div><h3>Anlatımı İzle</h3>Her konu için animasyonlu, sesli ve alt yazılı anlatım.</div>
+  <div class="about"><div class="ico">🤝</div><h3>Arkadaşlar ve Düello</h3>Arkadaşlarınla sıralamada yarış, düelloda meydan oku.</div>
+  <div class="about"><div class="ico">🧑‍🏫</div><h3>Öğretmen Modu</h3>Sınıfa sınav ver, sonuçları tek tabloda gör.</div>
+  <div class="about"><div class="ico">📄</div><h3>PDF'ler</h3>Konu özeti, soru kâğıdı, gelişim raporu ve başarı belgesi.</div>
+  <div class="about"><div class="ico">♿</div><h3>Erişilebilirlik</h3>Büyük yazı, okuma kolaylığı ve yüksek kontrast seçenekleri.</div>
   <div class="about"><div class="ico">🗒️</div><h3>Notlar ve Yanlışlar</h3>Kendi notlarını tut, yanlış yaptığın soruları tekrar et.</div></div>
   <h2>Nasıl Kullanılır?</h2>
   <div class="about">1. Ana sayfadan sınıfını seç.<br>2. Çalışmak istediğin dersi aç.<br>3. Konuyu oku, örnek soruyu çöz.<br>4. Takıldığın yerde video butonlarına tıkla.<br>5. Her gün ana sayfadaki "Günün Sorusu"nu çözmeyi unutma!</div>
@@ -2805,7 +2823,7 @@ function reportPage(){
 }
 const REPORT_EMAIL=""; // Sorun bildirimlerinin gideceği e-posta (boşsa sadece kopyalama gösterilir)
 // ===== Sürüm 1.1: Duyurular ve çalışma araçları =====
-const VERSION="1.9";
+const VERSION="2.0";
 function lsGet(k,d){try{const v=localStorage.getItem(PFX+k);return v?JSON.parse(v):d}catch(e){return d}}
 function lsSet(k,v){try{localStorage.setItem(PFX+k,JSON.stringify(v))}catch(e){}}
 let FAV=new Set(lsGet("favoriler",[])), WRONG=lsGet("yanlislar",{}), ST=lsGet("istatistik",{answered:0,correct:0,days:[]}), NOTES=lsGet("notlar",[]);
@@ -2823,15 +2841,16 @@ function confirmBtn(btn,label,fn){ // pencere açmadan iki tıkla onay
   btn.dataset.armed=1;const old=btn.textContent;btn.textContent=label;
   setTimeout(()=>{if(btn.isConnected){delete btn.dataset.armed;btn.textContent=old}},3000);
 }
-const TOOLS=[["deneme","📝","Deneme Sınavı","Sınıf ve ders seç, süreli test çöz"],["pomodoro","⏱️","Pomodoro Sayacı","25 dakika çalış, 5 dakika dinlen"],["kaydedilenler","⭐","Kaydettiklerim","Sonra çalışmak için kaydettiğin konular"],["yanlislarim","❌","Yanlışlarım","Yanlış yaptığın soruları tekrar et"],["notlarim","🗒️","Notlarım","Kendi ders notlarını tut"],["istatistikler","📊","İstatistiklerim","Başarı oranın ve çalışma serin"],["kartlar","🃏","Bilgi Kartları","Konuları kartlarla hızlıca tekrar et"],["program","📅","Ders Programım","Haftalık çalışma planını yap"],["rozetler","🏅","Rozetlerim","Çalıştıkça başarı rozetleri kazan"],["oyunlar","🧩","Oyunlar","Eşleştirme ve boşluk doldurma"],["hedefler","🎯","Hedeflerim","Günlük ve haftalık soru hedefi"],["temalar","🎨","Temalar","Sitenin rengini değiştir"],["formuller","🧮","Formül ve Tarihler","Formül kartları ve önemli tarihler"],["analiz","📊","Ders Analizim","Güçlü ve zayıf derslerini gör"],["hatirlatici","⏰","Hatırlatıcılar","Çalışma zamanı bildirimi"],["tekrar","🧠","Akıllı Tekrar","Unutmadan önce tekrar et"],["arkadaslar","🤝","Arkadaşlar","Arkadaş ekle, sıralama ve düello"]];
+const TOOLS=[["deneme","📝","Deneme Sınavı","Sınıf ve ders seç, süreli test çöz"],["pomodoro","⏱️","Pomodoro Sayacı","25 dakika çalış, 5 dakika dinlen"],["kaydedilenler","⭐","Kaydettiklerim","Sonra çalışmak için kaydettiğin konular"],["yanlislarim","❌","Yanlışlarım","Yanlış yaptığın soruları tekrar et"],["notlarim","🗒️","Notlarım","Kendi ders notlarını tut"],["istatistikler","📊","İstatistiklerim","Başarı oranın ve çalışma serin"],["kartlar","🃏","Bilgi Kartları","Konuları kartlarla hızlıca tekrar et"],["program","📅","Ders Programım","Haftalık çalışma planını yap"],["rozetler","🏅","Rozetlerim","Çalıştıkça başarı rozetleri kazan"],["oyunlar","🧩","Oyunlar","Eşleştirme ve boşluk doldurma"],["hedefler","🎯","Hedeflerim","Günlük ve haftalık soru hedefi"],["temalar","🎨","Temalar","Sitenin rengini değiştir"],["formuller","🧮","Formül ve Tarihler","Formül kartları ve önemli tarihler"],["analiz","📊","Ders Analizim","Güçlü ve zayıf derslerini gör"],["hatirlatici","⏰","Hatırlatıcılar","Çalışma zamanı bildirimi"],["tekrar","🧠","Akıllı Tekrar","Unutmadan önce tekrar et"],["arkadaslar","🤝","Arkadaşlar","Arkadaş ekle, sıralama ve düello"],["gunluk","☀️","Günün 5 Sorusu","Her gün yeni sorular, serini büyüt"],["ogretmen","🧑‍🏫","Öğretmen Modu","Sınıf sınavı oluştur, sonuçları topla"],["rapor","📈","Gelişim Raporu","Yazdırılabilir ilerleme raporu"],["profil","👤","Profilim","Profil, sınıf ve yedekleme"],["yardim","❓","Yardım","Sık sorulan sorular"]];
 function toolsGrid(){return `<div class="grid tools">`+TOOLS.map(([h,e,t,d])=>`<a class="tile tool" href="#${h}"><div class="ico">${e}</div><b>${t}</b><small>${d}</small></a>`).join("")+`</div>`}
-function toolsPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Araçlar</div><div class="hero" style="background:linear-gradient(135deg,#16a34a,#0ea5e9)"><h1>🧰 Çalışma Araçları</h1><p>Daha verimli çalışman için ihtiyacın olan her şey.</p></div>`+toolsGrid()}
+function toolsPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Araçlar</div><div class="hero" style="background:linear-gradient(135deg,#16a34a,#0ea5e9)"><h1>🧰 Çalışma Araçları</h1><p>Daha verimli çalışman için ihtiyacın olan her şey.</p></div>`+installHTML()+toolsGrid()}
 
 // ---- Duyurular ----
 const NEWS=[
- {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 2.0 yakında!",d:"Bir sonraki büyük sürüm üzerinde çalışıyoruz. 2.0 ile gelmesi planlanan yenilikler:",li:["☁️ İsteğe bağlı bulut hesabı (cihazlar arası otomatik eşitleme)","🎯 Diğer sınıflar için kazanım listeleri","📖 Diğer sınıflarda konu anlatımlarını uzatma","📚 Daha da fazla yeni konu ve soru"]},
- {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 1.9 yayında",d:"1.9 sürümü yayında! Bu sürümde gelenler:",li:["🤝 Arkadaşlık sistemi: arkadaş kodunu paylaş, arkadaşlarının kodunu ekle","🏆 Arkadaşlarınla sıralama: doğru cevap, haftalık soru, seri, rozet ve çözülen konuya göre","⚔️ Düello: arkadaşına aynı 10 soruyla meydan oku, kazananı görün","💬 Kodları WhatsApp ile kolayca gönderme","🎯 8. sınıf Türkçe ve İnkılap Tarihi konularına kazanım listeleri","📖 6. sınıf Matematik ve Fen Bilimleri'nde 24 konunun anlatımı uzatıldı","🏅 2 yeni rozet (toplam 28)"]},
- {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.8",d:"Önceki sürüm. 1.8 ile gelenler:",li:["👤 Profiller","💾 İlerleme yedekleme","🎯 8. sınıf Matematik ve Fen kazanımları","📖 7. sınıf anlatımları"]},
+ {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 2.1 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 2.1 ile gelmesi planlanan yenilikler:",li:["☁️ İsteğe bağlı bulut hesabı (cihazlar arası otomatik eşitleme)","🎯 Diğer sınıflar için kazanım listeleri","📖 Diğer sınıflarda konu anlatımlarını uzatma","📚 Daha da fazla yeni konu ve soru"]},
+ {tag:"Yeni sürüm",cls:"new",e:"🎉",t:"Versiyon 2.0 yayında: En büyük güncellememiz!",d:"Ders Kütüphanesi 2.0 ile yepyeni bir deneyim seni bekliyor:",li:["🎒 Kişisel ana sayfa: sınıfını seç; derslerin, ilerlemen ve sana önerilen konu ana sayfada","☀️ Günün 5 Sorusu: her gün sınıfına özel 5 yeni soru ve günlük seri","🧑‍🏫 Öğretmen Modu: sınıf sınavı oluştur, kodu öğrencilere gönder, sonuçları ve en çok yanlış yapılan soruları tek tabloda gör, kâğıda yazdır","📈 Gelişim Raporu: veliler ve öğretmenler için yazdırılabilir ilerleme raporu","🎓 Başarı Belgesi: bir dersin bütün konularını bitirince yazdırılabilir belge","📅 Sınav geri sayımı: yazılı ve sınav tarihlerini ekle, kaç gün kaldığını gör","📝 Konuya not alma: her konunun altından not ekle, Notlarım'dan konuya geri dön","📖 Sınav sonuçlarında yanlış yapılan sorular için 'Konuyu tekrar et' bağlantısı","⌨️ Klavye kısayolları: 1-4 / A-D ile cevap, Enter ile sonraki soru","♿ Erişilebilirlik: yazı boyutu, okuma kolaylığı, yüksek kontrast, animasyonları azaltma","📲 Uygulamayı yükle düğmesi","❓ Yardım (SSS) ve 🔒 Gizlilik sayfaları","🧰 Araçlar sayfası kategorilere ayrıldı","🏅 3 yeni rozet (toplam 31)","🐞 Hata düzeltmeleri: telefonda Deneme Sınavı sayfasının yana taşması ve koyu temada düğme yazılarının zor okunması düzeltildi"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.9",d:"Önceki sürüm. 1.9 ile gelenler:",li:["🤝 Arkadaşlık sistemi","🏆 Sıralama","⚔️ Düello","🎯 8. sınıf Türkçe ve İnkılap kazanımları"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.8",d:"1.8 ile gelenler:",li:["👤 Profiller","💾 İlerleme yedekleme","🎯 8. sınıf Matematik ve Fen kazanımları"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.7",d:"1.7 ile gelenler:",li:["🧠 Akıllı Tekrar","📄 Konu Özeti ve 📝 Soru PDF","🔊 Sesli okuma","🗂️ Konu grupları"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.6",d:"1.6 ile gelenler:",li:["📊 Ders Analizim","⚖️ Doğru mu Yanlış mı?","✍️ Yazarak Cevapla","⏰ Hatırlatıcılar"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.5",d:"1.5 ile gelenler:",li:["🧮 Formül ve tarih kartları","🖨️ Yazdırma","🔍 Gelişmiş arama"]},
@@ -2905,7 +2924,7 @@ function testAnswer(btn){
   btns[ci].classList.add("ok"); if(!ok) btn.classList.add("no");
   const fb=document.getElementById("tfb"); fb.textContent=ok?"✅ Doğru!":"❌ Yanlış. Doğru cevap: "+btns[ci].textContent; fb.style.color=ok?"var(--green)":"var(--red)";
   const r=T.res[Q.sb]||(T.res[Q.sb]={c:0,n:0});r.n++;if(ok)r.c++;
-  if(ok){T.correct++; if(!Q.key.includes("#")){SOLVED.add(Q.key);saveSolved()}} else T.wrong.push({q:Q.q,a:Q.o[Q.a],label:Q.label});
+  if(ok){T.correct++; if(!Q.key.includes("#")){SOLVED.add(Q.key);saveSolved()}} else{T.wrong.push({q:Q.q,a:Q.o[Q.a],label:Q.label,key:Q.key});if(T.wi)T.wi.push(T.i)}
   trackAnswer(Q.key,ok,Q.q,Q.o[Q.a]);
   document.getElementById("tnext").innerHTML=`<button class="send" type="button" data-act="tnext">${T.i+1<T.qs.length?"Sonraki soru →":"Sonucu gör 🏁"}</button>`;
 }
@@ -2918,9 +2937,11 @@ function testResult(){
   <div class="hero" style="background:linear-gradient(135deg,#16a34a,#2f6bff);text-align:center"><div style="font-size:64px">${e}</div><h1>%${p} başarı</h1><p>${n} sorudan ${T.correct} doğru · Süre: ${fmtTime((Date.now()-T.start)/1000)} ${best[bk]!=null?" · En iyi skorun: %"+best[bk]:""}</p></div>
   <div class="about"><b>${T.timeup?"⏰ Süre doldu! "+done+" soruyu cevaplayabildin. ":""}${msg}</b></div>`+
   (Object.keys(T.res).length?`<h2>📊 Derslere göre sonuç</h2><div class="about rbars">`+Object.entries(T.res).map(([sb,r])=>{const q=Math.round(r.c/r.n*100);return `<div class="rbar"><b>${subjName(sb)}</b><div class="prog"><i style="width:${q}%"></i></div><span>${r.c}/${r.n} · %${q}</span></div>`}).join("")+`</div>`:"")+
-  (T.wrong.length?`<h2>Yanlış yaptığın sorular</h2>`+T.wrong.map(w=>`<div class="about"><div class="crumb">${esc(w.label)}</div><b>${esc(w.q)}</b><div class="fb" style="color:var(--green)">Doğru cevap: ${esc(w.a)}</div></div>`).join(""):"")+
+  (T.wrong.length?`<h2>Yanlış yaptığın sorular</h2>`+T.wrong.map(w=>`<div class="about"><div class="crumb">${esc(w.label)}</div><b>${esc(w.q)}</b><div class="fb" style="color:var(--green)">Doğru cevap: ${esc(w.a)}</div>${w.key&&D[keyInfo(w.key).g]?`<a class="yt alt" href="${keyInfo(w.key).href}">📖 Konuyu tekrar et</a>`:""}</div>`).join(""):"")+
   `<div class="vids"><button class="send" type="button" data-act="tagain">🔁 Yeni sınav</button><a class="yt alt" href="#yanlislarim">❌ Yanlışlarım</a></div>`;
   if(T.duel)duelDone(T);
+  if(T.daily)dailyDone(T);
+  if(T.cls)clsDone(T);
   TEST=null; checkBadges();
 }
 
@@ -2986,7 +3007,7 @@ function notesPage(){
   <div class="hero" style="background:linear-gradient(135deg,#0ea5e9,#6366f1)"><h1>🗒️ Notlarım</h1><p>Önemli formülleri, tarihleri ve hatırlatmaları buraya yaz. Notların sadece bu cihazda saklanır.</p></div>
   <form class="about rform" id="nform"><label>Başlık<input name="t" maxlength="80" placeholder="Örn. Pisagor bağıntısı" required></label>
   <label>Not<textarea name="b" rows="4" placeholder="a² + b² = c²" required></textarea></label><button class="send" type="submit">➕ Not ekle</button></form>`+
-  (NOTES.length?NOTES.slice().reverse().map(n=>`<div class="about note-card"><h3>${esc(n.t)}</h3><div class="nbody">${esc(n.b)}</div><div class="crumb">${new Date(n.d).toLocaleDateString("tr-TR")}</div><button class="mini" type="button" data-delnote="${n.id}">Sil</button></div>`).join(""):`<div class="note">Henüz notun yok.</div>`);
+  (NOTES.length?NOTES.slice().reverse().map(n=>`<div class="about note-card"><h3>${esc(n.t)}</h3><div class="nbody">${esc(n.b)}</div><div class="crumb">${new Date(n.d).toLocaleDateString("tr-TR")}${n.k&&D[keyInfo(n.k).g]?` · <a href="${keyInfo(n.k).href}">📖 Konuya git</a>`:""}</div><button class="mini" type="button" data-delnote="${n.id}">Sil</button></div>`).join(""):`<div class="note">Henüz notun yok.</div>`);
   document.getElementById("nform").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);NOTES.push({id:Date.now(),t:f.get("t"),b:f.get("b"),d:Date.now()});lsSet("notlar",NOTES);checkBadges();notesPage()};
 }
 
@@ -3014,6 +3035,13 @@ document.addEventListener("click",e=>{
   if(b.dataset.psw!==undefined) return switchProfile(b.dataset.psw);
   if(b.dataset.pdel!==undefined){const id=b.dataset.pdel;return confirmBtn(b,"Emin misin? Tekrar bas",()=>{profileKeys(id).forEach(([k])=>{try{localStorage.removeItem(k)}catch(e){}});PROFILES=PROFILES.filter(p=>p.id!==id);saveProfiles();profilePage()})}
   if(b.dataset.pren!==undefined){const p=PROFILES.find(x=>x.id===b.dataset.pren);const n=prompt("Yeni isim:",p.name);if(n&&n.trim()){p.name=n.trim().slice(0,20);saveProfiles();const el=document.getElementById("pchip");if(p.id===ACTIVE&&el)el.textContent=p.av+" "+p.name;profilePage()}return}
+  if(b.dataset.setg!==undefined) return setGrade(b.dataset.setg);
+  if(b.dataset.zoom!==undefined){ACC.z=+b.dataset.zoom;lsSet("erisim",ACC);applyAcc();return themesPage()}
+  if(b.dataset.exdel!==undefined){lsSet("sinavlar",lsGet("sinavlar",[]).filter(x=>String(x.id)!==b.dataset.exdel));return route()}
+  if(b.dataset.cert!==undefined){const [cg,ci]=b.dataset.cert.split("|");return certPage(cg,+ci)}
+  if(b.dataset.tnote!==undefined) return topicNoteForm(b);
+  if(b.dataset.clsprint!==undefined) return clsPrint(b.dataset.clsprint);
+  if(b.dataset.clsdel!==undefined){const sd=b.dataset.clsdel;return confirmBtn(b,"Emin misin? Tekrar bas",()=>{const TS=lsGet("ogretmenSinavlari",{});delete TS[sd];lsSet("ogretmenSinavlari",TS);teacherPage()})}
   if(b.dataset.copy!==undefined){const t=b.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent="✅ Kopyalandı"},()=>{const ta=b.closest(".sharebox").querySelector("textarea");ta.select();b.textContent="Seçildi, Ctrl+C ile kopyala"});return}
   if(b.dataset.fdel!==undefined){const id=b.dataset.fdel;return confirmBtn(b,"Sil?",()=>{const F=lsGet("arkadaslar",{});delete F[id];lsSet("arkadaslar",F);friendsPage()})}
   if(b.dataset.duelacc!==undefined){const o=window.__duel;if(o)duelBegin({role:"guest",g:o.g,s:o.s,seed:o.seed,from:o.from});return}
@@ -3031,6 +3059,8 @@ document.addEventListener("click",e=>{
   if(b.dataset.progdone!==undefined){const x=PROG.find(q=>String(q.id)===b.dataset.progdone);if(x){x.done=!x.done;lsSet("program",PROG)}return progPage()}
   if(b.dataset.progdel!==undefined){PROG=PROG.filter(q=>String(q.id)!==b.dataset.progdel);lsSet("program",PROG);return progPage()}
   const a=b.dataset.act; if(!a) return;
+  if(a==="dailystart") return dailyStart();
+  if(a==="install"){if(INSTALL){INSTALL.prompt();INSTALL.userChoice.finally(()=>{INSTALL=null;route()})}else toast("📲 Tarayıcının menüsünden 'Uygulamayı yükle' ya da 'Ana ekrana ekle' seçeneğini kullanabilirsin.");return}
   if(a==="pexport") return profileExport();
   if(a==="revstart") return revStart();
   if(a==="tfnext"){TF.i++;return tfDraw()}
@@ -3060,7 +3090,7 @@ document.addEventListener("click",e=>{
   if(a==="pomoreset"){POMO.running=false;clearInterval(POMO.timer);POMO.mode="work";POMO.left=POMO_LEN.work;return pomoDraw()}
   if(a==="pomoskip"){POMO.left=1;return pomoTick()}
   if(a==="clearwrong") return confirmBtn(b,"Emin misin? Tekrar bas",()=>{WRONG={};lsSet("yanlislar",WRONG);wrongPage()});
-  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["arkadaslar","duellolar","duelloGalibiyet","tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
+  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["gunlukSon","gunlukSeri","gunlukToplam","belgeler","belgeSayisi","sinifSinavi","sinavlar","arkadaslar","duellolar","duelloGalibiyet","tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
 });
 
 // ===== Sürüm 1.3: LGS/TYT modları, rozetler, bilgi kartları, ders programı =====
@@ -3632,7 +3662,7 @@ function friendsPage(msg){const F=lsGet("arkadaslar",{}),me=myCard(),D2=lsGet("d
   document.getElementById("codeform").onsubmit=e=>{e.preventDefault();codeIn(document.getElementById("codein").value)};
   const get=pickerInit("d","sonDuello");document.getElementById("duelstart").onclick=()=>{const v=get();duelBegin({role:"host",g:v.g,s:v.s,seed:Math.floor(Math.random()*1e9)})};
 }
-function codeIn(code){const fb=document.getElementById("codefb"),x=dec(code);const bad=m=>{fb.style.color="var(--red)";fb.textContent=m};
+function codeIn(code){if(dec2(String(code).trim().split(/\s+/)[0])){teacherPage();return clsCode(code)}const fb=document.getElementById("codefb"),x=dec(code);const bad=m=>{fb.style.color="var(--red)";fb.textContent=m};
   if(!x)return bad("❌ Bu kod geçerli değil. Kodu eksiksiz kopyaladığından emin ol.");
   const o=x.o;
   if(x.t==="DK1"){if(o.id===myId())return bad("Bu senin kendi kodun 🙂");const F=lsGet("arkadaslar",{}),isNew=!F[o.id];F[o.id]={id:String(o.id).slice(0,12),n:String(o.n||"Arkadaş").slice(0,20),av:String(o.av||"🙂").slice(0,4),a:+o.a||0,c:+o.c||0,k:+o.k||0,s:+o.s||0,r:+o.r||0,w:+o.w||0,d:String(o.d||"").slice(0,10)};lsSet("arkadaslar",F);checkBadges();return friendsPage(isNew?`✅ ${esc(F[o.id].n)} arkadaş olarak eklendi!`:`🔄 ${esc(F[o.id].n)} bilgileri güncellendi.`)}
@@ -3656,18 +3686,183 @@ function duelDone(T){const d=T.duel,me=curProfile(),time=Math.round((Date.now()-
     html=shareBox(enc("DKR",{seed:d.seed,from:{id:myId(),n:me.name,av:me.av},gs:{c:T.correct,time}}),`✅ Bitti! Şimdi bu sonuç kodunu ${esc(host.n)}'a gönder; kimin kazandığını ikiniz de göreceksiniz.`)}
   app.insertAdjacentHTML("beforeend",html)}
 
+// ===================== SÜRÜM 2.0 =====================
+BADGES.push(
+ ["gunluk","☀️","Günün Yıldızı","Günün 5 Sorusu'nu 3 gün çöz",()=>[lsGet("gunlukToplam",0),3]],
+ ["belge","🎓","Ders Mezunu","Bir dersin bütün konularını tamamla",()=>[lsGet("belgeSayisi",0),1]],
+ ["ogretmen","🧑‍🏫","Sınıf Lideri","Bir sınıf sınavı oluştur ya da çöz",()=>[lsGet("sinifSinavi",0),1]]);
+
+// ---- Erişilebilirlik ----
+let ACC=lsGet("erisim",{z:1,dys:false,hc:false,rm:false});
+function applyAcc(){const r=document.documentElement;r.dataset.dys=ACC.dys?"1":"";r.dataset.hc=ACC.hc?"1":"";r.dataset.rm=ACC.rm?"1":"";document.body.style.zoom=ACC.z&&ACC.z!==1?ACC.z:""}
+applyAcc();
+function accHTML(){const z=[[0.9,"Küçük"],[1,"Normal"],[1.15,"Büyük"],[1.3,"Çok büyük"]];
+  return `<h2>♿ Okuma ve Erişilebilirlik</h2><div class="about rform"><div><b>Yazı boyutu</b><div class="swatches" style="margin-top:6px">${z.map(([v,l])=>`<button type="button" class="swatch${ACC.z===v?" on":""}" data-zoom="${v}"><i style="display:grid;place-items:center;font-weight:900;font-size:${v*14}px;background:var(--bg)">A</i>${l}</button>`).join("")}</div></div>
+  <label class="rday"><input type="checkbox" data-accx="dys"${ACC.dys?" checked":""}> 📖 Okuma kolaylığı (geniş harf ve satır aralığı)</label>
+  <label class="rday"><input type="checkbox" data-accx="hc"${ACC.hc?" checked":""}> 🔲 Yüksek kontrast</label>
+  <label class="rday"><input type="checkbox" data-accx="rm"${ACC.rm?" checked":""}> 🐢 Animasyonları azalt</label></div>`}
+document.addEventListener("change",e=>{const k=e.target.dataset&&e.target.dataset.accx;if(!k)return;ACC[k]=e.target.checked;lsSet("erisim",ACC);applyAcc()});
+
+// ---- Sınıfım ve kişisel ana sayfa ----
+function myGrade(){return lsGet("sinifim","")}
+function setGrade(g){lsSet("sinifim",String(g));home()}
+function welcomeCard(){if(myGrade())return "";return `<div class="about welcome"><h3>👋 Hoş geldin! Kaçıncı sınıftasın?</h3><p class="crumb">Sınıfını seç, ana sayfayı sana göre hazırlayalım. Bunu daha sonra Profilim sayfasından değiştirebilirsin.</p><div class="gpick">${Object.keys(D).map(g=>`<button type="button" class="mini" data-setg="${g}">${g}. Sınıf</button>`).join("")}<button type="button" class="mini" data-setg="hepsi">Sadece geziniyorum</button></div></div>`}
+function recommendTopic(g){const DS=lsGet("dersIst",{});let best=null;
+  for(const s in D[g]){const r=DS[g+"|"+s]||{a:0,c:0},acc=r.a?r.c/r.a:0.5,un=D[g][s].map((t,ti)=>[t,ti]).filter(([t])=>!SOLVED.has(g+"|"+s+"|"+t[0]));
+    if(!un.length)continue;const score=acc+Math.random()*0.15;if(!best||score<best.score)best={score,s,t:un[0][0],i:Object.keys(D[g]).indexOf(s)}}
+  return best}
+function myHome(){const g=myGrade();if(!g||g==="hepsi"||!D[g])return "";
+  const subs=Object.keys(D[g]),rec=recommendTopic(g),dl=lsGet("gunlukSon",{});
+  return `<h2>🎒 Sınıfım: ${g}. Sınıf</h2><div class="grid">`+subs.map((s,i)=>{const tot=D[g][s].length,sv=D[g][s].filter(t=>SOLVED.has(g+"|"+s+"|"+t[0])).length;return `<a class="tile" href="#s${g}-d${i}"><div class="ico">${ICON[s]||"📘"}</div><b style="font-size:17px">${subjName(s)}</b><div class="prog" style="margin:6px 0 2px"><i style="width:${Math.round(sv/tot*100)}%"></i></div><small>${sv}/${tot} konu</small></a>`}).join("")+`</div>
+  <div class="goals" style="margin-top:14px">${rec?`<a class="about gbox recbox" href="#s${g}-d${rec.i}"><div style="font-size:40px">⭐</div><h3>Sana önerilen konu</h3><b>${esc(rec.t[0])}</b><small>${subjName(rec.s)} · Henüz çözmedin</small></a>`:""}
+  <a class="about gbox recbox" href="#gunluk"><div style="font-size:40px">☀️</div><h3>Günün 5 Sorusu</h3><b>${dl.d===dayStr()?`Bugün ${dl.c}/5 yaptın ✅`:"Bugünün soruları hazır!"}</b><small>Seri: ${lsGet("gunlukSeri",0)} gün</small></a></div>`}
+
+// ---- Günün 5 Sorusu ----
+function dailyQs(){const g=myGrade(),gs=g&&D[g]?[g]:Object.keys(D),pool=[];gs.forEach(gg=>Object.keys(D[gg]).forEach(s=>addPool(pool,gg,s)));
+  const r=mulberry(hash(dayStr()+"|"+(g||"*")));for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+  const out=[],seen=new Set();for(const q of pool){const k=q.key.split("#")[0];if(seen.has(k))continue;seen.add(k);out.push(q);if(out.length===5)break}return out}
+function dailyPage(){const dl=lsGet("gunlukSon",{}),g=myGrade(),done=dl.d===dayStr();
+  app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Günün 5 Sorusu</div>
+  <div class="hero" style="background:linear-gradient(135deg,#f59e0b,#ef4444);text-align:center"><div style="font-size:60px">☀️</div><h1>Günün 5 Sorusu</h1><p>Her gün ${g&&D[g]?g+". sınıf":"bütün sınıflar"} için yeni 5 soru! Her gün çözerek serini büyüt.</p></div>
+  <div class="goals"><div class="about gbox"><h3>🔥 Seri</h3><b style="font-size:32px">${lsGet("gunlukSeri",0)} gün</b></div><div class="about gbox"><h3>📅 Bugün</h3><b style="font-size:32px">${done?dl.c+" / 5":"Çözülmedi"}</b></div></div>
+  <div class="vids" style="justify-content:center">${done?`<div class="note">Bugünün sorularını çözdün! Yarın yeni sorular seni bekliyor. İstersen tekrar çözebilirsin (seri değişmez).</div>`:""}<button class="send" type="button" data-act="dailystart">${done?"🔁 Tekrar çöz":"▶ Başla"}</button></div>
+  ${!g?`<div class="note">İpucu: Ana sayfadan ya da Profilim sayfasından sınıfını seçersen sorular senin sınıfından gelir.</div>`:""}`}
+function dailyStart(){const qs=dailyQs();TEST={g:myGrade()||"Karışık",s:"gunluk",qs,i:0,correct:0,wrong:[],res:{},start:Date.now(),answered:false,lim:0,src:"all",mode:"☀️ Günün 5 Sorusu",daily:1};
+  clearInterval(testTimer);testTimer=setInterval(()=>{if(!TEST){clearInterval(testTimer);return}const el=document.getElementById("ttime");if(el)el.textContent=fmtTime((Date.now()-TEST.start)/1000)},500);testQuestion();window.scrollTo(0,0)}
+function dailyDone(T){const t=dayStr(),last=lsGet("gunlukSon",{});if(last.d!==t){const y=new Date();y.setDate(y.getDate()-1);lsSet("gunlukSeri",last.d===dayStr(y)?lsGet("gunlukSeri",0)+1:1);lsSet("gunlukToplam",lsGet("gunlukToplam",0)+1);lsSet("gunlukSon",{d:t,c:T.correct})}
+  app.insertAdjacentHTML("beforeend",`<div class="about" style="text-align:center"><h3>🔥 Günlük serin: ${lsGet("gunlukSeri",0)} gün</h3>Yarın yeni 5 soruyla gel, serini bozma!</div>`)}
+
+// ---- Öğretmen modu: sınıf sınavı ----
+function clsQs(o){const pool=[];(o.s==="*"?Object.keys(D[o.g]):[o.s]).forEach(s=>addPool(pool,o.g,s));const r=mulberry(o.seed);for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}return pool.slice(0,o.n)}
+function teacherPage(msg){const TS=lsGet("ogretmenSinavlari",{});
+  app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › <a href="#araclar">Araçlar</a> › Öğretmen Modu</div>
+  <div class="hero" style="background:linear-gradient(135deg,#0f766e,#2f6bff)"><h1>🧑‍🏫 Öğretmen Modu: Sınıf Sınavı</h1><p>Öğretmenler ve veliler için: bir sınav oluştur, kodunu öğrencilere gönder. Öğrenciler çözünce sonuç kodlarını sana gönderir, sen de bütün sonuçları tek tabloda görürsün.</p></div>
+  ${msg?`<div class="note" style="border-color:var(--green)">${msg}</div>`:""}
+  <div class="goals"><form class="about rform" id="clsform"><h3>➕ Yeni sınav oluştur</h3><label>Sınav adı<input name="t" maxlength="40" required placeholder="Örn. 8-A Üslü İfadeler Quiz"></label>${pickerHTML("c")}
+   <label>Soru sayısı<select name="n"><option>5</option><option selected>10</option><option>15</option><option>20</option></select></label><button class="send" type="submit">Sınavı oluştur</button></form>
+  <form class="about rform" id="clsin"><h3>📥 Kod yapıştır</h3><span class="crumb">Öğrenciysen öğretmeninin gönderdiği sınav kodunu, öğretmensen öğrencilerinden gelen sonuç kodlarını buraya yapıştır. Birden fazla sonuç kodunu alt alta yapıştırabilirsin.</span><textarea id="clscode" rows="5" class="codeta" required></textarea><button class="send" type="submit">Aç / Ekle</button><div class="fb" id="clsfb"></div></form></div>
+  ${Object.keys(TS).length?`<h2>📋 Oluşturduğun sınavlar</h2>`+Object.entries(TS).sort((a,b)=>b[1].t-a[1].t).map(([seed,x])=>clsReport(seed,x)).join(""):""}`;
+  const get=pickerInit("c","sonSinifSinavi");const cs=document.getElementById("cs");if(cs&&![...cs.options].some(o=>o.value==="*"))cs.insertAdjacentHTML("afterbegin",`<option value="*">Tüm dersler (karışık)</option>`);
+  document.getElementById("cg").addEventListener("change",()=>{const c=document.getElementById("cs");if(![...c.options].some(o=>o.value==="*"))c.insertAdjacentHTML("afterbegin",`<option value="*">Tüm dersler (karışık)</option>`)});
+  document.getElementById("clsform").onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),v=get(),seed=Math.floor(Math.random()*1e9),o={t:String(f.get("t")).trim().slice(0,40),g:v.g,s:v.s,n:+f.get("n"),seed,tid:myId(),tn:curProfile().name};
+    const TS=lsGet("ogretmenSinavlari",{});TS[seed]={...o,tm:Date.now(),t:Date.now(),title:o.t,res:{}};lsSet("ogretmenSinavlari",TS);lsSet("sinifSinavi",1);checkBadges();
+    teacherPage(`✅ "${esc(o.t)}" oluşturuldu! Aşağıdaki kodu öğrencilerine gönder.`+shareBox(enc("DKS",o),"📋 Sınav kodu"))};
+  document.getElementById("clsin").onsubmit=e=>{e.preventDefault();clsCode(document.getElementById("clscode").value)};
+}
+function clsReport(seed,x){const R=Object.values(x.res||{}),n=x.n,avg=R.length?Math.round(R.reduce((a,r)=>a+r.c,0)/R.length*10)/10:0;
+  const wrongCount={};R.forEach(r=>(r.w||[]).forEach(i=>wrongCount[i]=(wrongCount[i]||0)+1));const qs=R.length?clsQs({g:x.g,s:x.s,seed:+seed,n}):[];
+  const hard=Object.entries(wrongCount).sort((a,b)=>b[1]-a[1]).slice(0,3);
+  return `<details class="about clsrep"><summary><b>${esc(x.title)}</b> · ${x.g}. Sınıf ${x.s==="*"?"Karışık":subjName(x.s)} · ${n} soru · <b>${R.length}</b> öğrenci${R.length?` · ortalama <b>${avg}/${n}</b>`:""}</summary>
+  ${shareBox(enc("DKS",{t:x.title,g:x.g,s:x.s,n,seed:+seed,tid:x.tid,tn:x.tn}),"Sınav kodu")}
+  ${R.length?`<div class="lb">`+R.sort((a,b)=>b.c-a.c||a.time-b.time).map((r,i)=>`<div class="lbrow"><span class="lbrank">${["🥇","🥈","🥉"][i]||i+1+"."}</span><span class="lbav">${r.av||"🙂"}</span><span class="lbname"><b>${esc(r.n)}</b><small>${fmtTime(r.time)} sürede</small></span><span class="lbval"><b>${r.c}/${n}</b><small>%${Math.round(r.c/n*100)}</small></span></div>`).join("")+`</div>`
+   +(hard.length?`<h4>❗ En çok yanlış yapılan sorular</h4>`+hard.map(([i,c])=>`<div class="res"><b>${+i+1}. ${esc(qs[i]?qs[i].q:"?")}</b><br><small>${c} öğrenci yanlış yaptı · Doğru cevap: ${esc(qs[i]?qs[i].o[qs[i].a]:"")}</small></div>`).join(""):"")
+   :`<div class="note">Henüz sonuç yok. Öğrencilerinden gelen sonuç kodlarını yukarıdaki kutuya yapıştır.</div>`}
+  <div class="vids"><button class="mini" type="button" data-clsprint="${seed}">🖨️ Kâğıt sınav olarak yazdır</button><button class="mini" type="button" data-clsdel="${seed}">🗑️ Sınavı sil</button></div></details>`}
+function clsCode(text){const fb=document.getElementById("clsfb");const codes=String(text).split(/\s+/).filter(Boolean);let added=0,last="";
+  for(const c of codes){const x=dec2(c);if(!x)continue;
+    if(x.t==="DKS"){const o=x.o;if(!D[o.g])continue;window.__cls=o;
+      app.innerHTML=`<div class="crumb"><a href="#ogretmen">Öğretmen Modu</a> › Sınav</div><div class="hero" style="background:linear-gradient(135deg,#0f766e,#2f6bff);text-align:center"><div style="font-size:56px">📋</div><h1>${esc(o.t)}</h1><p>${o.g}. Sınıf ${o.s==="*"?"karışık":subjName(o.s)} · ${o.n} soru · Hazırlayan: ${esc(o.tn)}</p></div>
+      <form class="about rform" id="clsjoin"><label>Adın ve soyadın (öğretmeninin seni tanıması için)<input name="n" maxlength="30" required value="${esc(curProfile().name)}"></label><button class="send" type="submit">▶ Sınava başla</button></form>`;
+      document.getElementById("clsjoin").onsubmit=e=>{e.preventDefault();const n=String(new FormData(e.target).get("n")).trim().slice(0,30);clsStart(o,n)};return}
+    if(x.t==="DKO"){const o=x.o,TS=lsGet("ogretmenSinavlari",{}),s=TS[o.seed];if(!s)continue;s.res=s.res||{};s.res[(o.sid||"")+"|"+o.sn]={n:String(o.sn).slice(0,30),av:o.av,c:+o.c||0,time:+o.time||0,w:(o.w||[]).map(Number).filter(i=>i>=0&&i<s.n)};TS[o.seed]=s;lsSet("ogretmenSinavlari",TS);added++;last=s.title}}
+  if(added)return teacherPage(`✅ ${added} sonuç "${esc(last)}" sınavına eklendi.`);
+  fb.style.color="var(--red)";fb.textContent="❌ Geçerli bir sınav ya da sonuç kodu bulunamadı. Sonuç kodları yalnızca sınavı oluşturan cihazda eklenebilir."}
+function dec2(code){const m=String(code).trim().match(/^(DKS|DKO)-([A-Za-z0-9+/=]+)$/);if(!m)return null;try{return{t:m[1],o:JSON.parse(decodeURIComponent(escape(atob(m[2]))))}}catch(e){return null}}
+function clsStart(o,name){const qs=clsQs(o);TEST={g:o.g,s:"sinif",qs,i:0,correct:0,wrong:[],res:{},start:Date.now(),answered:false,lim:0,src:"all",mode:"📋 "+o.t,cls:{...o,name},wi:[]};
+  clearInterval(testTimer);testTimer=setInterval(()=>{if(!TEST){clearInterval(testTimer);return}const el=document.getElementById("ttime");if(el)el.textContent=fmtTime((Date.now()-TEST.start)/1000)},500);testQuestion();window.scrollTo(0,0)}
+function clsDone(T){const o=T.cls,time=Math.round((Date.now()-T.start)/1000);lsSet("sinifSinavi",1);
+  const code=enc("DKO",{seed:o.seed,sn:o.name,sid:myId(),av:curProfile().av,c:T.correct,time,w:T.wi||[]});
+  app.insertAdjacentHTML("beforeend",shareBox(code,`✅ Sınav bitti! Bu sonuç kodunu öğretmenin ${esc(o.tn)}'a gönder.`))}
+function clsPrint(seed){const x=lsGet("ogretmenSinavlari",{})[seed];if(!x)return;const qs=clsQs({g:x.g,s:x.s,seed:+seed,n:x.n});const key=[];
+  app.innerHTML=`<div class="noprint vids"><a class="yt alt" href="#ogretmen">← Öğretmen Modu</a><button class="send" type="button" data-act="doprint">🖨️ Yazdır / PDF</button></div>
+  <div class="printdoc"><div class="phead"><div><h1>📋 ${esc(x.title)}</h1><p class="psmall">${x.g}. Sınıf ${x.s==="*"?"Karışık":subjName(x.s)} · ${x.n} soru · Ders Kütüphanesi</p></div><div class="plogo">📚</div></div>
+  <div class="pinfo"><span>Ad Soyad: ______________________</span><span>No: ______</span><span>Tarih: ____/____/______</span><span>Puan: ______</span></div><section class="ptopic pqs">`+
+  qs.map((q,i)=>{const ord=optOrder(q.q,q.o.length);key.push((i+1)+"-"+"ABCD"[ord.indexOf(q.a)]);return `<div class="pq pqn"><b>${i+1})</b> ${esc(q.q)}<div class="pqo">${ord.map((o,k)=>`<span>${"ABCD"[k]}) ${esc(q.o[o])}</span>`).join("")}</div></div>`}).join("")+
+  `</section><section class="ptopic pans pbreak"><h2>🔑 Cevap Anahtarı</h2><div class="pkey">${key.map(k=>`<span>${k}</span>`).join("")}</div></section></div>`;
+  window.scrollTo(0,0);setTimeout(()=>{try{window.print()}catch(e){}},500)}
+
+// ---- Gelişim raporu ----
+function reportCardPage(){const c=curProfile(),DS=lsGet("dersIst",{}),acc=ST.answered?Math.round(ST.correct/ST.answered*100):0;
+  const rows=Object.entries(DS).filter(([k,r])=>r.a>=1).map(([k,r])=>{const [g,s]=k.split("|");return{g,s,a:r.a,c:r.c,p:Math.round(r.c/r.a*100)}}).sort((a,b)=>b.a-a.a);
+  const strong=rows.filter(r=>r.a>=3).sort((a,b)=>b.p-a.p)[0],weak=rows.filter(r=>r.a>=3).sort((a,b)=>a.p-b.p)[0];
+  app.innerHTML=`<div class="noprint vids"><a class="yt alt" href="#araclar">← Araçlar</a><button class="send" type="button" data-act="doprint">🖨️ Raporu yazdır / PDF</button></div>
+  <div class="printdoc"><div class="phead"><div><h1>📈 Gelişim Raporu</h1><p class="psmall">${c.av} ${esc(c.name)}${myGrade()&&D[myGrade()]?" · "+myGrade()+". Sınıf":""} · ${new Date().toLocaleDateString("tr-TR")} · Ders Kütüphanesi</p></div><div class="plogo">📚</div></div>
+  <div class="grid">${[["📝",ST.answered,"çözülen soru"],["🎯","%"+acc,"başarı oranı"],["✅",SOLVED.size,"tamamlanan konu"],["🔥",streak(),"günlük seri"],["📅",ST.days.length,"çalışılan gün"],["🏅",EARNED.length,"rozet"]].map(([e,v,l])=>`<div class="tile"><div class="ico">${e}</div><b>${v}</b><small>${l}</small></div>`).join("")}</div>
+  <section class="ptopic"><h2>📈 Son 7 gün</h2>${weekChart()}</section>
+  <section class="ptopic"><h2>📊 Derslere göre başarı</h2>${rows.length?`<table class="rtab"><tr><th>Ders</th><th>Soru</th><th>Doğru</th><th>Başarı</th></tr>${rows.slice(0,15).map(r=>`<tr><td>${r.g}. Sınıf ${subjName(r.s)}</td><td>${r.a}</td><td>${r.c}</td><td><b>%${r.p}</b></td></tr>`).join("")}</table>`:"Henüz ders verisi yok."}</section>
+  <section class="ptopic"><h2>💡 Değerlendirme</h2><ul class="pfacts">${strong?`<li>En başarılı ders: <b>${strong.g}. Sınıf ${subjName(strong.s)}</b> (%${strong.p})</li>`:""}${weak&&weak!==strong?`<li>Daha çok çalışılması önerilen ders: <b>${weak.g}. Sınıf ${subjName(weak.s)}</b> (%${weak.p})</li>`:""}
+  <li>Tekrar zamanı gelen konu sayısı: <b>${revDue().length}</b></li><li>Günlük hedef: <b>${GOAL.day} soru</b> · Bu hafta: <b>${weekSum()} / ${GOAL.week}</b> soru</li>${!rows.length?"<li>Değerlendirme için biraz soru çözmek gerekiyor.</li>":""}</ul></section>
+  <p class="psmall">Bu rapor yalnızca bu cihazdaki kayıtlara göre hazırlanmıştır.</p></div>`}
+
+// ---- Başarı belgesi ----
+function certBanner(g,i){const s=Object.keys(D[g])[i],tot=D[g][s].length,sv=D[g][s].filter(t=>SOLVED.has(g+"|"+s+"|"+t[0])).length;
+  if(sv<tot)return "";return `<div class="about certban"><span style="font-size:34px">🎓</span><div><b>Tebrikler! ${g}. Sınıf ${subjName(s)} dersinin bütün konularını tamamladın.</b><br><button class="send" type="button" data-cert="${g}|${i}">Başarı belgeni al</button></div></div>`}
+function certPage(g,i){const s=Object.keys(D[g])[i],c=curProfile(),k=g+"|"+s,got=lsGet("belgeler",{});if(!got[k]){got[k]=dayStr();lsSet("belgeler",got);lsSet("belgeSayisi",Object.keys(got).length);checkBadges()}
+  app.innerHTML=`<div class="noprint vids"><a class="yt alt" href="#s${g}-d${i}">← Derse dön</a><button class="send" type="button" data-act="doprint">🖨️ Belgeyi yazdır / PDF</button></div>
+  <div class="cert"><div class="certin"><div class="certlogo">📚 Ders Kütüphanesi</div><h1>BAŞARI BELGESİ</h1><p>Bu belge</p><div class="certname">${c.av} ${esc(c.name)}</div>
+  <p>adlı öğrencinin <b>${g}. Sınıf ${subjName(s)}</b> dersindeki <b>${D[g][s].length} konunun</b> tamamını başarıyla çalıştığını belgeler.</p>
+  <div class="certfoot"><span>📅 ${new Date(got[k]+"T00:00:00").toLocaleDateString("tr-TR")}</span><span>🏅 Tebrikler, öğrenmeye devam!</span></div></div></div>`;window.scrollTo(0,0)}
+
+// ---- Sınav geri sayımı ----
+function examsHTML(){const E=lsGet("sinavlar",[]).filter(x=>x.d>=dayStr()).sort((a,b)=>a.d.localeCompare(b.d));
+  const left=d=>Math.round((new Date(d+"T00:00:00")-new Date(dayStr()+"T00:00:00"))/864e5);
+  return `<h2>📅 Sınavlarım</h2><p class="crumb">Yazılı, LGS, YKS ya da başka bir sınavının tarihini ekle; kaç gün kaldığını takip et.</p>
+  <div class="grid">${E.map(x=>`<div class="tile exam"><b style="font-size:30px">${left(x.d)}</b><small>gün kaldı</small><b>${esc(x.n)}</b><small>${new Date(x.d+"T00:00:00").toLocaleDateString("tr-TR")}</small><button class="mini" type="button" data-exdel="${x.id}">Sil</button></div>`).join("")}</div>
+  <form class="about rform" id="exform" style="margin-top:10px"><label>Sınav adı<input name="n" maxlength="30" required placeholder="Örn. Matematik yazılısı"></label><label>Tarih<input type="date" name="d" required min="${dayStr()}"></label><button class="send" type="submit">➕ Sınav ekle</button></form>`}
+function examCard(){const E=lsGet("sinavlar",[]).filter(x=>x.d>=dayStr()).sort((a,b)=>a.d.localeCompare(b.d));if(!E.length)return "";const x=E[0],l=Math.round((new Date(x.d+"T00:00:00")-new Date(dayStr()+"T00:00:00"))/864e5);
+  return `<a class="cont" href="#hedefler" style="border-left-color:#ef4444"><span>📅</span><div><b>${esc(x.n)}: ${l===0?"Bugün! Başarılar 🍀":l+" gün kaldı"}</b><small>Sınavlarını Hedeflerim sayfasından yönetebilirsin →</small></div></a>`}
+function bindExams(){const f=document.getElementById("exform");if(!f)return;f.onsubmit=e=>{e.preventDefault();const d=new FormData(f),E=lsGet("sinavlar",[]);E.push({id:Date.now(),n:String(d.get("n")).trim().slice(0,30),d:String(d.get("d"))});lsSet("sinavlar",E);route()}}
+
+// ---- Konuya not ----
+function topicNoteForm(b){const key=b.dataset.tnote,box=b.closest(".tb");if(!box||box.querySelector(".tnform"))return;const info=keyInfo(key);
+  b.closest(".topic-actions").insertAdjacentHTML("afterend",`<form class="tnform about rform"><b>📝 ${esc(info.name)} için not</b><textarea rows="3" maxlength="1000" required placeholder="Bu konuda hatırlamak istediğin şey…"></textarea><div class="vids"><button class="send" type="submit">Kaydet</button><a class="yt alt" href="#notlarim">Bütün notlarım</a></div></form>`);
+  const f=box.querySelector(".tnform");f.querySelector("textarea").focus();f.onsubmit=e=>{e.preventDefault();const t=f.querySelector("textarea").value.trim();if(!t)return;NOTES.push({id:Date.now(),t:info.name,b:t,d:Date.now(),k:key});lsSet("notlar",NOTES);checkBadges();f.innerHTML=`<div class="fb" style="color:var(--green)">✅ Not kaydedildi. Notlarım sayfasından görebilirsin.</div>`}}
+
+// ---- Klavye kısayolları ----
+document.addEventListener("keydown",e=>{if(e.target.closest&&e.target.closest("input,textarea,select"))return;if(e.ctrlKey||e.metaKey||e.altKey)return;
+  const map={"1":0,"2":1,"3":2,"4":3,"a":0,"b":1,"c":2,"d":3};const k=e.key.toLowerCase();
+  if(k in map){const btns=app.querySelectorAll(".topt,.bopt");if(btns.length===4&&btns[map[k]]){e.preventDefault();btns[map[k]].click();return}
+    if(k==="d"||k==="y"){}}
+  if(e.key==="Enter"){const nx=app.querySelector('[data-act="tnext"],[data-act="bnext"],[data-act="tfnext"],[data-act="wrnext"]');if(nx){e.preventDefault();nx.click()}}
+  if((k==="d"||k==="y")&&app.querySelector(".tfb")){const b=app.querySelector(`.tfb[data-tf="${k==="d"?1:0}"]`);if(b){e.preventDefault();b.click()}}});
+
+// ---- Uygulamayı yükle (PWA) ----
+let INSTALL=null;window.addEventListener("beforeinstallprompt",e=>{e.preventDefault();INSTALL=e});
+function installHTML(){const ios=/iphone|ipad|ipod/i.test(navigator.userAgent),standalone=window.matchMedia&&matchMedia("(display-mode: standalone)").matches;if(standalone)return "";
+  return `<div class="about installbox"><span style="font-size:32px">📲</span><div><b>Ders Kütüphanesi'ni uygulama olarak yükle</b><br><small>Ana ekranından tek dokunuşla aç, internet yokken de çalışsın.</small><br>${ios?`<small>iPhone/iPad: Safari'de <b>Paylaş</b> → <b>Ana Ekrana Ekle</b>'ye dokun.</small>`:`<button class="send" type="button" data-act="install">Uygulamayı yükle</button>`}</div></div>`}
+
+// ---- Yardım ve gizlilik ----
+function helpPage(){const qa=[["Siteyi kullanmak ücretli mi?","Hayır. Ders Kütüphanesi tamamen ücretsizdir ve reklam içermez."],["Üye olmam gerekiyor mu?","Hayır. Profilim sayfasından takma adınla bir profil oluşturman yeterli. Aynı cihazda birden fazla profil açabilirsin."],["İlerlemem nerede saklanıyor?","Bütün ilerlemen yalnızca kullandığın cihazın tarayıcısında saklanır. Tarayıcı verilerini silersen ilerlemen de silinir; bu yüzden Profilim sayfasından ara sıra yedek almanı öneririz."],["Başka cihaza nasıl geçerim?","Profilim → 'İlerlememi dışa aktar' ile bir yedek dosyası indir, yeni cihazda aynı sayfadan 'İçe aktar' ile yükle."],["Akıllı Tekrar nasıl çalışır?","Doğru bildiğin konular 1, 3, 7, 14 ve 30 gün sonra tekrar karşına çıkar. Yanlış yaptığın konular ertesi gün geri gelir."],["Arkadaşımla nasıl yarışırım?","Arkadaşlar sayfasından kodunu arkadaşına gönder, onun kodunu da ekle. Düello bölümünden aynı 10 soruyla meydan okuyabilirsin."],["Öğretmenim sınıfa nasıl sınav verebilir?","Araçlar → Öğretmen Modu'ndan sınav oluşturulur ve kodu öğrencilere gönderilir. Öğrenciler çözünce çıkan sonuç kodunu öğretmenlerine gönderir."],["Klavye kısayolları var mı?","Evet. Sınavlarda 1-4 ya da A-D tuşlarıyla cevap verebilir, Enter ile sonraki soruya geçebilirsin. Doğru-Yanlış oyununda D ve Y tuşları çalışır."],["Yazılar çok küçük, ne yapabilirim?","Araçlar → Temalar sayfasındaki 'Okuma ve Erişilebilirlik' bölümünden yazı boyutunu büyütebilir, okuma kolaylığı ve yüksek kontrast seçeneklerini açabilirsin."],["Bir hata buldum.","Sorun Bildir sayfasından bize yazabilirsin. Konu sayfalarındaki 'Bu konuda bir hata mı var?' bağlantısı da işini kolaylaştırır."]];
+  app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Yardım</div><div class="hero"><h1>❓ Yardım ve Sık Sorulan Sorular</h1><p>Siteyi en verimli şekilde kullanman için bilmen gerekenler.</p></div>`+qa.map(([q,a])=>`<details class="about faq"><summary><b>${q}</b></summary><p>${a}</p></details>`).join("")+`<div class="vids"><a class="send" style="text-decoration:none" href="#gizlilik">🔒 Gizlilik</a><a class="yt alt" href="#sorun-bildir">⚠️ Sorun bildir</a></div>`}
+function privacyPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Gizlilik</div><div class="hero" style="background:linear-gradient(135deg,#334155,#2f6bff)"><h1>🔒 Gizlilik ve Kişisel Veriler</h1><p>Ders Kütüphanesi çocukların da kullandığı bir sitedir; gizliliğe özen gösteririz.</p></div>
+  <div class="about"><h3>Hangi bilgileri saklıyoruz?</h3>Çözdüğün sorular, rozetlerin, notların, hedeflerin ve profil takma adın <b>yalnızca senin cihazındaki tarayıcıda</b> saklanır. Bu bilgiler bize ya da başka bir sunucuya gönderilmez. Hesap, şifre ya da e-posta istemiyoruz.</div>
+  <div class="about"><h3>Kodlar ve paylaşım</h3>Arkadaş, düello ve sınav kodlarında yalnızca takma adın, avatarın ve puanların bulunur. Bu kodları sen kopyalayıp gönderdiğinde paylaşılır; kodlarını sadece tanıdığın kişilerle paylaş. Gerçek adın yerine takma ad kullanabilirsin.</div>
+  <div class="about"><h3>Sorun bildirimi</h3>Sorun Bildir formuna yazdıkların yalnızca sen gönder düğmesine bastığında iletilir. İletişim alanı isteğe bağlıdır; çocukların bu alana kişisel bilgi yazmamasını öneririz.</div>
+  <div class="about"><h3>Dış bağlantılar</h3>Video bağlantıları YouTube'a gider. YouTube'un kendi gizlilik kuralları geçerlidir. Küçük öğrencilerin video izlerken bir büyüğüyle birlikte olmasını öneririz.</div>
+  <div class="about"><h3>Verilerimi nasıl silerim?</h3>İstatistiklerim sayfasındaki 'İlerlememi sıfırla' düğmesiyle ya da tarayıcının site verilerini temizleyerek bütün kayıtlarını silebilirsin.</div>`}
+
+// ---- Araçlar: kategoriler ----
+const TOOL_CATS=[["📝 Çalış ve pratik yap",["deneme","gunluk","tekrar","kartlar","yanlislarim","formuller","kaydedilenler","notlarim"]],["🎮 Oyunlar ve arkadaşlar",["oyunlar","arkadaslar","rozetler"]],["📊 Takip ve planlama",["hedefler","analiz","istatistikler","rapor","program","pomodoro","hatirlatici"]],["🧑‍🏫 Öğretmen ve veli",["ogretmen","rapor"]],["⚙️ Ayarlar ve yardım",["temalar","profil","yardim"]]];
+function toolsGrid(compact){const T=Object.fromEntries(TOOLS.map(t=>[t[0],t]));const tile=([h,e,t,d])=>`<a class="tile tool" href="#${h}"><div class="ico">${e}</div><b>${t}</b><small>${d}</small></a>`;
+  if(compact)return `<div class="grid tools">`+["gunluk","deneme","tekrar","oyunlar","arkadaslar","hedefler"].filter(h=>T[h]).map(h=>tile(T[h])).join("")+`</div><div class="vids"><a class="yt alt" href="#araclar">🧰 Bütün araçlar (${TOOLS.length}) →</a></div>`;
+  return TOOL_CATS.map(([c,hs])=>`<h2>${c}</h2><div class="grid tools">`+hs.filter(h=>T[h]).map(h=>tile(T[h])).join("")+`</div>`).join("")}
+
+{const _gp=goalsPage;goalsPage=function(){_gp();app.insertAdjacentHTML("beforeend",examsHTML());bindExams()}}
+{const _tp=themesPage;themesPage=function(){_tp();app.insertAdjacentHTML("beforeend",accHTML())}}
+{const _pp=profilePage;profilePage=function(){_pp();const g=myGrade();app.insertAdjacentHTML("beforeend",`<div class="about rform"><h3>🎒 Sınıfım</h3><span class="crumb">Ana sayfa ve Günün 5 Sorusu senin sınıfına göre hazırlanır.</span><select id="mygrade"><option value="">Seçilmedi</option>${Object.keys(D).map(x=>`<option value="${x}"${x===g?" selected":""}>${x}. Sınıf</option>`).join("")}</select></div>`);document.getElementById("mygrade").onchange=e=>{lsSet("sinifim",e.target.value);toast("🎒 Sınıfın kaydedildi.")}}}
+
 function home(){
   const st=stats();
   let h=`<div class="hero"><h1>Ders Kütüphanesi 📚</h1><p>1'den 12'ye bütün sınıflar, dersler, konu anlatımları, örnek sorular ve YouTube videoları tek yerde.</p>
   <div class="stats"><div class="stat"><b>12</b>sınıf</div><div class="stat"><b>${st.ders}</b>ders</div><div class="stat"><b>${st.konu}</b>konu</div><div class="stat"><b>${st.soru}</b>soru</div><div class="stat"><b>${SOLVED.size}</b>doğru cevabın</div></div></div>`;
-  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 1.9 yayında! 🎉</b><small>Arkadaşlık sistemi, sıralama ve düellolar geldi. Versiyon 2.0 yakında →</small></div></a>`;
+  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 2.0 yayında! 🎉🎉</b><small>Kişisel ana sayfa, Günün 5 Sorusu, Öğretmen Modu, gelişim raporu, başarı belgesi ve çok daha fazlası →</small></div></a>`;
   const last=lsGet("sonKonu",null);
   if(last&&D[last.g]&&D[last.g][last.s]) h+=`<a class="cont" href="${last.h}"><span>▶️</span><div><b>Kaldığın yerden devam et</b><small>${last.g}. Sınıf · ${subjName(last.s)} · ${D[last.g][last.s].filter(t=>SOLVED.has(last.g+"|"+last.s+"|"+t[0])).length}/${D[last.g][last.s].length} konu tamamlandı</small></div></a>`;
-  h+=goalCard()+revCard();
+  h+=welcomeCard()+goalCard()+revCard()+examCard()+myHome();
   const all=[];for(const g in D)for(const s in D[g])D[g][s].forEach((t,ti)=>all.push([g,s,t,ti]));
   const day=Math.floor(Date.now()/864e5), [dg,ds,dt,dti]=all[(day*7919)%all.length];
   h+=`<h2>⭐ Günün Sorusu</h2><div class="about daily"><div class="crumb">${dg}. Sınıf · ${subjName(ds)} · ${esc(dt[0])}</div>`+topicQ(dg,ds,dt)+`</div>`;
-  h+=`<h2>🧰 Çalışma Araçları</h2>`+toolsGrid();
+  h+=`<h2>🧰 Çalışma Araçları</h2>`+toolsGrid(true);
   LEVELS.forEach(([n,c,gs])=>{
     h+=`<h2>${n}</h2><div class="grid">`+gs.map(g=>`<a class="tile ${c}" href="#s${g}"><b>${g}. Sınıf</b><small>${Object.keys(D[g]).length} ders</small></a>`).join("")+`</div>`;
   });
@@ -3687,6 +3882,7 @@ function topicHTML(g,s,t,ti,open){
   <div class="vids"><button class="yt watch" type="button" data-watch="${esc(key)}">🎬 Anlatımı izle</button><a class="yt" href="${yt(g+". sınıf "+subjName(s)+" "+name+" konu anlatımı")}" target="_blank" rel="noopener">▶ Konu anlatımı videoları</a>
   <a class="yt alt" href="${yt(g+". sınıf "+subjName(s)+" "+name+" soru çözümü")}" target="_blank" rel="noopener">▶ Soru çözümü videoları</a></div>
   <div class="topic-actions"><button class="favbtn${FAV.has(key)?" on":""}" type="button" data-fav="${esc(key)}">${FAV.has(key)?"★ Kaydedildi":"☆ Kaydet"}</button>
+  <button class="mini" type="button" data-tnote="${esc(key)}">📝 Not al</button>
   <a class="report-link" href="#sorun-bildir" data-konu="${esc(g+". Sınıf · "+subjName(s)+" · "+name)}">⚠️ Bu konuda bir hata mı var? Bildir</a></div>
   </div></details>`;
 }
@@ -3694,7 +3890,7 @@ function subject(g,i){
   const s=Object.keys(D[g])[i]; if(!s) return grade(g);
   lsSet("sonKonu",{h:`#s${g}-d${i}`,g,s,t:Date.now()});
   app.innerHTML=`<div class="crumb"><a href="#">Sınıflar</a> › <a href="#s${g}">${g}. Sınıf</a> › ${subjName(s)}</div>
-  <h2>${ICON[s]||""} ${g}. Sınıf ${subjName(s)}</h2><div class="vids" style="margin:-4px 0 10px"><button class="mini" type="button" data-print="${g}|${i}|ozet">📄 Konu Özeti PDF</button><button class="mini" type="button" data-print="${g}|${i}|soru">📝 Soru PDF</button>${sortBar()}</div>`+progHTML(D[g][s].filter(t=>SOLVED.has(g+"|"+s+"|"+t[0])).length,D[g][s].length)+(SV==="grp"&&TGROUPS[s]?groupedTopicsHTML(g,s):subjOrder(g,s).map(([t,ti],k)=>topicHTML(g,s,t,ti,k===0)).join(""))+
+  <h2>${ICON[s]||""} ${g}. Sınıf ${subjName(s)}</h2><div class="vids" style="margin:-4px 0 10px"><button class="mini" type="button" data-print="${g}|${i}|ozet">📄 Konu Özeti PDF</button><button class="mini" type="button" data-print="${g}|${i}|soru">📝 Soru PDF</button>${sortBar()}</div>`+progHTML(D[g][s].filter(t=>SOLVED.has(g+"|"+s+"|"+t[0])).length,D[g][s].length)+certBanner(g,i)+(SV==="grp"&&TGROUPS[s]?groupedTopicsHTML(g,s):subjOrder(g,s).map(([t,ti],k)=>topicHTML(g,s,t,ti,k===0)).join(""))+
   `<div class="vids" style="margin-top:16px"><a class="yt alt" href="${yt(g+". sınıf "+subjName(s)+" tüm konular")}" target="_blank" rel="noopener">▶ ${g}. Sınıf ${subjName(s)} — tüm konular</a></div>`;
   const ss=document.getElementById("ssort");if(ss)ss.onchange=e=>{SV=e.target.value;lsSet("siralama",SV);subject(g,i)};
 }
@@ -3759,6 +3955,11 @@ function route(){
   else if(h==="tekrar") revPage();
   else if(h==="profil") profilePage();
   else if(h==="arkadaslar") friendsPage();
+  else if(h==="gunluk") dailyPage();
+  else if(h==="ogretmen") teacherPage();
+  else if(h==="rapor") reportCardPage();
+  else if(h==="yardim") helpPage();
+  else if(h==="gizlilik") privacyPage();
   else if(h==="dogruyanlis") tfSetup();
   else if(h==="yazili") wrSetup();
   else if(h==="hatirlatici") remPage();
