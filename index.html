@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ders Kütüphanesi</title>
 <meta name="theme-color" content="#2f6bff"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes"><meta name="description" content="Ders Kütüphanesi: 1-12. sınıflar için ücretsiz konu anlatımları, sorular, denemeler ve çalışma araçları.">
+<link rel="canonical" href="https://derskutuphanesi.vercel.app/"><meta property="og:title" content="Ders Kütüphanesi – 1-12. sınıf ücretsiz konu anlatımı ve sorular"><meta property="og:description" content="1-12. sınıflar için ücretsiz konu anlatımları, örnek sorular, deneme sınavları, videolar ve çalışma araçları."><meta property="og:type" content="website"><meta property="og:url" content="https://derskutuphanesi.vercel.app/"><meta property="og:locale" content="tr_TR">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800;900&display=swap" rel="stylesheet">
 <style>
@@ -150,6 +151,23 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 .ck.ceq{background:var(--blue);color:#fff;grid-column:span 2}.ck.cdel{background:rgba(239,68,68,.12)}[data-theme=dark] .ck.ceq{color:#0b1020}
 .crow{display:grid;grid-template-columns:1fr 1fr auto 1fr;gap:8px;align-items:center}@media(max-width:560px){.crow{grid-template-columns:1fr 1fr}.crow span{display:none}.mname{width:110px}}
 .pline{margin-top:6px;color:#555}
+.chatbtn{position:fixed;left:18px;bottom:18px;width:60px;height:60px;border-radius:50%;border:none;background:linear-gradient(135deg,#2f6bff,#8b5cf6);color:#fff;font-size:28px;cursor:pointer;box-shadow:0 8px 22px rgba(47,107,255,.45);z-index:55;display:grid;place-items:center;transition:transform .15s}
+.chatbtn:hover{transform:scale(1.07)}.chatbtn:focus-visible{outline:3px solid #f59e0b;outline-offset:3px}
+.chatpanel{position:fixed;left:18px;bottom:90px;width:370px;max-width:calc(100vw - 36px);height:min(560px,calc(100vh - 120px));background:var(--card,#fff);color:var(--ink);border-radius:20px;box-shadow:0 18px 50px rgba(0,0,0,.3);z-index:56;display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(127,127,127,.2)}
+.chatpanel[hidden]{display:none}.chatpanel header{display:flex;justify-content:space-between;align-items:center;padding:12px 14px;background:linear-gradient(135deg,#2f6bff,#8b5cf6);color:#fff}.chatpanel header small{display:block;opacity:.9;font-size:12px}
+.chatx{background:rgba(255,255,255,.2);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer}
+.chatlog{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.cm{max-width:88%;padding:9px 12px;border-radius:16px;line-height:1.45;font-size:15px;word-wrap:break-word}.cm.bot{background:rgba(127,127,127,.12);align-self:flex-start;border-bottom-left-radius:4px}.cm.me{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+[data-theme=dark] .cm.me{color:#0b1020}.cm a{font-weight:700}.cm small{opacity:.85}
+.typing span{animation:blink 1.2s infinite}.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}@keyframes blink{0%,100%{opacity:.2}50%{opacity:1}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}.chip{border:1px solid var(--blue);background:transparent;color:var(--blue);border-radius:999px;padding:6px 10px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none}
+.chatform{display:flex;gap:6px;padding:10px;border-top:1px solid rgba(127,127,127,.2)}.chatform input{flex:1;min-width:0;padding:10px 12px;border-radius:12px;border:1px solid rgba(127,127,127,.35);font-size:15px;background:transparent;color:inherit}
+.chatform button{width:44px;border:none;border-radius:12px;background:var(--blue);color:#fff;font-size:18px;cursor:pointer}[data-theme=dark] .chatform button{color:#0b1020}
+.chatnote{margin:0;padding:0 12px 10px;font-size:11.5px;color:var(--mute)}
+@media(max-width:560px){.chatpanel{left:8px;right:8px;width:auto;max-width:none;bottom:84px;height:calc(100vh - 110px)}.chatbtn{width:54px;height:54px;font-size:25px;left:12px;bottom:12px}}
+@media print{.chatbtn,.chatpanel{display:none!important}}
+.wdays{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:12px}.wday{text-align:center;padding:8px 2px;border-radius:12px;background:rgba(127,127,127,.12)}.wday small{display:block;color:var(--mute);font-weight:700}.wday span{font-weight:900;font-size:16px}
+.wday.full{background:var(--green);color:#fff}.wday.full small{color:#fff}.wday.part{background:rgba(245,158,11,.25)}.wday.today{outline:2px solid var(--blue)}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute);font-weight:700;margin-top:6px}.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.gbox{display:grid;justify-items:center;gap:6px;text-align:center}.gbox h3{margin:6px 0 0}.gbox select{font:inherit;font-weight:700;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 .gring{width:160px;height:160px;border-radius:50%;display:grid;place-items:center}.gin{width:126px;height:126px;border-radius:50%;background:var(--card);display:grid;place-content:center;text-align:center}.gin b{font-size:34px;line-height:1}.gin small{color:var(--mute);font-weight:700}
@@ -207,7 +225,7 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 </div></header>
 <main id="app"></main>
 <form name="sorun-bildir" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="tur"><input name="konu"><textarea name="aciklama"></textarea><input name="iletisim"></form>
-<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a> · <a href="#yardim">Yardım</a> · <a href="#gizlilik">Gizlilik</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 2.2</div></footer>
+<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a> · <a href="#yardim">Yardım</a> · <a href="#gizlilik">Gizlilik</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 2.3</div></footer>
 <button id="top" class="totop" type="button" aria-label="Yukarı çık">↑</button>
 
 <script>
@@ -2879,6 +2897,153 @@ const E12={
 }
 };
 let E12N=0;for(const g in E12)for(const s in E12[g])E12[g][s].forEach(t=>{if(!D[g]||!D[g][s])return;const ex=D[g][s].find(x=>x[0]===t[0]);if(!ex){D[g][s].push(t);E12N++;return}ex[1]=t[1];if(t[5])ex[5]=(ex[5]||[]).concat(t[5])});
+KAZ["9"]["Kimya"]={
+"Kimya Bilimi":["Kimyanın bir bilim dalı olarak gelişimini simya ile karşılaştırarak açıklar.","Kimyanın günlük hayattaki uygulama alanlarına örnek verir."],
+"Kimyanın Alt Dalları":["Kimyanın alt dallarını (analitik, organik, anorganik, fizikokimya, biyokimya, polimer) ve çalışma alanlarını açıklar.","Kimya ile ilgili meslekleri tanır."],
+"Laboratuvar Güvenliği":["Laboratuvarda uyulması gereken güvenlik kurallarını açıklar.","Güvenlik ve tehlike işaretlerinin anlamlarını açıklar.","Temel laboratuvar malzemelerini tanır."],
+"Atom Modelleri":["Dalton, Thomson, Rutherford ve Bohr atom modellerini karşılaştırır.","Modern atom teorisinin temel fikirlerini açıklar."],
+"Atom ve Periyodik Sistem":["Atomu oluşturan temel tanecikleri (proton, nötron, elektron) ve özelliklerini açıklar.","Atom numarası ve kütle numarasını kullanarak tanecik sayılarını hesaplar.","Periyodik sistemin oluşturulma sürecini açıklar."],
+"İzotoplar":["İzotop atomları tanımlar ve örnek verir.","İzotop atomların fiziksel ve kimyasal özelliklerini karşılaştırır."],
+"İyonlar":["Katyon ve anyon oluşumunu elektron alışverişiyle açıklar.","Bir iyonun proton ve elektron sayılarını hesaplar."],
+"Elektron Dizilimi":["Atomların elektronlarını katmanlara yerleştirir.","Elektron dizilimi ile periyodik sistemdeki yer arasında ilişki kurar."],
+"Periyodik Tablo Grupları":["Periyodik sistemde grup ve periyotları açıklar.","Alkali metaller, toprak alkali metaller, halojenler ve soy gazların özelliklerini karşılaştırır."],
+"Periyodik Sistemde Özelliklerin Değişimi":["Atom yarıçapı, iyonlaşma enerjisi, elektron ilgisi ve elektronegatifliğin periyodik sistemdeki değişimini açıklar.","Metalik ve ametalik özelliklerin grup ve periyotlardaki değişimini açıklar."],
+"Metaller ve Ametaller":["Metal, ametal, yarı metal ve soy gazların fiziksel ve kimyasal özelliklerini karşılaştırır.","Elementlerin periyodik sistemdeki yerlerine göre sınıflandırılmasını açıklar."],
+"Halojenler":["Halojenlerin (7A grubu) ortak özelliklerini açıklar.","Halojenlerin günlük hayattaki kullanım alanlarına örnek verir."],
+"Kimyasal Türler Arası Etkileşimler":["Kimyasal türleri (atom, molekül, iyon) tanımlar.","Güçlü ve zayıf etkileşimleri ayırt eder."],
+"Kimyasal Bağlar":["İyonik ve kovalent bağın oluşumunu açıklar.","Lewis yapılarını kullanarak bağ oluşumunu gösterir."],
+"Kovalent Bağ":["Ametal atomları arasında elektron ortaklaşmasıyla kovalent bağ oluştuğunu açıklar.","Polar ve apolar kovalent bağları ayırt eder."],
+"Metalik Bağ":["Metal atomları arasındaki metalik bağı elektron denizi modeliyle açıklar.","Metallerin iletkenlik, parlaklık ve işlenebilirlik özelliklerini metalik bağ ile ilişkilendirir."],
+"Zayıf Etkileşimler":["Van der Waals kuvvetlerini ve hidrojen bağını açıklar.","Zayıf etkileşimlerin maddelerin kaynama noktası ve çözünürlüğüne etkisini açıklar."],
+"Fiziksel ve Kimyasal Değişim":["Fiziksel ve kimyasal değişimleri örneklerle ayırt eder.","Kimyasal değişimde maddenin kimlik değiştirdiğini açıklar."],
+"Maddenin Hâlleri":["Katı, sıvı, gaz ve plazma hâllerinin özelliklerini tanecik modeliyle açıklar.","Hâl değişimlerini ve bu sırada alınan-verilen enerjiyi açıklar."],
+"Karışım Türleri":["Homojen ve heterojen karışımları ayırt eder.","Çözelti, süspansiyon, emülsiyon ve aerosol türlerine örnek verir."],
+"Su ve Sertlik":["Suyun sertliğine neden olan iyonları açıklar.","Sert suyun günlük hayattaki etkilerini ve suyun yumuşatılma yollarını açıklar."],
+"Doğa ve Kimya":["Su, hava ve toprak kirliliğinin nedenlerini ve sonuçlarını açıklar.","Çevre kirliliğini azaltmak için kimyanın katkılarını açıklar."]
+};
+KAZ["9"]["Biyoloji"]={
+"Biyolojinin Alt Dalları":["Biyolojinin alt dallarını ve çalışma alanlarını açıklar.","Biyoloji ile ilgili meslekleri tanır."],
+"Canlıların Ortak Özellikleri":["Canlıların ortak özelliklerini (hücresel yapı, beslenme, solunum, üreme, boşaltım, uyarılara tepki) açıklar.","Homeostazinin önemini açıklar."],
+"Canlıların Temel Bileşenleri":["Canlıların yapısındaki inorganik (su, mineral, asit, baz, tuz) ve organik bileşikleri (karbonhidrat, lipit, protein, vitamin, nükleik asit) sınıflandırır."],
+"Organik ve İnorganik Bileşikler":["Organik ve inorganik bileşikleri ayırt eder.","Bu bileşiklerin canlılar için önemini açıklar."],
+"Su ve Mineraller":["Suyun canlılar için önemini açıklar.","Minerallerin vücuttaki görevlerine örnek verir."],
+"Karbonhidratlar":["Karbonhidratları monosakkarit, disakkarit ve polisakkarit olarak sınıflandırır.","Karbonhidratların canlılardaki görevlerini açıklar."],
+"Lipitler":["Lipitlerin yapısını ve çeşitlerini açıklar.","Lipitlerin canlılardaki görevlerini ve sağlıkla ilişkisini açıklar."],
+"Proteinler":["Proteinlerin amino asitlerden oluştuğunu ve peptit bağını açıklar.","Proteinlerin canlılardaki görevlerine örnek verir."],
+"Enzimler":["Enzimlerin yapısını ve çalışma şeklini açıklar.","Enzim etkinliğini etkileyen faktörleri (sıcaklık, pH, substrat derişimi) açıklar."],
+"Vitaminler":["Suda ve yağda çözünen vitaminleri ayırt eder.","Vitamin eksikliğinde görülen sağlık sorunlarına örnek verir."],
+"DNA ve RNA":["Nükleik asitlerin yapısını ve çeşitlerini açıklar.","DNA ile RNA'yı yapı ve görev bakımından karşılaştırır."],
+"ATP":["ATP'nin yapısını ve canlılar için önemini açıklar.","ATP'nin üretildiği ve kullanıldığı olaylara örnek verir."],
+"Hücre":["Hücre teorisinin temel ilkelerini açıklar.","Hücrenin temel kısımlarını (zar, sitoplazma, çekirdek) açıklar."],
+"Hücre Organelleri":["Hücre organellerinin yapı ve görevlerini açıklar.","Bitki ve hayvan hücrelerini organeller bakımından karşılaştırır."],
+"Prokaryot ve Ökaryot":["Prokaryot ve ökaryot hücreleri yapı bakımından karşılaştırır."],
+"Hücre Zarından Madde Geçişi":["Difüzyon, osmoz, aktif taşıma, endositoz ve ekzositozu açıklar.","Osmozla ilgili günlük hayattan örnekler verir."],
+"Hücre Döngüsü":["Hücre döngüsünün evrelerini açıklar.","Hücre bölünmesinin canlılar için önemini açıklar."],
+"Mikroskop Kullanımı":["Mikroskobun bölümlerini ve kullanımını açıklar.","Mikroskobun gelişiminin biyoloji bilimine katkısını açıklar."],
+"Canlıların Sınıflandırılması":["Canlıların sınıflandırılmasında kullanılan ölçütleri açıklar.","Canlıları bakteriler, arkeler, protistler, bitkiler, mantarlar ve hayvanlar olarak gruplandırır."],
+"Canlıların Sınıflandırılmasında Kategoriler":["Sınıflandırma kategorilerini (âlem, şube, sınıf, takım, aile, cins, tür) sıralar.","İkili adlandırma kuralını açıklar."],
+"Bakteriler ve Virüsler":["Bakterilerin genel özelliklerini ve insan için önemini açıklar.","Virüslerin canlılarla ortak ve farklı özelliklerini açıklar."],
+"Virüslerin Özellikleri":["Virüslerin yapısını ve çoğalma şeklini açıklar.","Virüslerin neden olduğu hastalıklara ve korunma yollarına örnek verir."],
+"Mantarlar":["Mantarların genel özelliklerini açıklar.","Mantarların ekonomik ve ekolojik önemini açıklar."]
+};
+KAZ["10"]={
+"Matematik":{
+"Sayma ve Olasılık":["Toplama ve çarpma yoluyla sayma yöntemlerini kullanır.","Basit olayların olasılığını hesaplar."],
+"Permütasyon":["Sıralama (permütasyon) kavramını açıklar ve n! ile hesap yapar.","Tekrarlı ve dairesel permütasyon problemlerini çözer."],
+"Kombinasyon":["Seçme (kombinasyon) kavramını açıklar ve C(n, r) ile hesap yapar.","Permütasyon ile kombinasyon arasındaki farkı açıklar."],
+"Binom Açılımı":["(a + b)ⁿ ifadesinin açılımını Pascal üçgeni ve kombinasyon yardımıyla yapar.","Açılımda istenen terimi bulur."],
+"Olasılık":["Örnek uzay, olay, kesin ve imkânsız olay kavramlarını açıklar.","Eş olasılı olaylarda olasılık hesaplar."],
+"Olasılıkta Bağımsız Olaylar":["Bağımlı ve bağımsız olayları ayırt eder.","Bağımsız olayların birlikte gerçekleşme olasılığını hesaplar."],
+"Fonksiyonlar":["Fonksiyon kavramını, tanım ve değer kümesini açıklar.","Bire bir ve örten fonksiyonları ayırt eder."],
+"Fonksiyon Grafikleri":["Fonksiyonların grafiklerini çizer ve yorumlar.","Grafikten fonksiyonun artan-azalan olduğu aralıkları belirler."],
+"Fonksiyonlarda İşlemler":["Fonksiyonlarda toplama, çıkarma, çarpma ve bölme işlemlerini yapar."],
+"Bileşke Fonksiyon":["İki fonksiyonun bileşkesini bulur.","Bileşke işleminin değişme özelliğinin olmadığını gösterir."],
+"Ters Fonksiyon":["Bire bir ve örten bir fonksiyonun tersini bulur.","Bir fonksiyon ile tersinin grafiklerinin y = x doğrusuna göre simetrik olduğunu açıklar."],
+"Polinomlar":["Polinom kavramını, derecesini ve katsayılarını açıklar.","Polinomun değerini hesaplar."],
+"Polinomlarda İşlemler":["Polinomlarda toplama, çıkarma ve çarpma işlemlerini yapar.","Polinomlarda bölme işlemini yapar ve kalanı bulur."],
+"Çarpanlara Ayırma":["Ortak çarpan parantezine alma ve özdeşlikleri kullanarak çarpanlara ayırır.","ax² + bx + c biçimindeki ifadeleri çarpanlarına ayırır."],
+"İkinci Dereceden Fonksiyonlar":["İkinci dereceden fonksiyonun grafiği olan parabolün tepe noktasını ve eksenleri kestiği noktaları bulur.","Parabolün kollarının yönünü baş katsayıya göre belirler."],
+"Kökler Toplamı":["İkinci dereceden denklemin kökler toplamını (−b/a) ve kökler çarpımını (c/a) bulur.","Kökleri verilen ikinci dereceden denklemi yazar."],
+"Çokgenler":["Çokgenlerin iç ve dış açıları toplamını hesaplar.","Köşegen sayısını bulur."],
+"Düzgün Çokgenlerde Açılar":["Düzgün çokgenin bir iç ve bir dış açısının ölçüsünü hesaplar."],
+"Paralelkenarın Özellikleri":["Paralelkenarın kenar, açı ve köşegen özelliklerini kullanır.","Paralelkenarın alanını hesaplar."],
+"Yamuk ve Eşkenar Dörtgen":["Yamuk ve eşkenar dörtgenin özelliklerini kullanarak problem çözer.","Bu dörtgenlerin alanlarını hesaplar."],
+"Katı Cisimler":["Dik prizma, piramit, silindir, koni ve kürenin yüzey alanı ve hacmini hesaplar."],
+"Prizmalar":["Prizmaların temel elemanlarını açıklar.","Dik prizmaların yüzey alanı ve hacmini hesaplar."],
+"Dönüşüm Geometrisi":["Öteleme, yansıma ve dönme dönüşümlerini koordinat düzleminde uygular."]
+}
+};
+const EXP4={
+"Matematik":{
+"Dört Basamaklı Sayılar":"Dört basamaklı sayılar 1000 ile 9999 arasındaki sayılardır. Bu sayıların birler, onlar, yüzler ve binler basamağı vardır. Örneğin 4 527 sayısında 4 binler, 5 yüzler, 2 onlar, 7 birler basamağındadır. Bu sayı 4000 + 500 + 20 + 7 şeklinde çözümlenebilir. Sayıları karşılaştırırken önce en büyük basamağa bakarız.",
+"Geometrik Şekiller":"Üçgen, kare, dikdörtgen ve çember temel geometrik şekillerdir. Üçgenin 3, karenin ve dikdörtgenin 4 kenarı ve köşesi vardır. Karenin bütün kenarları eşittir. Dikdörtgenin karşılıklı kenarları eşittir. Çemberin kenarı ve köşesi yoktur. Küp, kare prizma ve dikdörtgenler prizması ise üç boyutlu geometrik cisimlerdir.",
+"Uzunluk Ölçme":"Uzunlukları ölçmek için metre (m), santimetre (cm), milimetre (mm) ve kilometre (km) birimlerini kullanırız. 1 metre 100 santimetre, 1 santimetre 10 milimetredir. 1 kilometre 1000 metredir. Kısa uzunlukları cetvelle, uzun mesafeleri ise şerit metreyle ölçeriz. Şehirler arası uzaklıklar kilometreyle ifade edilir.",
+"Çarpma ve Bölme":"Çarpma, aynı sayının tekrar tekrar toplanmasının kısa yoludur: 4 × 3 = 4 + 4 + 4 = 12. Bölme ise bir çokluğu eşit gruplara ayırmaktır: 12 ÷ 3 = 4. Çarpma ve bölme birbirinin tersidir. Bir sayıyı 10 ile çarparken sağına bir sıfır, 100 ile çarparken iki sıfır ekleriz. Bölmenin doğruluğunu çarpma ile kontrol ederiz.",
+"Kesirler":"Kesir, bir bütünün eşit parçalarından birini veya birkaçını gösterir. Kesir çizgisinin altındaki sayıya payda, üstündeki sayıya pay denir. Payda bütünün kaç eş parçaya ayrıldığını, pay ise kaç parçanın alındığını gösterir. Bir pizzayı 8 eş parçaya bölüp 3 parçasını yersek pizzanın 3/8'ini yemiş oluruz.",
+"Zaman Ölçme":"Zamanı ölçmek için saniye, dakika, saat, gün, hafta, ay ve yıl birimlerini kullanırız. 1 dakika 60 saniye, 1 saat 60 dakikadır. 1 gün 24 saat, 1 hafta 7 gündür. 1 yıl 12 ay, yaklaşık 365 gündür. Saatin kısa kolu saati, uzun kolu dakikayı gösterir.",
+"Toplama ve Çıkarma":"Toplama işleminde sayıları alt alta, basamakları hizalı yazarız ve birler basamağından başlayarak toplarız. Bir basamağın toplamı 10 veya daha fazla olursa eldeyi bir sonraki basamağa aktarırız. Çıkarma işleminde üstteki rakam alttakinden küçükse bir üst basamaktan onluk bozarız. Çıkarmanın doğruluğunu toplama ile kontrol edebiliriz.",
+"Kesirleri Karşılaştırma":"Paydaları eşit kesirlerden payı büyük olan daha büyüktür: 5/7 > 3/7. Payları eşit kesirlerden ise paydası küçük olan daha büyüktür: 1/3 > 1/5, çünkü bütün daha az parçaya bölünmüştür ve her parça daha büyüktür. Kesirleri sayı doğrusunda veya şekillerle göstererek de karşılaştırabiliriz.",
+"Alan Ölçme":"Alan, bir yüzeyin kapladığı yerdir. Alanı ölçmek için yüzeyi birim karelerle kaplarız ve kaç birim kare olduğunu sayarız. Bir dikdörtgenin alanını bulmak için kısa ve uzun kenarındaki birim kare sayılarını çarparız. Örneğin 3 sıra ve her sırada 5 kare varsa alan 15 birim karedir.",
+"Veri İşleme":"Veri, bir konu hakkında topladığımız bilgilerdir. Verileri çetele ile sayar, sıklık tablosuna yazar ve sütun grafiği ya da şekil grafiğiyle gösteririz. Grafikler verileri kolayca karşılaştırmamızı sağlar. Örneğin sınıftaki öğrencilerin en sevdiği renkleri sütun grafiğinde gösterirsek en çok sevilen rengi hemen görürüz.",
+"Bölme ve Sağlama":"Bölme işleminde bölünen, bölen, bölüm ve kalan vardır. İşlemin doğru olup olmadığını sağlama yaparak kontrol ederiz: bölen ile bölümü çarpar, kalanı ekleriz. Sonuç bölünen sayıya eşitse işlem doğrudur. Örneğin 29 ÷ 4 işleminde bölüm 7, kalan 1'dir; 4 × 7 + 1 = 29 olduğundan işlem doğrudur.",
+"Simetri":"Bir şekli bir doğru boyunca katladığımızda iki parça tam olarak üst üste geliyorsa şekil simetriktir. Bu doğruya simetri doğrusu denir. Kelebeğin kanatları, insan yüzü ve kalp şekli simetriye örnektir. Bazı şekillerin birden fazla simetri doğrusu vardır: karenin 4, dikdörtgenin 2 simetri doğrusu vardır.",
+"Uzunluk Birimleri":"Uzunluk birimleri büyükten küçüğe kilometre, metre, santimetre ve milimetredir. 1 km = 1000 m, 1 m = 100 cm, 1 cm = 10 mm'dir. Büyük birimi küçük birime çevirirken çarparız: 3 m = 300 cm. Küçük birimi büyük birime çevirirken böleriz: 500 cm = 5 m. Ölçülecek uzunluğa uygun birimi seçmek önemlidir.",
+"Çevre Hesaplama":"Bir şeklin çevre uzunluğu, bütün kenarlarının uzunlukları toplamıdır. Karenin bütün kenarları eşit olduğundan çevresi bir kenarın 4 katıdır. Dikdörtgenin çevresi ise uzun kenar ile kısa kenarın toplamının 2 katıdır. Örneğin kenarları 5 cm ve 3 cm olan dikdörtgenin çevresi (5 + 3) × 2 = 16 cm'dir.",
+"Kesirlerle Toplama":"Paydaları eşit kesirleri toplarken payları toplar, paydayı aynen yazarız: 2/9 + 5/9 = 7/9. Paydalar aynı kaldığı için parçaların büyüklüğü değişmez, sadece parça sayısı artar. Çıkarma işleminde de aynı kural geçerlidir: 6/8 − 1/8 = 5/8. Sonucu şekil çizerek kontrol edebiliriz.",
+"Açılar":"Açı, başlangıç noktaları aynı olan iki ışının oluşturduğu şekildir. Açılar dar, dik ve geniş açı olarak sınıflandırılır. Dik açı 90 derecedir ve kitabın köşesi gibi görünür. Dik açıdan küçük açılar dar açı, dik açıdan büyük açılar geniş açıdır. Çevremizdeki nesnelerde birçok açı görebiliriz.",
+"Litre ve Mililitre":"Sıvıların miktarını ölçmek için litre (L) ve mililitre (mL) birimlerini kullanırız. 1 litre 1000 mililitredir. Büyük miktarlar (su şişesi, süt kutusu) litreyle, küçük miktarlar (ilaç, şurup) mililitreyle ölçülür. Örneğin yarım litre 500 mL'dir. Ölçü kapları sıvı miktarını ölçmemizi kolaylaştırır.",
+"Ton":"Ton, çok ağır cisimlerin kütlesini ölçmek için kullanılan birimdir. 1 ton 1000 kilogramdır. Kamyon, gemi, fil gibi çok ağır varlıkların kütlesi tonla ifade edilir. Kilogram ise insanların ve günlük eşyaların kütlesini ölçmede kullanılır. 1 kilogram 1000 gramdır. Uygun birimi seçmek ölçümü kolaylaştırır.",
+"Bölme Problemleri":"Bölme problemlerinde bir çokluğu eşit gruplara ayırırız ya da bir grupta kaç tane olduğunu buluruz. Önce problemi dikkatle okur, verilenleri ve isteneni belirleriz. Örneğin 48 kalem 6 öğrenciye eşit paylaştırılırsa her öğrenciye 48 ÷ 6 = 8 kalem düşer. Sonucu çarpma ile kontrol ederiz: 6 × 8 = 48."
+},
+"Fen Bilimleri":{
+"Dünya'nın Hareketleri":"Dünya'nın iki temel hareketi vardır. Dünya kendi ekseni etrafında yaklaşık 24 saatte bir tur döner; bu dönme hareketi gece ve gündüzü oluşturur. Dünya ayrıca Güneş'in etrafında yaklaşık 365 gün 6 saatte bir tur dolanır; bu dolanma hareketi bir yılı oluşturur. Dünya'nın şekli küreye benzer.",
+"Besinlerimiz":"Besinler vücudumuza enerji verir, büyüyüp gelişmemizi ve hastalıklardan korunmamızı sağlar. Besinlerin içinde karbonhidratlar, yağlar, proteinler, vitaminler, mineraller ve su bulunur. Karbonhidrat ve yağlar enerji verir, proteinler büyümeyi sağlar, vitamin ve mineraller hastalıklardan korur. Su ise yaşamımız için çok gereklidir.",
+"Basit Elektrik Devreleri":"Basit bir elektrik devresi pil, ampul, kablo ve anahtardan oluşur. Pil devreye enerji sağlar. Kablolar elektriği iletir. Anahtar devreyi açar ve kapatır. Devre kapalıyken elektrik akar ve ampul yanar; devre açıksa ampul yanmaz. Elektrikle çalışan araçları kullanırken güvenlik kurallarına uymalıyız.",
+"Mıknatıs":"Mıknatıs demir, nikel ve kobalt gibi bazı metalleri çeken maddedir. Mıknatısın N (kuzey) ve S (güney) olmak üzere iki kutbu vardır. Aynı kutuplar birbirini iter, zıt kutuplar birbirini çeker. Mıknatısın çekim etkisi kutuplarında en fazladır. Mıknatıs tahta, plastik, cam ve kâğıdı çekmez.",
+"Saf Madde ve Karışım":"Tek tür maddeden oluşan maddelere saf madde denir; su ve altın saf maddeye örnektir. Birden fazla maddenin bir araya gelmesiyle oluşan maddelere karışım denir. Ayran, salata ve tuzlu su karışıma örnektir. Karışımı oluşturan maddeler özelliklerini kaybetmez ve uygun yöntemlerle birbirinden ayrılabilir.",
+"Ses":"Ses, titreşen cisimler tarafından oluşturulur ve her yöne yayılır. Ses katı, sıvı ve gaz ortamlarda yayılabilir ama boşlukta yayılamaz. Sesi kulağımızla algılarız. Sesin şiddeti, yani yüksek ya da alçak olması, ses kaynağına olan uzaklığa bağlıdır: ses kaynağından uzaklaştıkça sesi daha az duyarız.",
+"Kuvvetin Etkileri":"Kuvvet, itme veya çekme etkisidir. Kuvvet duran bir cismi hareket ettirebilir, hareket eden bir cismi durdurabilir, hızlandırabilir, yavaşlatabilir ya da yönünü değiştirebilir. Kuvvet bazı cisimlerin şeklini de değiştirebilir: oyun hamuruna bastırdığımızda şekli değişir. Futbolda topa vurmak kuvvete örnektir.",
+"Aydınlatma Teknolojileri":"İnsanlar geçmişte aydınlanmak için ateş, meşale, mum ve gaz lambası kullanırdı. Elektriğin bulunmasıyla ampul icat edildi. Günümüzde enerji tasarrufu sağlayan LED ampuller kullanılmaktadır. Aydınlatma araçları gece de çalışmamızı ve güvenli yaşamamızı sağlar. Gereksiz yanan lambaları söndürerek enerji tasarrufu yaparız.",
+"İnsan ve Çevre":"İnsanlar çevreyi hem olumlu hem olumsuz yönde etkiler. Ağaç dikmek, geri dönüşüm yapmak ve doğal alanları korumak olumlu etkilerdir. Çöpleri doğaya atmak, ormanları yok etmek ve suyu kirletmek ise olumsuz etkilerdir. Çevreyi korumak hepimizin görevidir; çünkü temiz bir çevre sağlıklı bir yaşam demektir.",
+"Sağlıklı Beslenme":"Sağlıklı beslenmek için her besin grubundan yeterli miktarda tüketmeliyiz. Sebze, meyve, süt ürünleri, et, yumurta, baklagiller ve tahıllar dengeli beslenmenin parçalarıdır. Kahvaltı yapmak güne enerjik başlamamızı sağlar. Hazır yiyeceklerden, şekerli ve asitli içeceklerden uzak durmalı, bol su içmeliyiz.",
+"Katı ve Sıvılar":"Katıların belirli bir şekli ve hacmi vardır; bulundukları kabın şeklini almazlar. Sıvıların belirli bir hacmi vardır ama belirli bir şekli yoktur; konuldukları kabın şeklini alırlar ve akabilirler. Taş ve tahta katıya, su ve süt sıvıya örnektir. Maddeler ısıtıldığında veya soğutulduğunda hâl değiştirebilir.",
+"Ses Kirliliği":"İstenmeyen, rahatsız edici ve yüksek seslere gürültü denir. Gürültünün çevremizde artmasına ses kirliliği denir. Trafik, inşaat ve fabrika sesleri ses kirliliğine yol açar. Ses kirliliği işitme kaybına, baş ağrısına ve dikkat dağınıklığına neden olabilir. Yüksek sesle müzik dinlememek ve ses yalıtımı yapmak önlem olur.",
+"Besinleri Saklama":"Besinler uygun şekilde saklanmazsa bozulur ve sağlığımızı tehdit eder. Besinleri buzdolabında soğutarak, dondurarak, kurutarak, konserve yaparak veya tuzlayarak daha uzun süre saklayabiliriz. Paketli besinleri alırken son kullanma tarihine mutlaka bakmalıyız. Bozulmuş besinler kokusundan ve renginden anlaşılabilir.",
+"Yer Kabuğu ve Fosiller":"Yer kabuğu Dünya'nın en dış katmanıdır ve kayaçlardan oluşur. Kayaçlar zamanla parçalanarak toprağı oluşturur. Fosiller, çok uzun yıllar önce yaşamış canlıların kalıntıları veya izleridir. Fosiller sayesinde geçmişte yaşamış canlılar ve o dönemin iklimi hakkında bilgi ediniriz. Fosilleri inceleyen bilim insanlarına paleontolog denir.",
+"Gece ve Gündüzün Oluşumu":"Dünya kendi ekseni etrafında dönerken Güneş'e dönük olan yarısı aydınlık olur ve orada gündüz yaşanır. Güneş'e dönük olmayan yarısı karanlıkta kalır ve orada gece yaşanır. Dünya batıdan doğuya doğru döndüğü için Güneş doğudan doğar, batıdan batar gibi görünür. Bir gece ve bir gündüz toplam 24 saattir.",
+"Elektrikli Araçlarda Güvenlik":"Elektrikli araçlar hayatımızı kolaylaştırır ama dikkatsiz kullanılırsa tehlikelidir. Prizlere metal cisim sokmamalı, ıslak elle elektrikli araçlara dokunmamalıyız. Fişi çekerken kablodan değil fişin kendisinden tutmalıyız. Hasarlı kabloları kullanmamalı, bir prize çok fazla araç takmamalıyız. Elektrik çarpmasında önce sigorta kapatılmalıdır.",
+"Eleme ve Mıknatısla Ayırma":"Karışımlar farklı yöntemlerle ayrılabilir. Tanecik büyüklükleri farklı katıları (kum ve çakıl) elek kullanarak ayırırız; buna eleme denir. Mıknatısın çektiği maddeleri (demir tozu) mıknatısın çekmediği maddelerden (kum) mıknatısla ayırırız. Hurdalıklarda demir eşyalar büyük mıknatıslarla diğer atıklardan ayrılır."
+}
+};
+let EXP4N=0;for(const s in EXP4)for(const n in EXP4[s]){const t=D[4]&&D[4][s]&&D[4][s].find(x=>x[0]===n);if(t&&EXP4[s][n].length>t[1].length){t[1]=EXP4[s][n];EXP4N++}}
+const EXP9={"Matematik":{
+"Mantık":"Mantıkta doğru ya da yanlış kesin bir hüküm bildiren ifadelere önerme denir ve p, q, r gibi harflerle gösterilir. Doğru önermenin doğruluk değeri 1 (D), yanlış önermeninki 0 (Y)'dır. Bir önermenin değili p′ ile gösterilir ve doğruluk değeri tersine döner. 've' (∧) bağlacıyla kurulan bileşik önerme ancak iki önerme de doğruysa doğrudur. 'veya' (∨) bağlacıyla kurulan bileşik önerme en az biri doğruysa doğrudur. 'ise' (⇒) önermesi yalnızca 1 ⇒ 0 durumunda yanlıştır.",
+"Kümeler":"Küme, iyi tanımlanmış nesneler topluluğudur ve büyük harflerle gösterilir. Kümeyi oluşturan nesnelere eleman denir; a ∈ A, 'a, A kümesinin elemanıdır' demektir. Kümeler liste yöntemi (A = {1, 2, 3}), ortak özellik yöntemi ve Venn şemasıyla gösterilebilir. Hiç elemanı olmayan kümeye boş küme denir: ∅. n elemanlı bir kümenin 2ⁿ tane alt kümesi vardır.",
+"Denklemler ve Eşitsizlikler":"Birinci dereceden bir bilinmeyenli denklem ax + b = 0 biçimindedir (a ≠ 0) ve çözümü x = −b/a'dır. Denklemi çözerken eşitliğin iki tarafına aynı işlem uygulanır, böylece eşitlik bozulmaz. Eşitsizliklerde ise <, >, ≤, ≥ sembolleri kullanılır ve çözüm genellikle bir aralıktır. Eşitsizliğin iki tarafı negatif bir sayıyla çarpılır ya da bölünürse eşitsizliğin yönü değişir.",
+"Üslü ve Köklü Sayılar":"aⁿ ifadesi a sayısının n kez kendisiyle çarpımıdır. Üslü ifadelerde aᵐ · aⁿ = aᵐ⁺ⁿ, aᵐ / aⁿ = aᵐ⁻ⁿ ve (aᵐ)ⁿ = aᵐ·ⁿ kuralları geçerlidir. Sıfırdan farklı her sayının sıfırıncı kuvveti 1'dir, a⁻ⁿ = 1/aⁿ'dir. Köklü ifadelerde √(a·b) = √a · √b'dir ve √a = a^(1/2) olarak yazılabilir. Paydada kök varsa pay ve payda aynı kökle çarpılarak payda rasyonel yapılır.",
+"Üçgenler":"Üçgenin iç açıları toplamı 180°, dış açıları toplamı 360°'dir. Bir üçgende büyük açı karşısında büyük kenar bulunur. Üçgen eşitsizliğine göre bir kenar, diğer iki kenarın farkından büyük ve toplamından küçüktür. Dik üçgende dik kenarların kareleri toplamı hipotenüsün karesine eşittir (Pisagor: a² + b² = c²). Eşkenar üçgende bütün açılar 60°, ikizkenar üçgende taban açıları eşittir.",
+"Veri ve İstatistik":"İstatistikte veriler toplanır, düzenlenir ve yorumlanır. Aritmetik ortalama, veriler toplamının veri sayısına bölümüdür. Ortanca (medyan), veriler sıralandığında ortada kalan değerdir; veri sayısı çiftse ortadaki iki değerin ortalamasıdır. Tepe değer (mod) en çok tekrar eden değerdir. Açıklık ise en büyük değer ile en küçük değer arasındaki farktır. Veriler sütun, çizgi ve daire grafikleriyle gösterilebilir.",
+"Sayı Kümeleri":"Doğal sayılar N = {0, 1, 2, …}, tam sayılar Z = {…, −2, −1, 0, 1, 2, …} şeklindedir. a/b biçiminde yazılabilen sayılar (b ≠ 0) rasyonel sayılardır (Q). √2, π gibi bu biçimde yazılamayan sayılar ise irrasyonel sayılardır. Rasyonel ve irrasyonel sayıların birleşimi gerçek (reel) sayılar kümesini (R) oluşturur. N ⊂ Z ⊂ Q ⊂ R sıralaması geçerlidir.",
+"Mutlak Değer":"Bir sayının mutlak değeri, sayı doğrusunda o sayının sıfıra olan uzaklığıdır ve |x| ile gösterilir. Uzaklık negatif olamayacağından mutlak değer her zaman sıfır ya da pozitiftir: |5| = 5, |−5| = 5. x ≥ 0 ise |x| = x, x < 0 ise |x| = −x'tir. |x| = a denkleminin (a > 0) iki çözümü vardır: x = a veya x = −a. |x − a| ifadesi x ile a arasındaki uzaklığı gösterir.",
+"Ters Orantı Problemleri":"İki çokluktan biri artarken diğeri aynı oranda azalıyorsa bu çokluklar ters orantılıdır ve çarpımları sabittir: x · y = k. Örneğin bir işi yapan işçi sayısı artarsa işin bitme süresi azalır. 4 işçi bir işi 12 günde bitiriyorsa toplam iş 4 · 12 = 48 işçi-gündür; aynı işi 6 işçi 48 ÷ 6 = 8 günde bitirir. Hız ile yolu alma süresi de ters orantılıdır.",
+"Kâr ve Zarar":"Bir malın satış fiyatı alış fiyatından fazlaysa kâr, azsa zarar edilir. Kâr = satış fiyatı − alış fiyatı'dır. Kâr ve zarar yüzdeleri her zaman alış (maliyet) fiyatı üzerinden hesaplanır. Örneğin 200 TL'ye alınan bir mal %20 kârla satılırsa satış fiyatı 200 · 1,2 = 240 TL olur. %20 zararla satılırsa satış fiyatı 200 · 0,8 = 160 TL olur.",
+"Üçgenin Alanı":"Üçgenin alanı, bir kenarı ile o kenara ait yüksekliğin çarpımının yarısıdır: A = (taban · yükseklik) / 2. Yükseklik, köşeden karşı kenara (veya uzantısına) indirilen dikmedir. Dik üçgende dik kenarlardan biri taban, diğeri yükseklik olarak alınır: A = (a · b) / 2. Tabanları aynı doğru üzerinde ve yükseklikleri eşit olan üçgenlerin alanları tabanlarıyla orantılıdır.",
+"Kümelerde İşlemler":"İki kümenin birleşimi (A ∪ B) her iki kümedeki bütün elemanları, kesişimi (A ∩ B) ortak elemanları içerir. A − B fark kümesi, A'da olup B'de olmayan elemanlardan oluşur. Bir kümenin tümleyeni (A′), evrensel kümede olup A'da olmayan elemanlardır. Eleman sayıları için s(A ∪ B) = s(A) + s(B) − s(A ∩ B) bağıntısı kullanılır.",
+"İçler-Dışlar Çarpımı":"a/b = c/d orantısında b ve c'ye içler, a ve d'ye dışlar denir. Bir orantıda içler çarpımı dışlar çarpımına eşittir: a · d = b · c. Bu kural orantıdaki bilinmeyen bir terimi bulmayı sağlar. Örneğin x/4 = 6/8 ise 8x = 24 ve x = 3 bulunur. İçler veya dışlar kendi aralarında yer değiştirse de orantı bozulmaz.",
+"Daire ve Çember":"Çember, bir noktaya (merkez) eşit uzaklıktaki noktaların kümesidir; bu uzaklığa yarıçap (r) denir. Çap, yarıçapın iki katıdır. Daire ise çember ve iç bölgesinin birleşimidir. Çemberin uzunluğu (çevresi) Ç = 2πr, dairenin alanı A = πr² formülüyle bulunur. Hesaplarda π genellikle 3 veya 3,14 alınır."
+}};
+let EXP9N=0;for(const s in EXP9)for(const n in EXP9[s]){const t=D[9]&&D[9][s]&&D[9][s].find(x=>x[0]===n);if(t&&EXP9[s][n].length>t[1].length){t[1]=EXP9[s][n];EXP9N++}}
+const E13={
+"9":{"Tarih":[["Takvim ve Zaman","İnsanlar zamanı ölçmek için gök cisimlerinin hareketlerinden yararlanarak takvimler oluşturmuştur. Güneş yılını esas alan takvimlere güneş takvimi, Ay'ın hareketlerini esas alan takvimlere ay takvimi denir. Türkler 12 Hayvanlı Türk Takvimi'ni kullanmıştır. Türkiye Cumhuriyeti 1926'da Miladi takvime geçmiştir. Tarihte zaman milattan önce (MÖ) ve milattan sonra (MS) olarak ikiye ayrılır.","Türkiye Cumhuriyeti hangi yıl Miladi takvime geçmiştir?",["1926","1923","1934","1928"],0,[["Ay'ın hareketlerini esas alan takvimlere ne ad verilir?",["Ay takvimi","Güneş takvimi","Miladi takvim","Celali takvim"],0],["12 Hayvanlı Takvim hangi millete aittir?",["Türkler","Mısırlılar","Romalılar","Sümerler"],0]]]],
+ "Coğrafya":[["Harita Bilgisi","Harita, yeryüzünün tamamının ya da bir parçasının belirli bir ölçekle küçültülerek düzleme aktarılmış hâlidir. Ölçek, haritadaki uzunluğun gerçek uzunluğa oranıdır. Kesir ölçekte paydası küçük olan haritalar büyük ölçekli harita olup daha ayrıntılıdır. Yer şekilleri haritalarda izohipsler (eş yükselti eğrileri) ve renklerle gösterilir. Haritalarda yön bulmak için pusula gülü kullanılır.","1/100 000 ölçekli bir haritada 3 cm olarak gösterilen uzaklığın gerçek uzunluğu kaç km'dir?",["3","30","0,3","300"],0,[["Eş yükseltideki noktaları birleştiren eğrilere ne ad verilir?",["İzohips","Paralel","Meridyen","İzobar"],0],["Aşağıdaki ölçeklerden hangisi en ayrıntılı haritaya aittir?",["1/25 000","1/100 000","1/500 000","1/1 000 000"],0]]]]},
+"10":{"Coğrafya":[["Levha Hareketleri","Yer kabuğu levha adı verilen büyük parçalardan oluşur. Bu levhalar, altındaki manto tabakasındaki konveksiyon akımları sayesinde yılda birkaç santimetre hareket eder. Levhaların birbirine yaklaştığı, uzaklaştığı veya yan yana kaydığı sınırlarda depremler ve volkanik faaliyetler yoğundur. Türkiye, Avrasya, Afrika ve Arap levhalarının etkileşim alanında bulunduğu için deprem riski yüksek bir ülkedir.","Levhaların hareket etmesine neden olan akımlar hangi katmanda oluşur?",["Manto","Yer kabuğu","Atmosfer","Hidrosfer"],0,[["Depremlerin en yoğun yaşandığı yerler hangileridir?",["Levha sınırları","Okyanusların ortası","Çöllerin merkezi","Kutup bölgeleri"],0],["Türkiye'nin deprem riski neden yüksektir?",["Levhaların etkileşim alanında bulunduğu için","Denizlerle çevrili olduğu için","Dağlık olduğu için","İklimi ılıman olduğu için"],0]]]]},
+"11":{"Tarih":[["Sanayi İnkılabı","Sanayi İnkılabı, 18. yüzyılın ikinci yarısında İngiltere'de başlayan ve üretimde insan ile hayvan gücü yerine makine gücünün kullanılmasıdır. Buharlı makinenin geliştirilmesi bu süreçte çok önemli bir rol oynamıştır. Seri üretim başlamış, fabrikalar kurulmuş ve şehirlere göç artmıştır. Hammadde ve pazar arayışı sömürgeciliği hızlandırmıştır. Sanayi İnkılabı ile işçi sınıfı ortaya çıkmıştır.","Sanayi İnkılabı ilk olarak hangi ülkede başlamıştır?",["İngiltere","Fransa","Almanya","İtalya"],0,[["Sanayi İnkılabında üretimde öne çıkan güç hangisidir?",["Makine gücü","Hayvan gücü","İnsan gücü","Rüzgâr gücü"],0],["Sanayi İnkılabının sonuçlarından biri hangisidir?",["Hammadde ve pazar arayışının sömürgeciliği hızlandırması","Köylere göçün artması","Seri üretimin sona ermesi","Ticaretin azalması"],0]]]],
+ "Coğrafya":[["Nüfus Politikaları","Nüfus politikaları, devletlerin nüfusun artış hızını ve niteliğini etkilemek için uyguladığı programlardır. Nüfus artış hızı yüksek olan ülkeler nüfusu azaltmaya yönelik, nüfusu yaşlanan ülkeler ise nüfusu artırmaya yönelik politikalar uygular. Türkiye, Cumhuriyet'in ilk yıllarında savaşlar nedeniyle azalan nüfusu artırmak için nüfus artışını destekleyen politikalar uygulamıştır. Nüfusun eğitim ve sağlık düzeyini yükseltmek nitelik politikalarıdır.","Nüfusu yaşlanan ve doğum oranı düşük olan ülkeler genellikle hangi politikayı uygular?",["Nüfus artışını destekleyen politika","Nüfusu azaltan politika","Göçü yasaklayan politika","Hiçbir politika uygulamaz"],0,[["Cumhuriyet'in ilk yıllarında Türkiye'nin nüfus politikası neydi?",["Nüfus artışını desteklemek","Nüfusu azaltmak","Göçü durdurmak","Doğumları sınırlamak"],0],["Eğitim ve sağlık düzeyini yükseltmeye yönelik politikalar hangi gruptadır?",["Nitelik politikaları","Nicelik politikaları","Göç politikaları","Dış politikalar"],0]]]]},
+"12":{"İnkılap Tarihi":[["Atatürk İlkeleri","Atatürk ilkeleri, Türkiye Cumhuriyeti'nin temel dayanaklarıdır. Bunlar cumhuriyetçilik, milliyetçilik, halkçılık, devletçilik, laiklik ve inkılapçılıktır. Cumhuriyetçilik, millet egemenliğine dayalı yönetimi; laiklik, din ve devlet işlerinin ayrılmasını; halkçılık, ayrıcalıksız ve eşit bir toplumu ifade eder. İnkılapçılık ise yapılan yenilikleri korumayı ve çağın gereklerine göre geliştirmeyi amaçlar. Bu altı ilke 1937'de Anayasa'ya girmiştir.","Din ve devlet işlerinin birbirinden ayrılmasını ifade eden Atatürk ilkesi hangisidir?",["Laiklik","Halkçılık","Devletçilik","Milliyetçilik"],0,[["Atatürk ilkeleri hangi yıl Anayasa'ya girmiştir?",["1937","1923","1928","1934"],0],["Millet egemenliğine dayalı yönetimi ifade eden ilke hangisidir?",["Cumhuriyetçilik","İnkılapçılık","Devletçilik","Laiklik"],0]]]],
+ "Edebiyat":[["Cumhuriyet Dönemi Roman","Cumhuriyet Dönemi'nde roman, toplumun değişimini ve Millî Mücadele'yi anlatan önemli bir tür olmuştur. Halide Edib Adıvar 'Ateşten Gömlek', Yakup Kadri Karaosmanoğlu 'Yaban' gibi eserlerde Millî Mücadele'yi işlemiştir. Köy romanları da bu dönemde gelişmiştir. Sait Faik Abasıyanık ve Sabahattin Ali gibi yazarlar toplumcu ve bireysel konulara yönelmiştir. Ahmet Hamdi Tanpınar 'Huzur' romanıyla modern Türk romanının önemli örneklerini vermiştir.","'Ateşten Gömlek' romanının yazarı kimdir?",["Halide Edib Adıvar","Yakup Kadri Karaosmanoğlu","Reşat Nuri Güntekin","Sabahattin Ali"],0,[["'Yaban' romanının yazarı kimdir?",["Yakup Kadri Karaosmanoğlu","Ahmet Hamdi Tanpınar","Halide Edib Adıvar","Ömer Seyfettin"],0],["'Huzur' romanı hangi yazara aittir?",["Ahmet Hamdi Tanpınar","Sait Faik Abasıyanık","Orhan Kemal","Refik Halit Karay"],0]]]]}
+};
+let E13N=0;for(const g in E13)for(const s in E13[g])E13[g][s].forEach(t=>{if(!D[g]||!D[g][s])return;const ex=D[g][s].find(x=>x[0]===t[0]);if(!ex){D[g][s].push(t);E13N++;return}ex[1]=t[1];if(t[5])ex[5]=(ex[5]||[]).concat(t[5])});
+
 
 KAZ["7"]={
 "Matematik":{
@@ -2978,6 +3143,7 @@ function about(){
   <div class="about"><div class="ico">♿</div><h3>Erişilebilirlik</h3>Büyük yazı, okuma kolaylığı ve yüksek kontrast seçenekleri.</div>
   <div class="about"><div class="ico">📋</div><h3>Bugünün Planı</h3>Her gün sana özel küçük bir çalışma planı.</div>
   <div class="about"><div class="ico">📖</div><h3>Kavram Sözlüğü</h3>Bütün kavramlar A'dan Z'ye, tek dokunuşla konusuna git.</div>
+  <div class="about"><div class="ico">💬</div><h3>Canlı Destek</h3>Sol alttaki balona dokun; takıldığın yerde asistan yardım etsin.</div>
   <div class="about"><div class="ico">🗒️</div><h3>Notlar ve Yanlışlar</h3>Kendi notlarını tut, yanlış yaptığın soruları tekrar et.</div></div>
   <h2>Nasıl Kullanılır?</h2>
   <div class="about">1. Ana sayfadan sınıfını seç.<br>2. Çalışmak istediğin dersi aç.<br>3. Konuyu oku, örnek soruyu çöz.<br>4. Takıldığın yerde video butonlarına tıkla.<br>5. Her gün ana sayfadaki "Günün Sorusu"nu çözmeyi unutma!</div>
@@ -3016,7 +3182,7 @@ function reportPage(){
 }
 const REPORT_EMAIL=""; // Sorun bildirimlerinin gideceği e-posta (boşsa sadece kopyalama gösterilir)
 // ===== Sürüm 1.1: Duyurular ve çalışma araçları =====
-const VERSION="2.2";
+const VERSION="2.3";
 function lsGet(k,d){try{const v=localStorage.getItem(PFX+k);return v?JSON.parse(v):d}catch(e){return d}}
 function lsSet(k,v){try{localStorage.setItem(PFX+k,JSON.stringify(v))}catch(e){}}
 let FAV=new Set(lsGet("favoriler",[])), WRONG=lsGet("yanlislar",{}), ST=lsGet("istatistik",{answered:0,correct:0,days:[]}), NOTES=lsGet("notlar",[]);
@@ -3040,8 +3206,9 @@ function toolsPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a>
 
 // ---- Duyurular ----
 const NEWS=[
- {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 2.3 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 2.3 ile gelmesi planlanan yenilikler:",li:["🎯 9. sınıf Kimya ve Biyoloji ile 10. sınıf Matematik için kazanım listeleri","📖 4. ve 9. sınıflarda konu anlatımlarını uzatma","🗓️ Haftalık çalışma planı (Bugünün Planı'nın haftalık hâli)","📚 Daha da fazla yeni konu ve soru","☁️ İsteğe bağlı bulut hesabı: sunucu kurulumu tamamlanınca gelecek"]},
- {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 2.2 yayında",d:"2.2 sürümü yayında! Bu sürümde gelenler:",li:["📋 Bugünün Planı: 'Bugün ne çalışayım?' sorusuna her gün sana özel cevap. Ana sayfada da görünür","📖 Kavram Sözlüğü: 1.700'den fazla kavram A'dan Z'ye, arama ve sınıf filtresiyle","🗺️ Konu ilerleme haritası: İstatistiklerim sayfasında her konu bir kare; çözdüklerin yeşil, yanlışın olanlar kırmızı","⏳ Çalışma süresi: sitede aktif geçirdiğin dakikalar; İstatistiklerim ve Gelişim Raporu'nda","🔗 Konu paylaşma: her konunun altında Paylaş düğmesi; bağlantı doğrudan o konuyu açar","🎯 Arama sonuçları, Yanlışlarım ve Notlarım artık doğrudan konunun kendisini açıyor","🔢 Hesap makinesi ve birim çevirici (uzunluk, kütle, zaman, alan, hacim, sıcaklık)","🖨️ Yanlışlarımı yazdır / PDF: yanlış yaptığın sorulardan tekrar kâğıdı","🎯 9. sınıf Matematik ve Fizik konularına kazanım listeleri (45 konu)","📖 5. sınıf Matematik ve Fen Bilimleri konu anlatımları uzatıldı","📚 9-12. sınıf Matematik, Fizik, Kimya ve Biyoloji: 9 yeni konu, 7 konu genişletildi, 41 yeni soru","🏅 3 yeni rozet (toplam 33)","✨ Yeni sürüm gelince ekranda küçük bir bildirim çıkar"]},
+ {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 2.4 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 2.4 ile gelmesi planlanan yenilikler:",li:["🎯 10. sınıf Fizik, Kimya ve Biyoloji için kazanım listeleri","📖 4. sınıf Türkçe ve Sosyal Bilgiler ile 9. sınıf Fizik konu anlatımlarını uzatma","💬 Canlı Destek'e konu sayfasından 'Bu soruyu asistana sor' düğmesi","📚 Daha da fazla yeni konu ve soru","☁️ İsteğe bağlı bulut hesabı: sunucu kurulumu tamamlanınca gelecek"]},
+ {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 2.3 yayında",d:"2.3 sürümü yayında! Bu sürümde gelenler:",li:["💬 Canlı Destek: sol alttaki yuvarlak balona dokun. Bir hata, anlamadığın bir konu ya da yapamadığın bir soru için yardım asistanına yaz. Hatayı tek dokunuşla Sorun Bildir sayfasına aktarabilirsin","🔒 Canlı Destek'te kişisel bilgi (telefon, e-posta, kimlik numarası) yazılırsa uyarı çıkar; yazışmalar kaydedilmez","🗓️ Haftalık plan: Bugünün Planı sayfasında haftanın 7 günü ve haftalık hedefler (5 gün plan, 150 dakika, 50 doğru)","🎯 Kazanım listeleri: 9. sınıf Kimya ve Biyoloji, 10. sınıf Matematik (68 konu)","📖 Konu anlatımları uzatıldı: 4. sınıf Matematik ve Fen Bilimleri, 9. sınıf Matematik","📚 9-12. sınıf Tarih, Coğrafya, İnkılap Tarihi ve Edebiyat'a yeni konular ve sorular","🏅 1 yeni rozet: Haftanın Yıldızı"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 2.2",d:"Önceki sürüm. 2.2 ile gelenler:",li:["📋 Bugünün Planı: 'Bugün ne çalışayım?' sorusuna her gün sana özel cevap. Ana sayfada da görünür","📖 Kavram Sözlüğü: 1.700'den fazla kavram A'dan Z'ye, arama ve sınıf filtresiyle","🗺️ Konu ilerleme haritası: İstatistiklerim sayfasında her konu bir kare; çözdüklerin yeşil, yanlışın olanlar kırmızı","⏳ Çalışma süresi: sitede aktif geçirdiğin dakikalar; İstatistiklerim ve Gelişim Raporu'nda","🔗 Konu paylaşma: her konunun altında Paylaş düğmesi; bağlantı doğrudan o konuyu açar","🎯 Arama sonuçları, Yanlışlarım ve Notlarım artık doğrudan konunun kendisini açıyor","🔢 Hesap makinesi ve birim çevirici (uzunluk, kütle, zaman, alan, hacim, sıcaklık)","🖨️ Yanlışlarımı yazdır / PDF: yanlış yaptığın sorulardan tekrar kâğıdı","🎯 9. sınıf Matematik ve Fizik konularına kazanım listeleri (45 konu)","📖 5. sınıf Matematik ve Fen Bilimleri konu anlatımları uzatıldı","📚 9-12. sınıf Matematik, Fizik, Kimya ve Biyoloji: 9 yeni konu, 7 konu genişletildi, 41 yeni soru","🏅 3 yeni rozet (toplam 33)","✨ Yeni sürüm gelince ekranda küçük bir bildirim çıkar"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 2.1",d:"Önceki sürüm. 2.1 ile gelenler:",li:["📚 Konu sayfaları adım adım: 1) Konu anlatımını izle 2) Konuyu oku 3) Soruları çöz 4) Soru çözümünü izle","📂 Ders sayfası açıldığında hiçbir konu kendiliğinden açılmaz; istediğin konuya dokunarak başlarsın","🎯 7. sınıf Matematik ve Fen Bilimleri konularına kazanım listeleri (45 konu)"]},
 {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 2.0: En büyük güncellememiz",d:"Önceki sürüm. 2.0 ile gelenler:",li:["🎒 Kişisel ana sayfa: sınıfını seç; derslerin, ilerlemen ve sana önerilen konu ana sayfada","☀️ Günün 5 Sorusu: her gün sınıfına özel 5 yeni soru ve günlük seri","🧑‍🏫 Öğretmen Modu: sınıf sınavı oluştur, kodu öğrencilere gönder, sonuçları ve en çok yanlış yapılan soruları tek tabloda gör, kâğıda yazdır","📈 Gelişim Raporu: veliler ve öğretmenler için yazdırılabilir ilerleme raporu","🎓 Başarı Belgesi: bir dersin bütün konularını bitirince yazdırılabilir belge","📅 Sınav geri sayımı: yazılı ve sınav tarihlerini ekle, kaç gün kaldığını gör","📝 Konuya not alma: her konunun altından not ekle, Notlarım'dan konuya geri dön","📖 Sınav sonuçlarında yanlış yapılan sorular için 'Konuyu tekrar et' bağlantısı","⌨️ Klavye kısayolları: 1-4 / A-D ile cevap, Enter ile sonraki soru","♿ Erişilebilirlik: yazı boyutu, okuma kolaylığı, yüksek kontrast, animasyonları azaltma","📲 Uygulamayı yükle düğmesi","❓ Yardım (SSS) ve 🔒 Gizlilik sayfaları","🧰 Araçlar sayfası kategorilere ayrıldı","🏅 3 yeni rozet (toplam 31)","🐞 Hata düzeltmeleri: telefonda Deneme Sınavı sayfasının yana taşması ve koyu temada düğme yazılarının zor okunması düzeltildi"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.9",d:"Önceki sürüm. 1.9 ile gelenler:",li:["🤝 Arkadaşlık sistemi","🏆 Sıralama","⚔️ Düello","🎯 8. sınıf Türkçe ve İnkılap kazanımları"]},
@@ -3285,7 +3452,7 @@ document.addEventListener("click",e=>{
   if(a==="pomoreset"){POMO.running=false;clearInterval(POMO.timer);POMO.mode="work";POMO.left=POMO_LEN.work;return pomoDraw()}
   if(a==="pomoskip"){POMO.left=1;return pomoTick()}
   if(a==="clearwrong") return confirmBtn(b,"Emin misin? Tekrar bas",()=>{WRONG={};lsSet("yanlislar",WRONG);wrongPage()});
-  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["gunlukSon","gunlukSeri","gunlukToplam","belgeler","belgeSayisi","sinifSinavi","sinavlar","arkadaslar","duellolar","duelloGalibiyet","tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme","plan","planTamam","sure","sozlukAcildi"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
+  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["gunlukSon","gunlukSeri","gunlukToplam","belgeler","belgeSayisi","sinifSinavi","sinavlar","arkadaslar","duellolar","duelloGalibiyet","tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme","plan","planTamam","sure","sozlukAcildi","planGecmis","haftaPlanSay"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
 });
 
 // ===== Sürüm 1.3: LGS/TYT modları, rozetler, bilgi kartları, ders programı =====
@@ -4189,11 +4356,100 @@ document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)r
   if(b.dataset.act==="wprint")return wrongPrint();
 });
 
+
+// ===== Sürüm 2.3: Canlı Destek (yapay zekâ asistanı) ve haftalık plan =====
+const CHAT={open:false,msgs:[],ai:null,busy:false};
+const CHAT_KB=[
+ [/^(selam|merhaba|mrb|slm|hey|sa|selamün aleyküm|günaydın|iyi akşamlar)\b/,"Merhaba! 👋 Ben Ders Kütüphanesi'nin yardım asistanıyım. Bir konuyu anlamadıysan, bir soruyu yapamadıysan ya da sitede bir hata gördüysen bana yazabilirsin."],
+ [/(ücret|para|paralı|bedava|ücretsiz)/,"Ders Kütüphanesi tamamen ücretsizdir ve reklam içermez. 🎉"],
+ [/(şifre|parola|giriş yap|kayıt ol|üye|hesap aç|hesabım)/,"Sitede şifre ya da üyelik yok. 👤 <a href=\"#profil\">Profilim</a> sayfasından takma adınla profil oluşturman yeterli. Aynı cihazda birden fazla profil açabilirsin. Gerçek adını, adresini veya telefonunu hiçbir yere yazma."],
+ [/(ilerleme|kayboldu|silindi|sıfırlandı|yedek|başka cihaz|telefona geç|bilgisayara geç)/,"İlerlemen sadece kullandığın cihazın tarayıcısında saklanır. Tarayıcı verilerini silersen ilerleme de silinir. 💾 <a href=\"#profil\">Profilim</a> sayfasından 'İlerlememi dışa aktar' ile yedek alabilir, yeni cihazda 'İçe aktar' ile yükleyebilirsin."],
+ [/(video|izle|anlatım izle|youtube)/,"Her konunun içinde 1. adımda 🎬 'Anlatımı izle' (sesli, animasyonlu anlatım) ve ▶ 'Konu anlatımı videoları' (YouTube) düğmeleri var. Soru çözümü videoları da 4. adımda."],
+ [/(pdf|yazdır|çıktı|kâğıt|kagit)/,"Her ders sayfasının üstünde 📄 Konu Özeti PDF ve 📝 Soru PDF düğmeleri var. <a href=\"#yanlislarim\">Yanlışlarım</a> sayfasından da yanlışlarını yazdırabilirsin. Yazdır penceresinde 'PDF olarak kaydet'i seç."],
+ [/(arkadaş|düello|yarış|sıralama)/,"🤝 <a href=\"#arkadaslar\">Arkadaşlar</a> sayfasından kodunu arkadaşına gönder, onun kodunu da ekle. Düello bölümünden aynı 10 soruyla yarışabilirsiniz."],
+ [/(öğretmen|sınıfa sınav|sınıf sınavı)/,"🧑‍🏫 <a href=\"#ogretmen\">Öğretmen Modu</a>'ndan sınav oluşturup kodu öğrencilere gönderebilirsin. Sonuç kodlarını ekleyince tablo oluşur."],
+ [/(rozet)/,"🏅 Rozetlerin <a href=\"#rozetler\">Rozetlerim</a> sayfasında. Soru çözdükçe, planını bitirdikçe ve çalıştıkça yeni rozetler kazanırsın."],
+ [/(plan|ne çalışayım|ne çalışsam)/,"📋 <a href=\"#plan\">Bugünün Planı</a> sayfası sana her gün ne çalışacağını söyler. Aynı sayfada haftalık planın da var."],
+ [/(sözlük|kavram|anlamı ne)/,"📖 <a href=\"#sozluk\">Kavram Sözlüğü</a>'nde bütün kavramlar A'dan Z'ye sıralı. Arama kutusuna kelimeyi yazabilirsin."],
+ [/(karanlık|koyu tema|gece modu|tema|yazı büyüt|yazılar küçük)/,"🎨 Sağ üstteki 🌙 düğmesiyle koyu temaya geçebilirsin. Yazıyı büyütmek için <a href=\"#temalar\">Temalar</a> sayfasındaki 'Okuma ve Erişilebilirlik' bölümüne bak."],
+ [/(uygulama|yükle|indir|ana ekran)/,"📲 Siteyi telefonuna uygulama gibi yükleyebilirsin: tarayıcı menüsünden 'Ana ekrana ekle' ya da 'Uygulamayı yükle'yi seç. İnternetsiz de açılır."],
+ [/(deneme|test çöz|sınav)/,"📝 <a href=\"#deneme\">Deneme Sınavı</a>'ndan sınıf ve ders seçip süreli test çözebilirsin. Her gün yeni sorular için ☀️ <a href=\"#gunluk\">Günün 5 Sorusu</a>'na bak."],
+ [/(teşekkür|sağ ol|sağol|eyvallah)/,"Rica ederim! 😊 Başka bir sorun olursa buradayım."]
+];
+const BUGRX=/(hata|bug|çalışmıyor|calismiyor|açılmıyor|acilmiyor|bozuk|donuyor|takılıyor|yüklenmiyor|gözükmüyor|görünmüyor|basamıyorum|tıklayamıyorum|yanlış cevap|cevap yanlış|sorun var)/;
+function chatTopics(text,n){const t=text.toLocaleLowerCase("tr"),gm=t.match(/(\d{1,2})\s*\.?\s*sınıf/),g=gm&&D[gm[1]]?gm[1]:null,stop=new Set("bir bu şu ve ile için ama nasıl neden niye nedir ne mi mı mu mü da de ki çok daha en konu konusu konusunu soru soruyu sınıf anlamadım yapamıyorum anlat bana bunu şunu olan gibi var yok".split(" "));
+  const words=t.replace(/[^\p{L}\p{N}\s']/gu," ").split(/\s+/).filter(w=>w.length>2&&!stop.has(w)&&!/^\d+$/.test(w));if(!words.length)return [];
+  const res=[];for(const gg in D){if(g&&gg!==g)continue;Object.keys(D[gg]).forEach((s,i)=>D[gg][s].forEach((tp,ti)=>{const nm=tp[0].toLocaleLowerCase("tr"),ds=tp[1].toLocaleLowerCase("tr");let sc=0;
+    words.forEach(w=>{const st=w.length>5?w.slice(0,w.length-2):w;if(nm.includes(st))sc+=3;else if(ds.includes(st))sc+=1});if(t.includes(nm))sc+=6;if(sc)res.push({sc,g:gg,s,tp,h:`#s${gg}-d${i}-k${ti}`})}))}
+  const mg=myGrade();res.sort((a,b)=>b.sc-a.sc||((b.g===mg)-(a.g===mg)));return res.slice(0,n||3)}
+function chatLocal(text){const t=text.toLocaleLowerCase("tr").trim();
+  if(/^[\d\s+\-*/×÷:^().,%√π−]+$/.test(t)&&/\d/.test(t)&&/[+\-*/×÷:^√%−]/.test(t)){try{return `🔢 ${esc(text)} = <b>${calcFmt(calcEval(text.replace(/−/g,"-")))}</b>`}catch(e){}}
+  if(BUGRX.test(t)){CHAT.bug=text;return `Bunu duyduğuma üzüldüm. 🛠️ Önce şunları dene:<br>1) Sayfayı yenile (bilgisayarda <b>Ctrl + F5</b>, telefonda sayfayı aşağı çek).<br>2) İnternet bağlantını kontrol et.<br>3) Uygulama olarak yüklediysen kapatıp yeniden aç.<br>Düzelmezse hatayı bize bildir, düzeltelim:<div class="chips"><button type="button" class="chip" data-chatact="bug">⚠️ Bu hatayı bildir</button></div>`}
+  for(const [rx,ans] of CHAT_KB)if(rx.test(t))return ans;
+  const tops=chatTopics(text,3);
+  if(tops.length){const x=tops[0];let d=String(x.tp[1]).split(/(?<=[.!?])\s+/).slice(0,2).join(" ");
+    return `📚 <b>${esc(x.tp[0])}</b> <small>(${x.g}. Sınıf · ${subjName(x.s)})</small><br>${esc(d)}<div class="chips"><a class="chip" href="${x.h}">📖 Konuyu aç</a><a class="chip" href="${yt(x.g+". sınıf "+subjName(x.s)+" "+x.tp[0]+" konu anlatımı")}" target="_blank" rel="noopener">▶ Video</a></div>`+
+      (tops.length>1?`<small>Bunlardan biri mi? ${tops.slice(1).map(o=>`<a href="${o.h}">${esc(o.tp[0])} (${o.g}. sınıf)</a>`).join(" · ")}</small>`:"")}
+  return `Bunu tam anlayamadım. 🤔 Hangi sınıf ve hangi konu olduğunu yazar mısın? Örneğin: <i>"7. sınıf rasyonel sayılar"</i>. Sitede bir sorun varsa <i>"... çalışmıyor"</i> diye yazabilirsin.`}
+function chatSafe(text){return /(\b0?5\d{2}[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}\b)|([\w.+-]+@[\w-]+\.[\w.]+)|(\b\d{11}\b)/.test(text)}
+function chatAI(){if(CHAT.ai!==null)return Promise.resolve(CHAT.ai);if(!/^https?:/.test(location.protocol)){CHAT.ai=false;return Promise.resolve(false)}
+  return fetch("/api/destek",{cache:"no-store"}).then(r=>r.ok?r.json():{ok:false}).then(j=>CHAT.ai=!!(j&&j.ok)).catch(()=>CHAT.ai=false).then(()=>{chatHead();return CHAT.ai})}
+function chatHead(){const s=document.getElementById("chatmode");if(s)s.textContent=CHAT.ai?"🤖 Yapay zekâ asistanı · çevrimiçi":"🤖 Yardım asistanı"}
+function chatAdd(role,html){CHAT.msgs.push({role,html});const box=document.getElementById("chatlog");if(!box)return;box.insertAdjacentHTML("beforeend",`<div class="cm ${role}">${html}</div>`);box.scrollTop=box.scrollHeight}
+function chatOpen(v){CHAT.open=v===undefined?!CHAT.open:v;const p=document.getElementById("chatpanel"),b=document.getElementById("chatbtn");p.hidden=!CHAT.open;b.setAttribute("aria-expanded",CHAT.open);b.innerHTML=CHAT.open?"✕":"💬";
+  if(CHAT.open){if(!CHAT.msgs.length){chatAdd("bot",`Merhaba! 👋 Ben yardım asistanıyım. Bir konuyu anlamadıysan, bir soruyu yapamadıysan ya da sitede bir hata gördüysen yaz, yardım edeyim.<div class="chips"><button type="button" class="chip" data-chatq="Sitede bir hata buldum">🐞 Bir hata buldum</button><button type="button" class="chip" data-chatq="Bir soruyu yapamıyorum">❓ Bir soruyu yapamıyorum</button><button type="button" class="chip" data-chatq="Bugün ne çalışayım?">📋 Ne çalışayım?</button><button type="button" class="chip" data-chatq="İlerlemem nasıl saklanıyor?">💾 İlerlemem</button></div>`)}
+    chatAI();setTimeout(()=>document.getElementById("chatin").focus(),50)}}
+async function chatSend(text){text=String(text||"").trim().slice(0,500);if(!text||CHAT.busy)return;
+  chatAdd("me",esc(text));
+  if(chatSafe(text)){chatAdd("bot","🔒 Telefon numarası, e-posta ya da kimlik numarası gibi kişisel bilgilerini buraya yazma. Bu bilgilere ihtiyacım yok. Sorunu bunlar olmadan anlatabilirsin.");return}
+  if(/^bir soruyu yapamıyorum$/i.test(text)){chatAdd("bot",CHAT.ai?"Tabii! Soruyu buraya yaz (ya da hangi konu olduğunu söyle). Sana cevabı direkt söylemek yerine adım adım nasıl çözüleceğini anlatacağım. ✏️":"Tabii! Hangi sınıf ve hangi konu olduğunu yaz (örneğin <i>\"8. sınıf üslü ifadeler\"</i>), sana konunun anlatımını ve videolarını bulayım. ✏️");return}
+  if(/^sitede bir hata buldum$/i.test(text)){chatAdd("bot","Hangi sayfada ne oldu? Kısaca anlat; örneğin <i>\"Deneme sınavında sonraki soru düğmesi çalışmıyor\"</i>. 🛠️");return}
+  if(/^bugün ne çalışayım\??$/i.test(text)){const it=planItems(),nx=it.find(i=>!i.ok);chatAdd("bot",nx?`📋 Bugünün planında sıradaki görev: <b>${esc(nx.t)}</b>.<div class="chips"><a class="chip" href="${nx.h}">Hemen başla →</a><a class="chip" href="#plan">Planın tamamı</a></div>`:"🎉 Bugünün planını bitirmişsin! İstersen <a href=\"#gunluk\">Günün 5 Sorusu</a>'na ya da <a href=\"#tekrar\">Akıllı Tekrar</a>'a bakabilirsin.");return}
+  const ai=await chatAI();
+  if(!ai){chatAdd("bot",chatLocal(text));return}
+  CHAT.busy=true;const log=document.getElementById("chatlog");log.insertAdjacentHTML("beforeend",`<div class="cm bot typing" id="chattyping">Yazıyor<span>.</span><span>.</span><span>.</span></div>`);log.scrollTop=log.scrollHeight;
+  const hist=CHAT.msgs.filter(m=>m.role!=="sys").slice(-8).map(m=>({role:m.role==="me"?"user":"assistant",content:m.html.replace(/<[^>]+>/g," ").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/\s+/g," ").trim()}));
+  let reply=null;try{const r=await fetch("/api/destek",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:hist,page:location.hash||"#",grade:myGrade()||""})});
+    if(r.status===429)reply="⏳ Çok fazla mesaj gönderildi. Biraz sonra tekrar dene.";else if(r.ok){const j=await r.json();reply=j.reply?chatFmt(j.reply):null}}catch(e){}
+  const ty=document.getElementById("chattyping");if(ty)ty.remove();CHAT.busy=false;
+  chatAdd("bot",reply||chatLocal(text))}
+function chatFmt(s){let h=esc(s).replace(/\*\*(.+?)\*\*/g,"<b>$1</b>").replace(/(^|\n)[-•] /g,"$1• ").replace(/\n/g,"<br>");
+  return h.replace(/(#(s\d+(-d\d+(-k\d+)?)?|plan|sozluk|profil|deneme|gunluk|tekrar|yanlislarim|sorun-bildir|arkadaslar|ogretmen|hesap|araclar|temalar))\b/g,'<a href="$1">$1</a>')}
+function chatInit(){if(document.getElementById("chatbtn"))return;
+  document.body.insertAdjacentHTML("beforeend",`<button id="chatbtn" class="chatbtn noprint" type="button" aria-label="Canlı destek: yardım asistanı" aria-expanded="false" aria-controls="chatpanel" title="Canlı destek">💬</button>
+  <section id="chatpanel" class="chatpanel noprint" hidden aria-label="Canlı destek"><header><div><b>💬 Canlı Destek</b><small id="chatmode">🤖 Yardım asistanı</small></div><button type="button" class="chatx" data-chatact="close" aria-label="Kapat">✕</button></header>
+  <div id="chatlog" class="chatlog" aria-live="polite"></div>
+  <form id="chatform" class="chatform"><input id="chatin" maxlength="500" autocomplete="off" placeholder="Mesajını yaz… (örn. 7. sınıf kesirler)" aria-label="Mesajın"><button type="submit" aria-label="Gönder">➤</button></form>
+  <p class="chatnote">🔒 Adını, adresini, telefonunu ya da okulunu yazma. Yazdıkların kaydedilmez. Asistan hata yapabilir; emin olmadığın şeyleri öğretmenine sor.</p></section>`);
+  document.getElementById("chatbtn").onclick=()=>chatOpen();
+  document.getElementById("chatform").onsubmit=e=>{e.preventDefault();const i=document.getElementById("chatin");const v=i.value;i.value="";chatSend(v)};
+  document.getElementById("chatpanel").addEventListener("click",e=>{const q=e.target.closest("[data-chatq]");if(q)return chatSend(q.dataset.chatq);
+    const a=e.target.closest("[data-chatact]");if(a){if(a.dataset.chatact==="close")return chatOpen(false);if(a.dataset.chatact==="bug"){const msg=CHAT.bug||"";location.hash="sorun-bildir";setTimeout(()=>{const f=document.getElementById("rform");if(!f)return;const ta=f.querySelector('[name="aciklama"]');if(ta&&!ta.value)ta.value=msg;const tu=f.querySelector('[name="tur"]');if(tu){const lo=msg.toLocaleLowerCase("tr"),want=/video/.test(lo)?/Video/:/(yanlış cevap|cevap yanlış|soru hatalı|soru yanlış)/.test(lo)?/Yanlış cevap/:/Diğer/,o=[...tu.options].find(o=>want.test(o.textContent));if(o)tu.value=o.value}},120);if(innerWidth<700)chatOpen(false);return}}
+    const l=e.target.closest("a[href^='#']");if(l&&innerWidth<700)chatOpen(false)});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&CHAT.open)chatOpen(false)})}
+
+// ---- Haftalık plan ----
+function planHist(){return lsGet("planGecmis",{})}
+{const _pi=planItems;planItems=function(){const it=_pi(),H=planHist(),t=dayStr(),n=it.filter(i=>i.ok).length;if(!H[t]||H[t][0]!==n||H[t][1]!==it.length){H[t]=[n,it.length];const ks=Object.keys(H).sort();while(ks.length>60)delete H[ks.shift()];lsSet("planGecmis",H)}return it}}
+function weekDays(){const d=new Date(),wd=(d.getDay()+6)%7,out=[];for(let k=0;k<7;k++){const x=new Date(d);x.setDate(d.getDate()-wd+k);out.push(x)}return out}
+function weekHTML(){const H=planHist(),days=weekDays(),t=dayStr(),gn=["Pzt","Sal","Çar","Per","Cum","Cmt","Paz"];
+  const full=days.filter(d=>{const h=H[dayStr(d)];return h&&h[0]===h[1]}).length,mins=days.reduce((a,d)=>a+sureDay(dayStr(d)),0),cor=days.reduce((a,d)=>a+(perDay(dayStr(d)).c||0),0);
+  const W=[["📋","Planı tamamladığın gün",full,5,"gün"],["⏳","Çalışma süresi",mins,150,"dakika"],["✅","Doğru cevap",cor,50,"doğru"]];
+  if(W.every(w=>w[2]>=w[3])){const k="haftaPlan"+dayStr(days[0]);if(!lsGet(k,0)){lsSet(k,1);lsSet("haftaPlanSay",lsGet("haftaPlanSay",0)+1);setTimeout(()=>{toast("🏆 Bu haftanın bütün hedeflerini tamamladın!");checkBadges()},300)}}
+  return `<h2>🗓️ Bu haftaki planım</h2><div class="about"><div class="wdays">${days.map((d,k)=>{const ds=dayStr(d),h=H[ds],c=ds>t?"fut":h&&h[0]===h[1]?"full":h&&h[0]>0?"part":"none";
+    return `<div class="wday ${c}${ds===t?" today":""}" title="${h?h[0]+"/"+h[1]+" görev":"Görev yok"}"><small>${gn[k]}</small><span>${c==="full"?"✓":c==="part"?h[0]+"/"+h[1]:c==="fut"?"·":"–"}</span></div>`}).join("")}</div>
+  ${W.map(([e,l,v,g,u])=>`<div class="gbar"><span>${e} ${l}</span><div class="prog"><i style="width:${Math.min(100,Math.round(v/g*100))}%"></i></div><small>${v}/${g} ${u}</small></div>`).join("")}
+  <p class="crumb">Haftalık hedefler: 5 gün planı tamamla, 150 dakika çalış, 50 doğru cevap ver. Hafta pazartesi başlar.</p></div>`}
+{const _pp2=planPage;planPage=function(){_pp2();app.insertAdjacentHTML("beforeend",weekHTML())}}
+BADGES.push(["haftaplan","🗓️","Haftanın Yıldızı","Bir haftanın bütün hedeflerini tamamla",()=>[lsGet("haftaPlanSay",0),1]]);
+TOOLS.forEach(t=>{if(t[0]==="plan"){t[2]="Bugünün ve Haftanın Planı";t[3]="Günlük görevler ve haftalık hedefler"}});
+TOOLS.push(["destek","💬","Canlı Destek","Takıldığın yerde asistana sor"]);TOOL_CATS[4][1].push("destek");
+
 function home(){
   const st=stats();
   let h=`<div class="hero"><h1>Ders Kütüphanesi 📚</h1><p>1'den 12'ye bütün sınıflar, dersler, konu anlatımları, örnek sorular ve YouTube videoları tek yerde.</p>
   <div class="stats"><div class="stat"><b>12</b>sınıf</div><div class="stat"><b>${st.ders}</b>ders</div><div class="stat"><b>${st.konu}</b>konu</div><div class="stat"><b>${st.soru}</b>soru</div><div class="stat"><b>${SOLVED.size}</b>doğru cevabın</div></div></div>`;
-  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 2.2 yayında! 🎉</b><small>Bugünün Planı, Kavram Sözlüğü, ilerleme haritası, çalışma süresi, hesap makinesi ve yeni konular →</small></div></a>`;
+  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 2.3 yayında! 🎉</b><small>Sol alttaki 💬 balonla Canlı Destek, haftalık plan, yeni kazanım listeleri ve konular →</small></div></a>`;
   const last=lsGet("sonKonu",null);
   if(last&&D[last.g]&&D[last.g][last.s]) h+=`<a class="cont" href="${last.h}"><span>▶️</span><div><b>Kaldığın yerden devam et</b><small>${last.g}. Sınıf · ${subjName(last.s)} · ${D[last.g][last.s].filter(t=>SOLVED.has(last.g+"|"+last.s+"|"+t[0])).length}/${D[last.g][last.s].length} konu tamamlandı</small></div></a>`;
   h+=welcomeCard()+planCard()+goalCard()+revCard()+examCard()+myHome();
@@ -4307,6 +4563,7 @@ function route(){
   else if(h==="yazili") wrSetup();
   else if(h==="hatirlatici") remPage();
   else if(h==="plan") planPage();
+  else if(h==="destek"){home();chatOpen(true)}
   else if(h==="sozluk") glosPage();
   else if(h==="hesap") calcPage();
   else if(m=h.match(/^s(\d+)-d(\d+)-k(\d+)$/)){if(D[m[1]]){subject(+m[1],+m[2]);const ti=+m[3];setTimeout(()=>openTopic(ti),0)}else home()}
@@ -4347,6 +4604,7 @@ const topBtn=document.getElementById("top");
 window.addEventListener("scroll",()=>topBtn.classList.toggle("show",scrollY>500));
 topBtn.addEventListener("click",()=>scrollTo({top:0,behavior:"smooth"}));
 try{const ov=localStorage.getItem("sonSurum"),had=localStorage.getItem("cozulen")||localStorage.getItem("profiller");if(ov!==VERSION&&(ov||had))setTimeout(()=>toast(`<span>✨ Sürüm ${VERSION} yayında! <a href="#duyurular" style="color:#fff;text-decoration:underline">Yenilikleri gör</a></span>`),1200);localStorage.setItem("sonSurum",VERSION)}catch(e){}
+chatInit();
 if("serviceWorker" in navigator){window.addEventListener("load",()=>{navigator.serviceWorker.register("sw.js").catch(()=>{})})}
 route();
 </script>

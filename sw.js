@@ -1,5 +1,5 @@
 // Ders Kütüphanesi – çevrimdışı çalışma için önbellek
-const CACHE = "ders-kutuphanesi-v22";
+const CACHE = "ders-kutuphanesi-v23";
 const FILES = ["./", "index.html", "manifest.webmanifest", "icon-192.png", "icon-512.png", "icon-maskable-512.png", "apple-touch-icon.png"];
 
 self.addEventListener("install", e => {
@@ -13,6 +13,7 @@ self.addEventListener("activate", e => {
 // Önce internetten dene (güncel sürüm gelsin), olmazsa önbellekten aç
 self.addEventListener("fetch", e => {
   if (e.request.method !== "GET") return;
+  if (new URL(e.request.url).pathname.startsWith("/api/")) return;
   e.respondWith(
     fetch(e.request).then(res => {
       const copy = res.clone();
