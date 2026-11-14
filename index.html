@@ -119,6 +119,8 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 .pbig{font-size:60px;line-height:1}.plist{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:18px}.pcard{background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:8px;justify-items:center;text-align:center}.pcard.on{border-color:var(--blue)}.pcard small{color:var(--green);font-weight:800}.pav{font-size:46px;line-height:1}.pact{display:flex;gap:6px;flex-wrap:wrap;justify-content:center}
 .avs{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.avl{display:inline-flex!important;cursor:pointer}.avl input{position:absolute;opacity:0}.avl span{font-size:28px;width:48px;height:48px;display:grid;place-items:center;border-radius:12px;border:2px solid var(--line);background:var(--bg)}.avl input:checked+span{border-color:var(--blue);background:color-mix(in srgb,var(--blue) 15%,var(--card))}
 .box.kaz{border-left:4px solid var(--green)}.box.kaz ul{margin:4px 0 0;padding-left:20px;line-height:1.7}
+.sharebox b{display:block;margin-bottom:8px}.codeta{width:100%;font-family:ui-monospace,Consolas,monospace;font-size:13px;padding:10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);word-break:break-all;resize:vertical}
+.lb{display:grid;gap:2px}.lbrow{display:grid;grid-template-columns:44px 44px 1fr auto auto;gap:10px;align-items:center;padding:10px 6px;border-bottom:1px solid var(--line)}.lbrow:last-child{border-bottom:0}.lbrow.me{background:color-mix(in srgb,var(--blue) 10%,transparent);border-radius:12px}.lbrank{font-size:22px;font-weight:900;text-align:center}.lbav{font-size:30px}.lbname small,.lbval small{display:block;color:var(--mute);font-size:12px}.lbval{text-align:right}.lbval b{font-size:20px}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute);font-weight:700;margin-top:6px}.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.gbox{display:grid;justify-items:center;gap:6px;text-align:center}.gbox h3{margin:6px 0 0}.gbox select{font:inherit;font-weight:700;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 .gring{width:160px;height:160px;border-radius:50%;display:grid;place-items:center}.gin{width:126px;height:126px;border-radius:50%;background:var(--card);display:grid;place-content:center;text-align:center}.gin b{font-size:34px;line-height:1}.gin small{color:var(--mute);font-weight:700}
@@ -176,7 +178,7 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 </div></header>
 <main id="app"></main>
 <form name="sorun-bildir" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="tur"><input name="konu"><textarea name="aciklama"></textarea><input name="iletisim"></form>
-<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 1.8</div></footer>
+<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 1.9</div></footer>
 <button id="top" class="totop" type="button" aria-label="Yukarı çık">↑</button>
 
 <script>
@@ -2647,6 +2649,83 @@ const EXP7={
 };
 
 let EXP7N=0;for(const s in EXP7)for(const n in EXP7[s]){const t=D[7]&&D[7][s]&&D[7][s].find(x=>x[0]===n);if(t){t[1]=EXP7[s][n];EXP7N++}}
+KAZ["8"]["Türkçe"]={
+"Fiilimsiler":["Fiilimsilerin cümledeki işlevlerini kavrar.","İsim-fiil, sıfat-fiil ve zarf-fiilleri ayırt eder."],
+"Cümlenin Ögeleri":["Cümlenin temel ve yardımcı ögelerini belirler.","Ögeleri doğru soruları sorarak bulur."],
+"Fiilde Çatı":["Fiillerin etken ve edilgen çatı özelliklerini kavrar.","Çatı eklerinin cümleye kattığı anlamı açıklar."],
+"Cümle Türleri":["Cümleleri yapı, anlam, yüklemin türü ve yeri bakımından sınıflandırır."],
+"Söz Sanatları":["Okuduğu metindeki söz sanatlarını tespit eder.","Benzetme, kişileştirme, abartma ve karşıtlığı ayırt eder."],
+"Kesme İşareti":["Kesme işaretini yerinde kullanır.","Özel isimlere gelen ekleri doğru yazar."],
+"Zarf-Fiiller":["Zarf-fiil eklerini tanır ve cümledeki işlevini açıklar."],
+"Basit ve Birleşik Cümle":["Cümleleri yapılarına göre ayırt eder.","Yan cümleciği temel cümleden ayırır."],
+"Karşıtlık Sanatı":["Metinde karşıtlık sanatının kullanıldığı yerleri belirler."],
+"Makale ve Fıkra":["Makale ve fıkra türlerinin özelliklerini ayırt eder.","Metnin amacını ve yazarın bakış açısını belirler."],
+"Paragrafta Yapı":["Paragrafın giriş, gelişme ve sonuç bölümlerini belirler.","Akışı bozan cümleyi tespit eder."],
+"Sözel Mantık":["Verilen bilgileri düzenleyerek mantıksal çıkarımlar yapar."],
+"Anlatım Bozukluğu":["Anlatım bozukluklarını tespit eder ve düzeltir.","Anlamsal ve yapısal bozuklukları ayırt eder."],
+"Biyografi ve Otobiyografi":["Biyografi ve otobiyografinin özelliklerini ayırt eder."],
+"Dolaylı Tümleç":["Dolaylı tümleci cümlede bulur ve diğer ögelerden ayırt eder."],
+"İsim-Fiiller":["İsim-fiil eklerini tanır ve kalıcı isim olmuş örnekleri ayırt eder."],
+"Tartışma ve Açıklama":["Metinlerdeki anlatım biçimlerini belirler.","Tartışmacı ve açıklayıcı anlatımı ayırt eder."],
+"Yardımcı Düşünceler":["Metnin ana fikrini ve yardımcı fikirlerini belirler."],
+"Grafik ve Tablo Yorumlama":["Grafik, tablo ve çizelgeyle sunulan bilgileri yorumlar."],
+"Yazım Kuralları":["Yazım kurallarını uygular.","Bağlaç ve eklerin yazımını doğru yapar."],
+"Metin Türleri":["Metin türlerini ayırt eder ve amaçlarını belirler."],
+"Paragrafta Anlatım Teknikleri":["Düşünceyi geliştirme yollarını belirler: tanımlama, örneklendirme, karşılaştırma, tanık gösterme, sayısal verilerden yararlanma."],
+"Cümlede Anlam: Neden-Sonuç ve Amaç-Sonuç":["Cümleler arasındaki neden-sonuç ve amaç-sonuç ilişkilerini ayırt eder."],
+"Metin Türlerini Ayırt Etme":["Makale, deneme ve fıkra türlerinin farklarını açıklar."]};
+KAZ["8"]["İnkılap Tarihi"]={
+"Bir Kahraman Doğuyor":["Avrupa'daki gelişmelerin Osmanlı Devleti'ne etkilerini kavrar.","Mustafa Kemal'in çocukluk ve öğrenim hayatından hareketle onun kişilik özelliklerini çıkarımda bulunur."],
+"Millî Uyanış":["I. Dünya Savaşı'nın sebeplerini ve sonuçlarını açıklar.","Mondros Ateşkesi'nin uygulanması karşısında Osmanlı yönetiminin ve halkın tutumunu değerlendirir."],
+"Atatürk İlkeleri":["Atatürk ilkelerini açıklar ve inkılaplarla ilişkilendirir."],
+"Amasya Genelgesi":["Amasya Genelgesi'nin Millî Mücadele'deki önemini açıklar."],
+"Ya İstiklal Ya Ölüm":["Kuvâ-yı Millîye'nin oluşumunu ve önemini açıklar.","Kongrelerin millî birliğin sağlanmasındaki rolünü kavrar."],
+"Demokratikleşme Çabaları":["Çok partili hayata geçiş denemelerini açıklar."],
+"Erzurum ve Sivas Kongreleri":["Erzurum ve Sivas kongrelerinde alınan kararları karşılaştırır."],
+"Misak-ı Millî":["Misak-ı Millî'nin kabulünü ve önemini açıklar."],
+"Cephelerde Mücadele":["Doğu, Güney ve Batı cephelerinde yaşanan mücadeleleri açıklar."],
+"Saltanatın Kaldırılması":["Saltanatın kaldırılmasının nedenlerini ve sonuçlarını açıklar."],
+"Sakarya ve Büyük Taarruz":["Sakarya Meydan Muharebesi ve Büyük Taarruz'un sonuçlarını değerlendirir."],
+"Lozan Barış Antlaşması":["Lozan Barış Antlaşması'nın maddelerini ve önemini açıklar.","Lozan ile Sevr'i karşılaştırır."],
+"TBMM'nin Açılması":["TBMM'nin açılışını ve özelliklerini açıklar.","TBMM'ye karşı çıkan ayaklanmaların nedenlerini değerlendirir."],
+"İnönü Muharebeleri":["I. ve II. İnönü muharebelerinin sonuçlarını açıklar."],
+"I. Dünya Savaşı ve Osmanlı":["Osmanlı Devleti'nin I. Dünya Savaşı'na girişini ve cepheleri açıklar."],
+"Güney Cephesi":["Güney Cephesi'nde halkın direnişini ve önemini açıklar."],
+"Harf İnkılabı":["Harf İnkılabı'nın amacını ve eğitime etkisini açıklar."],
+"Kuvâ-yı Millîye":["Kuvâ-yı Millîye'nin kuruluş nedenlerini ve özelliklerini açıklar."],
+"Atatürk Dönemi Dış Politika":["Atatürk dönemi dış politikasının temel ilkelerini açıklar.","Hatay'ın anavatana katılmasını ve Montrö Sözleşmesi'ni değerlendirir."],
+"Sakarya Meydan Muharebesi":["Sakarya Meydan Muharebesi'nin sonuçlarını açıklar."],
+"Büyük Taarruz ve Mudanya":["Büyük Taarruz'u ve Mudanya Ateşkes Antlaşması'nın önemini açıklar."],
+"Kongreler Dönemi":["Kongrelerin millî birliği sağlamadaki rolünü açıklar."]};
+const EXP6={
+"Matematik":{
+"Üslü İfadeler":"Bir sayının kendisiyle tekrarlı çarpımı üslü ifade olarak yazılır: 2 · 2 · 2 = 2³. Burada 2 taban, 3 üstür ve 'iki üssü üç' diye okunur. Bir sayının karesi kendisiyle çarpımı, küpü ise kendisiyle üç kez çarpımıdır. Her sayının 1. kuvveti kendisidir; işlem önceliğinde üslü ifadeler çarpma ve bölmeden önce hesaplanır.",
+"Tam Sayılar":"Tam sayılar negatif tam sayılar, sıfır ve pozitif tam sayılardan oluşur. Sayı doğrusunda sıfırın sağındakiler pozitif, solundakiler negatiftir; sağa gidildikçe sayılar büyür. −5 < 0 < 3 olduğu gibi her negatif sayı sıfırdan ve pozitif sayılardan küçüktür. Bir sayının sıfıra olan uzaklığına mutlak değer denir: |−5| = 5.",
+"Kesirlerle Çarpma":"Kesirler çarpılırken paylar kendi arasında, paydalar kendi arasında çarpılır: 2/3 × 4/5 = 8/15. Bir doğal sayı ile kesir çarpılırken doğal sayı pay ile çarpılır. Çarpmadan önce sadeleştirme yapmak işlemi kolaylaştırır. Bir sayının bir kesrini bulmak da çarpma demektir: 20'nin 3/4'ü 15'tir.",
+"Aritmetik Ortalama":"Aritmetik ortalama, bir veri grubundaki sayıların toplamının veri sayısına bölünmesiyle bulunur. Örneğin 70, 80 ve 90 notlarının ortalaması (70 + 80 + 90) ÷ 3 = 80'dir. Ortalama, veri grubunu temsil eden tek bir değer verir. Açıklık ise en büyük ve en küçük değer arasındaki farktır.",
+"Ondalık Sayılarla İşlemler":"Ondalık sayılarla toplama ve çıkarma yaparken virgüller alt alta gelecek şekilde yazılır, eksik basamaklara sıfır eklenebilir. Sonuçtaki virgül de aynı hizaya konur. Örneğin 3,5 + 1,25 = 4,75'tir. Ondalık sayılar para ve ölçü problemlerinde sık kullanılır.",
+"Ondalık Sayılarla Çarpma":"Ondalık sayılar çarpılırken virgüller yokmuş gibi çarpılır, sonra çarpanlardaki virgülden sonraki basamak sayıları toplanarak sonuçta o kadar basamak ayrılır. 1,2 × 0,3 = 0,36'dır. Bir ondalık sayıyı 10, 100 ya da 1000 ile çarpınca virgül sırasıyla 1, 2 ya da 3 basamak sağa kayar.",
+"Uzunluk ve Sıvı Ölçme":"Uzunluk ölçü birimleri: 1 km = 1000 m, 1 m = 100 cm = 1000 mm'dir. Sıvı ölçü birimleri: 1 L = 1000 mL'dir. Büyük birimden küçük birime geçerken çarpma, küçük birimden büyük birime geçerken bölme yapılır. Problemlerde önce birimler eşitlenir, sonra işlem yapılır.",
+"Paralelkenarın Alanı":"Paralelkenarın alanı, bir kenarı (taban) ile o kenara ait yüksekliğin çarpımıyla bulunur: A = taban × yükseklik. Yükseklik, tabana dik olarak çizilen uzunluktur; yan kenar ile karıştırılmamalıdır. Paralelkenar kesilip yeniden düzenlendiğinde aynı taban ve yükseklikte bir dikdörtgene dönüştürülebilir.",
+"Cebirsel İfadeler":"İçinde bilinmeyen bir harf bulunan ifadelere cebirsel ifade denir: 2x + 3. Harfin yerine bir sayı yazılarak ifadenin değeri bulunur; x = 4 için 2x + 3 = 11 olur. 'Bir sayının 3 fazlası' gibi sözel ifadeler x + 3 biçiminde cebirsel ifadeye çevrilir. Cebirsel ifadelerde harfin önündeki sayıya katsayı denir.",
+"EBOB ve EKOK":"Ortak bölenlerin en büyüğüne EBOB, ortak katların en küçüğüne EKOK denir. 12 ve 18'in EBOB'u 6, EKOK'u 36'dır. EBOB parçalara ayırma ve eşit gruplama problemlerinde, EKOK ise tekrar eden olayların aynı anda gerçekleşeceği zamanı bulma problemlerinde kullanılır. Asal çarpanlara ayırma ile EBOB ve EKOK kolayca bulunur.",
+"Doğru Açı ve Tam Açı":"Ölçüsü 180° olan açıya doğru açı, 360° olan açıya tam açı denir. Bir doğru üzerindeki komşu açıların toplamı 180°'dir. Bir noktanın etrafındaki açıların toplamı ise 360°'dir. Bu özellikler bilinmeyen açıların ölçüsünü bulmakta kullanılır.",
+"Sıvı Ölçme Problemleri":"Sıvı ölçme problemlerinde litre (L) ve mililitre (mL) birimleri kullanılır ve 1 L = 1000 mL'dir. Problemi çözmeden önce bütün değerler aynı birime çevrilir. Örneğin 1,5 L suyu 250 mL'lik bardaklara paylaştırmak için 1500 ÷ 250 = 6 bardak gerekir."},
+"Fen Bilimleri":{
+"Vücudumuzdaki Sistemler":"Vücudumuz birlikte çalışan sistemlerden oluşur. Destek ve hareket sistemi vücuda şekil verir, sindirim sistemi besinleri parçalar, dolaşım sistemi kanı vücuda dağıtır. Solunum sistemi oksijen alıp karbondioksit verir, boşaltım sistemi atıkları uzaklaştırır. Bu sistemler sağlıklı yaşam için uyum içinde çalışır.",
+"Madde ve Isı":"Maddeler ısı aldığında tanecikleri hızlanır ve aralarındaki uzaklık artar; bu yüzden genleşir. Isı verdiğinde ise büzülür. Köprülerdeki genleşme aralıkları ve elektrik tellerinin yazın sarkması bu duruma örnektir. Farklı maddelerin genleşme miktarları farklıdır; bu özellik ayırt edicidir.",
+"Ses ve Özellikleri":"Ses titreşimle oluşur ve yayılmak için bir maddesel ortama ihtiyaç duyar; boşlukta yayılmaz. Ses en hızlı katılarda, sonra sıvılarda, en yavaş gazlarda yayılır. Sesin yüksekliği titreşim sayısına, şiddeti ise titreşimin büyüklüğüne bağlıdır. Ses bir engele çarptığında yansıyabilir ya da soğurulabilir.",
+"İletken ve Yalıtkan":"Elektrik akımını iyi ileten maddelere iletken, iletmeyen maddelere yalıtkan denir. Bakır, alüminyum ve demir gibi metaller iletkendir; plastik, tahta, cam ve kauçuk yalıtkandır. Elektrik kabloların içi iletken bakırdan, dışı ise yalıtkan plastikten yapılır. Saf su yalıtkandır ama içinde tuz çözünmüş su elektriği iletir.",
+"Sindirim Sistemi":"Sindirim ağızda başlar; dişler besinleri parçalar, tükürük sindirime yardım eder. Besinler yemek borusuyla mideye iner ve burada sindirime devam edilir. Sindirimin büyük kısmı ve besinlerin kana geçişi ince bağırsakta olur. Kalın bağırsakta su emilir; karaciğer ve pankreas sindirime yardımcı organlardır.",
+"Bileşke Kuvvet":"Bir cisme etki eden kuvvetlerin yaptığı etkiyi tek başına yapabilen kuvvete bileşke kuvvet denir. Aynı yöndeki kuvvetler toplanır, zıt yöndeki kuvvetler çıkarılır ve bileşke büyük kuvvet yönündedir. Bileşke kuvvet sıfırsa cisim dengededir: duruyorsa durmaya, hareket ediyorsa sabit hızla hareketine devam eder.",
+"Sürat":"Sürat, birim zamanda alınan yoldur ve sürat = alınan yol ÷ geçen süre formülüyle hesaplanır. Birimi m/s ya da km/sa'tir. 120 km yolu 2 saatte giden aracın sürati 60 km/sa'tir. Yol-zaman grafiklerinde eğim ne kadar dikse sürat o kadar büyüktür.",
+"Yoğunluk":"Yoğunluk, birim hacimdeki madde miktarıdır ve kütle ÷ hacim ile hesaplanır. Saf maddeler için ayırt edici bir özelliktir; suyun yoğunluğu 1 g/cm³'tür. Yoğunluğu sudan küçük cisimler suda yüzer, büyük olanlar batar. Sıvılar yoğunluklarına göre üst üste dizilir; en yoğun sıvı en altta bulunur.",
+"Sinir Sistemi ve Duyular":"Sinir sistemi vücudu yöneten ve denetleyen sistemdir; beyin, omurilik ve sinirlerden oluşur. Duyu organları (göz, kulak, burun, dil, deri) çevreden aldıkları uyarıları sinirlerle beyne iletir. Beyin bu uyarıları yorumlar ve tepki verir. Refleksler ise omurilik tarafından çok hızlı yönetilir.",
+"Destek ve Hareket Sistemi":"Destek ve hareket sistemi iskelet, kaslar ve eklemlerden oluşur. İskelet vücuda şekil verir ve iç organları korur. Kaslar kasılıp gevşeyerek kemikleri hareket ettirir. Eklemler kemiklerin birleşme yerleridir; düzenli spor, dengeli beslenme ve doğru oturuş bu sistemin sağlığı için önemlidir.",
+"Dolaşım Sistemi":"Dolaşım sistemi kalp, damarlar ve kandan oluşur. Kalp kanı pompalar; atardamarlar kanı kalpten vücuda, toplardamarlar vücuttan kalbe taşır, kılcal damarlar ise madde alışverişini sağlar. Kan oksijeni, besinleri ve atıkları taşır. Küçük dolaşım kalp ile akciğerler arasında, büyük dolaşım kalp ile vücut arasında gerçekleşir.",
+"Sesin Yayılma Hızı":"Ses yayılmak için madde gerektirir ve boşlukta yayılmaz; bu yüzden uzayda ses duyulmaz. Ses en hızlı katılarda, ardından sıvılarda, en yavaş gazlarda yayılır. Havada ses yaklaşık 340 m/s hızla yayılır. Şimşeğin ışığını gördükten sonra gök gürültüsünü duymamız, ışığın sesten çok daha hızlı olmasındandır."}};
+
+let EXP6N=0;for(const s in EXP6)for(const n in EXP6[s]){const t=D[6]&&D[6][s]&&D[6][s].find(x=>x[0]===n);if(t){t[1]=EXP6[s][n];EXP6N++}}
 
 const ICON={"Türkçe":"📖","Matematik":"➗","Hayat Bilgisi":"🏡","İngilizce":"🇬🇧","Fen Bilimleri":"🔬","Sosyal Bilgiler":"🌍","Din Kültürü":"🕌","İnkılap Tarihi":"🇹🇷","Edebiyat":"✒️","Fizik":"⚛️","Kimya":"🧪","Biyoloji":"🧬","Tarih":"🏛️","Coğrafya":"🗺️","Felsefe":"🤔"};
 const LEVELS=[["İlkokul","lv1",[1,2,3,4]],["Ortaokul","lv2",[5,6,7,8]],["Lise","lv3",[9,10,11,12]]];
@@ -2726,7 +2805,7 @@ function reportPage(){
 }
 const REPORT_EMAIL=""; // Sorun bildirimlerinin gideceği e-posta (boşsa sadece kopyalama gösterilir)
 // ===== Sürüm 1.1: Duyurular ve çalışma araçları =====
-const VERSION="1.8";
+const VERSION="1.9";
 function lsGet(k,d){try{const v=localStorage.getItem(PFX+k);return v?JSON.parse(v):d}catch(e){return d}}
 function lsSet(k,v){try{localStorage.setItem(PFX+k,JSON.stringify(v))}catch(e){}}
 let FAV=new Set(lsGet("favoriler",[])), WRONG=lsGet("yanlislar",{}), ST=lsGet("istatistik",{answered:0,correct:0,days:[]}), NOTES=lsGet("notlar",[]);
@@ -2744,15 +2823,16 @@ function confirmBtn(btn,label,fn){ // pencere açmadan iki tıkla onay
   btn.dataset.armed=1;const old=btn.textContent;btn.textContent=label;
   setTimeout(()=>{if(btn.isConnected){delete btn.dataset.armed;btn.textContent=old}},3000);
 }
-const TOOLS=[["deneme","📝","Deneme Sınavı","Sınıf ve ders seç, süreli test çöz"],["pomodoro","⏱️","Pomodoro Sayacı","25 dakika çalış, 5 dakika dinlen"],["kaydedilenler","⭐","Kaydettiklerim","Sonra çalışmak için kaydettiğin konular"],["yanlislarim","❌","Yanlışlarım","Yanlış yaptığın soruları tekrar et"],["notlarim","🗒️","Notlarım","Kendi ders notlarını tut"],["istatistikler","📊","İstatistiklerim","Başarı oranın ve çalışma serin"],["kartlar","🃏","Bilgi Kartları","Konuları kartlarla hızlıca tekrar et"],["program","📅","Ders Programım","Haftalık çalışma planını yap"],["rozetler","🏅","Rozetlerim","Çalıştıkça başarı rozetleri kazan"],["oyunlar","🧩","Oyunlar","Eşleştirme ve boşluk doldurma"],["hedefler","🎯","Hedeflerim","Günlük ve haftalık soru hedefi"],["temalar","🎨","Temalar","Sitenin rengini değiştir"],["formuller","🧮","Formül ve Tarihler","Formül kartları ve önemli tarihler"],["analiz","📊","Ders Analizim","Güçlü ve zayıf derslerini gör"],["hatirlatici","⏰","Hatırlatıcılar","Çalışma zamanı bildirimi"],["tekrar","🧠","Akıllı Tekrar","Unutmadan önce tekrar et"]];
+const TOOLS=[["deneme","📝","Deneme Sınavı","Sınıf ve ders seç, süreli test çöz"],["pomodoro","⏱️","Pomodoro Sayacı","25 dakika çalış, 5 dakika dinlen"],["kaydedilenler","⭐","Kaydettiklerim","Sonra çalışmak için kaydettiğin konular"],["yanlislarim","❌","Yanlışlarım","Yanlış yaptığın soruları tekrar et"],["notlarim","🗒️","Notlarım","Kendi ders notlarını tut"],["istatistikler","📊","İstatistiklerim","Başarı oranın ve çalışma serin"],["kartlar","🃏","Bilgi Kartları","Konuları kartlarla hızlıca tekrar et"],["program","📅","Ders Programım","Haftalık çalışma planını yap"],["rozetler","🏅","Rozetlerim","Çalıştıkça başarı rozetleri kazan"],["oyunlar","🧩","Oyunlar","Eşleştirme ve boşluk doldurma"],["hedefler","🎯","Hedeflerim","Günlük ve haftalık soru hedefi"],["temalar","🎨","Temalar","Sitenin rengini değiştir"],["formuller","🧮","Formül ve Tarihler","Formül kartları ve önemli tarihler"],["analiz","📊","Ders Analizim","Güçlü ve zayıf derslerini gör"],["hatirlatici","⏰","Hatırlatıcılar","Çalışma zamanı bildirimi"],["tekrar","🧠","Akıllı Tekrar","Unutmadan önce tekrar et"],["arkadaslar","🤝","Arkadaşlar","Arkadaş ekle, sıralama ve düello"]];
 function toolsGrid(){return `<div class="grid tools">`+TOOLS.map(([h,e,t,d])=>`<a class="tile tool" href="#${h}"><div class="ico">${e}</div><b>${t}</b><small>${d}</small></a>`).join("")+`</div>`}
 function toolsPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Araçlar</div><div class="hero" style="background:linear-gradient(135deg,#16a34a,#0ea5e9)"><h1>🧰 Çalışma Araçları</h1><p>Daha verimli çalışman için ihtiyacın olan her şey.</p></div>`+toolsGrid()}
 
 // ---- Duyurular ----
 const NEWS=[
- {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 1.9 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 1.9 ile gelmesi planlanan yenilikler:",li:["🎯 Diğer sınıf ve dersler için kazanım listeleri","📖 Diğer sınıflarda konu anlatımlarını uzatma","☁️ İsteğe bağlı bulut hesabı (cihazlar arası eşitleme)","📚 Daha da fazla yeni konu ve soru"]},
- {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 1.8 yayında",d:"1.8 sürümü yayında! Bu sürümde gelenler:",li:["👤 Profiller: aynı cihazda herkes kendi profilini seçer, ilerlemeler karışmaz","💾 İlerlemeyi dosyaya yedekleme ve başka cihaza taşıma (dışa / içe aktar)","🎯 8. sınıf Matematik ve Fen Bilimleri konularına kazanım listeleri (konu sayfalarında ve Konu Özeti PDF'inde)","📖 7. sınıf Matematik, Fen Bilimleri ve Türkçe'de 37 konunun anlatımı uzatıldı"]},
- {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.7",d:"Önceki sürüm. 1.7 ile gelenler:",li:["🧠 Akıllı Tekrar","📄 Konu Özeti PDF ve 📝 Soru PDF","🔊 Sesli okuma","🗂️ Konu grupları","📖 61 uzatılmış anlatım"]},
+ {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 2.0 yakında!",d:"Bir sonraki büyük sürüm üzerinde çalışıyoruz. 2.0 ile gelmesi planlanan yenilikler:",li:["☁️ İsteğe bağlı bulut hesabı (cihazlar arası otomatik eşitleme)","🎯 Diğer sınıflar için kazanım listeleri","📖 Diğer sınıflarda konu anlatımlarını uzatma","📚 Daha da fazla yeni konu ve soru"]},
+ {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 1.9 yayında",d:"1.9 sürümü yayında! Bu sürümde gelenler:",li:["🤝 Arkadaşlık sistemi: arkadaş kodunu paylaş, arkadaşlarının kodunu ekle","🏆 Arkadaşlarınla sıralama: doğru cevap, haftalık soru, seri, rozet ve çözülen konuya göre","⚔️ Düello: arkadaşına aynı 10 soruyla meydan oku, kazananı görün","💬 Kodları WhatsApp ile kolayca gönderme","🎯 8. sınıf Türkçe ve İnkılap Tarihi konularına kazanım listeleri","📖 6. sınıf Matematik ve Fen Bilimleri'nde 24 konunun anlatımı uzatıldı","🏅 2 yeni rozet (toplam 28)"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.8",d:"Önceki sürüm. 1.8 ile gelenler:",li:["👤 Profiller","💾 İlerleme yedekleme","🎯 8. sınıf Matematik ve Fen kazanımları","📖 7. sınıf anlatımları"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.7",d:"1.7 ile gelenler:",li:["🧠 Akıllı Tekrar","📄 Konu Özeti ve 📝 Soru PDF","🔊 Sesli okuma","🗂️ Konu grupları"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.6",d:"1.6 ile gelenler:",li:["📊 Ders Analizim","⚖️ Doğru mu Yanlış mı?","✍️ Yazarak Cevapla","⏰ Hatırlatıcılar"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.5",d:"1.5 ile gelenler:",li:["🧮 Formül ve tarih kartları","🖨️ Yazdırma","🔍 Gelişmiş arama"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.4",d:"1.4 ile gelenler:",li:["🎬 Anlatımı izle","🧩 Oyunlar","🎯 Hedefler","🎨 Temalar"]},
@@ -2840,6 +2920,7 @@ function testResult(){
   (Object.keys(T.res).length?`<h2>📊 Derslere göre sonuç</h2><div class="about rbars">`+Object.entries(T.res).map(([sb,r])=>{const q=Math.round(r.c/r.n*100);return `<div class="rbar"><b>${subjName(sb)}</b><div class="prog"><i style="width:${q}%"></i></div><span>${r.c}/${r.n} · %${q}</span></div>`}).join("")+`</div>`:"")+
   (T.wrong.length?`<h2>Yanlış yaptığın sorular</h2>`+T.wrong.map(w=>`<div class="about"><div class="crumb">${esc(w.label)}</div><b>${esc(w.q)}</b><div class="fb" style="color:var(--green)">Doğru cevap: ${esc(w.a)}</div></div>`).join(""):"")+
   `<div class="vids"><button class="send" type="button" data-act="tagain">🔁 Yeni sınav</button><a class="yt alt" href="#yanlislarim">❌ Yanlışlarım</a></div>`;
+  if(T.duel)duelDone(T);
   TEST=null; checkBadges();
 }
 
@@ -2933,6 +3014,9 @@ document.addEventListener("click",e=>{
   if(b.dataset.psw!==undefined) return switchProfile(b.dataset.psw);
   if(b.dataset.pdel!==undefined){const id=b.dataset.pdel;return confirmBtn(b,"Emin misin? Tekrar bas",()=>{profileKeys(id).forEach(([k])=>{try{localStorage.removeItem(k)}catch(e){}});PROFILES=PROFILES.filter(p=>p.id!==id);saveProfiles();profilePage()})}
   if(b.dataset.pren!==undefined){const p=PROFILES.find(x=>x.id===b.dataset.pren);const n=prompt("Yeni isim:",p.name);if(n&&n.trim()){p.name=n.trim().slice(0,20);saveProfiles();const el=document.getElementById("pchip");if(p.id===ACTIVE&&el)el.textContent=p.av+" "+p.name;profilePage()}return}
+  if(b.dataset.copy!==undefined){const t=b.dataset.copy;(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>{b.textContent="✅ Kopyalandı"},()=>{const ta=b.closest(".sharebox").querySelector("textarea");ta.select();b.textContent="Seçildi, Ctrl+C ile kopyala"});return}
+  if(b.dataset.fdel!==undefined){const id=b.dataset.fdel;return confirmBtn(b,"Sil?",()=>{const F=lsGet("arkadaslar",{});delete F[id];lsSet("arkadaslar",F);friendsPage()})}
+  if(b.dataset.duelacc!==undefined){const o=window.__duel;if(o)duelBegin({role:"guest",g:o.g,s:o.s,seed:o.seed,from:o.from});return}
   if(b.dataset.say!==undefined) return speakText(b.dataset.say,b);
   if(b.dataset.tf!==undefined) return tfAnswer(b);
   if(b.dataset.ftab!==undefined){FTAB=b.dataset.ftab;return formulasPage()}
@@ -2976,7 +3060,7 @@ document.addEventListener("click",e=>{
   if(a==="pomoreset"){POMO.running=false;clearInterval(POMO.timer);POMO.mode="work";POMO.left=POMO_LEN.work;return pomoDraw()}
   if(a==="pomoskip"){POMO.left=1;return pomoTick()}
   if(a==="clearwrong") return confirmBtn(b,"Emin misin? Tekrar bas",()=>{WRONG={};lsSet("yanlislar",WRONG);wrongPage()});
-  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
+  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["arkadaslar","duellolar","duelloGalibiyet","tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
 });
 
 // ===== Sürüm 1.3: LGS/TYT modları, rozetler, bilgi kartları, ders programı =====
@@ -3490,7 +3574,7 @@ function profileKeys(id){const pre=id==="0"?"":"p"+id+"_",out=[];try{for(let i=0
 function profilePage(){const cur=curProfile();
   app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Profilim</div>
   <div class="hero" style="background:linear-gradient(135deg,var(--hero1),var(--hero2))"><div class="pbig">${cur.av}</div><h1>${esc(cur.name)}</h1><p>${ST.answered} soru çözdün · ${SOLVED.size} konuyu doğru çözdün · ${streak()} günlük seri · ${EARNED.length} rozet</p></div>
-  <h2>👥 Profiller</h2><p class="crumb">Aynı cihazı kardeşlerinle ya da arkadaşlarınla kullanıyorsan herkes kendi profilini seçsin; ilerlemeler birbirine karışmaz.</p>
+  <div class="vids"><a class="send" style="text-decoration:none" href="#arkadaslar">🤝 Arkadaşlarım ve düellolar</a></div><h2>👥 Profiller</h2><p class="crumb">Aynı cihazı kardeşlerinle ya da arkadaşlarınla kullanıyorsan herkes kendi profilini seçsin; ilerlemeler birbirine karışmaz.</p>
   <div class="plist">`+PROFILES.map(p=>`<div class="pcard${p.id===ACTIVE?" on":""}"><div class="pav">${p.av}</div><b>${esc(p.name)}</b>${p.id===ACTIVE?`<small>✅ Şu an kullanılıyor</small>`:`<button class="send" type="button" data-psw="${p.id}">Bu profile geç</button>`}
     <div class="pact"><button class="mini" type="button" data-pren="${p.id}">✏️ Adı</button>${p.id!=="0"&&p.id!==ACTIVE?`<button class="mini" type="button" data-pdel="${p.id}">🗑️ Sil</button>`:""}</div></div>`).join("")+`</div>
   <form class="about rform" id="pnew"><h3>➕ Yeni profil oluştur</h3><label>İsim (takma ad da olabilir)<input name="n" maxlength="20" required placeholder="Örn. Ayşe"></label>
@@ -3518,11 +3602,65 @@ function kazOf(g,s,n){return KAZ[String(g)]&&KAZ[String(g)][s]&&KAZ[String(g)][s
 function kazHTML(g,s,n){const k=kazOf(g,s,n);return k?`<div class="box kaz"><h4>🎯 Kazanımlar</h4><ul>${k.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`:""}
 function kazPrint(g,s,n){const k=kazOf(g,s,n);return k?`<div class="plabel">🎯 Kazanımlar</div><ul class="pfacts">${k.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`:""}
 
+// ===== Sürüm 1.9: Arkadaşlık sistemi ve düellolar =====
+BADGES.push(
+ ["arkadas","🤝","Sosyal Öğrenci","İlk arkadaşını ekle",()=>[Object.keys(lsGet("arkadaslar",{})).length,1]],
+ ["duello","⚔️","Düello Galibi","Bir düelloyu kazan",()=>[lsGet("duelloGalibiyet",0),1]]);
+function myId(){let id=lsGet("arkId","");if(!id){id=Math.random().toString(36).slice(2,8);lsSet("arkId",id)}return id}
+function enc(prefix,o){return prefix+"-"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))}
+function dec(code){const m=String(code).trim().match(/^(DK1|DKD|DKR)-([A-Za-z0-9+/=]+)$/);if(!m)return null;try{return{t:m[1],o:JSON.parse(decodeURIComponent(escape(atob(m[2]))))}}catch(e){return null}}
+function myCard(){const c=curProfile();return{id:myId(),n:c.name,av:c.av,a:ST.answered,c:ST.correct,k:SOLVED.size,s:streak(),r:EARNED.length,w:weekSum(),d:dayStr()}}
+function mulberry(a){return()=>{a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function duelQs(g,s,seed){const pool=[];addPool(pool,g,s);const r=mulberry(seed);for(let i=pool.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}return pool.slice(0,10)}
+function shareBox(code,label){return `<div class="about sharebox"><b>${label}</b><textarea readonly rows="3" class="codeta">${esc(code)}</textarea><div class="vids"><button class="send" type="button" data-copy="${esc(code)}">📋 Kopyala</button><a class="yt alt" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent("Ders Kütüphanesi kodum: "+code)}">💬 WhatsApp ile gönder</a></div></div>`}
+let LBM="c";
+function friendsPage(msg){const F=lsGet("arkadaslar",{}),me=myCard(),D2=lsGet("duellolar",{});
+  const rows=[{...me,me:1},...Object.values(F)];const M={c:["doğru cevap","c"],w:["bu hafta soru","w"],s:["günlük seri","s"],r:["rozet","r"],k:["çözülen konu","k"]};
+  rows.sort((a,b)=>(b[LBM]||0)-(a[LBM]||0));const medal=i=>["🥇","🥈","🥉"][i]||(i+1)+".";
+  app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › <a href="#araclar">Araçlar</a> › Arkadaşlar</div>
+  <div class="hero" style="background:linear-gradient(135deg,#0ea5e9,#22c55e)"><h1>🤝 Arkadaşlar</h1><p>Arkadaş kodunu paylaş, arkadaşlarının kodunu ekle; sıralamada yarışın ve birbirinize düello için meydan okuyun!</p></div>
+  ${msg?`<div class="note" style="border-color:var(--green)">${msg}</div>`:""}
+  <div class="goals"><div>${shareBox(enc("DK1",me),"🔑 Senin arkadaş kodun")}<p class="crumb">İlerledikçe kodun da güncellenir; arkadaşların yeni bilgilerini görsün diye kodunu ara sıra tekrar paylaş.</p></div>
+  <form class="about rform" id="codeform"><b>➕ Kod ekle</b><textarea id="codein" rows="3" class="codeta" placeholder="Arkadaşının kodunu, düello kodunu ya da düello sonuç kodunu buraya yapıştır" required></textarea><button class="send" type="submit">Ekle / Aç</button><div class="fb" id="codefb"></div></form></div>
+  <h2>🏆 Sıralama</h2><div class="sfilter"><select id="lbm">${Object.entries(M).map(([k,v])=>`<option value="${k}"${k===LBM?" selected":""}>${v[0][0].toUpperCase()+v[0].slice(1)}</option>`).join("")}</select></div>
+  <div class="about lb">`+rows.map((r,i)=>`<div class="lbrow${r.me?" me":""}"><span class="lbrank">${medal(i)}</span><span class="lbav">${r.av||"🙂"}</span><span class="lbname"><b>${esc(r.n||"?")}${r.me?" (sen)":""}</b><small>${r.me?"Şimdi":"Son güncelleme: "+esc(r.d||"?")}</small></span><span class="lbval"><b>${r[LBM]||0}</b><small>${M[LBM][0]}</small></span>${r.me?"":`<button class="mini" type="button" data-fdel="${esc(r.id)}" title="Arkadaşı sil">✕</button>`}</div>`).join("")+`</div>
+  ${Object.keys(F).length?"":`<div class="note">Henüz arkadaşın yok. Kodunu kopyalayıp arkadaşına gönder, onun kodunu da yukarıya yapıştır.</div>`}
+  <h2>⚔️ Düello</h2><div class="about rform"><b>Arkadaşına meydan oku</b><span class="crumb">Ders seç, 10 soruyu çöz ve çıkan düello kodunu arkadaşına gönder. O da aynı 10 soruyu çözsün, kim kazanacak?</span>${pickerHTML("d")}<button class="send" id="duelstart" type="button">⚔️ Düelloyu başlat</button></div>
+  ${Object.keys(D2).length?`<h3>Düello geçmişi</h3>`+Object.values(D2).sort((a,b)=>b.t-a.t).slice(0,15).map(d=>`<div class="res"><b>${d.g}. Sınıf ${subjName(d.s)}</b> · ${esc(d.me.n)} <b>${d.me.c}/10</b> – ${d.op?`<b>${d.op.c}/10</b> ${esc(d.op.n)} · ${d.res}`:"<i>rakibin sonucu bekleniyor</i>"}</div>`).join(""):""}
+  <div class="note">🔒 Kodlarda yalnızca takma adın, avatarın ve istatistiklerin bulunur; mesajlaşma yoktur. Kodunu sadece tanıdığın arkadaşlarınla paylaş.</div>`;
+  document.getElementById("lbm").onchange=e=>{LBM=e.target.value;friendsPage()};
+  document.getElementById("codeform").onsubmit=e=>{e.preventDefault();codeIn(document.getElementById("codein").value)};
+  const get=pickerInit("d","sonDuello");document.getElementById("duelstart").onclick=()=>{const v=get();duelBegin({role:"host",g:v.g,s:v.s,seed:Math.floor(Math.random()*1e9)})};
+}
+function codeIn(code){const fb=document.getElementById("codefb"),x=dec(code);const bad=m=>{fb.style.color="var(--red)";fb.textContent=m};
+  if(!x)return bad("❌ Bu kod geçerli değil. Kodu eksiksiz kopyaladığından emin ol.");
+  const o=x.o;
+  if(x.t==="DK1"){if(o.id===myId())return bad("Bu senin kendi kodun 🙂");const F=lsGet("arkadaslar",{}),isNew=!F[o.id];F[o.id]={id:String(o.id).slice(0,12),n:String(o.n||"Arkadaş").slice(0,20),av:String(o.av||"🙂").slice(0,4),a:+o.a||0,c:+o.c||0,k:+o.k||0,s:+o.s||0,r:+o.r||0,w:+o.w||0,d:String(o.d||"").slice(0,10)};lsSet("arkadaslar",F);checkBadges();return friendsPage(isNew?`✅ ${esc(F[o.id].n)} arkadaş olarak eklendi!`:`🔄 ${esc(F[o.id].n)} bilgileri güncellendi.`)}
+  if(x.t==="DKD"){if(o.from&&o.from.id===myId())return bad("Bu senin oluşturduğun düello kodu. Arkadaşına göndermelisin.");if(!D[o.g]||!D[o.g][o.s])return bad("Bu düellonun dersi bulunamadı.");
+    app.innerHTML=`<div class="crumb"><a href="#arkadaslar">Arkadaşlar</a> › Düello</div><div class="hero" style="background:linear-gradient(135deg,#ef4444,#f59e0b);text-align:center"><div style="font-size:60px">⚔️</div><h1>${esc(o.from.av)} ${esc(o.from.n)} sana meydan okuyor!</h1><p>${o.g}. Sınıf ${subjName(o.s)} · 10 soru. Rakibinin skorunu sınav bitince göreceksin.</p></div><div class="vids" style="justify-content:center"><button class="send" type="button" data-duelacc="1">Kabul et ve başla</button><a class="yt alt" href="#arkadaslar">Vazgeç</a></div>`;
+    window.__duel=o;return}
+  if(x.t==="DKR"){const D2=lsGet("duellolar",{}),d=D2[o.seed];if(!d)return bad("Bu sonuç koduna ait bir düello bu cihazda bulunamadı.");
+    d.op={n:String(o.from.n).slice(0,20),av:o.from.av,c:+o.gs.c||0,time:+o.gs.time||0};d.res=duelVerdict(d.me,d.op);if(d.res.startsWith("🏆"))lsSet("duelloGalibiyet",lsGet("duelloGalibiyet",0)+1);lsSet("duellolar",D2);checkBadges();
+    return friendsPage(`⚔️ Düello sonucu: ${esc(d.me.n)} ${d.me.c}/10 – ${d.op.c}/10 ${esc(d.op.n)} · ${d.res}`)}
+}
+function duelVerdict(me,op){return me.c>op.c||(me.c===op.c&&me.time<op.time)?"🏆 Kazandın!":me.c===op.c&&me.time===op.time?"🤝 Berabere":"💪 Kaybettin, rövanş zamanı!"}
+function duelBegin(d){const qs=duelQs(d.g,d.s,d.seed);if(!qs.length)return;
+  TEST={g:d.g,s:"duello",qs,i:0,correct:0,wrong:[],res:{},start:Date.now(),answered:false,lim:0,src:"all",mode:"⚔️ Düello",duel:d};
+  clearInterval(testTimer);testTimer=setInterval(()=>{if(!TEST){clearInterval(testTimer);return}const el=document.getElementById("ttime");if(el)el.textContent=fmtTime((Date.now()-TEST.start)/1000)},500);
+  testQuestion();window.scrollTo(0,0)}
+function duelDone(T){const d=T.duel,me=curProfile(),time=Math.round((Date.now()-T.start)/1000),D2=lsGet("duellolar",{});let html="";
+  if(d.role==="host"){D2[d.seed]={g:d.g,s:d.s,t:Date.now(),me:{n:me.name,av:me.av,c:T.correct,time}};lsSet("duellolar",D2);
+    html=shareBox(enc("DKD",{g:d.g,s:d.s,seed:d.seed,from:{id:myId(),n:me.name,av:me.av}}),"⚔️ Düello kodun hazır! Bu kodu arkadaşına gönder. O da çözünce sana bir sonuç kodu gönderecek; onu Arkadaşlar sayfasına yapıştır.")}
+  else{const host=d.from,hs=d.hs;const mine={n:me.name,c:T.correct,time};
+    D2[d.seed]={g:d.g,s:d.s,t:Date.now(),me:{n:me.name,av:me.av,c:T.correct,time},op:null,res:"Sonuç kodunu gönder"};lsSet("duellolar",D2);
+    html=shareBox(enc("DKR",{seed:d.seed,from:{id:myId(),n:me.name,av:me.av},gs:{c:T.correct,time}}),`✅ Bitti! Şimdi bu sonuç kodunu ${esc(host.n)}'a gönder; kimin kazandığını ikiniz de göreceksiniz.`)}
+  app.insertAdjacentHTML("beforeend",html)}
+
 function home(){
   const st=stats();
   let h=`<div class="hero"><h1>Ders Kütüphanesi 📚</h1><p>1'den 12'ye bütün sınıflar, dersler, konu anlatımları, örnek sorular ve YouTube videoları tek yerde.</p>
   <div class="stats"><div class="stat"><b>12</b>sınıf</div><div class="stat"><b>${st.ders}</b>ders</div><div class="stat"><b>${st.konu}</b>konu</div><div class="stat"><b>${st.soru}</b>soru</div><div class="stat"><b>${SOLVED.size}</b>doğru cevabın</div></div></div>`;
-  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 1.8 yayında! 🎉</b><small>Profiller, ilerleme yedekleme, kazanım listeleri ve uzatılmış anlatımlar geldi. Versiyon 1.9 yakında →</small></div></a>`;
+  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 1.9 yayında! 🎉</b><small>Arkadaşlık sistemi, sıralama ve düellolar geldi. Versiyon 2.0 yakında →</small></div></a>`;
   const last=lsGet("sonKonu",null);
   if(last&&D[last.g]&&D[last.g][last.s]) h+=`<a class="cont" href="${last.h}"><span>▶️</span><div><b>Kaldığın yerden devam et</b><small>${last.g}. Sınıf · ${subjName(last.s)} · ${D[last.g][last.s].filter(t=>SOLVED.has(last.g+"|"+last.s+"|"+t[0])).length}/${D[last.g][last.s].length} konu tamamlandı</small></div></a>`;
   h+=goalCard()+revCard();
@@ -3620,6 +3758,7 @@ function route(){
   else if(h==="analiz") analysisPage();
   else if(h==="tekrar") revPage();
   else if(h==="profil") profilePage();
+  else if(h==="arkadaslar") friendsPage();
   else if(h==="dogruyanlis") tfSetup();
   else if(h==="yazili") wrSetup();
   else if(h==="hatirlatici") remPage();
