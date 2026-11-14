@@ -179,6 +179,10 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 .avt{width:100%;border-collapse:collapse}.avt th{text-align:left;font-size:13px;color:var(--mute);padding:4px}.avt td{padding:4px}.avt td:nth-child(2),.avt td:nth-child(3){width:22%}.avt td:last-child{width:40px}
 @media(max-width:560px){.avt input{padding:8px 6px!important;font-size:15px}.avt td:nth-child(2),.avt td:nth-child(3){width:64px}.avt td:last-child{width:34px}}
 .dleft{font-weight:900;font-size:18px;white-space:nowrap;color:var(--blue)}.pitem.ok2{border:2px solid #dc2626}
+.setb{text-align:left;cursor:pointer;font:inherit;color:inherit}
+.memgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}@media(max-width:560px){.memgrid{grid-template-columns:repeat(3,1fr)}}
+.memc{min-height:96px;border-radius:14px;border:2px solid rgba(127,127,127,.3);background:linear-gradient(135deg,#2f6bff,#8b5cf6);color:#fff;font-size:28px;font-weight:800;cursor:pointer;padding:6px;line-height:1.25}
+.memc.up{background:var(--card,#fff);color:var(--ink);font-size:13.5px}.memc.ans.up{border-color:#ec4899}.memc.ok{background:rgba(22,163,74,.18);border-color:var(--green);color:var(--ink)}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute);font-weight:700;margin-top:6px}.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.gbox{display:grid;justify-items:center;gap:6px;text-align:center}.gbox h3{margin:6px 0 0}.gbox select{font:inherit;font-weight:700;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 .gring{width:160px;height:160px;border-radius:50%;display:grid;place-items:center}.gin{width:126px;height:126px;border-radius:50%;background:var(--card);display:grid;place-content:center;text-align:center}.gin b{font-size:34px;line-height:1}.gin small{color:var(--mute);font-weight:700}
@@ -236,7 +240,7 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 </div></header>
 <main id="app"></main>
 <form name="sorun-bildir" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="tur"><input name="konu"><textarea name="aciklama"></textarea><input name="iletisim"></form>
-<footer><div><a href="#">Ana Sayfa</a> · <a href="#siniflar">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a> · <a href="#yardim">Yardım</a> · <a href="#gizlilik">Gizlilik</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 2.5</div></footer>
+<footer><div><a href="#">Ana Sayfa</a> · <a href="#siniflar">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a> · <a href="#yardim">Yardım</a> · <a href="#gizlilik">Gizlilik</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 2.6</div></footer>
 <button id="top" class="totop" type="button" aria-label="Yukarı çık">↑</button>
 
 <script>
@@ -3461,6 +3465,328 @@ const EXP4T={"Türkçe":{
 "Tablo ve Grafik Okuma":"Tablo ve grafikler bilgileri düzenli ve kolay anlaşılır biçimde gösterir. Tablo okurken önce başlığına, sonra satır ve sütun adlarına bakılır. Sütun grafiğinde sütunların uzunluğu değerlerin büyüklüğünü gösterir. Grafikten bilgi çıkarırken en büyük ve en küçük değerler karşılaştırılır, farklar hesaplanır."
 }};
 let EXP4TN=0;for(const n in EXP4T["Türkçe"]){const t=D[4]["Türkçe"].find(x=>x[0]===n);if(t&&EXP4T["Türkçe"][n].length>t[1].length){t[1]=EXP4T["Türkçe"][n];EXP4TN++}}
+Object.assign(KAZ["11"],{
+"Kimya":{
+"Modern Atom Teorisi":["Atomun kuantum modelini açıklar.","Orbital kavramını ve kuantum sayılarını açıklar."],
+"Orbital Kapasiteleri":["s, p, d ve f orbitallerinin alabileceği en fazla elektron sayısını belirtir.","Atomların elektron dizilimlerini orbitallere göre yazar."],
+"Periyodik Özellikler":["Atom yarıçapı, iyonlaşma enerjisi, elektron ilgisi ve elektronegatifliğin periyodik değişimini açıklar."],
+"Gazlar":["Gazların basınç, hacim, sıcaklık ve mol sayısı arasındaki ilişkileri açıklar.","İdeal gaz denklemini (PV = nRT) kullanarak hesaplama yapar."],
+"Gazların Özellikleri":["Gazların genel özelliklerini ve ölçülebilir niteliklerini açıklar."],
+"Kinetik Teori":["Gazların kinetik teorisini açıklar.","Sıcaklık ile tanecik hızı arasındaki ilişkiyi açıklar."],
+"Kısmi Basınç":["Gaz karışımlarında kısmi basınç kavramını açıklar ve Dalton yasasını kullanır."],
+"Çözeltiler":["Çözünme sürecini moleküler düzeyde açıklar.","Çözelti derişimlerini (molarite, kütlece yüzde) hesaplar."],
+"Doymuş ve Doymamış Çözelti":["Doymuş, doymamış ve aşırı doymuş çözeltileri ayırt eder."],
+"Gazların Çözünürlüğü":["Gazların çözünürlüğünün sıcaklık ve basınçla değişimini açıklar."],
+"Koligatif Özellikler":["Çözeltilerin donma noktası alçalması ve kaynama noktası yükselmesini açıklar."],
+"Tepkimelerde Enerji":["Ekzotermik ve endotermik tepkimeleri ayırt eder."],
+"Entalpi":["Tepkime entalpisini açıklar ve Hess Yasası ile hesaplama yapar."],
+"Tepkime Hızı":["Tepkime hızını tanımlar ve çarpışma teorisiyle açıklar."],
+"Hızı Etkileyen Faktörler":["Derişim, sıcaklık, katalizör, temas yüzeyi ve madde türünün tepkime hızına etkisini açıklar."],
+"Tepkime Hızı ve Denge":["Tepkime hızı ile kimyasal denge arasındaki ilişkiyi açıklar."],
+"Kimyasal Denge":["Kimyasal dengeyi ve denge sabitini (Kc) açıklar."],
+"Dengenin Özellikleri":["Dengenin dinamik olduğunu ve dengedeki sistemlerin özelliklerini açıklar."],
+"Le Chatelier İlkesi":["Dengeye etki eden faktörleri Le Chatelier ilkesiyle açıklar."],
+"pH ve pOH":["pH ve pOH kavramlarını açıklar ve hesaplar."],
+"Nötrleşme":["Asit-baz nötrleşme tepkimelerini ve titrasyonu açıklar."],
+"Tampon Çözeltiler":["Tampon çözeltilerin özelliklerini ve kullanım alanlarını açıklar."],
+"Asit-Baz Dengesi ve Tampon Çözeltiler":["Sulu çözeltilerde asit-baz dengesini açıklar.","Kuvvetli ve zayıf asit-bazları karşılaştırır."]
+},
+"Biyoloji":{
+"Sinir Sistemi":["Sinir sisteminin yapısını, görevlerini ve nöronların çalışmasını açıklar."],
+"Beynin Bölümleri":["Beyin, beyincik, omurilik soğanı ve omuriliğin görevlerini açıklar."],
+"Endokrin Sistem":["Endokrin bezleri ve salgıladıkları hormonların etkilerini açıklar."],
+"Hormonlar":["Hormonların vücuttaki düzenleyici etkilerini ve geri bildirim mekanizmasını açıklar."],
+"Duyu Organları":["Duyu organlarının yapısını ve uyarıların algılanmasını açıklar."],
+"Göz":["Gözün yapısını, görme olayını ve göz kusurlarını açıklar."],
+"Kulak ve İşitme":["Kulağın yapısını, işitme ve denge olayını açıklar."],
+"Destek ve Hareket Sistemi":["Kemik, kıkırdak, eklem ve kasların yapısını ve görevlerini açıklar."],
+"Sindirim Sistemi":["Sindirim sisteminin yapısını ve besinlerin sindirimini açıklar."],
+"Sindirim Enzimleri":["Karbonhidrat, protein ve yağların sindiriminde görev alan enzimleri açıklar."],
+"Dolaşım Sistemi":["Dolaşım sisteminin yapısını ve büyük-küçük kan dolaşımını açıklar."],
+"Kalp ve Damarlar":["Kalbin yapısını ve atardamar, toplardamar, kılcal damarların özelliklerini açıklar."],
+"Kan Hücreleri":["Alyuvar, akyuvar ve kan pulcuklarının görevlerini açıklar."],
+"Bağışıklık":["Vücudun savunma mekanizmalarını açıklar."],
+"Bağışıklık Sistemi":["Doğal ve kazanılmış bağışıklığı açıklar.","Aşı ve serumun farkını açıklar."],
+"Savunma Hücreleri":["Fagositoz yapan hücrelerin ve lenfositlerin görevlerini açıklar."],
+"Solunum Sistemi":["Solunum sisteminin yapısını, soluk alıp verme ve gaz değişimini açıklar."],
+"Boşaltım Sistemi":["Böbreklerin yapısını ve idrar oluşumunu açıklar."],
+"Embriyo Gelişimi":["Döllenmeden doğuma kadar embriyonik gelişimin evrelerini açıklar."],
+"Popülasyon Ekolojisi":["Popülasyonun yoğunluk, dağılış ve yaş yapısı gibi özelliklerini açıklar."],
+"Popülasyon Büyümesi":["Üstel ve lojistik popülasyon büyümesini karşılaştırır.","Taşıma kapasitesi kavramını açıklar."]
+},
+"Psikoloji":{
+"Psikolojinin Tanımı":["Psikolojinin konusunu ve amaçlarını açıklar."],
+"Psikolojinin Alt Alanları":["Psikolojinin temel ve uygulamalı alanlarını tanıtır."],
+"Psikolojinin Tarihçesi":["Psikolojinin bilim olarak gelişimini ve başlıca yaklaşımlarını açıklar."],
+"Psikolojide Araştırma Yöntemleri":["Psikolojide kullanılan araştırma yöntemlerini ve etik ilkeleri açıklar."],
+"Sinir Sistemi ve Davranış":["Davranışın biyolojik temellerini açıklar."],
+"Duyum ve Algı":["Duyum ve algı süreçlerini ayırt eder; algıyı etkileyen faktörleri açıklar."],
+"Öğrenme":["Öğrenme kuramlarını (klasik ve edimsel koşullanma, model alma) açıklar."],
+"Bellek":["Bellek süreçlerini ve bellek türlerini açıklar."],
+"Unutma":["Unutmanın nedenlerini açıklar ve hatırlamayı kolaylaştıran yöntemleri belirtir."],
+"Düşünme ve Problem Çözme":["Düşünme süreçlerini ve problem çözme yöntemlerini açıklar."],
+"Güdüler":["Güdülerin türlerini ve Maslow'un ihtiyaçlar hiyerarşisini açıklar."],
+"Duygular":["Temel duyguları ve duyguların yönetimini açıklar."],
+"Gelişim Dönemleri":["Gelişim dönemlerinin özelliklerini açıklar."],
+"Ergenlik Psikolojisi":["Ergenlik döneminin bedensel, duygusal ve sosyal özelliklerini açıklar."],
+"Kişilik":["Kişiliği etkileyen faktörleri ve kişilik kuramlarını açıklar."],
+"Stres ve Başa Çıkma":["Stresin kaynaklarını ve stresle başa çıkma yollarını açıklar."],
+"Ruh Sağlığı":["Ruh sağlığını korumanın önemini ve yardım alma yollarını açıklar."],
+"Sosyal Etki ve Uyma":["Grubun birey üzerindeki etkisini (uyma, itaat) açıklar."]
+},
+"Sosyoloji":{
+"Sosyolojinin Tanımı":["Sosyolojinin konusunu ve amacını açıklar."],
+"Sosyolojinin Doğuşu":["Sosyolojinin ortaya çıkışını hazırlayan toplumsal koşulları açıklar."],
+"Türkiye'de Sosyoloji":["Türkiye'de sosyolojinin gelişimini ve önemli temsilcilerini açıklar."],
+"Sosyolojide Araştırma Yöntemleri":["Sosyolojide kullanılan araştırma yöntemlerini açıklar."],
+"Birey ve Toplum":["Birey ile toplum arasındaki ilişkiyi ve toplumsallaşma sürecini açıklar."],
+"Toplumsal Statü ve Rol":["Statü ve rol kavramlarını örneklerle açıklar."],
+"Toplumsal Gruplar":["Toplumsal grupların türlerini ve özelliklerini açıklar."],
+"Toplumsal Kurumlar":["Temel toplumsal kurumların işlevlerini açıklar."],
+"Aile Kurumu":["Ailenin toplumsal işlevlerini ve aile türlerini açıklar."],
+"Kültür":["Kültürün özelliklerini ve ögelerini açıklar."],
+"Kültürel Değişme":["Kültürel değişme süreçlerini (kültürleşme, asimilasyon, kültürel gecikme) açıklar."],
+"Toplumsal Değişme":["Toplumsal değişmenin nedenlerini ve sonuçlarını açıklar."],
+"Göç":["Göçün türlerini, nedenlerini ve toplumsal etkilerini açıklar."],
+"Toplumsal Tabakalaşma":["Toplumsal tabakalaşma ve toplumsal hareketlilik kavramlarını açıklar."],
+"Toplumsal Normlar ve Kontrol":["Toplumsal normların türlerini ve toplumsal kontrolü açıklar."],
+"Medya ve Toplum":["Medyanın toplumsal işlevlerini açıklar ve medya okuryazarlığı becerisi kazanır."],
+"Toplumsal Sorunlar":["Toplumsal sorunları tanımlar ve çözüm önerileri geliştirir."]
+}
+});
+KAZ["12"]=KAZ["12"]||{};
+KAZ["12"]["Mantık"]={
+"Mantığın Tanımı":["Mantığın konusunu ve önemini açıklar."],
+"Düşünce İlkeleri":["Özdeşlik, çelişmezlik ve üçüncü hâlin imkânsızlığı ilkelerini açıklar."],
+"Kavram ve Terim":["Kavram ve terimi ayırt eder; içlem ve kaplam ilişkisini açıklar."],
+"Tanım":["Tanım türlerini ve iyi bir tanımın kurallarını açıklar."],
+"Önerme":["Önermeyi tanımlar ve önerme türlerini sınıflandırır."],
+"Karşıtlık Karesi":["Önermeler arasındaki karşı olma ilişkilerini karşıtlık karesiyle açıklar."],
+"Kıyas":["Kıyasın yapısını açıklar ve geçerli kıyasları belirler."],
+"Akıl Yürütme Türleri":["Tümdengelim, tümevarım ve analojiyi karşılaştırır."],
+"Doğruluk ve Geçerlilik":["Doğruluk ile geçerlilik arasındaki farkı açıklar."],
+"Sembolik Mantık":["Önermeleri sembollerle gösterir ve doğruluk tablosu oluşturur."],
+"Safsatalar":["Safsata türlerini tanır ve örnekler üzerinde açıklar."],
+"Dil ve Mantık":["Dilin işlevlerini ve mantık açısından doğru dil kullanımını açıklar."],
+"Mantık ve Bilim":["Mantığın bilimsel yöntemle ilişkisini açıklar."],
+"Eleştirel Düşünme":["Bilgi ve iddiaları eleştirel düşünme ilkeleriyle değerlendirir."],
+"Mantığın Tarihçesi":["Mantığın tarihsel gelişimini ve önemli temsilcilerini açıklar."],
+"Mantık Bulmacaları":["Mantık bulmacalarını sistematik akıl yürütmeyle çözer."]
+};
+
+const EXP1={
+"Türkçe":{
+"Harfler ve Sesler":"Konuşurken çıkardığımız her sesin yazıdaki karşılığına harf denir. Türkçede 29 harf vardır. Harfler ünlü (sesli) ve ünsüz (sessiz) olarak ikiye ayrılır. A, E, I, İ, O, Ö, U, Ü ünlü harflerdir; bu harfler tek başına rahatça okunabilir. Diğer 21 harf ise ünsüzdür.",
+"Büyük ve Küçük Harf":"Her harfin büyük ve küçük olmak üzere iki yazılışı vardır: A–a, B–b, İ–i gibi. Cümleye büyük harfle başlarız. İnsan adları, şehir ve ülke adları gibi özel isimlerin ilk harfi de büyük yazılır: Ayşe, Ankara, Türkiye. Diğer kelimeleri küçük harfle yazarız.",
+"Kelime":"Anlamı olan harf ya da harf topluluklarına kelime denir. 'Elma', 'okul', 'koş' birer kelimedir. Kelimeler hecelerden oluşur: 'ki-tap' iki heceli, 'ar-ka-daş' üç heceli bir kelimedir. Kelimeleri yan yana getirerek cümle kurarız.",
+"Dinleme ve Konuşma":"İyi bir dinleyici konuşan kişinin yüzüne bakar, sözünü kesmez ve söylenenleri dikkatle dinler. Konuşurken ise sırayla söz alırız, sesimizi uygun tonda kullanırız ve kibar kelimeler seçeriz. Söz almak için parmak kaldırmak sınıfta güzel bir davranıştır.",
+"Okuma Kuralları":"Okurken kitabı gözümüzden yaklaşık 30 santimetre uzakta tutarız. Aydınlık bir yerde, dik oturarak okumalıyız. Kelimeleri doğru ve anlayarak okur, noktalama işaretlerinde dururuz. Okuduğumuzu anlamak için 'Kim? Ne? Nerede? Ne zaman?' sorularını sorabiliriz.",
+"Görsel Okuma":"Resimler ve görseller de bize bilgi verir. Bir resme bakarken önce genel olarak inceler, sonra ayrıntılara dikkat ederiz: Kimler var? Ne yapıyorlar? Nerede bulunuyorlar? Görsellerden yola çıkarak olayı tahmin edebilir ve hikâye anlatabiliriz.",
+"Yazma Kuralları":"Yazı yazarken dik oturur, kalemi doğru tutar ve defterimizi düzgün koyarız. Harfleri satır çizgisine uygun ve eşit büyüklükte yazarız. Kelimeler arasında bir parmak kadar boşluk bırakırız. Cümleye büyük harfle başlar, cümlenin sonuna nokta koyarız.",
+"Nezaket Kelimeleri":"Nezaket kelimeleri, insanlarla konuşurken kibar olmamızı sağlar. 'Lütfen', 'teşekkür ederim', 'özür dilerim', 'günaydın', 'iyi akşamlar', 'afiyet olsun' ve 'kolay gelsin' nezaket kelimelerine örnektir. Bu kelimeleri kullanmak insanlar arasında sevgi ve saygıyı artırır.",
+"Alfabe":"Bir dildeki harflerin belli bir sıraya göre dizilişine alfabe denir. Türk alfabesinde 29 harf vardır: A, B, C, Ç, D, E, F, G, Ğ, H, I, İ, J, K, L, M, N, O, Ö, P, R, S, Ş, T, U, Ü, V, Y, Z. Türk alfabesi 1 Kasım 1928'de kabul edilmiştir.",
+"Kısa Metin Okuma":"Kısa bir metni okurken önce başlığına bakar, metnin neyi anlatacağını tahmin ederiz. Sonra metni dikkatlice, anlayarak okuruz. Okuduktan sonra metinde kimlerin olduğunu, neler olduğunu ve olayların nerede geçtiğini anlatabiliriz.",
+"Cümle Kurma":"Bir duyguyu, düşünceyi ya da olayı anlatan kelime grubuna cümle denir. Cümleye büyük harfle başlarız. Cümlenin sonuna anlamına göre nokta (.), soru işareti (?) ya da ünlem işareti (!) koyarız. Örnek: 'Ali okula gitti.' Kelimeleri doğru sıraya dizmek anlamlı cümle kurmamızı sağlar.",
+"Bilmece ve Tekerleme":"Bilmeceler, bir varlığın özelliklerini anlatıp onun ne olduğunu tahmin etmemizi isteyen eğlenceli sözlerdir: 'Ağzı var dili yok, konuşur sesi yok.' (mektup). Tekerlemeler ise ses benzerlikleriyle oluşturulan, hızlı söylenen sözlerdir. Tekerlemeler dilimizi döndürmemize ve kelimeleri doğru söylememize yardımcı olur.",
+"Hikâye Dinleme":"Hikâye dinlerken anlatana dikkatimizi verir, olayların sırasını aklımızda tutarız. Hikâyedeki kişileri, olayın geçtiği yeri ve zamanı belirleriz. Hikâye bitince ne olduğunu kendi cümlelerimizle anlatabilir, hikâyenin bize verdiği mesajı düşünebiliriz.",
+"Resim ve Kelime":"Resimler kelimeleri öğrenmemize yardımcı olur. Bir resme bakıp gördüğümüz varlığın adını söyler ve yazarız: elma resmi için 'elma'. Kelimeleri resimlerle eşleştirmek hem okumayı hem de kelimenin anlamını öğrenmeyi kolaylaştırır.",
+"Şiir Okuma":"Şiirler dizelerden oluşur ve duyguları ahenkli bir dille anlatır. Şiir okurken duyguya uygun bir ses tonu kullanırız. Dizelerin sonunda kısa duraklarız. Şiirlerdeki benzer sesleri (uyakları) fark etmek şiire ritim kazandırır."
+},
+"Matematik":{
+"Sayılar (1-100)":"Sayıları sayarak varlıkların kaç tane olduğunu buluruz. 1'den 100'e kadar sayıları ileriye ve geriye doğru sayabiliriz. Onar onar saymak (10, 20, 30…) çok sayıda nesneyi saymayı kolaylaştırır. 100 sayısı 10 tane 10'dan oluşur.",
+"Toplama":"Toplama, iki ya da daha fazla çokluğu bir araya getirmektir. Toplama işleminin işareti '+' sembolüdür. 3 elmanın yanına 2 elma daha koyarsak 3 + 2 = 5 elma olur. Toplanan sayıların yeri değişse de sonuç değişmez: 2 + 3 = 3 + 2.",
+"Çıkarma":"Çıkarma, bir çokluktan bir kısmını ayırmaktır. Çıkarma işleminin işareti '−' sembolüdür. 7 kuştan 3'ü uçarsa 7 − 3 = 4 kuş kalır. Çıkarma işleminin sonucunu toplama ile kontrol edebiliriz: 4 + 3 = 7.",
+"Geometrik Şekiller":"Çevremizdeki nesneler farklı şekillere benzer. Üçgenin 3 kenarı ve 3 köşesi vardır. Karenin 4 kenarı eşittir ve 4 köşesi vardır. Dikdörtgenin 4 kenarı, 4 köşesi vardır. Çemberin ise köşesi yoktur, yuvarlaktır. Saat çembere, pencere kareye ya da dikdörtgene benzer.",
+"Uzunluk Karşılaştırma":"Nesnelerin uzunluklarını karşılaştırırken onları yan yana koyar, başlangıç noktalarını aynı hizaya getiririz. Daha uzun olanı, daha kısa olanı ve eşit uzunlukta olanları belirleriz. Uzunlukları ölçmek için karış, adım ve kulaç gibi standart olmayan birimler de kullanabiliriz.",
+"Paralarımız":"Ülkemizin parası Türk lirasıdır. Paralarımız madeni para ve kâğıt para olmak üzere ikiye ayrılır. 1 Türk lirası 100 kuruştur. Alışveriş yaparken paranın değerini bilmek ve para üstünü kontrol etmek önemlidir. Paramızı biriktirmek için kumbara kullanabiliriz.",
+"Sayıları Karşılaştırma":"İki sayıdan hangisinin büyük, hangisinin küçük olduğunu bulmaya karşılaştırma denir. Büyük sayı daha fazla nesneyi gösterir. Karşılaştırmada 'büyüktür' (>), 'küçüktür' (<) ve 'eşittir' (=) işaretleri kullanılır: 8 > 5, 3 < 9, 4 = 4.",
+"Örüntüler":"Belli bir kurala göre tekrar eden şekil, sayı ya da renk dizilerine örüntü denir. Örneğin 'kırmızı, mavi, kırmızı, mavi…' bir örüntüdür; sıradaki renk kırmızıdır. Örüntünün kuralını bularak devamını tahmin edebiliriz. Sayı örüntüsüne örnek: 2, 4, 6, 8…",
+"Tartma":"Nesnelerin ağırlıklarını karşılaştırmak için eşit kollu terazi kullanırız. Terazinin aşağıya inen kefesindeki nesne daha ağır, yukarıda kalan kefedeki nesne daha hafiftir. Kefeler aynı hizada duruyorsa iki nesne eşit ağırlıktadır.",
+"Veri Toplama":"Bir konu hakkında bilgi toplamaya veri toplama denir. Örneğin sınıfımızdaki arkadaşlarımıza en sevdikleri meyveyi sorarak veri toplayabiliriz. Topladığımız verileri çetele ile sayar, tablo ya da resim grafiğiyle gösteririz. Böylece en çok sevilen meyveyi kolayca buluruz.",
+"Sıfır":"Sıfır (0), hiç nesne olmadığını gösteren sayıdır. Tabakta 3 elma varken 3'ünü de yersek 0 elma kalır. Bir sayıya sıfır eklersek ya da bir sayıdan sıfır çıkarırsak sayı değişmez: 5 + 0 = 5, 5 − 0 = 5. Sıfır, 10 ve 20 gibi sayılarda birler basamağında da kullanılır.",
+"Önce – Sonra – Arasında":"Sıralamada konumları belirtmek için 'önce', 'sonra' ve 'arasında' kelimelerini kullanırız. Sayı dizisinde 4, 5'ten önce; 6, 5'ten sonra gelir. 5 sayısı 4 ile 6'nın arasındadır. Günlük hayatta da kahvaltıdan önce yüzümüzü yıkar, okuldan sonra ödev yaparız.",
+"Toplama ve Çıkarma Problemleri":"Problem çözerken önce problemi dikkatle okur, verilenleri ve isteneni buluruz. 'Toplam', 'daha fazla', 'eklendi' gibi ifadeler genellikle toplama; 'kaldı', 'verdi', 'eksildi' gibi ifadeler çıkarma işlemine işaret eder. İşlemi yapar ve sonucumuzu kontrol ederiz.",
+"Tam Saatler":"Saatin kısa kolu (akrep) saati, uzun kolu (yelkovan) dakikayı gösterir. Yelkovan 12'nin üzerindeyken saat tamdır. Akrep 3'ü, yelkovan 12'yi gösteriyorsa saat 3'tür. Bir gün 24 saattir; sabah, öğle, akşam ve gece gibi bölümlere ayrılır.",
+"Sayı Doğrusu":"Sayı doğrusu, sayıların eşit aralıklarla sırayla dizildiği bir çizgidir. Sayı doğrusunda sağa doğru gittikçe sayılar büyür, sola doğru gittikçe küçülür. Toplama yaparken sağa, çıkarma yaparken sola doğru adım atarız.",
+"Sıra Sayıları":"Varlıkların sırasını belirten sayılara sıra sayısı denir: birinci, ikinci, üçüncü, dördüncü… Sıra sayıları rakamla yazılırken sayının yanına nokta konur: 1., 2., 3. Bir yarışta ilk gelen birinci, ondan sonra gelen ikinci olur.",
+"Yer ve Konum":"Nesnelerin yerini anlatmak için 'altında', 'üstünde', 'yanında', 'önünde', 'arkasında', 'içinde', 'dışında', 'sağında' ve 'solunda' gibi kelimeler kullanırız. Örneğin 'Kalem masanın üstünde, çanta sandalyenin yanında.' Sağ ve solumuzu doğru bilmek yön bulmamıza yardımcı olur.",
+"İki Basamaklı Sayılar":"10'dan 99'a kadar olan sayılar iki basamaklıdır. Bu sayıların onlar ve birler basamağı vardır. 47 sayısında 4 onlar basamağında, 7 birler basamağındadır; yani 47, 4 onluk ve 7 birlikten oluşur. Onluk ve birlikleri modellerle göstermek sayıları anlamayı kolaylaştırır.",
+"Nesne Sayma":"Nesneleri sayarken her nesneyi yalnızca bir kez sayarız. Saydığımız nesneleri işaretlemek ya da bir kenara ayırmak karışıklığı önler. Son söylediğimiz sayı toplam nesne sayısını verir. Çok sayıda nesneyi ikişer, beşer ya da onar gruplayarak daha hızlı sayabiliriz.",
+"Yarım ve Bütün":"Bir bütünü iki eş parçaya ayırdığımızda her bir parça bütünün yarısıdır. İki yarım bir araya gelince bütünü oluşturur. Bir elmayı ortadan ikiye kestiğimizde iki yarım elma elde ederiz. Parçaların eşit olması önemlidir; eşit değilse yarım denmez.",
+"Uzun – Kısa, Ağır – Hafif":"Nesneleri uzunluklarına göre uzun ve kısa, ağırlıklarına göre ağır ve hafif olarak karşılaştırırız. Bir zürafa tavşandan uzundur, bir fil kediden ağırdır. Karşılaştırma yaparken nesneleri yan yana koymak ya da terazi kullanmak doğru karar vermemizi sağlar."
+},
+"Hayat Bilgisi":{
+"Okulumuzda Hayat":"Okul, öğrenmek, arkadaş edinmek ve eğlenmek için gittiğimiz yerdir. Okulumuzda öğretmenlerimiz, okul müdürümüz ve diğer çalışanlar bize yardımcı olur. Sınıfımızı ve okulumuzu temiz tutmak, kurallara uymak ve arkadaşlarımıza saygılı olmak sorumluluklarımızdır.",
+"Sağlıklı Hayat":"Sağlıklı olmak için dengeli beslenmeli, bol su içmeli, her gün hareket etmeli ve yeterince uyumalıyız. Ellerimizi sık sık yıkamak, dişlerimizi fırçalamak ve temiz giysiler giymek bizi hastalıklardan korur. Hastalandığımızda bir yetişkine haber vermeliyiz.",
+"Güvenli Hayat":"Evde, okulda ve sokakta güvenliğimize dikkat etmeliyiz. Prizlere dokunmamalı, ilaçları ve temizlik maddelerini kullanmamalı, tanımadığımız kişilerle bir yere gitmemeliyiz. Acil durumlarda 112'yi arayabileceğimizi bilmeli ve ev adresimizi öğrenmeliyiz.",
+"Evimizde Hayat":"Evimiz ailemizle birlikte yaşadığımız yerdir. Evde herkesin görevleri vardır: odamızı toplamak, sofrayı kurmaya yardım etmek ve eşyalarımızı yerine koymak bizim görevlerimizdir. Aile bireyleri birbirine sevgi ve saygı gösterir, yardımlaşır.",
+"Millî Sembollerimiz":"Bayrağımız, İstiklal Marşı'mız ve Atatürk millî sembollerimizdir. Bayrağımız kırmızı zemin üzerinde beyaz ay ve yıldızdan oluşur. İstiklal Marşı'nı Mehmet Akif Ersoy yazmıştır ve okunurken saygı duruşunda bulunuruz. Millî sembollerimize saygı göstermek hepimizin görevidir.",
+"Doğada Hayat":"Doğada bitkiler, hayvanlar, su, toprak ve hava bulunur. Bitkiler ve hayvanlar yaşamak için suya, havaya ve besine ihtiyaç duyar. Doğayı korumak için çöplerimizi yere atmamalı, ağaçlara ve çiçeklere zarar vermemeli, hayvanlara iyi davranmalıyız.",
+"Duygularımız":"İnsanlar mutluluk, üzüntü, korku, öfke ve şaşkınlık gibi farklı duygular yaşar. Duygularımızı tanımak ve uygun şekilde ifade etmek önemlidir. Öfkelendiğimizde derin nefes almak, üzüldüğümüzde sevdiğimiz biriyle konuşmak bize iyi gelir. Başkalarının duygularını da anlamaya çalışmalıyız.",
+"Kişisel Temizlik":"Kişisel temizlik sağlığımızı korur. Yemekten önce ve sonra, tuvaletten sonra ellerimizi sabunla yıkarız. Dişlerimizi sabah ve akşam fırçalarız. Düzenli banyo yapar, tırnaklarımızı keser ve temiz giysiler giyeriz. Havlu ve diş fırçası gibi eşyalarımızı başkalarıyla paylaşmayız.",
+"Meslekler":"İnsanlar ihtiyaçlarını karşılamak ve topluma yardım etmek için farklı meslekler yapar. Öğretmen öğretir, doktor hastaları tedavi eder, çiftçi ürün yetiştirir, itfaiyeci yangın söndürür. Her meslek önemlidir ve toplum için gereklidir. Meslek sahibi olmak için okumak ve çalışmak gerekir.",
+"Zaman Kavramları":"Zamanı anlatmak için dün, bugün, yarın, sabah, öğle, akşam ve gece gibi kelimeler kullanırız. Bir hafta 7 gündür: pazartesi, salı, çarşamba, perşembe, cuma, cumartesi, pazar. Günlük işlerimizi zamana göre sıralarız: sabah kalkar, okula gider, akşam ödevimizi yaparız.",
+"Okul Eşyaları":"Kalem, silgi, kalemtıraş, defter, kitap, cetvel ve boya kalemleri okul eşyalarımızdır. Eşyalarımızı özenli kullanmalı, kaybetmemek için üzerine adımızı yazmalıyız. İhtiyacımız olmayan eşyaları almamalı, israf etmemeliyiz. Arkadaşımızın eşyasını kullanmadan önce izin isteriz.",
+"Bitki ve Hayvan Bakımı":"Bitkiler canlıdır; büyümek için suya, ışığa ve toprağa ihtiyaç duyar. Evdeki bitkilerimizi düzenli sularız. Hayvanlar da canlıdır ve beslenmeye, temiz suya ve barınağa ihtiyaç duyar. Evcil ya da sokak hayvanlarına su ve mama vererek, onlara nazik davranarak yardım edebiliriz.",
+"Ailemiz":"Aile anne, baba ve çocuklardan oluşur. Büyükanne, büyükbaba, teyze, amca, hala ve dayı gibi akrabalarımız da geniş ailemizi oluşturur. Aile bireyleri birbirini sever, korur ve yardımlaşır. Aile büyüklerimize saygı göstermeli, küçüklerimize sevgiyle davranmalıyız.",
+"Hava Durumu":"Hava güneşli, bulutlu, yağmurlu, karlı ya da rüzgârlı olabilir. Hava durumuna uygun giyinmek bizi hastalıklardan korur: yağmurlu havada şemsiye ve yağmurluk, karlı havada mont ve eldiven kullanırız. Hava durumunu televizyondan ya da internetten öğrenebiliriz.",
+"Okulda Arkadaşlık":"Okulda yeni arkadaşlar ediniriz. İyi bir arkadaş paylaşır, yardım eder, sırasını bekler ve arkadaşlarının duygularına saygı gösterir. Oyunlarda kurallara uymalı, kimseyi dışlamamalıyız. Bir sorun yaşadığımızda konuşarak çözmeye çalışır, gerekirse öğretmenimizden yardım isteriz.",
+"Ulaşım Araçları":"İnsanlar bir yerden başka bir yere gitmek için ulaşım araçlarını kullanır. Otomobil, otobüs ve bisiklet karada; gemi ve vapur denizde; uçak ve helikopter havada; tren ise raylarda gider. Ulaşım araçlarında emniyet kemeri takmalı ve kurallara uymalıyız.",
+"Su ve Enerji Tasarrufu":"Su ve elektrik değerli kaynaklarımızdır ve israf edilmemelidir. Dişlerimizi fırçalarken musluğu kapatmalı, boş odalarda yanan lambaları söndürmeliyiz. Kullanmadığımız elektrikli eşyaların fişini çekmek de enerji tasarrufu sağlar. Tasarruf hem doğayı hem de aile bütçemizi korur.",
+"Trafikte Güvenlik":"Trafikte güvenliğimiz için kurallara uymalıyız. Kaldırımda yürümeli, karşıdan karşıya yaya geçidinden geçmeliyiz. Trafik ışığında kırmızı 'dur', sarı 'hazırlan', yeşil 'geç' demektir. Karşıya geçmeden önce sola, sağa, sonra tekrar sola bakarız. Mümkünse bir büyüğümüzün elini tutarız."
+}};
+const EXP2={
+"Türkçe":{
+"Eş Anlamlı Kelimeler":"Yazılışları farklı, anlamları aynı ya da çok yakın olan kelimelere eş anlamlı kelimeler denir. Örneğin 'okul – mektep', 'siyah – kara', 'cevap – yanıt', 'öğrenci – talebe' eş anlamlıdır. Eş anlamlı kelimeleri kullanmak aynı kelimeyi tekrar etmekten kurtarır ve anlatımı zenginleştirir.",
+"Zıt Anlamlı Kelimeler":"Anlamca birbirinin karşıtı olan kelimelere zıt anlamlı kelimeler denir. Örneğin 'büyük – küçük', 'sıcak – soğuk', 'uzun – kısa', 'açık – kapalı', 'gece – gündüz' zıt anlamlıdır. Zıt anlamlı kelimeler varlıkları karşılaştırırken işimize yarar.",
+"Noktalama İşaretleri":"Noktalama işaretleri yazıyı doğru okumamıza ve anlamamıza yardım eder. Nokta (.) cümlenin sonuna konur. Soru işareti (?) soru cümlelerinin sonuna, ünlem işareti (!) sevinç, korku, şaşkınlık gibi duyguları anlatan cümlelerin sonuna konur. Virgül (,) ise sıralanan kelimelerin arasına konur.",
+"Hikâye Okuma":"Hikâyelerde olaylar, kişiler, yer ve zaman vardır. Hikâye okurken olayların sırasına dikkat ederiz: başlangıçta ne oldu, sonra ne oldu, sonunda nasıl bitti? Hikâyenin ana karakterini ve bize verdiği mesajı bulmaya çalışırız. Okuduktan sonra hikâyeyi kendi cümlelerimizle anlatabiliriz.",
+"Alfabetik Sıralama":"Kelimeleri alfabedeki harf sırasına göre dizmeye alfabetik sıralama denir. Önce kelimelerin ilk harflerine bakarız: 'armut, elma, kiraz'. İlk harfler aynıysa ikinci harfe bakarız: 'kalem, kitap'. Sözlükler ve sınıf listeleri alfabetik sıraya göre düzenlenir.",
+"Tekil ve Çoğul":"Bir tane varlığı anlatan kelimeler tekildir: 'kitap', 'kuş'. Birden fazla varlığı anlatmak için kelimeye '-ler' veya '-lar' eki getiririz: 'kitaplar', 'kuşlar'. Kelimenin son hecesinde e, i, ö, ü varsa '-ler'; a, ı, o, u varsa '-lar' eki gelir: 'evler', 'okullar'.",
+"Ünlü ve Ünsüz Harfler":"Türk alfabesindeki 29 harften 8'i ünlüdür: a, e, ı, i, o, ö, u, ü. Ünlü harfler tek başına okunabilir. Diğer 21 harf ünsüzdür ve okunurken bir ünlüden yardım alır: b (be), c (ce) gibi. Her hecede mutlaka bir ünlü harf bulunur.",
+"Sözlük Kullanımı":"Sözlük, kelimelerin anlamlarını ve doğru yazılışlarını öğrendiğimiz kitaptır. Sözlükteki kelimeler alfabetik sıraya göre dizilmiştir. Bir kelimeyi ararken önce ilk harfinin bulunduğu bölüme gider, sonra diğer harflere göre kelimeyi buluruz. Türk Dil Kurumunun sözlüğünü internetten de kullanabiliriz.",
+"Başlık ve Konu":"Konu, bir metinde anlatılan olay ya da düşüncedir. Başlık ise metnin konusunu kısaca gösteren ve okuru metne çeken addır. Başlık genellikle metnin en üstünde yer alır. Bir metne başlık koyarken metnin ne anlattığını düşünür, kısa ve dikkat çekici bir başlık seçeriz.",
+"Kısaltmalar":"Bazı kelimeleri ve kurum adlarını daha kısa yazmak için kısaltmalar kullanırız. Örneğin 'Türkiye Büyük Millet Meclisi' için TBMM, 'santimetre' için cm, 'kilogram' için kg, 'Türk Dil Kurumu' için TDK yazarız. Kısaltmalar yazıda yer kazandırır.",
+"Heceleme":"Kelimeleri ağzımızın bir açılışta çıkardığı ses parçalarına ayırmaya heceleme denir. Her hecede bir ünlü harf bulunur, bu yüzden bir kelimede kaç ünlü varsa o kadar hece vardır. Örneğin 'ki-tap' iki, 'ar-ka-daş' üç, 'o-kul' iki hecelidir.",
+"Duygu Cümleleri":"Sevinç, korku, şaşkınlık, üzüntü, heyecan gibi duyguları anlatan cümlelere duygu cümleleri denir. Bu cümlelerin sonuna genellikle ünlem işareti (!) konur. Örneğin 'Yaşasın, bugün tatil!' sevinç; 'Eyvah, geç kaldım!' telaş anlatır.",
+"Görsel Yorumlama":"Bir görseli yorumlarken önce resimde neler olduğunu dikkatle inceleriz. Kişilerin yüz ifadelerinden duygularını, çevreden olayın nerede ve ne zaman geçtiğini tahmin ederiz. Görseldeki ayrıntıları kullanarak bir hikâye oluşturabilir, olayın öncesini ve sonrasını hayal edebiliriz.",
+"Özel İsimlerin Yazımı":"Kişi, ülke, şehir, ırmak, dağ ve hayvanlara verilen özel adlar büyük harfle başlar: Ali, Türkiye, İzmir, Kızılırmak, Ağrı Dağı, Pamuk (kedinin adı). Özel isimlere gelen ekler kesme işaretiyle ayrılır: 'Ankara'ya', 'Ayşe'nin'. Cümlenin içinde olsa bile özel isimler büyük harfle yazılır.",
+"Ek Getirerek Kelime Türetme":"Kelimelere bazı ekler getirerek yeni anlamlı kelimeler türetebiliriz. Örneğin 'göz' kelimesinden 'gözlük', 'gözcü'; 'tuz' kelimesinden 'tuzluk', 'tuzlu'; 'kitap' kelimesinden 'kitaplık', 'kitapçı' kelimeleri türer. Türeyen kelime ile kök kelime arasında anlam ilgisi vardır.",
+"Bir Kelime Birçok Anlam":"Bazı kelimeler cümlede kullanıldığı yere göre farklı anlamlar kazanır. Örneğin 'yüz' kelimesi 'Yüzünü yıkadı.' cümlesinde bir organı, 'Yüz kalem aldı.' cümlesinde bir sayıyı, 'Denizde yüz.' cümlesinde suda ilerlemeyi anlatır. Kelimenin anlamını cümleden anlarız.",
+"Mektup Yazma":"Mektup, uzakta olan birine duygu ve düşüncelerimizi yazıyla iletmektir. Mektubun sağ üst köşesine tarih yazılır. Ardından 'Sevgili Annem' gibi bir hitapla başlanır. Sonra söylemek istediklerimizi yazarız ve 'Sevgiyle' gibi bir sözle bitirip adımızı yazarız."
+},
+"Matematik":{
+"Basamak Değeri":"Bir sayıdaki rakamın bulunduğu basamağa göre aldığı değere basamak değeri denir. 2. sınıfta üç basamaklı sayıları öğreniriz. 345 sayısında 3 yüzler, 4 onlar, 5 birler basamağındadır. 3'ün basamak değeri 300, 4'ün 40, 5'in 5'tir: 300 + 40 + 5 = 345.",
+"Çarpma":"Çarpma, aynı sayının tekrar tekrar toplanmasının kısa yoludur. Çarpma işleminin işareti '×' sembolüdür. 3 tabakta 4'er elma varsa 4 + 4 + 4 = 12'dir; bunu kısaca 3 × 4 = 12 diye yazarız. Çarpılan sayıların yeri değişse de sonuç değişmez: 3 × 4 = 4 × 3.",
+"Zaman Ölçme":"Zamanı ölçmek için saat, gün, hafta, ay ve yıl birimlerini kullanırız. 1 saat 60 dakikadır. 1 gün 24 saattir. 1 hafta 7 gün, 1 yıl 12 aydır. Saatte yelkovan 6'yı gösterdiğinde saat 'buçuk', 3'ü gösterdiğinde 'çeyrek geçe', 9'u gösterdiğinde 'çeyrek kala' olur.",
+"Eldeli Toplama":"Toplama yaparken birler basamağındaki sayıların toplamı 10 ya da daha fazla olursa 'eldeli toplama' yaparız. 10 birliği 1 onluğa çevirir ve onlar basamağına elde olarak ekleriz. Örneğin 27 + 15 işleminde 7 + 5 = 12 olur; 2'yi yazar, 1'i elde olarak onlara ekleriz: 42.",
+"Geometrik Cisimler":"Geometrik cisimler üç boyutludur; eni, boyu ve yüksekliği vardır. Küp (zar), kare prizma, dikdörtgenler prizması (kibrit kutusu), üçgen prizma, silindir (bardak), küre (top) ve koni (dondurma külahı) geometrik cisimlere örnektir. Cisimlerin yüzleri, köşeleri ve ayrıtları vardır.",
+"Bölme (Paylaştırma)":"Bölme, bir çokluğu eşit gruplara ayırmak ya da eşit paylaştırmaktır. Bölme işleminin işareti '÷' sembolüdür. 12 şekeri 3 arkadaşa eşit paylaştırırsak her birine 12 ÷ 3 = 4 şeker düşer. Bölme işlemini çarpma ile kontrol edebiliriz: 3 × 4 = 12.",
+"Ritmik Sayma":"Belli bir sayıyı sürekli ekleyerek saymaya ritmik sayma denir. İkişer ritmik sayma: 2, 4, 6, 8, 10… Beşer: 5, 10, 15, 20… Onar: 10, 20, 30, 40… Ritmik sayma, nesneleri hızlı saymamızı sağlar ve çarpım tablosunu öğrenmemize yardımcı olur.",
+"Bütün, Yarım, Çeyrek":"Bir bütünü iki eş parçaya bölersek her parça bütünün yarısıdır. Dört eş parçaya bölersek her parça bütünün çeyreğidir. İki çeyrek bir yarıma, dört çeyrek bir bütüne eşittir. Pizza, ekmek ve kâğıt gibi nesneleri bölerek yarım ve çeyreği gösterebiliriz.",
+"Paralarımız":"Paramızın birimi Türk lirasıdır (₺). 1 Türk lirası 100 kuruştur. Madeni paralarımız 1, 5, 10, 25 ve 50 kuruş ile 1 liradır; kâğıt paralarımız ise 5, 10, 20, 50, 100 ve 200 lira gibi değerlerdedir. Alışverişte ödediğimiz paradan ürünün fiyatını çıkararak para üstünü hesaplarız.",
+"Metre ile Ölçme":"Uzun mesafeleri ve büyük nesneleri ölçmek için metre (m) birimini kullanırız. Metreyle ölçüm yaparken şerit metre ya da metre çubuğu kullanılır. 1 metre 100 santimetredir. Sınıfımızın uzunluğu, bir halının boyu ya da bir kapının yüksekliği metreyle ölçülebilir.",
+"Tek ve Çift Sayılar":"İkişer ikişer gruplandığında artan olmayan sayılara çift sayı denir: 2, 4, 6, 8, 10… Birler basamağında 0, 2, 4, 6 ya da 8 olan sayılar çifttir. İkişer gruplandığında bir tane artan sayılar tek sayıdır: 1, 3, 5, 7, 9… Birler basamağında 1, 3, 5, 7 ya da 9 olan sayılar tektir.",
+"Çetele ve Tablo":"Çetele, verileri sayarken her biri için bir çizgi çizdiğimiz sayma yöntemidir. Dört çizgiden sonra beşinci çizgi çapraz çizilir ve beşlik grup oluşur. Çeteleyle saydığımız verileri sıklık tablosuna sayı olarak yazarız. Tablo, verileri düzenli ve kolay okunur şekilde gösterir.",
+"Onluk Bozarak Çıkarma":"Çıkarma yaparken birler basamağındaki üstteki sayı alttaki sayıdan küçükse onlar basamağından bir onluk bozarız. Bir onluk 10 birliğe eşittir. Örneğin 42 − 17 işleminde 2'den 7 çıkmaz; bir onluk bozarız, 12 − 7 = 5, onlarda 3 − 1 = 2 kalır: sonuç 25.",
+"Ağırlık Ölçme":"Nesnelerin ağırlığını ölçmek için kilogram (kg) birimini kullanırız. Ağırlık ölçmek için terazi ve baskül kullanılır. Bir şişe su yaklaşık 1 kilogramdır. Elma, patates ve un gibi ürünleri manav ve markette kilogramla satın alırız.",
+"Toplama Problemleri":"Toplama problemlerinde birden fazla çokluğun toplamını buluruz. 'Toplam kaç?', 'hepsi', 'daha fazla', 'eklendi' gibi ifadeler toplama yapacağımızı gösterir. Problemi çözerken önce verilenleri yazar, sonra işlemi yapar ve sonucu kontrol ederiz. Örneğin 25 kırmızı ve 18 mavi bilye toplam 43 bilyedir.",
+"Simetri":"Bir şekli bir doğru boyunca katladığımızda iki parçası tam üst üste geliyorsa şekil simetriktir. Bu doğruya simetri doğrusu denir. Kelebek, kalp şekli ve insan yüzü simetriye örnektir. Kare ve dikdörtgen gibi şekillerin birden fazla simetri doğrusu olabilir.",
+"Santimetre ile Ölçme":"Kısa uzunlukları ölçmek için santimetre (cm) birimini kullanırız. Santimetreyle ölçüm yaparken cetvel kullanılır. Cetveli ölçeceğimiz nesnenin başlangıcına, 0 çizgisine denk gelecek şekilde yerleştiririz. Kalem, defter ve silgi gibi küçük nesneler santimetreyle ölçülür.",
+"Çarpım Tablosu (2–5)":"Çarpım tablosu, sayıların çarpımlarını gösteren tablodur. 2'ler: 2, 4, 6, 8, 10… 3'ler: 3, 6, 9, 12, 15… 4'ler: 4, 8, 12, 16, 20… 5'ler: 5, 10, 15, 20, 25… Çarpım tablosunu ritmik sayarak öğrenebiliriz. Bir sayıyı 1 ile çarparsak sayı değişmez.",
+"Takvim Okuma":"Takvim, günleri, haftaları ve ayları gösterir. Bir yıl 12 aydır: ocak, şubat, mart, nisan, mayıs, haziran, temmuz, ağustos, eylül, ekim, kasım ve aralık. Ayların çoğu 30 ya da 31 gündür; şubat ise 28 ya da 29 gündür. Takvimden önemli günleri ve tatilleri takip ederiz.",
+"Saat ve Dakika":"Saatin uzun kolu (yelkovan) dakikayı, kısa kolu (akrep) saati gösterir. Yelkovan bir sayıdan diğerine geçtiğinde 5 dakika geçer. 1 saat 60 dakikadır. Yelkovan 12'deyse saat tam, 6'daysa buçuk, 3'teyse çeyrek geçe, 9'daysa çeyrek kaladır."
+},
+"Hayat Bilgisi":{
+"Evimizde Hayat":"Evimizde ailemizle birlikte yaşarız ve herkesin görevleri vardır. Odamızı toplamak, sofrayı kurmaya yardım etmek ve eşyalarımızı özenli kullanmak sorumluluklarımızdandır. Aile bireyleri birbirine sevgi ve saygı gösterir, kararları birlikte alır. Evde su, elektrik ve yiyecekleri israf etmemeliyiz.",
+"Ülkemizde Hayat":"Ülkemizin adı Türkiye Cumhuriyeti, başkenti Ankara'dır. Türkiye'nin her bölgesinde farklı yemekler, giysiler, oyunlar ve gelenekler vardır; bu farklılıklar ülkemizin zenginliğidir. Millî bayramlarımızı hep birlikte kutlarız. Ülkemizi, bayrağımızı ve millî değerlerimizi sever ve koruruz.",
+"Doğada Hayat":"Doğada canlı ve cansız varlıklar bir arada bulunur. Bitkiler, hayvanlar ve insanlar canlıdır; büyür, beslenir ve çoğalır. Taş, su ve hava cansızdır. Mevsimler değiştikçe doğa da değişir. Doğayı korumak için ağaç dikmeli, çöplerimizi geri dönüşüme ayırmalıyız.",
+"Okulumuzu Tanıyalım":"Okulumuzda sınıflar, kütüphane, kantin, spor salonu, öğretmenler odası ve müdür odası gibi bölümler bulunur. Okul müdürü, öğretmenler, rehber öğretmen ve okul görevlileri okulumuzda çalışır. Okulumuzun bölümlerini tanımak ihtiyaç duyduğumuzda doğru yere gitmemizi sağlar.",
+"Mevsime Uygun Giyinme":"Bir yılda dört mevsim vardır: ilkbahar, yaz, sonbahar ve kış. Yazın açık renkli, ince ve pamuklu giysiler; kışın kalın mont, bere, atkı ve eldiven giyeriz. İlkbahar ve sonbaharda hava değişken olduğu için yanımıza ince bir ceket almak iyi olur. Mevsime uygun giyinmek bizi hastalıklardan korur.",
+"Acil Durumlar":"Yangın, deprem, kaza ve ani hastalık gibi durumlar acil durumdur. Acil durumlarda sakin kalmalı ve hemen bir yetişkine haber vermeliyiz. Türkiye'de acil durumlarda 112 aranır. Aradığımızda adımızı, adresimizi ve ne olduğunu açıkça söylemeliyiz. Şaka amacıyla 112 aranmamalıdır.",
+"Empati":"Empati, kendimizi başkasının yerine koyarak onun duygularını ve düşüncelerini anlamaya çalışmaktır. Üzgün bir arkadaşımızı dinlemek, yeni gelen bir öğrenciye yardım etmek empati kurmanın örnekleridir. Empati kuran insanlar daha anlayışlı olur ve arkadaşlıkları güçlenir.",
+"Dengeli Beslenme":"Dengeli beslenmek için her besin grubundan yemeliyiz: sebze ve meyveler, süt ve süt ürünleri, et, yumurta ve baklagiller, tahıllar. Güne kahvaltıyla başlamalı, bol su içmeliyiz. Şekerli ve paketli yiyecekleri az tüketmeliyiz. Dengeli beslenmek büyümemize ve sağlıklı olmamıza yardımcı olur.",
+"Trafikte Güvenlik":"Trafikte yaya, yolcu ya da sürücü olabiliriz. Yaya olarak kaldırımda yürür, yaya geçidinden ve yeşil ışıkta karşıya geçeriz. Taşıtlarda arka koltukta oturur ve emniyet kemeri takarız. Bisiklet sürerken kask takar, oyunlarımızı trafikten uzak, güvenli alanlarda oynarız.",
+"Gökyüzü":"Gündüz gökyüzünde Güneş'i ve bulutları, gece ise Ay'ı ve yıldızları görürüz. Güneş Dünya'ya ısı ve ışık verir. Ay'ın görünüşü gün içinde değil, günlere göre değişir. Gökyüzündeki yıldızlar bize çok uzak oldukları için küçük görünür. Güneş'e asla çıplak gözle doğrudan bakmamalıyız.",
+"Çocuk Hakları":"Her çocuğun yaşama, sağlıklı büyüme, eğitim alma, oyun oynama, korunma ve düşüncesini söyleme hakkı vardır. Çocuk hakları Birleşmiş Milletler Çocuk Hakları Sözleşmesi ile güvence altına alınmıştır. Haklarımızı bilmeli, başkalarının haklarına da saygı göstermeliyiz.",
+"Atatürk'ü Tanıyalım":"Mustafa Kemal Atatürk 1881'de Selanik'te doğdu. Annesinin adı Zübeyde Hanım, babasının adı Ali Rıza Efendi'dir. Millî Mücadele'yi yöneterek vatanımızı kurtardı ve 29 Ekim 1923'te Türkiye Cumhuriyeti'ni kurdu. Çocukları çok severdi ve 23 Nisan'ı çocuklara armağan etti.",
+"Kişisel Bakım":"Kişisel bakım, vücudumuzun temizliğine ve sağlığına özen göstermektir. Her gün ellerimizi ve yüzümüzü yıkar, dişlerimizi fırçalar, saçlarımızı tarar ve temiz giysiler giyeriz. Düzenli banyo yapar, tırnaklarımızı keseriz. Kişisel bakım hem sağlığımızı korur hem de kendimizi iyi hissettirir.",
+"Gelenek ve Göreneklerimiz":"Gelenek ve görenekler, bir toplumda uzun zamandır yapılan ve kuşaktan kuşağa aktarılan davranışlardır. Bayramlarda büyükleri ziyaret etmek, el öpmek, misafire ikramda bulunmak, yeni komşuya yemek götürmek geleneklerimize örnektir. Gelenekler toplumu birbirine bağlar.",
+"Okul Kuralları":"Okulda herkesin rahat ve güvenli olması için kurallar vardır. Okula zamanında gelmek, derste söz almak için parmak kaldırmak, koridorlarda koşmamak, okul eşyalarını korumak ve sırayı beklemek okul kurallarından bazılarıdır. Kurallara uymak düzeni sağlar ve kazaları önler.",
+"Hastalıklardan Korunma":"Hastalıklardan korunmak için ellerimizi sık sık sabunla yıkamalı, dengeli beslenmeli ve yeterince uyumalıyız. Öksürürken ve hapşırırken ağzımızı mendil ya da dirsek içiyle kapatırız. Aşılarımızı zamanında yaptırmak da bizi hastalıklardan korur. Hastalanınca dinlenmeli ve doktora gitmeliyiz.",
+"Doğal ve Yapay Çevre":"Doğal çevre, insan eli değmeden kendiliğinden oluşan çevredir: ormanlar, dağlar, göller, denizler. Yapay çevre ise insanların yaptığı yapılardan oluşur: evler, okullar, köprüler, yollar, parklar. İnsanlar yapay çevreyi oluştururken doğal çevreye zarar vermemeye dikkat etmelidir.",
+"Meslekler":"Toplumda herkes farklı mesleklerde çalışır ve birbirinin ihtiyacını karşılar. Fırıncı ekmek yapar, polis güvenliğimizi sağlar, doktor hastaları tedavi eder, öğretmen öğretir. Her meslek değerlidir ve emek ister. İleride hangi mesleği yapmak istediğimizi düşünür, ilgi alanlarımızı keşfederiz.",
+"Komşuluk":"Komşularımız evimize yakın yaşayan kişilerdir. İyi komşular birbirine selam verir, yardımlaşır, zor günlerde destek olur. Komşularımızı rahatsız etmemek için gürültü yapmamalı, ortak alanları temiz tutmalıyız. 'Ev alma, komşu al' atasözü iyi komşuluğun önemini anlatır."
+}};
+let EXP1N=0;for(const [G,E] of [["1",EXP1],["2",EXP2]])for(const s in E)for(const n in E[s]){const t=D[G]&&D[G][s]&&D[G][s].find(x=>x[0]===n);if(t&&E[s][n].length>t[1].length){t[1]=E[s][n];EXP1N++}}
+
+const EXP3={
+"Türkçe":{
+"Gerçek ve Mecaz Anlam":"Bir kelimenin akla gelen ilk anlamına gerçek anlam denir: 'Kalın bir kitap okudum.' Kelimenin gerçek anlamından uzaklaşarak kazandığı yeni anlama ise mecaz anlam denir: 'Kalın kafalı olma!' Mecaz anlamlı kelimeler anlatımı daha etkili ve renkli hâle getirir.",
+"Hikâye Unsurları":"Hikâyenin dört temel unsuru vardır: olay, kişiler (karakterler), yer ve zaman. Olay hikâyede yaşananlardır. Kişiler olayları yaşayan insan, hayvan ya da varlıklardır. Yer olayın geçtiği mekân, zaman ise olayın ne zaman geçtiğidir. Bu unsurları bulmak hikâyeyi anlamamızı kolaylaştırır.",
+"Büyük Harflerin Kullanımı":"Cümleler büyük harfle başlar. Kişi adları ve soyadları (Ali Yılmaz), ülke ve şehir adları (Türkiye, Bursa), gün ve ay adları belirli bir tarih bildiriyorsa (23 Nisan 1920 Cuma) büyük harfle yazılır. Kurum adları (Millî Eğitim Bakanlığı) ve kitap adlarının her kelimesi de büyük harfle başlar.",
+"Eş ve Zıt Anlam":"Anlamları aynı ya da çok yakın olan kelimelere eş anlamlı kelimeler denir: 'hediye – armağan', 'ödev – görev', 'öykü – hikâye'. Anlamca birbirinin karşıtı olan kelimelere zıt anlamlı kelimeler denir: 'yorgun – dinç', 'cesur – korkak', 'ileri – geri'.",
+"Kelime Türetme":"Bir kelimenin sonuna yapım eki getirerek yeni anlamda kelimeler türetebiliriz. 'Göz' kelimesinden 'gözlük', 'gözlükçü'; 'süt' kelimesinden 'sütçü', 'sütlü', 'sütlaç' türetilir. Türetilen kelime ile kök kelime arasında anlam ilişkisi bulunur. Ekler kelimenin anlamını değiştirerek dilimizi zenginleştirir.",
+"Şiir":"Şiir, duygu ve düşüncelerin ahenkli ve etkili bir dille anlatıldığı yazı türüdür. Şiirin her satırına dize (mısra), dizelerden oluşan bölümlere kıta denir. Dize sonlarındaki ses benzerliklerine uyak (kafiye) denir. Şiir okurken anlama ve duyguya uygun bir ses tonu kullanırız.",
+"Paragraf":"Paragraf, bir düşünceyi anlatan cümleler topluluğudur. Yazı yazarken her paragrafa satır başından ve biraz içeriden başlarız. Bir paragrafta genellikle tek bir konu işlenir. Paragrafın konusunu bulmak için 'Bu paragraf neyden bahsediyor?' sorusunu sorarız.",
+"Olay Sıralaması":"Hikâyelerde olaylar belli bir sırayla gerçekleşir: giriş, gelişme ve sonuç. Olayları doğru sıralamak için 'önce', 'sonra', 'daha sonra', 'en sonunda' gibi sıralama kelimelerine dikkat ederiz. Olay sıralamasını bilmek hikâyeyi anlamamızı ve başkasına anlatmamızı kolaylaştırır.",
+"Kısaltmalara Gelen Ekler":"Kısaltmalara gelen ekler, kısaltmanın okunuşuna göre yazılır ve kesme işaretiyle ayrılır. 'TBMM' 'te-be-me-me' okunduğu için 'TBMM'ye' yazılır. 'TDK' 'te-de-ka' okunduğu için 'TDK'den' yazılır. 'kg' ve 'cm' gibi ölçü kısaltmalarına gelen ekler de okunuşa uyar: '5 kg'lık'.",
+"Soru Cümleleri":"Bir şeyi öğrenmek amacıyla sorulan cümlelere soru cümleleri denir. Soru cümlelerinin sonuna soru işareti (?) konur. Soru cümleleri 'kim, ne, nerede, ne zaman, nasıl, neden, kaç' gibi soru kelimeleriyle ya da 'mi' ekiyle kurulur. 'mi' soru eki her zaman ayrı yazılır: 'Okula geldin mi?'",
+"Hikâye Yazma":"Hikâye yazmadan önce olayı, kişileri, yeri ve zamanı belirleriz. Hikâye giriş, gelişme ve sonuç bölümlerinden oluşur. Girişte kişileri ve yeri tanıtırız, gelişmede olayları anlatırız, sonuçta olayın nasıl bittiğini yazarız. Hikâyemize uygun ve ilgi çekici bir başlık koyarız.",
+"Görsellerle Anlam":"Resimler, fotoğraflar, grafikler ve işaretler de bir şeyler anlatır. Görselleri incelerken ayrıntılara dikkat eder, görseldeki kişilerin duygularını ve yaptıkları işi anlamaya çalışırız. Bir metindeki görsel, metnin konusunu tahmin etmemize ve metni daha iyi anlamamıza yardımcı olur.",
+"Eklerle Yeni Kelimeler":"Kelimelere getirilen ekler kelimenin anlamını ya da görevini değiştirir. '-lık, -lik' eki 'kitap'tan 'kitaplık', '-cı, -ci' eki 'boya'dan 'boyacı', '-lı, -li' eki 'şeker'den 'şekerli' kelimesini türetir. Eklerle türetilen kelimeleri doğru kullanmak kelime hazinemizi genişletir.",
+"Dinleme Kuralları":"Dinlerken konuşan kişiye bakar, sözünü kesmez ve dikkatimizi dağıtacak şeylerden uzak dururuz. Anlamadığımız bir yer olursa konuşma bitince soru sorarız. Önemli noktaları aklımızda tutmak için not alabiliriz. İyi bir dinleyici olmak hem öğrenmemizi hem de iletişimimizi güçlendirir.",
+"Deyimleri Tanıyalım":"Deyimler, genellikle gerçek anlamından farklı bir anlam taşıyan kalıplaşmış söz gruplarıdır. 'Göz atmak' kısaca bakmak, 'kulak asmamak' önemsememek, 'eli açık olmak' cömert olmak, 'dili tutulmak' şaşkınlıktan konuşamamak anlamına gelir. Deyimler anlatımı daha etkili hâle getirir.",
+"Satır Sonunda Kelime Bölme":"Yazı yazarken satırın sonuna sığmayan kelimeleri hece sınırından bölüp kısa çizgi (-) koyarız ve kelimenin devamını alt satıra yazarız. Örneğin 'öğret-men' ya da 'öğ-retmen'. Kelimeler hecelerin ortasından bölünmez. Tek harften oluşan heceler satır sonunda ya da başında yalnız bırakılmamalıdır.",
+"Bilgi Notu Yazma":"Bilgi notu, bir konu hakkında öğrendiğimiz önemli bilgileri kısaca yazdığımız nottur. Bilgi notu yazarken konunun başlığını yazar, en önemli bilgileri kısa ve açık cümlelerle sıralarız. Gerekirse resim ya da şekil ekleriz. Bilgi notları konuları tekrar ederken işimizi kolaylaştırır.",
+"Öykü Unsurları":"Öykü (hikâye), gerçek ya da hayal ürünü olayların anlatıldığı yazı türüdür. Öykünün unsurları olay, kişiler, yer ve zamandır. Öyküde olaylar giriş, gelişme ve sonuç bölümlerinde anlatılır. Öykünün ana karakteri olayların merkezindeki kişidir. Öyküler okura genellikle bir mesaj verir."
+},
+"Matematik":{
+"Üç Basamaklı Sayılar":"Üç basamaklı sayılar 100 ile 999 arasındaki sayılardır. Bu sayıların yüzler, onlar ve birler basamağı vardır. Örneğin 582 sayısında 5 yüzler, 8 onlar, 2 birler basamağındadır; 582 = 500 + 80 + 2 şeklinde çözümlenir. Sayıları karşılaştırırken önce yüzler basamağına bakarız.",
+"Bölme":"Bölme, bir çokluğu eşit gruplara ayırmaktır. Bölme işleminde bölünen, bölen ve bölüm vardır. 24 ÷ 4 = 6 işleminde 24 bölünen, 4 bölen, 6 bölümdür. Bölme ile çarpma birbirinin tersidir: 4 × 6 = 24. Bölme işleminin sonucunu çarpma işlemiyle kontrol ederiz.",
+"Kesirler":"Kesir, bir bütünün eş parçalarından bir ya da birkaçını gösterir. Kesir çizgisinin altındaki sayı (payda) bütünün kaç eş parçaya bölündüğünü, üstündeki sayı (pay) kaç parçanın alındığını gösterir. Bir pastayı 4 eş parçaya bölüp 1 parçasını alırsak pastanın 1/4'ünü almış oluruz.",
+"Üç Basamaklı Toplama":"Üç basamaklı sayıları toplarken sayıları basamakları alt alta gelecek şekilde yazarız. Toplamaya birler basamağından başlarız. Bir basamaktaki toplam 10 ya da daha fazla olursa eldeyi bir sonraki basamağa ekleriz. Örneğin 345 + 278 = 623. Sonucu tahmin ederek kontrol edebiliriz.",
+"Çarpım Tablosu":"Çarpım tablosu 1'den 10'a kadar sayıların çarpımlarını gösterir. Çarpım tablosunu ezberlemek işlemleri hızlandırır. Bir sayıyı 10 ile çarptığımızda sağına bir sıfır ekleriz: 7 × 10 = 70. Bir sayıyı 0 ile çarptığımızda sonuç 0, 1 ile çarptığımızda sayının kendisidir.",
+"Saat Okuma":"Saatin kısa kolu (akrep) saati, uzun kolu (yelkovan) dakikayı gösterir. Yelkovan saati bir tam turda 60 dakikada dolaşır. Saat gündüz için 1-12, akşam için 13-24 olarak da okunabilir: öğleden sonra 3, 15.00'tir. Dijital saatlerde saat ve dakika iki nokta ile ayrılır: 08.45.",
+"Örüntünün Kuralı":"Örüntüler belli bir kurala göre devam eder. Sayı örüntüsünün kuralını bulmak için ardışık sayılar arasındaki farka bakarız. Örneğin 5, 10, 15, 20… örüntüsünde kural '5 ekle'dir ve sıradaki sayı 25'tir. Şekil örüntülerinde ise tekrar eden şekil grubunu buluruz.",
+"Çevre Ölçme":"Bir şeklin çevre uzunluğu, bütün kenarlarının uzunlukları toplamıdır. Kenarları 3 cm, 4 cm ve 5 cm olan üçgenin çevresi 3 + 4 + 5 = 12 cm'dir. Karenin bütün kenarları eşit olduğu için çevresi bir kenarının 4 katıdır. Bahçe etrafına çit yaparken çevre uzunluğunu hesaplarız.",
+"Sıvı Ölçme":"Sıvıların miktarını litre (L) ile ölçeriz. Su, süt ve meyve suyu gibi sıvılar litre ile satılır. Yarım litre, bir litrenin yarısıdır. Sıvıları ölçerken ölçü kapları ve şişeler kullanırız. Bir sürahideki suyu eşit bardaklara paylaştırarak miktarları karşılaştırabiliriz.",
+"Kilogram ve Gram":"Ağırlıkları ölçmek için kilogram (kg) ve gram (g) birimlerini kullanırız. 1 kilogram 1000 gramdır. Ağır nesneleri kilogramla (bir çuval un), hafif nesneleri gramla (bir paket bisküvi) ölçeriz. Yarım kilogram 500 gramdır. Ağırlıkları terazi ile ölçeriz.",
+"Şekil Örüntüleri":"Şekil örüntüleri, belli bir kurala göre tekrar eden şekil dizileridir. Örneğin 'üçgen, kare, daire, üçgen, kare, daire…' örüntüsünde tekrar eden grup 'üçgen, kare, daire'dir. Örüntüdeki eksik şekli bulmak için tekrar eden grubu belirleriz. Şekil örüntüleri halı, kumaş ve fayans desenlerinde görülür.",
+"Tahmin ve Yuvarlama":"Bir sayıyı en yakın onluğa yuvarlarken birler basamağına bakarız: 5 ve üzeriyse yukarı, 5'ten küçükse aşağı yuvarlarız. 47 sayısı 50'ye, 43 sayısı 40'a yuvarlanır. Yuvarlama, işlemlerin sonucunu tahmin etmemize yardımcı olur: 48 + 31 yaklaşık 50 + 30 = 80'dir.",
+"Çarpma Problemleri":"Çarpma problemlerinde eşit grupların toplamını buluruz. 'Her birinde', 'tanesi', 'katı' gibi ifadeler çarpma yapacağımızı gösterir. Örneğin 'Her kutuda 6 kalem varsa 5 kutuda kaç kalem vardır?' sorusunun cevabı 5 × 6 = 30'dur. Problemi çözdükten sonra cevabı kontrol ederiz.",
+"Geometrik Cisimler":"Geometrik cisimlerin yüzleri, ayrıtları ve köşeleri vardır. Küpün 6 eş kare yüzü, 12 ayrıtı ve 8 köşesi vardır. Silindirin 2 daire yüzü vardır ve yuvarlanabilir. Kürenin köşesi ve ayrıtı yoktur. Koninin bir daire yüzü ve bir tepe noktası vardır.",
+"Romen Rakamları":"Romen rakamları eski Roma'da kullanılan sayı sistemidir. Temel Romen rakamları I (1), V (5), X (10), L (50), C (100), D (500) ve M (1000)'dir. Küçük rakam büyüğün sağında ise toplanır (VI = 6), solunda ise çıkarılır (IV = 4). Aynı rakam en fazla üç kez yan yana yazılır.",
+"Yarım ve Çeyrek Problemleri":"Bir çokluğun yarısını bulmak için 2'ye, çeyreğini bulmak için 4'e böleriz. 20 cevizin yarısı 10, çeyreği 5'tir. İki çeyrek bir yarım eder. Bu problemlerde önce bütünü belirler, sonra istenen parçayı bölme işlemiyle buluruz.",
+"Takvim Okuma":"Takvim, yılın günlerini, haftalarını ve aylarını gösterir. Bir yıl 12 ay, 52 hafta ve 365 ya da 366 gündür. Ayların bazıları 30, bazıları 31 gündür; şubat 28 ya da 29 gündür. Takvime bakarak bir olayın hangi güne denk geldiğini ve kaç gün kaldığını bulabiliriz.",
+"Buçuk ve Çeyrek":"Saat okurken 'buçuk' yarım saat yani 30 dakika, 'çeyrek' ise 15 dakika demektir. Yelkovan 6'yı gösterdiğinde saat buçuktur: 3.30 'üç buçuk'tur. Yelkovan 3'ü gösterdiğinde 'çeyrek geçe' (3.15), 9'u gösterdiğinde 'çeyrek kala' (3.45, dörde çeyrek var) okunur.",
+"Kalanlı Bölme":"Bazı bölme işlemlerinde bölünen sayı bölene tam bölünmez ve bir miktar artar; bu artan sayıya kalan denir. Örneğin 17 ÷ 5 işleminde bölüm 3, kalan 2'dir, çünkü 5 × 3 = 15 ve 17 − 15 = 2'dir. Kalan her zaman bölenden küçük olmalıdır."
+},
+"Hayat Bilgisi":{
+"Kendimizi Tanıyalım":"Her insanın kendine özgü fiziksel özellikleri, ilgi alanları, yetenekleri ve duyguları vardır. Kendimizi tanımak için neleri sevdiğimizi, neleri yapmakta başarılı olduğumuzu ve nelere ilgi duyduğumuzu düşünürüz. Farklılıklarımız bizi özel yapar; başkalarının farklılıklarına da saygı göstermeliyiz.",
+"Doğal Afetler":"Deprem, sel, yangın, heyelan ve çığ doğal afetlerdir. Afetlere karşı önceden hazırlıklı olmak çok önemlidir. Evdeki eşyalar sabitlenmeli, aile afet planı yapılmalı ve afet çantası hazırlanmalıdır. Deprem sırasında 'Çök, Kapan, Tutun' hareketini yaparız. Ülkemizde afet işlerinden AFAD sorumludur.",
+"Millî Bayramlarımız":"Millî bayramlarımız 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı, 19 Mayıs Atatürk'ü Anma, Gençlik ve Spor Bayramı, 30 Ağustos Zafer Bayramı ve 29 Ekim Cumhuriyet Bayramı'dır. Bu günlerde törenler düzenler, evlerimizi bayraklarla süsler ve kazanılan zaferleri kutlarız.",
+"İsraf Etmeyelim":"İsraf, bir şeyi gereğinden fazla ya da boşuna harcamaktır. Tabağımıza yiyebileceğimiz kadar yemek almalı, ekmeği çöpe atmamalıyız. Suyu ve elektriği gereksiz kullanmamalı, eşyalarımızı özenle kullanarak uzun süre dayanmasını sağlamalıyız. İsraf etmemek hem doğayı hem de bütçemizi korur.",
+"Yöresel Kültür":"Türkiye'nin her yöresinin kendine özgü yemekleri, kıyafetleri, oyunları, türküleri ve el sanatları vardır. Örneğin Karadeniz'de horon, Ege'de zeybek oynanır. Gaziantep baklavası, Kayseri mantısı yöresel lezzetlerimizdendir. Yöresel kültürümüzü tanımak ve korumak kültürel zenginliğimizi yaşatır.",
+"Geri Dönüşüm":"Geri dönüşüm, kullanılmış kâğıt, cam, plastik ve metal gibi atıkların işlenerek yeniden kullanılmasıdır. Atıklarımızı türlerine göre ayırarak geri dönüşüm kutularına atarız. Geri dönüşüm doğal kaynakları korur, enerji tasarrufu sağlar ve çöp miktarını azaltır. Pil gibi zararlı atıklar ayrı kutulara atılmalıdır.",
+"Zaman Yönetimi":"Zamanımızı iyi kullanmak için günlük işlerimizi planlarız. Ders çalışmaya, oyun oynamaya, dinlenmeye ve uyumaya yeterli zaman ayırırız. Önemli işleri önce yapar, ödevlerimizi son ana bırakmayız. Bir haftalık plan hazırlamak zamanımızı düzenli kullanmamıza yardımcı olur.",
+"İlk Yardım":"İlk yardım, bir kaza ya da hastalık durumunda sağlık ekipleri gelene kadar yapılan basit yardımlardır. Küçük bir yarayı temiz suyla yıkayıp temiz bir bezle kapatabiliriz. Ciddi durumlarda yaralıya dokunmadan hemen bir yetişkine haber vermeli ve 112'yi aramalıyız. Bilmediğimiz uygulamaları yapmamalıyız.",
+"Yön Bulma":"Dört ana yön kuzey, güney, doğu ve batıdır. Güneş doğudan doğar, batıdan batar. Sabah Güneş'e doğru baktığımızda önümüz doğu, arkamız batı, sağımız güney, solumuz kuzeydir. Pusulanın ibresi her zaman kuzeyi gösterir. Gece Kutup Yıldızı da kuzeyi bulmamızı sağlar.",
+"Hayvanları Koruyalım":"Hayvanlar da canlıdır; beslenmeye, suya ve barınağa ihtiyaç duyar. Sokak hayvanlarına su ve mama vererek, kışın onlar için barınak yaparak yardım edebiliriz. Hayvanlara eziyet etmek, yuvalarını bozmak yanlıştır. Nesli tükenmekte olan hayvanları korumak hepimizin görevidir.",
+"Okulda Demokrasi":"Okulda demokrasiyi sınıf başkanı ve okul meclisi seçimleriyle öğreniriz. Seçimlerde aday olabilir ve oy kullanabiliriz. Kararlar birlikte konuşularak ve oylanarak alınır; çoğunluğun kararına saygı gösterilir ama farklı düşüncelere de saygı duyulur. Herkesin fikrini özgürce söyleme hakkı vardır.",
+"Güvenli İnternet":"İnterneti kullanırken bir yetişkinin bilgisi dahilinde olmalı ve sadece güvenli sitelere girmeliyiz. Adımızı, adresimizi, telefonumuzu, okulumuzu ve fotoğraflarımızı tanımadığımız kişilerle paylaşmamalıyız. Rahatsız olduğumuz bir şeyle karşılaşırsak hemen ailemize ya da öğretmenimize söylemeliyiz.",
+"İstek ve İhtiyaç":"İhtiyaç, yaşamımızı sürdürmek için mutlaka gerekli olan şeylerdir: yiyecek, su, giysi, barınak ve sağlık. İstek ise sahip olmak istediğimiz ama zorunlu olmayan şeylerdir: yeni bir oyuncak, oyun konsolu. Alışveriş yaparken önce ihtiyaçlarımızı karşılamalı, bütçemizi düşünerek hareket etmeliyiz.",
+"Komşuluk":"Komşuluk ilişkileri toplumda dayanışmayı ve güveni artırır. İyi komşular selamlaşır, birbirini ziyaret eder, hastalık ve zor zamanlarda yardımlaşır. Komşularımızı rahatsız etmemek için geç saatlerde gürültü yapmamalı, apartmanın ortak alanlarını temiz tutmalıyız.",
+"Kurallara Uyma":"Kurallar evde, okulda, trafikte ve oyunda düzeni ve güvenliği sağlar. Kurallara uymayan kişiler hem kendilerine hem de başkalarına zarar verebilir. Oyunlarda kurallara uymak adil olmayı, trafikte kurallara uymak güvende olmayı sağlar. Kuralları birlikte belirlemek uymayı kolaylaştırır.",
+"Ülkemizin Güzellikleri":"Türkiye üç tarafı denizlerle çevrili, doğal ve tarihî güzelliklerle dolu bir ülkedir. Kapadokya'nın peri bacaları, Pamukkale'nin travertenleri, İstanbul'un tarihî yapıları ve Karadeniz'in yeşil yaylaları ülkemizin güzelliklerinden bazılarıdır. Bu güzellikleri korumak ve tanıtmak hepimizin görevidir.",
+"Mevsimler ve Doğa":"Bir yılda dört mevsim yaşanır: ilkbahar, yaz, sonbahar ve kış. İlkbaharda ağaçlar çiçek açar, yazın hava sıcak olur ve meyveler olgunlaşır. Sonbaharda yapraklar sararır ve dökülür, kışın hava soğur ve kar yağabilir. Mevsimler değiştikçe insanların giyimi, yiyecekleri ve etkinlikleri de değişir.",
+"Okul Çalışanları":"Okulda pek çok kişi çalışır: okul müdürü ve müdür yardımcıları okulu yönetir, öğretmenler ders verir, rehber öğretmen öğrencilere destek olur. Okul görevlileri okulun temizliğini ve düzenini sağlar, kantin görevlileri yiyecek hazırlar. Bütün okul çalışanlarına teşekkür etmeli ve saygı göstermeliyiz.",
+"Ekmeğin Yolculuğu":"Ekmeğin sofralarımıza gelmesi için pek çok kişi çalışır. Çiftçi buğdayı eker, yetiştirir ve hasat eder. Buğday değirmende öğütülerek un yapılır. Fırıncı unu su, maya ve tuzla yoğurup hamur yapar ve fırında pişirir. Bu emeğe saygı göstermek için ekmeği israf etmemeliyiz.",
+"Tasarruf":"Tasarruf, sahip olduklarımızı dikkatli ve ölçülü kullanmak, gereksiz harcama yapmamaktır. Harçlığımızın bir kısmını kumbarada biriktirerek tasarruf yapabiliriz. Su, elektrik, kâğıt ve yiyecekleri boşa harcamamak da tasarruftur. Tasarruf yapan kişiler ihtiyaç duyduklarında birikimlerinden yararlanabilir."
+},
+"Fen Bilimleri":{
+"Gezegenimizi Tanıyalım":"Yaşadığımız gezegenin adı Dünya'dır. Dünya'nın şekli küreye benzer. Dünya'nın yüzeyinin büyük bir kısmı sularla, geri kalanı karalarla kaplıdır. Dünya'nın etrafını saran hava tabakasına atmosfer denir. Dünya, üzerinde canlıların yaşadığı bilinen tek gezegendir.",
+"Beş Duyumuz":"Çevremizi beş duyu organımızla algılarız. Gözümüzle görür, kulağımızla işitir, burnumuzla koku alır, dilimizle tat alır ve derimizle dokunarak sıcak, soğuk, sert, yumuşak gibi özellikleri hissederiz. Duyu organlarımızı korumak için gözlerimizi güçlü ışıktan, kulaklarımızı yüksek sesten korumalıyız.",
+"İtme ve Çekme":"Bir cismi kendimizden uzaklaştırmaya itme, kendimize doğru yaklaştırmaya çekme denir. İtme ve çekme kuvvet örnekleridir. Kapıyı açarken çekme, alışveriş arabasını sürerken itme kuvveti uygularız. Kuvvet uygulayarak duran cisimleri hareket ettirir, hareket eden cisimleri durdurabiliriz.",
+"Maddenin Hâlleri":"Maddeler katı, sıvı ve gaz olmak üzere üç hâlde bulunur. Katıların belirli bir şekli vardır (taş, kalem). Sıvılar konuldukları kabın şeklini alır (su, süt). Gazlar bulundukları ortama yayılır ve genellikle gözle görülmez (hava, su buharı). Su, buz (katı), su (sıvı) ve su buharı (gaz) hâlinde bulunabilir.",
+"Işık Kaynakları":"Kendiliğinden ışık veren varlıklara ışık kaynağı denir. Güneş, yıldızlar ve ateş böceği doğal ışık kaynaklarıdır. Ampul, mum, el feneri ve lamba gibi insanların yaptığı kaynaklar ise yapay ışık kaynaklarıdır. Ay ışık kaynağı değildir; Güneş'ten aldığı ışığı yansıttığı için parlak görünür.",
+"Canlı ve Cansız Varlıklar":"Canlı varlıklar büyür, beslenir, solunum yapar, çoğalır ve hareket eder. İnsanlar, hayvanlar ve bitkiler canlıdır. Cansız varlıklar ise bu özellikleri göstermez; taş, su, masa ve oyuncak cansızdır. Bitkiler yer değiştirmese de büyüdükleri ve beslendikleri için canlıdır.",
+"Atmosfer":"Dünya'nın etrafını saran hava katmanına atmosfer denir. Atmosfer, canlıların solunum yapması için gerekli olan oksijeni içerir. Ayrıca bizi Güneş'in zararlı ışınlarından korur ve Dünya'nın çok ısınıp soğumasını engeller. Hava kirliliği atmosfere zarar verir; bu yüzden havayı temiz tutmalıyız.",
+"Ses Kaynakları":"Ses çıkaran varlıklara ses kaynağı denir. Kuş, insan, rüzgâr ve şimşek doğal ses kaynaklarıdır. Zil, korna, radyo ve müzik aletleri ise yapay ses kaynaklarıdır. Ses kaynağından uzaklaştıkça sesi daha az duyarız. Çok yüksek sesler kulaklarımıza zarar verebilir.",
+"Elektrik Güvenliği":"Elektrik hayatımızı kolaylaştırır ama dikkatsiz kullanılırsa tehlikelidir. Prizlere parmağımızı ya da metal cisimleri sokmamalı, ıslak elle elektrikli araçlara dokunmamalıyız. Fişi çekerken kablodan değil fişin kendisinden tutmalıyız. Hasarlı kabloları kullanmamalı ve bir büyüğümüze haber vermeliyiz.",
+"Canlılar ve Yaşam Alanları":"Her canlı yaşamak için uygun bir yaşam alanına ihtiyaç duyar. Balıklar suda, kuşlar ağaçlarda, köstebekler toprak altında yaşar. Yaşam alanları canlıların besin, su ve barınak ihtiyacını karşılar. Ormanları kesmek ve suları kirletmek canlıların yaşam alanlarını yok eder.",
+"Isı ve Sıcaklık":"Isı, sıcak bir maddeden soğuk bir maddeye geçen enerjidir. Sıcaklık ise bir maddenin ne kadar sıcak ya da soğuk olduğunu gösterir ve termometre ile ölçülür. Sıcak çay bardağını tuttuğumuzda ısı çaydan elimize geçer. Güneş ve soba ısı kaynaklarına örnektir.",
+"Yer Şekilleri":"Dünya'nın yüzeyinde farklı yer şekilleri bulunur. Dağlar çevrelerinden çok yüksek yerlerdir. Ovalar düz ve geniş alanlardır; tarım için uygundur. Platolar yüksek ve düzlük alanlardır. Vadiler akarsuların oyduğu yerlerdir. Ülkemizin en yüksek dağı Ağrı Dağı'dır.",
+"Kuvvetin Etkileri":"Kuvvet, cisimleri hareket ettirebilir, hareket eden cisimleri durdurabilir, yavaşlatabilir ya da hızlandırabilir. Kuvvet cisimlerin yönünü de değiştirebilir: futbolcu topa vurarak topun yönünü değiştirir. Bazı cisimlerin şekli kuvvetle değişir: oyun hamurunu sıkınca şekli değişir.",
+"Işığın Önemi":"Işık sayesinde çevremizi görebiliriz; ışık olmadan karanlıkta hiçbir şeyi göremeyiz. Bitkiler besin üretmek için Güneş ışığına ihtiyaç duyar. Işık ayrıca ortamı aydınlatır ve ısıtır. Okurken ve çalışırken yeterli ışık olmalı, gözlerimizi korumak için çok parlak ışığa bakmamalıyız.",
+"Maddelerin Özellikleri":"Maddeleri duyu organlarımızla tanıyabiliriz. Maddeler renk, koku, tat, sertlik, esneklik ve pürüzlülük gibi özellikleriyle birbirinden ayrılır. Taş sert, sünger yumuşak; lastik esnek, cam kırılgandır. Zımpara kâğıdı pürüzlü, cam yüzey pürüzsüzdür. Bilmediğimiz maddeleri kesinlikle tatmamalı ve koklamamalıyız.",
+"Hareket Çeşitleri":"Varlıklar farklı şekillerde hareket eder. Dönme hareketi (dönme dolap, pervane), sallanma hareketi (salıncak, saat sarkacı), sıçrama ve yuvarlanma gibi hareketler vardır. Arabanın düz yolda ilerlemesi ise öteleme hareketidir. Bazı varlıklar aynı anda birden fazla hareket yapabilir: tekerlek hem döner hem ilerler.",
+"Ay Işık Kaynağı mı?":"Ay, geceleri parlak görünse de bir ışık kaynağı değildir. Ay, Güneş'ten aldığı ışığı yansıtır; bu yüzden parlak görünür. Ay'ın Dünya etrafında dolanması sırasında Güneş'ten ışık alan yüzünü farklı oranlarda gördüğümüz için Ay'ın görünüşü değişir; buna Ay'ın evreleri denir.",
+"Dünya'nın Şekli":"Dünya'nın şekli küreye benzer, yani yuvarlaktır. Eskiden insanlar Dünya'nın düz olduğunu düşünürdü. Uzaydan çekilen fotoğraflar Dünya'nın küreye benzediğini açıkça gösterir. Denizde uzaklaşan bir geminin önce alt kısmının, sonra direğinin gözden kaybolması da Dünya'nın yuvarlak olduğunun kanıtıdır."
+}};
+let EXP3N=0;for(const s in EXP3)for(const n in EXP3[s]){const t=D[3]&&D[3][s]&&D[3][s].find(x=>x[0]===n);if(t&&EXP3[s][n].length>t[1].length){t[1]=EXP3[s][n];EXP3N++}}
+
+
 
 
 
@@ -3585,7 +3911,7 @@ function reportPage(){
       </select></label>
     <label>Hangi konu? <input name="konu" placeholder="Örn. 8. Sınıf · Matematik · Pisagor" value="${esc(ctx)}"></label>
     <label>Açıklama <textarea name="aciklama" rows="5" required placeholder="Sorunu kısaca anlat…"></textarea></label>
-    <label>İletişim (isteğe bağlı) <input name="iletisim" placeholder="Cevap almak istersen e-posta adresin"></label>
+    <label>İletişim (isteğe bağlı) <input name="iletisim" placeholder="Cevap istersen bir velinin ya da öğretmeninin e-postası"></label>
     <button class="send" type="submit">📨 Gönder</button>
     <div id="rmsg" class="fb"></div>
   </form>`;
@@ -3594,6 +3920,7 @@ function reportPage(){
     const data=new FormData(f); btn.disabled=true; msg.style.color="var(--mute)"; msg.textContent="Gönderiliyor…";
     let ok=false;
     if(/netlify\.app$/.test(location.hostname)){try{const r=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(data).toString()});ok=r.ok}catch(err){ok=false}}
+    else if(/^https?:$/.test(location.protocol)){try{const o=Object.fromEntries(data.entries());o.sayfa=ctx||"";o.surum=VERSION;const r=await fetch("/api/bildir",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(o)});ok=r.ok;if(r.status===429){msg.textContent="Çok fazla bildirim gönderildi, biraz sonra tekrar dene.";btn.disabled=false;return}}catch(err){ok=false}}
     if(ok){f.innerHTML=`<h3>✅ Teşekkürler!</h3>Bildirimin bize ulaştı. En kısa sürede inceleyeceğiz.<div class="vids"><a class="yt alt" href="#">Ana sayfaya dön</a></div>`;return}
     btn.disabled=false;
     const text="Sorun türü: "+data.get("tur")+"\nKonu: "+data.get("konu")+"\nAçıklama: "+data.get("aciklama")+"\nİletişim: "+data.get("iletisim");
@@ -3604,7 +3931,7 @@ function reportPage(){
 }
 const REPORT_EMAIL=""; // Sorun bildirimlerinin gideceği e-posta (boşsa sadece kopyalama gösterilir)
 // ===== Sürüm 1.1: Duyurular ve çalışma araçları =====
-const VERSION="2.5";
+const VERSION="2.6";
 function lsGet(k,d){try{const v=localStorage.getItem(PFX+k);return v?JSON.parse(v):d}catch(e){return d}}
 function lsSet(k,v){try{localStorage.setItem(PFX+k,JSON.stringify(v))}catch(e){}}
 let FAV=new Set(lsGet("favoriler",[])), WRONG=lsGet("yanlislar",{}), ST=lsGet("istatistik",{answered:0,correct:0,days:[]}), NOTES=lsGet("notlar",[]);
@@ -3628,8 +3955,9 @@ function toolsPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a>
 
 // ---- Duyurular ----
 const NEWS=[
- {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 2.6 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 2.6 ile gelmesi planlanan yenilikler:",li:["🎯 11. sınıf Kimya ve Biyoloji ile yeni seçmeli dersler için kazanım listeleri","📖 1, 2 ve 3. sınıflarda konu anlatımlarını uzatma","📝 Çıkmış soru tarzında yeni deneme setleri","🎮 Yeni oyun: Hafıza Kartları (eşini bul)","☁️ İsteğe bağlı bulut hesabı: sunucu kurulumu tamamlanınca gelecek"]},
- {tag:"Yeni sürüm",cls:"new",e:"🎉",t:"Versiyon 2.5 yayında: Yeni dersler, yeni oyunlar, yeni araçlar!",d:"2.5 sürümü yayında! Bu büyük güncellemede gelenler:",li:["📚 3 yeni lise dersi, bütün konularıyla: 11. sınıf Psikoloji, 11. sınıf Sosyoloji, 12. sınıf Mantık (51 konu, 153 soru)","🧩 Yeni oyun: Kavram Bulmacası. Tanımı oku, kavramı yaz; harf sayısı ve ipucu var","✖️ Yeni oyun: Çarpım Tablosu. 20 işlem, süre tutulur, en iyi süren kaydedilir","🧮 Not Ortalaması Hesapla: ders puanı ve ders saatlerine göre karne ortalaması, Teşekkür ve Takdir aralığı","📅 Önemli Günler: millî bayramlar ve anma günleri, kaç gün kaldığıyla. Ana sayfada Atam bölümünde sıradaki gün görünür","🎯 Kazanım listeleri: 11. sınıf Matematik ve Fizik (47 konu)","📖 4. sınıf Türkçe konu anlatımları uzatıldı","🏅 2 yeni rozet: Bulmaca Ustası ve Çarpım Şampiyonu"]},
+ {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 2.7 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 2.7 ile gelmesi planlanan yenilikler:",li:["📖 5-8. sınıflarda kısa kalan konu anlatımlarını uzatma","🎯 12. sınıf ve yeni eklenen dersler için kazanım listeleri","🇬🇧 İlkokul İngilizce konularına kelime kartları","☁️ İsteğe bağlı bulut hesabı: sunucu kurulumu tamamlanınca gelecek"]},
+ {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 2.6 yayında",d:"2.6 sürümü yayında! Bu sürümde gelenler:",li:["📚 Deneme Setleri: 10 LGS ve 10 TYT tarzı numaralı set. Aynı numaralı seti çözen herkes aynı soruları görür; arkadaşınla puanını karşılaştır","🃏 Yeni oyun: Hafıza Kartları. Kartları çevir, soruyu cevabıyla eşleştir","📖 1, 2 ve 3. sınıflarda Türkçe, Matematik, Hayat Bilgisi ve Fen Bilimleri konu anlatımları uzatıldı","🎯 Kazanım listeleri: 11. sınıf Kimya ve Biyoloji, Psikoloji, Sosyoloji ve 12. sınıf Mantık","📨 Sorun Bildir yenilendi: bildirimler artık doğrudan site sahibine ulaşabilecek","📊 Ziyaretçi sayısı istatistiği (kişisel veri toplamaz)","🔍 Bütün soruların otomatik kontrolü yapıldı: cevap ve şık hataları tarandı","🏅 2 yeni rozet: Deneme Avcısı ve Hafıza Ustası"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 2.5: Yeni dersler, oyunlar ve araçlar",d:"Önceki sürüm. 2.5 ile gelenler:",li:["📚 3 yeni lise dersi, bütün konularıyla: 11. sınıf Psikoloji, 11. sınıf Sosyoloji, 12. sınıf Mantık (51 konu, 153 soru)","🧩 Yeni oyun: Kavram Bulmacası. Tanımı oku, kavramı yaz; harf sayısı ve ipucu var","✖️ Yeni oyun: Çarpım Tablosu. 20 işlem, süre tutulur, en iyi süren kaydedilir","🧮 Not Ortalaması Hesapla: ders puanı ve ders saatlerine göre karne ortalaması, Teşekkür ve Takdir aralığı","📅 Önemli Günler: millî bayramlar ve anma günleri, kaç gün kaldığıyla. Ana sayfada Atam bölümünde sıradaki gün görünür","🎯 Kazanım listeleri: 11. sınıf Matematik ve Fizik (47 konu)","📖 4. sınıf Türkçe konu anlatımları uzatıldı","🏅 2 yeni rozet: Bulmaca Ustası ve Çarpım Şampiyonu"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 2.4: Eksik dersler tamamlandı",d:"Önceki sürüm. 2.4 ile gelenler:",li:["📚 8 yeni ders, bütün konularıyla: 4. sınıf Din Kültürü ve Ahlak Bilgisi, 4. sınıf İnsan Hakları Yurttaşlık ve Demokrasi, 4. sınıf Trafik Güvenliği, 9. sınıf Din Kültürü, 9. sınıf Sağlık Bilgisi ve Trafik Kültürü, 10. 11. ve 12. sınıf Din Kültürü","📝 Yeni derslerde 143 yeni konu ve 429 yeni soru","🏠 Yeni ana sayfa: istatistikler, duyuru, kaldığın yerden devam, Bugünün Planı, günlük hedef, Günün Sorusu, Çalışma Araçları ve en altta Atam","📚 Sınıflar artık ayrı bir sayfada: İlkokul, ortaokul ve lise; her sınıfta ders, konu sayısı ve ilerleme çubuğu","🤖 Her konunun altında 'Asistana sor' düğmesi: Canlı Destek o konuyu açıklar","🔍 Ders sayfasında 'Bu derste konu ara' kutusu","🕘 Son baktığın konular (ana sayfada ve Sınıflar sayfasında)","🎲 Rastgele Konu: henüz çözmediğin konulardan birini açar","⏱️ Her konu anlatımında tahmini okuma süresi","🔤 Yeni oyun: Kelime Avı (konu adlarından gizli kelimeleri bul)","⌨️ '/' tuşuyla arama kutusuna hızlı geçiş","🎯 Kazanım listeleri: 10. sınıf Fizik, Kimya ve Biyoloji (71 konu)","📖 Konu anlatımları uzatıldı: 9. sınıf Fizik ve 4. sınıf Sosyal Bilgiler","🏅 1 yeni rozet: Kelime Avcısı"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 2.3",d:"Önceki sürüm. 2.3 ile gelenler:",li:["💬 Canlı Destek: sol alttaki yuvarlak balona dokun. Bir hata, anlamadığın bir konu ya da yapamadığın bir soru için yardım asistanına yaz. Hatayı tek dokunuşla Sorun Bildir sayfasına aktarabilirsin","🔒 Canlı Destek'te kişisel bilgi (telefon, e-posta, kimlik numarası) yazılırsa uyarı çıkar; yazışmalar kaydedilmez","🗓️ Haftalık plan: Bugünün Planı sayfasında haftanın 7 günü ve haftalık hedefler (5 gün plan, 150 dakika, 50 doğru)","🎯 Kazanım listeleri: 9. sınıf Kimya ve Biyoloji, 10. sınıf Matematik (68 konu)","📖 Konu anlatımları uzatıldı: 4. sınıf Matematik ve Fen Bilimleri, 9. sınıf Matematik","📚 9-12. sınıf Tarih, Coğrafya, İnkılap Tarihi ve Edebiyat'a yeni konular ve sorular","🏅 1 yeni rozet: Haftanın Yıldızı"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 2.2",d:"Önceki sürüm. 2.2 ile gelenler:",li:["📋 Bugünün Planı: 'Bugün ne çalışayım?' sorusuna her gün sana özel cevap. Ana sayfada da görünür","📖 Kavram Sözlüğü: 1.700'den fazla kavram A'dan Z'ye, arama ve sınıf filtresiyle","🗺️ Konu ilerleme haritası: İstatistiklerim sayfasında her konu bir kare; çözdüklerin yeşil, yanlışın olanlar kırmızı","⏳ Çalışma süresi: sitede aktif geçirdiğin dakikalar; İstatistiklerim ve Gelişim Raporu'nda","🔗 Konu paylaşma: her konunun altında Paylaş düğmesi; bağlantı doğrudan o konuyu açar","🎯 Arama sonuçları, Yanlışlarım ve Notlarım artık doğrudan konunun kendisini açıyor","🔢 Hesap makinesi ve birim çevirici (uzunluk, kütle, zaman, alan, hacim, sıcaklık)","🖨️ Yanlışlarımı yazdır / PDF: yanlış yaptığın sorulardan tekrar kâğıdı","🎯 9. sınıf Matematik ve Fizik konularına kazanım listeleri (45 konu)","📖 5. sınıf Matematik ve Fen Bilimleri konu anlatımları uzatıldı","📚 9-12. sınıf Matematik, Fizik, Kimya ve Biyoloji: 9 yeni konu, 7 konu genişletildi, 41 yeni soru","🏅 3 yeni rozet (toplam 33)","✨ Yeni sürüm gelince ekranda küçük bir bildirim çıkar"]},
@@ -3876,7 +4204,7 @@ document.addEventListener("click",e=>{
   if(a==="pomoreset"){POMO.running=false;clearInterval(POMO.timer);POMO.mode="work";POMO.left=POMO_LEN.work;return pomoDraw()}
   if(a==="pomoskip"){POMO.left=1;return pomoTick()}
   if(a==="clearwrong") return confirmBtn(b,"Emin misin? Tekrar bas",()=>{WRONG={};lsSet("yanlislar",WRONG);wrongPage()});
-  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["gunlukSon","gunlukSeri","gunlukToplam","belgeler","belgeSayisi","sinifSinavi","sinavlar","arkadaslar","duellolar","duelloGalibiyet","tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme","plan","planTamam","sure","sozlukAcildi","planGecmis","haftaPlanSay","sonBakilan","kelimeAvi","bulmacaIyi","carpimEnIyi","carpimTam","karneDersleri"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
+  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);REV={};["gunlukSon","gunlukSeri","gunlukToplam","belgeler","belgeSayisi","sinifSinavi","sinavlar","arkadaslar","duellolar","duelloGalibiyet","tekrar","sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme","plan","planTamam","sure","sozlukAcildi","planGecmis","haftaPlanSay","sonBakilan","kelimeAvi","bulmacaIyi","carpimEnIyi","carpimTam","karneDersleri","denemeSetleri","hafizaOyun"].forEach(k=>{try{localStorage.removeItem(PFX+k)}catch(e){}});statsPage()});
 });
 
 // ===== Sürüm 1.3: LGS/TYT modları, rozetler, bilgi kartları, ders programı =====
@@ -5025,11 +5353,58 @@ document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)r
   if(b.dataset.avfill){const g=myGrade(),K=lsGet("karneDersleri",[]).filter(r=>r.a||r.p);Object.keys(D[g]).forEach(s=>{if(!K.find(r=>r.a===subjName(s)))K.push({a:subjName(s),h:"",p:""})});lsSet("karneDersleri",K);return avgPage()}
 });
 
+
+// ===== Sürüm 2.6: Deneme setleri, Hafıza Kartları, bildirim altyapısı =====
+function setQs(kind,n){const M=MODES[kind],r=mulberry(n*7919+(kind==="lgs"?101:202)),qs=[];const sh=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(r()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+  M.parts.forEach(([gs,ss,c])=>{const p=[];gs.forEach(gg=>ss.forEach(sb=>{if(D[gg]&&D[gg][sb])addPool(p,gg,sb)}));qs.push(...sh(p).slice(0,c))});return qs}
+function setsPage(){const R=lsGet("denemeSetleri",{}),row=(kind,lbl)=>`<h2>${lbl}</h2><div class="grid">`+Array.from({length:10},(_,k)=>{const n=k+1,v=R[kind+n];
+    return `<button type="button" class="tile setb" data-set="${kind}|${n}"><b>${MODES[kind].g} Deneme ${n}</b><small>${v!=null?`En iyi: %${v} ${v>=85?"🏆":v>=70?"🎉":"✅"}`:"Henüz çözmedin"}</small></button>`}).join("")+`</div>`;
+  app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › <a href="#araclar">Araçlar</a> › Deneme Setleri</div>
+  <div class="hero" style="background:linear-gradient(135deg,#1e3a8a,#2f6bff)"><h1>📚 Deneme Setleri</h1><p>Numaralı ve sabit deneme setleri: aynı numaralı seti çözen herkes aynı soruları görür. Arkadaşlarınla aynı seti çözüp puanlarınızı karşılaştırabilirsiniz.</p></div>
+  <div class="note">LGS setleri 8. sınıf derslerinden 30, TYT setleri 9-12. sınıf derslerinden 30 soru içerir ve süreli çözülür. Sorular gerçek sınavlardan değil, sitedeki konulardan seçilir; sınav tarzında karışık çalışma içindir.</div>`+row("lgs","🎯 LGS tarzı setler (8. sınıf)")+row("tyt","🚀 TYT tarzı setler (lise)")}
+function setStart(kind,n){const M=MODES[kind],qs=setQs(kind,n);
+  TEST={g:M.g,s:kind,qs,i:0,correct:0,wrong:[],res:{},start:Date.now(),answered:false,lim:M.sec*qs.length,src:"all",mode:`📚 ${M.g} Deneme Seti ${n}`,set:{kind,n}};
+  clearInterval(testTimer);testTimer=setInterval(()=>{if(!TEST){clearInterval(testTimer);return}const el=document.getElementById("ttime");const sec=(Date.now()-TEST.start)/1000;
+    if(TEST.lim&&sec>=TEST.lim){TEST.timeup=true;testResult();return}if(el)el.textContent=TEST.lim?fmtTime(TEST.lim-sec):fmtTime(sec)},500);
+  testQuestion();window.scrollTo(0,0)}
+{const _tr=testResult;testResult=function(){const T=TEST;_tr.apply(this,arguments);if(T&&T.set){const R=lsGet("denemeSetleri",{}),k=T.set.kind+T.set.n,p=Math.round(T.correct/T.qs.length*100);if(R[k]==null||p>R[k]){R[k]=p;lsSet("denemeSetleri",R)}checkBadges()}}}
+
+// ---- Hafıza Kartları ----
+let MEM=null;
+function memPairs(g){const pool=[];Object.keys(D[g]).forEach(s=>D[g][s].forEach(t=>[[t[2],t[3],t[4]],...(t[5]||[])].forEach(([q,o,a])=>{const ans=String(o[a]);if(q.length<=70&&ans.length<=22&&ans.length>=1&&!/^(hepsi|hiçbiri|evet|hayır|doğru|yanlış)$/i.test(ans))pool.push({q,a:ans,s})})));
+  const out=[],seen=new Set();pool.sort(()=>Math.random()-.5).forEach(x=>{const k=x.a.toLocaleLowerCase("tr");if(out.length<6&&!seen.has(k)){seen.add(k);out.push(x)}});return out}
+function memSetup(){const mg=myGrade()&&D[myGrade()]?myGrade():"4";
+  app.innerHTML=`<div class="crumb"><a href="#oyunlar">Oyunlar</a> › Hafıza Kartları</div><div class="hero" style="background:linear-gradient(135deg,#ec4899,#8b5cf6)"><h1>🃏 Hafıza Kartları</h1><p>Kartları çevir, her soruyu doğru cevabıyla eşleştir! Ne kadar az hamlede bitirirsen o kadar iyi.</p></div>
+  <div class="about rform"><label>Sınıf<select id="memg">${Object.keys(D).map(g=>`<option value="${g}"${g===mg?" selected":""}>${g}. Sınıf</option>`).join("")}</select></label><button class="send" type="button" data-mem="start">▶ Başla</button></div>`}
+function memMake(g){const P=memPairs(g),cards=[];P.forEach((p,i)=>{cards.push({id:i,t:p.q,k:"q"});cards.push({id:i,t:p.a,k:"a"})});cards.sort(()=>Math.random()-.5);return {g,P,cards,open:[],done:[],moves:0,t:Date.now(),lock:false}}
+function memRender(){const M=MEM,fin=M.done.length===M.P.length;
+  app.innerHTML=`<div class="crumb"><a href="#oyunlar">Oyunlar</a> › <a href="#hafiza">Hafıza Kartları</a> › ${M.g}. Sınıf</div>
+  <div class="about"><b>${M.done.length}/${M.P.length} eşleşme</b> · <span class="crumb">Hamle: ${M.moves}</span></div>
+  <div class="memgrid">${M.cards.map((c,i)=>{const up=M.open.includes(i)||M.done.includes(c.id);return `<button type="button" class="memc${up?" up":""}${M.done.includes(c.id)?" ok":""}${c.k==="a"?" ans":""}" data-memc="${i}" ${M.done.includes(c.id)?"disabled":""} aria-label="${up?esc(c.t):"Kapalı kart"}">${up?esc(c.t):"❓"}</button>`}).join("")}</div>
+  ${fin?`<div class="about" style="text-align:center"><h3>🎉 Tebrikler! ${M.moves} hamlede, ${Math.round((Date.now()-M.t)/1000)} saniyede bitirdin.</h3><div class="vids" style="justify-content:center"><button class="send" type="button" data-mem="again">🔁 Yeni kartlar</button><a class="yt alt" href="#oyunlar">🧩 Diğer oyunlar</a></div></div>`:`<p class="crumb">İpucu: Pembe kenarlı kartlar cevap kartlarıdır.</p>`}`}
+function memClick(i){const M=MEM;if(M.lock||M.open.includes(i)||M.done.includes(M.cards[i].id))return;M.open.push(i);
+  if(M.open.length===2){M.moves++;const [a,b]=M.open.map(x=>M.cards[x]);if(a.id===b.id&&a.k!==b.k){M.done.push(a.id);M.open=[];if(M.done.length===M.P.length){lsSet("oyunSayisi",lsGet("oyunSayisi",0)+1);lsSet("hafizaOyun",lsGet("hafizaOyun",0)+1);setTimeout(checkBadges,200)}}
+    else{M.lock=true;setTimeout(()=>{M.open=[];M.lock=false;memRender()},1100)}}
+  memRender()}
+{const _gm3=gamesPage;gamesPage=function(){_gm3();const gr=app.querySelector(".grid.tools");if(gr)gr.insertAdjacentHTML("beforeend",`<a class="tile tool" href="#hafiza"><div class="ico">🃏</div><b>Hafıza Kartları</b><small>Soruyu cevabıyla eşleştir</small></a>`)}}
+
+// ---- Ziyaretçi istatistiği (yalnızca Vercel'de, kişisel veri toplamaz) ----
+try{if(/\.vercel\.app$/.test(location.hostname)){const s=document.createElement("script");s.defer=true;s.src="/_vercel/insights/script.js";document.head.appendChild(s)}}catch(e){}
+
+BADGES.push(["setci","📚","Deneme Avcısı","Bir deneme setini bitir",()=>[Object.keys(lsGet("denemeSetleri",{})).length,1]],["hafiza2","🃏","Hafıza Ustası","Bir Hafıza Kartları oyununu bitir",()=>[lsGet("hafizaOyun",0),1]]);
+TOOLS.push(["setler","📚","Deneme Setleri","Numaralı LGS ve TYT setleri"],["hafiza","🃏","Hafıza Kartları","Soru-cevap eşleştirme"]);
+TOOL_CATS[0][1].push("setler");TOOL_CATS[1][1].push("hafiza");
+document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+  if(b.dataset.set){const [k,n]=b.dataset.set.split("|");return setStart(k,+n)}
+  if(b.dataset.mem==="start"||b.dataset.mem==="again"){MEM=memMake(b.dataset.mem==="again"?MEM.g:document.getElementById("memg").value);return memRender()}
+  if(b.dataset.memc!==undefined&&MEM)return memClick(+b.dataset.memc);
+});
+
 function home(){
   const st=stats();
   let h=`<div class="hero"><h1>Ders Kütüphanesi 📚</h1><p>1'den 12'ye bütün sınıflar, dersler, konu anlatımları, örnek sorular ve YouTube videoları tek yerde.</p>
   <div class="stats"><div class="stat"><b>12</b>sınıf</div><div class="stat"><b>${st.ders}</b>ders</div><div class="stat"><b>${st.konu}</b>konu</div><div class="stat"><b>${st.soru}</b>soru</div><div class="stat"><b>${SOLVED.size}</b>doğru cevabın</div></div></div>`;
-  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 2.5 yayında! 🎉</b><small>Psikoloji, Sosyoloji ve Mantık dersleri, Kavram Bulmacası, Çarpım Tablosu, Not Ortalaması, Önemli Günler ve fazlası →</small></div></a>`;
+  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 2.6 yayında! 🎉</b><small>Deneme Setleri, Hafıza Kartları, uzatılan 1-3. sınıf konu anlatımları, yeni kazanımlar ve fazlası →</small></div></a>`;
   const last=lsGet("sonKonu",null);
   if(last&&D[last.g]&&D[last.g][last.s]) h+=`<a class="cont" href="${last.h}"><span>▶️</span><div><b>Kaldığın yerden devam et</b><small>${last.g}. Sınıf · ${subjName(last.s)} · ${D[last.g][last.s].filter(t=>SOLVED.has(last.g+"|"+last.s+"|"+t[0])).length}/${D[last.g][last.s].length} konu tamamlandı</small></div></a>`;
   h+=`<a class="cont" href="#siniflar" style="border-left-color:#16a34a"><span>📚</span><div><b>Sınıflar</b><small>İlkokul · Ortaokul · Lise — 1'den 12'ye bütün sınıflar ve dersler →</small></div></a>`;
@@ -5142,6 +5517,8 @@ function route(){
   else if(h==="yazili") wrSetup();
   else if(h==="hatirlatici") remPage();
   else if(h==="plan") planPage();
+  else if(h==="setler") setsPage();
+  else if(h==="hafiza") memSetup();
   else if(h==="bulmaca") bqSetup();
   else if(h==="carpim") ctSetup();
   else if(h==="ortalama") avgPage();
