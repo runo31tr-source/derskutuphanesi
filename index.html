@@ -105,6 +105,11 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 .res .snip{color:var(--mute);font-size:14px;margin-top:4px}mark{background:color-mix(in srgb,var(--blue) 25%,transparent);color:inherit;border-radius:4px;padding:0 2px}
 .printdoc h1{font-size:28px;margin:10px 0 0}.psmall{color:var(--mute);margin:0 0 16px}.ptopic{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin-bottom:12px}.ptopic h2{font-size:19px;margin:0 0 6px}.ptopic p{margin:0 0 8px}.pq{margin:6px 0}.pqo{display:grid;grid-template-columns:1fr 1fr;gap:2px 16px;margin:4px 0 0 10px;font-size:15px}.pans span{display:block;font-size:14px;margin:2px 0}
 @media print{header,footer,.noprint,#player,.toast,.banner{display:none!important}body{background:#fff!important;color:#000!important}main{max-width:none;padding:0}.ptopic{break-inside:avoid;border:1px solid #bbb;background:#fff}.fgrid{grid-template-columns:1fr 1fr}.fcardx{break-inside:avoid;background:#fff;border:1px solid #bbb}.fbar,.ftabs,.hero,.crumb{display:none!important}}
+.atable{display:grid;gap:4px}.arow{display:grid;grid-template-columns:minmax(180px,1.3fr) 1fr 1fr;gap:16px;align-items:center;text-decoration:none;padding:10px 6px;border-bottom:1px solid var(--line)}.arow:last-child{border-bottom:0}.acell{display:grid;gap:3px}.acell small{color:var(--mute);font-weight:700}.acell .prog{margin:0}@media(max-width:640px){.arow{grid-template-columns:1fr}}
+.tfprop{margin:12px 0;padding:12px 16px;border-radius:12px;background:var(--bg);font-size:18px}.tfbtns{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tfb{font:inherit;font-size:19px;font-weight:900;padding:16px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}.tfb.yes:hover{border-color:var(--green)}.tfb.no:hover{border-color:var(--red)}.tfb.ok{background:var(--okbg);border-color:var(--green)}.tfb.no.no,.tfb.yes.no{background:var(--nobg);border-color:var(--red)}
+.wrin{display:block;width:100%;font:inherit;font-size:20px;font-weight:700;padding:12px 16px;margin:12px 0 4px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink)}.wrin.ok{border-color:var(--green);background:var(--okbg)}.wrin.no{border-color:var(--red);background:var(--nobg)}
+.rdays{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}.rday{display:inline-flex!important;align-items:center;gap:6px;font-weight:700;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer}.rday input{width:auto!important}
+.ssort{font:inherit;font-weight:700;font-size:14px;padding:7px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
 .legend{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--mute);font-weight:700;margin-top:6px}.legend i{display:inline-block;width:14px;height:14px;border-radius:4px;margin-right:6px;vertical-align:-2px}
 .goals{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.gbox{display:grid;justify-items:center;gap:6px;text-align:center}.gbox h3{margin:6px 0 0}.gbox select{font:inherit;font-weight:700;padding:6px 10px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
 .gring{width:160px;height:160px;border-radius:50%;display:grid;place-items:center}.gin{width:126px;height:126px;border-radius:50%;background:var(--card);display:grid;place-content:center;text-align:center}.gin b{font-size:34px;line-height:1}.gin small{color:var(--mute);font-weight:700}
@@ -162,7 +167,7 @@ footer a{text-decoration:none;font-weight:800;color:var(--blue)}
 </div></header>
 <main id="app"></main>
 <form name="sorun-bildir" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="tur"><input name="konu"><textarea name="aciklama"></textarea><input name="iletisim"></form>
-<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 1.5</div></footer>
+<footer><div><a href="#">Sınıflar</a> · <a href="#atam">Atam</a> · <a href="#araclar">Araçlar</a> · <a href="#duyurular">Duyurular</a> · <a href="#hakkimizda">Hakkımızda</a> · <a href="#sorun-bildir">Sorun Bildir</a></div><div style="margin-top:6px">© 2026 Ders Kütüphanesi · Ücretsiz eğitim platformu · Sürüm 1.6</div></footer>
 <button id="top" class="totop" type="button" aria-label="Yukarı çık">↑</button>
 
 <script>
@@ -2379,6 +2384,85 @@ const E9={
 };
 
 for(const g in E9)for(const s in E9[g])E9[g][s].forEach(t=>{const ex=D[g][s].find(x=>x[0]===t[0]);if(!ex){D[g][s].push(t);return}ex[1]=t[1];ex[5]=ex[5]||[];const have=new Set([ex[2],...ex[5].map(q=>q[0])]);[[t[2],t[3],t[4]],...(t[5]||[])].forEach(q=>{if(!have.has(q[0]))ex[5].push(q)})});
+const E10={
+1:{"Türkçe":[["Nokta ve Soru İşareti","Bildiren cümlelerin sonuna nokta (.), soru soran cümlelerin sonuna soru işareti (?) koyarız. Doğru işareti kullanmak cümlenin anlamını doğru aktarır.","'Bugün hava çok güzel' cümlesinin sonuna hangi işaret konur?",["Nokta","Soru işareti","Virgül","Hiçbiri"],0,[["'Adın ne' cümlesinin sonuna hangi işaret konur?",["Soru işareti","Nokta","Virgül","Kesme işareti"],0]]]],
+"Matematik":[["Toplamada Yer Değiştirme","Toplamada sayıların yeri değişse de sonuç değişmez: 3 + 5 = 5 + 3 = 8. Bu özellik işlem yapmayı kolaylaştırır.","4 + 6 işleminin sonucu hangisine eşittir?",["6 + 4","6 − 4","4 − 6","10 + 6"],0,[["2 + 7 = 7 + ☐ ise ☐ kaçtır?",["2","7","9","5"],0]]]],
+"Hayat Bilgisi":[["Mevsimler","Bir yılda dört mevsim vardır: ilkbahar, yaz, sonbahar ve kış. Her mevsimde havaya uygun giyiniriz; kışın kalın, yazın ince giysiler giyeriz.","Bir yılda kaç mevsim vardır?",["4","2","12","7"],0,[["Hangi mevsimde kar yağar?",["Kış","Yaz","İlkbahar","Hiçbiri"],0]]]]},
+2:{"Türkçe":[["Kelimeleri Hecelerine Ayırma","Satır sonuna sığmayan kelimeleri hecelerinden bölüp kısa çizgi (-) koyarak alt satırda devam ederiz. Kelimeyi asla hece ortasından bölmeyiz.","'Kelebek' kelimesi satır sonunda nasıl bölünür?",["Ke-lebek","Kel-ebek","K-elebek","Keleb-ek"],0,[["Satır sonunda bölünen kelimeye hangi işaret konur?",["Kısa çizgi (-)","Nokta","Soru işareti","Ünlem"],0]]]],
+"Matematik":[["Sayı Örüntüleri","Belirli bir kurala göre devam eden sayı dizilerine örüntü denir. 2, 4, 6, 8 örüntüsünde sayılar ikişer artar; kuralı bulup sonraki sayıyı tahmin ederiz.","5, 10, 15, 20, … örüntüsünde sonraki sayı kaçtır?",["25","21","30","24"],0,[["20, 18, 16, 14, … örüntüsünün kuralı nedir?",["İkişer azalır","İkişer artar","Beşer artar","Değişmez"],0]]]],
+"Hayat Bilgisi":[["Para Biriktirme","Paramızı ihtiyaçlarımıza göre harcar, bir kısmını biriktiririz. Kumbara kullanmak ve istek ile ihtiyacı ayırt etmek tasarruf etmemizi sağlar.","Hangisi bir ihtiyaçtır?",["Okul için defter","Beşinci oyuncak araba","Gereksiz şeker","Aynı oyundan bir tane daha"],0,[["Para biriktirmek için ne kullanabiliriz?",["Kumbara","Çöp kutusu","Oyun kutusu","Kalem kutusu"],0]]]],
+"İngilizce":[["Prepositions: In, On, Under","The ball is in the box. The cat is on the table. The dog is under the chair.","'The cat is on the table.' ne demektir?",["Kedi masanın üstünde","Kedi masanın altında","Kedi kutunun içinde","Kedi sandalyede"],0,[["'Under' ne demektir?",["Altında","Üstünde","İçinde","Yanında"],0]]]]},
+3:{"Türkçe":[["Eş Sesli Kelimeler","Yazılışı ve okunuşu aynı, anlamı farklı kelimelere eş sesli kelimeler denir. 'Gül' hem bir çiçek hem de gülmek eyleminin emir hâlidir.","Hangi cümlede 'yüz' sayı anlamındadır?",["Kumbaramda yüz lira var.","Yüzünü yıkadı.","Havuzda yüzdü.","Yüzü güldü."],0,[["'Çay' kelimesi hangi cümlede akarsu anlamındadır?",["Köyün yanından bir çay akıyor.","Kahvaltıda çay içtik.","Çay bardağı kırıldı.","Çay demlendi."],0]]]],
+"Matematik":[["Kesirlere Giriş","Bir bütünün eş parçalarından her birine kesir denir. Bir pastayı 4 eş parçaya bölüp birini alırsak bütünün 1/4'ünü almış oluruz. Kesir çizgisinin altındaki sayı (payda) bütünün kaç parçaya bölündüğünü gösterir.","Bir bütün 5 eş parçaya bölünüp 2 parçası boyanırsa boyalı kısım hangi kesirle gösterilir?",["2/5","5/2","1/5","3/5"],0,[["Kesir çizgisinin altındaki sayıya ne denir?",["Payda","Pay","Bütün","Kesir çizgisi"],0]]]],
+"Hayat Bilgisi":[["Yakın Çevremizdeki Tarihî Yerler","Yaşadığımız yerde camiler, köprüler, kaleler ve müzeler gibi tarihî yapılar bulunur. Bu yapılar geçmişimizi anlatır; onları korumak ve temiz tutmak hepimizin görevidir.","Tarihî eserlerin sergilendiği yere ne denir?",["Müze","Market","Otopark","Stadyum"],0,[["Tarihî yapılara karşı nasıl davranmalıyız?",["Korumalı ve temiz tutmalıyız","Üzerine yazı yazmalıyız","Taşlarını sökmeliyiz","Görmezden gelmeliyiz"],0]]]],
+"Fen Bilimleri":[["Gece ve Gündüz","Dünya kendi etrafında dönerken Güneş'e bakan tarafı aydınlık olur ve orada gündüz yaşanır. Güneş'i görmeyen tarafta ise gece olur.","Gece ve gündüz nasıl oluşur?",["Dünya'nın kendi etrafında dönmesiyle","Ay'ın dönmesiyle","Bulutların hareketiyle","Rüzgârla"],0,[["Dünya'nın Güneş'e bakan tarafında ne yaşanır?",["Gündüz","Gece","Akşam","Kış"],0]]]],
+"İngilizce":[["Vehicles","car, bus, train, plane, ship, bike","'Plane' ne demektir?",["Uçak","Gemi","Tren","Otobüs"],0,[["'Ship' ne demektir?",["Gemi","Bisiklet","Araba","Uçak"],0]]]]},
+4:{"Türkçe":[["Kelimede Anlam: Eş ve Zıt Anlam","Yazılışları farklı, anlamları aynı kelimelere eş anlamlı kelimeler denir (siyah–kara, okul–mektep). Anlamca birbirinin karşıtı olan kelimeler ise zıt anlamlıdır (iyi–kötü).","'Cevap' kelimesinin eş anlamlısı hangisidir?",["Yanıt","Soru","Sınav","Kelime"],0,[["'Cesur' kelimesinin zıt anlamlısı hangisidir?",["Korkak","Yiğit","Güçlü","Kahraman"],0]]]],
+"Matematik":[["Çevre Uzunluğu","Bir şeklin çevre uzunluğu, bütün kenarlarının uzunlukları toplanarak bulunur. Karenin çevresi bir kenarın 4 katı, dikdörtgenin çevresi ise kısa ve uzun kenar toplamının 2 katıdır.","Bir kenarı 6 cm olan karenin çevresi kaç cm'dir?",["24","12","36","18"],0,[["Kenarları 5 cm ve 3 cm olan dikdörtgenin çevresi kaç cm'dir?",["16","15","8","30"],0]]]],
+"Fen Bilimleri":[["Işık Kirliliği ve Ses Kirliliği","Gereğinden fazla ve yanlış yönlendirilmiş ışık ışık kirliliğine, rahatsız edici yüksek sesler ses kirliliğine yol açar. İkisi de insan sağlığını ve hayvanların yaşamını olumsuz etkiler.","Rahatsız edici yüksek seslerin oluşturduğu kirliliğe ne denir?",["Ses kirliliği","Su kirliliği","Hava kirliliği","Toprak kirliliği"],0,[["Ses kirliliğini azaltmak için ne yapabiliriz?",["Gereksiz korna çalmamak","Müziği sonuna kadar açmak","Gece yüksek sesle konuşmak","Bağırmak"],0]]]],
+"Sosyal Bilgiler":[["Millî Kültürümüz","Bayramlar, düğünler, misafirperverlik, el sanatları ve yemeklerimiz millî kültürümüzün parçasıdır. Kültürümüz nesilden nesile aktarılarak yaşar.","Hangisi millî kültürümüzün bir parçasıdır?",["Bayramlarda büyükleri ziyaret etmek","Bilgisayar oyunu oynamak","Yabancı dizi izlemek","Asansöre binmek"],0,[["Kültür nasıl yaşatılır?",["Nesilden nesile aktarılarak","Unutularak","Yasaklanarak","Değiştirilerek yok edilerek"],0]]]],
+"İngilizce":[["Can I Have …?","Can I have a sandwich, please? Here you are. Thank you!","'Can I have a sandwich, please?' ne demektir?",["Bir sandviç alabilir miyim, lütfen?","Sandviç yaptım","Sandviç sevmem","Sandviç nerede?"],0,[["'Here you are.' ne demektir?",["Buyurun","Hoşça kal","Teşekkürler","Özür dilerim"],0]]]]},
+5:{"Türkçe":[["Söz Sanatları: Abartma","Bir durumu olduğundan çok büyük ya da çok küçük göstermeye abartma (mübalağa) denir. 'Bu çanta bir ton ağırlığında!' cümlesinde abartma vardır.","Hangi cümlede abartma vardır?",["Gözlerimden sel gibi yaşlar aktı.","Bugün okula gittim.","Kedi süt içti.","Hava biraz soğuk."],0,[["'Bir saattir değil, bin yıldır seni bekliyorum!' cümlesindeki söz sanatı hangisidir?",["Abartma","Kişileştirme","Konuşturma","Benzetme"],0]]]],
+"Matematik":[["Ondalık Gösterim","Paydası 10, 100 gibi olan kesirler virgül kullanılarak ondalık gösterimle yazılır. 3/10 = 0,3 ve 25/100 = 0,25'tir. Virgülün solu tam kısmı, sağı ondalık kısmı gösterir.","7/10 kesrinin ondalık gösterimi hangisidir?",["0,7","7,0","0,07","70"],0,[["0,25 hangi kesre eşittir?",["25/100","25/10","2/5","1/25"],0]]]],
+"Fen Bilimleri":[["Ay'ın Hareketleri ve Evreleri","Ay hem kendi etrafında hem de Dünya'nın etrafında döner. Dünya'dan bakıldığında Ay'ın aydınlık kısmı farklı görünür; bunlara Ay'ın evreleri denir: yeni ay, ilk dördün, dolunay ve son dördün.","Ay'ın tamamen aydınlık göründüğü evre hangisidir?",["Dolunay","Yeni ay","İlk dördün","Son dördün"],0,[["Ay kimin etrafında dolanır?",["Dünya","Mars","Güneş'in uydusu Venüs","Hiçbir şeyin"],0]]]],
+"Sosyal Bilgiler":[["Ekonomik Faaliyetler ve Meslekler","İnsanlar tarım, hayvancılık, sanayi, ticaret ve hizmet gibi ekonomik faaliyetlerle geçimini sağlar. Yaşanılan yerin özellikleri hangi mesleklerin yaygın olduğunu belirler.","Kıyı kesimlerinde hangi meslek daha yaygındır?",["Balıkçılık","Madencilik","Kayak hocalığı","Çobanlık"],0,[["Hangisi bir hizmet faaliyetidir?",["Öğretmenlik","Buğday ekmek","Kömür çıkarmak","Halı dokumak"],0]]]],
+"İngilizce":[["My Town: Giving Directions","Go straight. Turn left. It's next to the bank. It's between the school and the park.","'It's between the school and the park.' ne demektir?",["Okul ile parkın arasında","Okulun karşısında","Parkın içinde","Bankanın yanında"],0,[["'Go straight.' ne demektir?",["Düz git","Sola dön","Sağa dön","Geri dön"],0]]]],
+"Din Kültürü":[["Dua","Dua, insanın Allah'a yalvarması, dilekte bulunması ve şükretmesidir. Dua her zaman ve her yerde yapılabilir; en güzel dualardan biri Fatiha suresidir.","Duanın anlamı nedir?",["Allah'a yalvarmak ve dilekte bulunmak","Spor yapmak","Oyun oynamak","Alışveriş yapmak"],0,[["Dua ne zaman yapılabilir?",["Her zaman ve her yerde","Sadece bayramda","Sadece camide","Sadece sabah"],0]]]]},
+6:{"Türkçe":[["Kök ve Ek","Kelimenin anlamlı en küçük parçasına kök denir. Köke getirilen ekler yapım eki (yeni kelime türetir: göz-lük) ya da çekim eki (anlamı değiştirmez: göz-ler) olabilir.","'Gözlükçü' kelimesinin kökü hangisidir?",["göz","gözlük","gözlükçü","lük"],0,[["'Kitaplar' kelimesindeki '-lar' eki hangi tür ektir?",["Çekim eki","Yapım eki","Kök","Hiçbiri"],0]]]],
+"Matematik":[["Kümeler","Belirli nesnelerden oluşan topluluğa küme denir. Küme elemanları süslü parantez içinde yazılır: A = {1, 2, 3}. Bir eleman kümede varsa '∈' sembolüyle gösterilir.","A = {2, 4, 6, 8} kümesinin kaç elemanı vardır?",["4","8","2","6"],0,[["5 sayısı A = {1, 3, 5} kümesinin elemanı mıdır?",["Evet","Hayır","Bazen","Bilinemez"],0]]]],
+"Fen Bilimleri":[["Yoğunluk ve Yüzme","Yoğunluğu sudan küçük olan cisimler suda yüzer, büyük olanlar batar. Tahta suda yüzerken demir bilye batar. Zeytinyağı da sudan az yoğun olduğu için suyun üstünde kalır.","Zeytinyağı neden suyun üstünde kalır?",["Yoğunluğu sudan küçük olduğu için","Ağır olduğu için","Sıcak olduğu için","Renkli olduğu için"],0,[["Hangisi suda batar?",["Demir bilye","Tahta parçası","Mantar","Plastik top"],0]]]],
+"Sosyal Bilgiler":[["Kültürel Etkileşim","İnsanlar ticaret, göç ve savaşlar yoluyla birbirleriyle etkileşir ve kültürlerini paylaşır. Türkler İpek Yolu sayesinde Çin, Hint ve İran kültürleriyle etkileşime girmiştir.","Kültürlerin etkileşiminde hangisi etkilidir?",["Ticaret","Uyku","Yemek pişirmek","Oyun"],0,[["Türklerin farklı kültürlerle tanışmasını sağlayan ticaret yolu hangisidir?",["İpek Yolu","Kral Yolu","Süveyş Kanalı","Panama Kanalı"],0]]]],
+"İngilizce":[["Fairs and Festivals Vocabulary","stall, ticket, crowded, delicious, colorful","'Crowded' ne demektir?",["Kalabalık","Sessiz","Renkli","Lezzetli"],0,[["'Delicious' ne demektir?",["Lezzetli","Pahalı","Ucuz","Büyük"],0]]]],
+"Din Kültürü":[["Hac ve Umre","Hac, gücü yeten Müslümanların ömründe bir kez belirli günlerde Kâbe'yi ziyaret etmesidir. Umre ise yılın herhangi bir zamanında yapılabilen ziyarettir.","Hac ibadeti hangi şehirde yapılır?",["Mekke","Kudüs","Bağdat","İstanbul"],0,[["Yılın herhangi bir zamanında yapılabilen ziyarete ne denir?",["Umre","Hac","Kurban","Zekât"],0]]]]},
+7:{"Türkçe":[["Fiilde Yapı","Fiiller yapılarına göre üçe ayrılır: basit fiil (koşmak), türemiş fiil (su-la-mak) ve birleşik fiil (yardım etmek, gelebilmek). Birleşik fiiller birden fazla kelimeden ya da yardımcı fiillerden oluşur.","'Yardım etmek' hangi yapıda bir fiildir?",["Birleşik","Basit","Türemiş","Hiçbiri"],0,[["'Sulamak' fiilinin yapısı nedir?",["Türemiş","Basit","Birleşik","Kök"],0]]]],
+"Matematik":[["Tam Sayılarla Çarpma ve Bölme","Aynı işaretli iki sayının çarpımı ya da bölümü pozitif, zıt işaretli iki sayınınki negatiftir. (−3) · (−4) = 12 ve (−12) ÷ 3 = −4 olur.","(−3) · (−4) = ?",["12","−12","7","−7"],0,[["(−20) ÷ 5 = ?",["−4","4","−15","25"],0]]]],
+"Fen Bilimleri":[["Aynalar ve Kullanım Alanları","Düz aynalar görüntüyü olduğu gibi yansıtır, sağ ile sol yer değiştirir. Çukur aynalar ışığı toplar; el feneri ve araç farlarında kullanılır. Tümsek aynalar geniş görüş alanı sağlar; mağazalarda ve virajlarda kullanılır.","Virajlarda geniş görüş alanı için hangi ayna kullanılır?",["Tümsek ayna","Çukur ayna","Düz ayna","Hiçbiri"],0,[["El fenerlerinde ışığı toplamak için hangi ayna kullanılır?",["Çukur ayna","Tümsek ayna","Düz ayna","Prizma"],0]]]],
+"Sosyal Bilgiler":[["Osmanlı'da Kadınların Rolü","Osmanlı'da kadınlar vakıf kurarak cami, okul, çeşme ve aşevi yaptırdı. Hürrem Sultan'ın yaptırdığı Haseki Külliyesi bunun bir örneğidir.","Osmanlı'da kadınların topluma hizmet ettiği yollardan biri hangisidir?",["Vakıf kurmak","Orduya komutanlık etmek","Padişah olmak","Elçilik yapmak"],0,[["Haseki Külliyesi'ni kim yaptırmıştır?",["Hürrem Sultan","Mihrimah Sultan","Kösem Sultan","Nurbanu Sultan"],0]]]],
+"İngilizce":[["Past Simple: Regular Verbs","I played football yesterday. She visited her grandma last week.","'She visited her grandma.' ne demektir?",["Büyükannesini ziyaret etti","Büyükannesini ziyaret edecek","Büyükannesini ziyaret ediyor","Büyükannesi yok"],0,[["'Play' fiilinin geçmiş hâli nedir?",["played","plaied","plays","playing"],0]]]],
+"Din Kültürü":[["Melekler","Melekler Allah'ın nurdan yarattığı, gözle görülmeyen varlıklardır. Dört büyük melek Cebrail, Mikail, İsrafil ve Azrail'dir. Kirâmen Kâtibîn melekleri insanların yaptıklarını yazar.","Dört büyük melekten biri hangisidir?",["Mikail","Hızır","Lokman","Üzeyir"],0,[["İnsanların iyi ve kötü davranışlarını yazan meleklere ne denir?",["Kirâmen Kâtibîn","Hafaza","Münker-Nekir","Hamele-i Arş"],0]]]]},
+8:{"Türkçe":[["Cümlede Anlam: Neden-Sonuç ve Amaç-Sonuç","Neden-sonuç cümlelerinde bir yargı başka bir yargının nedenidir: 'Yağmur yağdığı için maç ertelendi.' Amaç-sonuç cümlelerinde ise eylem bir amaca ulaşmak için yapılır: 'Sınavı kazanmak için çok çalıştı.' 'İçin' kelimesinin anlamına dikkat ederek ikisini ayırt ederiz.","'Hasta olduğu için okula gelmedi.' cümlesinde hangi anlam ilişkisi vardır?",["Neden-sonuç","Amaç-sonuç","Koşul-sonuç","Karşılaştırma"],0,[["'Erken kalkmak için alarm kurdu.' cümlesinde hangi anlam ilişkisi vardır?",["Amaç-sonuç","Neden-sonuç","Koşul-sonuç","Benzetme"],0]]]],
+"Matematik":[["Veri Analizi: Daire ve Çizgi Grafiği","Daire grafiği bir bütünün parçalarını, çizgi grafiği zaman içindeki değişimi göstermek için kullanılır. Daire grafiğinde tüm dilimlerin toplamı 360°'dir.","Daire grafiğinde tüm dilimlerin toplam açısı kaç derecedir?",["360°","180°","90°","100°"],0,[["Bir şehrin aylara göre sıcaklık değişimini göstermek için hangi grafik uygundur?",["Çizgi grafiği","Daire grafiği","Resim","Tablo başlığı"],0]]]],
+"Fen Bilimleri":[["Mevsimlerin Oluşumu","Mevsimler Dünya'nın eksen eğikliği ve Güneş etrafındaki dolanımı sonucu oluşur. Güneş ışınlarının dik geldiği yarım kürede yaz, eğik geldiği yarım kürede kış yaşanır. 21 Haziran'da Kuzey Yarım Küre'de en uzun gündüz yaşanır.","Mevsimlerin oluşmasının nedeni hangisidir?",["Eksen eğikliği ve Güneş etrafında dolanım","Ay'ın evreleri","Dünya'nın Güneş'e uzaklığının değişmesi","Rüzgârlar"],0,[["Kuzey Yarım Küre'de en uzun gündüz hangi tarihte yaşanır?",["21 Haziran","21 Aralık","21 Mart","23 Eylül"],0]]]],
+"İnkılap Tarihi":[["Kongreler Dönemi","Mustafa Kemal Erzurum (23 Temmuz 1919) ve Sivas (4 Eylül 1919) kongrelerini topladı. Erzurum'da 'Manda ve himaye kabul edilemez.' kararı alındı. Sivas Kongresi'nde bütün yararlı cemiyetler Anadolu ve Rumeli Müdafaa-i Hukuk Cemiyeti adıyla birleştirildi.","'Manda ve himaye kabul edilemez.' kararı ilk kez hangi kongrede alındı?",["Erzurum Kongresi","Sivas Kongresi","Balıkesir Kongresi","Alaşehir Kongresi"],0,[["Yararlı cemiyetlerin tek çatı altında birleştirildiği kongre hangisidir?",["Sivas Kongresi","Erzurum Kongresi","Amasya Görüşmeleri","Havza Genelgesi"],0]]]],
+"İngilizce":[["Making Phone Calls","Hello, can I speak to Ali, please? Hold on, please. Can I take a message?","'Hold on, please.' ne demektir?",["Lütfen bekleyin / hatta kalın","Lütfen kapatın","Lütfen tekrar edin","Lütfen gelin"],0,[["'Can I take a message?' ne demektir?",["Not almamı ister misiniz?","Mesaj atabilir miyim?","Telefonum nerede?","Kim arıyor?"],0]]]],
+"Din Kültürü":[["Ahiret İnancı","Ahiret, dünya hayatının sona ermesinden sonra başlayacak ebedî hayattır. İslam'a göre insanlar dünyada yaptıklarından ahirette hesap verecektir. Bu inanç insanı sorumlu davranmaya yönlendirir.","Ahiret inancının insana etkisi hangisidir?",["Sorumlu davranmaya yönlendirir","Tembelliği artırır","Kibirli yapar","Hiçbir etkisi yoktur"],0,[["Dünya hayatından sonra başlayacak ebedî hayata ne denir?",["Ahiret","Kader","Kaza","Ecel"],0]]]]},
+9:{"Edebiyat":[["Hikâye Türleri: Olay ve Durum Hikâyesi","Olay hikâyesinde (Maupassant tarzı) serim, düğüm ve çözüm bölümleri belirgindir; Ömer Seyfettin bu türün ustasıdır. Durum hikâyesinde (Çehov tarzı) belirgin bir olay örgüsü yoktur, bir an ya da kesit anlatılır; Sait Faik bu türün temsilcisidir.","Türk edebiyatında olay hikâyesinin en önemli temsilcisi kimdir?",["Ömer Seyfettin","Sait Faik","Orhan Veli","Cemal Süreya"],0,[["Belirgin bir olay örgüsü olmayan, bir kesiti anlatan hikâye türü hangisidir?",["Durum hikâyesi","Olay hikâyesi","Masal","Fabl"],0]]]],
+"Matematik":[["Üçgende Açılar","Bir üçgenin iç açıları toplamı 180°'dir. Bir dış açı, kendisine komşu olmayan iki iç açının toplamına eşittir. Dış açılar toplamı ise 360°'dir.","Bir üçgenin iki iç açısı 50° ve 70° ise üçüncü açı kaç derecedir?",["60°","80°","120°","50°"],0,[["Bir üçgenin dış açılarının toplamı kaç derecedir?",["360°","180°","90°","540°"],0]]]],
+"Fizik":[["Isı ve Sıcaklık","Isı bir enerji türüdür ve birimi joule'dür; sıcaklık ise taneciklerin ortalama hareket enerjisinin ölçüsüdür ve termometreyle ölçülür. Isı sıcak cisimden soğuk cisme akar ve sıcaklıklar eşitlenince akış durur.","Sıcaklık hangi araçla ölçülür?",["Termometre","Kalorimetre","Dinamometre","Barometre"],0,[["Isı alışverişi ne zaman durur?",["Sıcaklıklar eşitlendiğinde","Cisimler eridiğinde","Hiçbir zaman","Cisimler soğuduğunda"],0]]]],
+"Kimya":[["Periyodik Sistemde Özelliklerin Değişimi","Periyodik tabloda soldan sağa doğru atom yarıçapı genellikle azalır, elektron alma isteği artar. Yukarıdan aşağıya ise atom yarıçapı artar. Metaller tablonun solunda, ametaller sağında bulunur.","Periyodik tabloda yukarıdan aşağıya inildikçe atom yarıçapı nasıl değişir?",["Artar","Azalır","Değişmez","Sıfır olur"],0,[["Metaller periyodik tablonun neresinde bulunur?",["Solunda","Sağında","En altında ayrı bir satırda","Hiçbir yerde"],0]]]],
+"Biyoloji":[["Virüslerin Özellikleri","Virüsler hücre yapısında değildir; yalnızca canlı bir hücrenin içinde çoğalabilirler. Kendilerine ait metabolizmaları yoktur. Grip, kızamık ve COVID-19 virüslerin neden olduğu hastalıklardır; antibiyotikler virüslere etki etmez.","Virüsler nerede çoğalabilir?",["Yalnızca canlı hücrelerin içinde","Taşların üzerinde","Her yerde kendi başlarına","Sadece suda"],0,[["Antibiyotikler hangi hastalık etkenlerine etki etmez?",["Virüsler","Bakteriler","Hiçbiri","Hepsine etki eder"],0]]]],
+"Tarih":[["İslamiyet'in Doğuşu","İslamiyet 610 yılında Mekke'de doğdu. 622'de Müslümanlar Medine'ye göç etti; bu olaya hicret denir ve Hicri takvimin başlangıcı kabul edilir. Hz. Muhammed 632'de vefat etti.","Hicri takvimin başlangıcı kabul edilen olay hangisidir?",["Hicret (622)","Mekke'nin fethi","Bedir Savaşı","Veda Haccı"],0,[["Hicret hangi şehre yapılmıştır?",["Medine","Kudüs","Şam","Bağdat"],0]]]],
+"Coğrafya":[["Kayaçlar","Kayaçlar oluşumlarına göre üçe ayrılır: magmatik (granit, bazalt), tortul (kireç taşı, kum taşı) ve başkalaşım (mermer, kuvarsit). Mermer kireç taşının yüksek sıcaklık ve basınç altında başkalaşmasıyla oluşur.","Mermer hangi tür kayaçtır?",["Başkalaşım","Magmatik","Tortul","Volkanik kül"],0,[["Granit hangi tür kayaçtır?",["Magmatik","Tortul","Başkalaşım","Organik"],0]]]],
+"İngilizce":[["Present Perfect: Ever / Never","Have you ever been to Paris? I have never eaten sushi.","'Have you ever been to Paris?' ne demektir?",["Hiç Paris'e gittin mi?","Paris'e gidecek misin?","Paris'te misin?","Paris'i sever misin?"],0,[["'I have never eaten sushi.' ne demektir?",["Hiç suşi yemedim","Suşi yiyorum","Suşi yiyeceğim","Suşiyi severim"],0]]]]},
+10:{"Edebiyat":[["Karacaoğlan ve Âşık Şiiri","Karacaoğlan 17. yüzyılda yaşamış, aşk ve doğayı sade bir dille anlatan âşık şairdir. Koşmaları en bilinen eserleridir. Âşık şiirinde hece ölçüsü ve yarım kafiye kullanılır, son dörtlükte şairin adı geçer.","Âşık şiirinde son dörtlükte şairin adının geçmesine ne denir?",["Mahlas (tapşırma)","Redif","Nakarat","Kafiye"],0,[["Karacaoğlan şiirlerinde en çok hangi konuları işlemiştir?",["Aşk ve doğa","Savaş ve kahramanlık","Din ve tasavvuf","Siyaset"],0]]]],
+"Matematik":[["Fonksiyonlarda İşlemler","f(x) = 2x + 1 fonksiyonunda x yerine bir sayı yazarak fonksiyonun değerini buluruz: f(3) = 7. İki fonksiyon toplanabilir, çıkarılabilir ve çarpılabilir: (f + g)(x) = f(x) + g(x).","f(x) = 3x − 2 ise f(4) kaçtır?",["10","14","12","2"],0,[["f(x) = x + 1 ve g(x) = 2x ise (f + g)(2) kaçtır?",["7","5","6","3"],0]]]],
+"Fizik":[["Elektrik Akımı ve Devreler","Elektrik akımı yüklerin iletken içinde hareketidir ve birimi amperdir (A). Akım ampermetreyle, gerilim voltmetreyle ölçülür. Ampermetre devreye seri, voltmetre paralel bağlanır.","Ampermetre devreye nasıl bağlanır?",["Seri","Paralel","Hiç bağlanmaz","Toprağa"],0,[["Elektrik akımının birimi nedir?",["Amper","Volt","Ohm","Watt"],0]]]],
+"Kimya":[["Endüstride Kimya: Gübreler ve Plastikler","Gübreler bitkilerin ihtiyaç duyduğu azot, fosfor ve potasyumu toprağa kazandırır. Plastikler petrolden üretilen polimerlerdir; doğada çok geç çözündükleri için geri dönüştürülmeleri önemlidir.","Gübrelerin bitkilere sağladığı temel elementlerden biri hangisidir?",["Azot","Altın","Kurşun","Helyum"],0,[["Plastikler neden geri dönüştürülmelidir?",["Doğada çok geç çözündükleri için","Çok pahalı oldukları için","Zehirli gaz oldukları için","Kolay kırıldıkları için"],0]]]],
+"Biyoloji":[["Ekolojik Ayak İzi ve Sürdürülebilirlik","Ekolojik ayak izi, bir kişinin tüketimi için gereken doğal kaynak miktarıdır. Su ve enerji tasarrufu, toplu taşıma kullanmak ve geri dönüşüm ayak izini küçültür. Sürdürülebilirlik, kaynakları gelecek nesillere de yetecek şekilde kullanmaktır.","Hangisi ekolojik ayak izini küçültür?",["Toplu taşıma kullanmak","Gereksiz ışık yakmak","Her gün yeni plastik şişe almak","Suyu açık bırakmak"],0,[["Kaynakları gelecek nesillere de yetecek şekilde kullanmaya ne denir?",["Sürdürülebilirlik","Tüketim","İsraf","Kirlilik"],0]]]],
+"Tarih":[["Osmanlı'da Yükselme Dönemi Seferleri","Yavuz Sultan Selim, Çaldıran (1514), Mercidabık (1516) ve Ridaniye (1517) savaşlarıyla Doğu'da ve Mısır'da topraklar kazandı. Ridaniye'den sonra halifelik Osmanlı'ya geçti. Kanuni döneminde 1526 Mohaç Meydan Muharebesi kazanıldı.","Halifeliğin Osmanlı'ya geçtiği savaş hangisidir?",["Ridaniye","Çaldıran","Mohaç","Preveze"],0,[["Mohaç Meydan Muharebesi hangi padişah döneminde yapıldı?",["Kanuni Sultan Süleyman","Yavuz Sultan Selim","Fatih Sultan Mehmet","II. Bayezid"],0]]]],
+"Coğrafya":[["Doğal Afetler: Heyelan ve Çığ","Heyelan, eğimli yamaçlardaki toprak ve kaya kütlelerinin yer çekimiyle kaymasıdır; en çok Karadeniz Bölgesi'nde görülür. Çığ ise dağ yamaçlarındaki kar kütlelerinin kaymasıdır ve en çok Doğu Anadolu'da yaşanır.","Türkiye'de heyelanın en çok görüldüğü bölge hangisidir?",["Karadeniz","İç Anadolu","Güneydoğu Anadolu","Ege"],0,[["Dağ yamaçlarındaki kar kütlesinin kaymasına ne denir?",["Çığ","Heyelan","Sel","Erozyon"],0]]]],
+"Felsefe":[["Sanat Felsefesi ve Estetik","Sanat felsefesi güzelliği, sanat eserini ve sanatçının yaratıcılığını sorgular. Güzel nedir, sanat eseri nasıl değerlendirilir gibi sorular estetiğin konusudur. Platon sanatı taklit (mimesis) olarak görmüştür.","Güzelliği ve sanatı sorgulayan felsefe dalına ne denir?",["Estetik","Etik","Epistemoloji","Ontoloji"],0,[["Sanatı taklit (mimesis) olarak gören filozof kimdir?",["Platon","Kant","Hegel","Nietzsche"],0]]]],
+"İngilizce":[["Comparatives and Superlatives Review","Istanbul is bigger than Izmir. Everest is the highest mountain in the world.","'Everest is the highest mountain in the world.' ne demektir?",["Everest dünyanın en yüksek dağıdır","Everest yüksek bir dağdır","Everest daha yüksektir","Everest uzaktadır"],0,[["'Big' sıfatının karşılaştırma hâli nedir?",["bigger","more big","biggest","bigest"],0]]]]},
+11:{"Edebiyat":[["Tanzimat Dönemi Tiyatrosu","Türk edebiyatında Batılı anlamda ilk tiyatro eseri Şinasi'nin Şair Evlenmesi'dir (1860). Namık Kemal'in Vatan yahut Silistre adlı oyunu vatan sevgisini işler ve büyük etki uyandırmıştır.","Batılı anlamda ilk Türk tiyatro eseri hangisidir?",["Şair Evlenmesi","Vatan yahut Silistre","Zavallı Çocuk","Akif Bey"],0,[["'Vatan yahut Silistre' oyununun yazarı kimdir?",["Namık Kemal","Şinasi","Ziya Paşa","Ahmet Mithat"],0]]]],
+"Matematik":[["Sıralama ve Seçme Problemleri","Sıralamanın önemli olduğu durumlarda permütasyon, önemli olmadığı durumlarda kombinasyon kullanılır. 5 kişiden 2 kişilik bir grup seçmek C(5,2) = 10, bu iki kişiyi başkan ve yardımcı olarak seçmek P(5,2) = 20 farklı şekilde olur.","5 kişiden 2 kişilik bir komisyon kaç farklı şekilde seçilir?",["10","20","25","5"],0,[["3 kitap bir rafa kaç farklı şekilde dizilir?",["6","3","9","1"],0]]]],
+"Fizik":[["Manyetizma","Mıknatısların zıt kutupları birbirini çeker, aynı kutupları iter. Üzerinden akım geçen bir telin çevresinde manyetik alan oluşur; elektromıknatıslar bu ilkeyle çalışır. Manyetik alan çizgileri kuzey kutuptan çıkıp güney kutba girer.","Mıknatısların aynı kutupları birbirine ne yapar?",["İter","Çeker","Etkilemez","Yapışır"],0,[["Elektromıknatıs hangi ilkeyle çalışır?",["Akım geçen telin manyetik alan oluşturması","Sürtünmeyle elektriklenme","Işığın kırılması","Sesin yansıması"],0]]]],
+"Kimya":[["Asit-Baz Dengesi ve Tampon Çözeltiler","Tampon çözeltiler az miktarda asit ya da baz eklendiğinde pH'ın büyük ölçüde değişmesini engeller. İnsan kanı bir tampon sistemdir ve pH'ı yaklaşık 7,4'te tutulur.","Tampon çözeltilerin görevi nedir?",["pH'ın büyük ölçüde değişmesini engellemek","Çözeltiyi renklendirmek","Kaynama noktasını düşürmek","Tuz oluşturmak"],0,[["İnsan kanının pH değeri yaklaşık kaçtır?",["7,4","2","10","5"],0]]]],
+"Biyoloji":[["Endokrin Sistem","Endokrin bezler hormon salgılar ve hormonlar kan yoluyla hedef organlara ulaşır. Pankreas insülin salgılayarak kan şekerini düşürür; tiroit bezi metabolizma hızını düzenler. Hipofiz, diğer bezleri yönettiği için 'ana bez' olarak bilinir.","Kan şekerini düşüren hormon hangisidir?",["İnsülin","Adrenalin","Tiroksin","Büyüme hormonu"],0,[["Diğer bezleri yönettiği için 'ana bez' olarak bilinen bez hangisidir?",["Hipofiz","Tiroit","Pankreas","Böbrek üstü"],0]]]],
+"Tarih":[["I. Dünya Savaşı'nda Osmanlı Cepheleri","Osmanlı I. Dünya Savaşı'nda Kafkasya, Kanal, Irak, Suriye-Filistin, Çanakkale ve Hicaz-Yemen gibi cephelerde savaştı. Çanakkale Cephesi'nde kazanılan zafer savaşın uzamasına ve Rusya'ya yardım ulaştırılamamasına yol açtı.","Osmanlı'nın I. Dünya Savaşı'nda kesin zafer kazandığı cephe hangisidir?",["Çanakkale","Kanal","Kafkasya","Irak"],0,[["Çanakkale Zaferi'nin bir sonucu hangisidir?",["Rusya'ya yardım ulaştırılamaması","Savaşın hemen bitmesi","Osmanlı'nın toprak kaybetmesi","İtilaf Devletleri'nin İstanbul'u alması"],0]]]],
+"Coğrafya":[["Türkiye'de Tarım Ürünleri ve İklim","Pamuk sıcak ve sulanabilir ovalarda (Çukurova, Harran), çay yağışlı Doğu Karadeniz'de, buğday İç Anadolu'da yetişir. Turunçgiller ve muz don olayı görülmeyen Akdeniz kıyılarında üretilir.","Türkiye'de çay tarımı en çok nerede yapılır?",["Doğu Karadeniz","İç Anadolu","Trakya","Güneydoğu Anadolu"],0,[["Harran Ovası'nda sulamayla en çok yetiştirilen ürün hangisidir?",["Pamuk","Çay","Fındık","Muz"],0]]]],
+"Felsefe":[["Pragmatizm","Pragmatizme göre bir düşüncenin doğruluğu, pratikte işe yarayıp yaramamasına bağlıdır. William James ve John Dewey bu akımın önemli temsilcileridir. Dewey eğitimde 'yaparak öğrenme' anlayışını savunmuştur.","Bir düşüncenin doğruluğunu işe yararlığına bağlayan akım hangisidir?",["Pragmatizm","İdealizm","Rasyonalizm","Septisizm"],0,[["Eğitimde 'yaparak öğrenme' anlayışını savunan düşünür kimdir?",["John Dewey","Platon","Descartes","Hegel"],0]]]],
+"İngilizce":[["Relative Clauses: Who / Which / Where","The man who lives next door is a doctor. This is the book which I bought. That's the city where I was born.","'The man who lives next door' ifadesinde 'who' neyi anlatır?",["İnsanı","Eşyayı","Yeri","Zamanı"],0,[["Yer bildiren ilgi zamiri hangisidir?",["where","who","which","whose"],0]]]]},
+12:{"Edebiyat":[["Cumhuriyet Dönemi Tiyatrosu","Cumhuriyet döneminde tiyatro hızla gelişti; Devlet Tiyatroları 1949'da kuruldu. Necip Fazıl'ın Bir Adam Yaratmak, Haldun Taner'in Keşanlı Ali Destanı bu dönemin önemli oyunlarıdır.","'Keşanlı Ali Destanı' oyununun yazarı kimdir?",["Haldun Taner","Necip Fazıl Kısakürek","Musahipzade Celal","Turgut Özakman"],0,[["Devlet Tiyatroları hangi yıl kuruldu?",["1949","1923","1960","1938"],0]]]],
+"Matematik":[["Trigonometrik Denklemler","sin x = 1/2 denkleminin 0° ile 360° arasındaki çözümleri 30° ve 150°'dir. Trigonometrik fonksiyonlar periyodik olduğu için denklemlerin sonsuz çözümü vardır; sin ve cos fonksiyonlarının periyodu 360°'dir.","sin x = 1 denkleminin 0° ile 360° arasındaki çözümü kaçtır?",["90°","0°","180°","270°"],0,[["Sinüs fonksiyonunun periyodu kaç derecedir?",["360°","180°","90°","720°"],0]]]],
+"Fizik":[["Fotoelektrik Olay","Yeterince yüksek frekanslı ışık bir metal yüzeye düştüğünde yüzeyden elektron sökülür; buna fotoelektrik olay denir. Einstein bu olayı ışığın tanecik (foton) özelliğiyle açıklamış ve Nobel Ödülü almıştır. Güneş panelleri bu ilkeden yararlanır.","Fotoelektrik olayı açıklayarak Nobel Ödülü alan bilim insanı kimdir?",["Einstein","Newton","Bohr","Faraday"],0,[["Fotoelektrik olay ışığın hangi özelliğini gösterir?",["Tanecik özelliğini","Sadece dalga özelliğini","Ses özelliğini","Manyetik özelliğini"],0]]]],
+"Kimya":[["Alkoller ve Kullanım Alanları","Alkoller −OH grubu içeren organik bileşiklerdir. Etanol dezenfektan ve yakıt olarak, metanol ise sanayide çözücü olarak kullanılır; metanol çok zehirlidir. Gliserin kozmetik ürünlerde nem tutucu olarak kullanılır.","Alkollerde bulunan fonksiyonel grup hangisidir?",["−OH","−COOH","−CHO","−NH₂"],0,[["Çok zehirli olan alkol hangisidir?",["Metanol","Etanol","Gliserin","Hiçbiri"],0]]]],
+"Biyoloji":[["Fotosentezi Etkileyen Faktörler","Fotosentez hızını ışık şiddeti, karbondioksit miktarı, sıcaklık ve su etkiler. Belirli bir noktaya kadar ışık ve CO₂ arttıkça fotosentez hızı artar. Çok yüksek sıcaklıklarda enzimler bozulduğu için fotosentez yavaşlar.","Fotosentez hızını etkileyen faktörlerden biri hangisidir?",["Işık şiddeti","Ay'ın evresi","Toprağın rengi","Rüzgârın yönü"],0,[["Çok yüksek sıcaklıkta fotosentez neden yavaşlar?",["Enzimler bozulduğu için","Işık azaldığı için","Su arttığı için","Bitki uyuduğu için"],0]]]],
+"İnkılap Tarihi":[["Eğitim ve Kültür İnkılapları","1924'te Tevhid-i Tedrisat Kanunu ile bütün okullar Millî Eğitim Bakanlığı'na bağlandı. 1928'de Harf İnkılabı yapıldı ve Millet Mektepleri açıldı. 1931'de Türk Tarih Kurumu, 1932'de Türk Dil Kurumu kuruldu.","Bütün okulları Millî Eğitim Bakanlığı'na bağlayan kanun hangisidir?",["Tevhid-i Tedrisat Kanunu","Soyadı Kanunu","Medeni Kanun","Şapka Kanunu"],0,[["Türk Dil Kurumu hangi yıl kuruldu?",["1932","1928","1923","1938"],0]]]],
+"Coğrafya":[["Türkiye'nin Turizm Potansiyeli","Türkiye deniz-kum-güneş, tarih, inanç ve doğa turizmi bakımından zengindir. Kapadokya, Efes, Pamukkale ve Nemrut Dağı önemli turizm merkezleridir. Turizm döviz geliri ve istihdam sağlar.","Peri bacalarıyla ünlü turizm bölgesi hangisidir?",["Kapadokya","Efes","Pamukkale","Uludağ"],0,[["Turizmin ekonomiye katkılarından biri hangisidir?",["Döviz geliri sağlaması","Nüfusu azaltması","Tarımı bitirmesi","Ormanları artırması"],0]]]],
+"İngilizce":[["Linking Words: However / Therefore / Although","Although it was raining, we went out. I studied hard; therefore, I passed the exam. The car is cheap; however, it is old.","'Therefore' ne anlama gelir?",["Bu nedenle","Ancak","Rağmen","Ayrıca"],0,[["'Although it was raining, we went out.' ne demektir?",["Yağmur yağmasına rağmen dışarı çıktık","Yağmur yağdığı için dışarı çıktık","Yağmur yağınca eve girdik","Yağmur yağmadı"],0]]]]}
+};
+
+for(const g in E10)for(const s in E10[g])E10[g][s].forEach(t=>{const ex=D[g][s].find(x=>x[0]===t[0]);if(!ex){D[g][s].push(t);return}ex[1]=t[1];ex[5]=ex[5]||[];const have=new Set([ex[2],...ex[5].map(q=>q[0])]);[[t[2],t[3],t[4]],...(t[5]||[])].forEach(q=>{if(!have.has(q[0]))ex[5].push(q)})});
 
 const ICON={"Türkçe":"📖","Matematik":"➗","Hayat Bilgisi":"🏡","İngilizce":"🇬🇧","Fen Bilimleri":"🔬","Sosyal Bilgiler":"🌍","Din Kültürü":"🕌","İnkılap Tarihi":"🇹🇷","Edebiyat":"✒️","Fizik":"⚛️","Kimya":"🧪","Biyoloji":"🧬","Tarih":"🏛️","Coğrafya":"🗺️","Felsefe":"🤔"};
 const LEVELS=[["İlkokul","lv1",[1,2,3,4]],["Ortaokul","lv2",[5,6,7,8]],["Lise","lv3",[9,10,11,12]]];
@@ -2453,7 +2537,7 @@ function reportPage(){
 }
 const REPORT_EMAIL=""; // Sorun bildirimlerinin gideceği e-posta (boşsa sadece kopyalama gösterilir)
 // ===== Sürüm 1.1: Duyurular ve çalışma araçları =====
-const VERSION="1.5";
+const VERSION="1.6";
 function lsGet(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}}
 function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
 let FAV=new Set(lsGet("favoriler",[])), WRONG=lsGet("yanlislar",{}), ST=lsGet("istatistik",{answered:0,correct:0,days:[]}), NOTES=lsGet("notlar",[]);
@@ -2462,7 +2546,7 @@ function recordAnswer(ok){ST.answered++;if(ok)ST.correct++;const t=dayStr();ST.p
 function streak(){const set=new Set(ST.days);let d=new Date(),n=0;if(!set.has(dayStr(d)))d.setDate(d.getDate()-1);while(set.has(dayStr(d))){n++;d.setDate(d.getDate()-1)}return n}
 function keyInfo(key){const [g,s,name]=key.split("#")[0].split("|");const i=Object.keys(D[g]||{}).indexOf(s);return{g,s,name,href:`#s${g}-d${i}`,label:`${g}. Sınıf · ${subjName(s)} · ${name}`}}
 function trackAnswer(key,ok,qText,aText){
-  recordAnswer(ok); setTimeout(checkBadges,0); if(!key) return;
+  recordAnswer(ok); setTimeout(checkBadges,0); if(!key) return; if(!trackAnswer.skip)subjStat(key,ok);
   if(ok){if(WRONG[key]){delete WRONG[key];lsSet("yanlislar",WRONG)}}
   else{WRONG[key]={q:qText,a:aText,t:Date.now()};lsSet("yanlislar",WRONG)}
 }
@@ -2471,17 +2555,18 @@ function confirmBtn(btn,label,fn){ // pencere açmadan iki tıkla onay
   btn.dataset.armed=1;const old=btn.textContent;btn.textContent=label;
   setTimeout(()=>{if(btn.isConnected){delete btn.dataset.armed;btn.textContent=old}},3000);
 }
-const TOOLS=[["deneme","📝","Deneme Sınavı","Sınıf ve ders seç, süreli test çöz"],["pomodoro","⏱️","Pomodoro Sayacı","25 dakika çalış, 5 dakika dinlen"],["kaydedilenler","⭐","Kaydettiklerim","Sonra çalışmak için kaydettiğin konular"],["yanlislarim","❌","Yanlışlarım","Yanlış yaptığın soruları tekrar et"],["notlarim","🗒️","Notlarım","Kendi ders notlarını tut"],["istatistikler","📊","İstatistiklerim","Başarı oranın ve çalışma serin"],["kartlar","🃏","Bilgi Kartları","Konuları kartlarla hızlıca tekrar et"],["program","📅","Ders Programım","Haftalık çalışma planını yap"],["rozetler","🏅","Rozetlerim","Çalıştıkça başarı rozetleri kazan"],["oyunlar","🧩","Oyunlar","Eşleştirme ve boşluk doldurma"],["hedefler","🎯","Hedeflerim","Günlük ve haftalık soru hedefi"],["temalar","🎨","Temalar","Sitenin rengini değiştir"],["formuller","🧮","Formül ve Tarihler","Formül kartları ve önemli tarihler"]];
+const TOOLS=[["deneme","📝","Deneme Sınavı","Sınıf ve ders seç, süreli test çöz"],["pomodoro","⏱️","Pomodoro Sayacı","25 dakika çalış, 5 dakika dinlen"],["kaydedilenler","⭐","Kaydettiklerim","Sonra çalışmak için kaydettiğin konular"],["yanlislarim","❌","Yanlışlarım","Yanlış yaptığın soruları tekrar et"],["notlarim","🗒️","Notlarım","Kendi ders notlarını tut"],["istatistikler","📊","İstatistiklerim","Başarı oranın ve çalışma serin"],["kartlar","🃏","Bilgi Kartları","Konuları kartlarla hızlıca tekrar et"],["program","📅","Ders Programım","Haftalık çalışma planını yap"],["rozetler","🏅","Rozetlerim","Çalıştıkça başarı rozetleri kazan"],["oyunlar","🧩","Oyunlar","Eşleştirme ve boşluk doldurma"],["hedefler","🎯","Hedeflerim","Günlük ve haftalık soru hedefi"],["temalar","🎨","Temalar","Sitenin rengini değiştir"],["formuller","🧮","Formül ve Tarihler","Formül kartları ve önemli tarihler"],["analiz","📊","Ders Analizim","Güçlü ve zayıf derslerini gör"],["hatirlatici","⏰","Hatırlatıcılar","Çalışma zamanı bildirimi"]];
 function toolsGrid(){return `<div class="grid tools">`+TOOLS.map(([h,e,t,d])=>`<a class="tile tool" href="#${h}"><div class="ico">${e}</div><b>${t}</b><small>${d}</small></a>`).join("")+`</div>`}
 function toolsPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › Araçlar</div><div class="hero" style="background:linear-gradient(135deg,#16a34a,#0ea5e9)"><h1>🧰 Çalışma Araçları</h1><p>Daha verimli çalışman için ihtiyacın olan her şey.</p></div>`+toolsGrid()}
 
 // ---- Duyurular ----
 const NEWS=[
- {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 1.6 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 1.6 ile gelmesi planlanan yenilikler:",li:["✍️ Doğru-yanlış ve boşluklu soru tipleri","📊 Ders bazında ayrıntılı başarı analizi","⏰ Çalışma hatırlatıcıları","🗂️ Konuları ünitelere göre gruplama","📚 Daha da fazla yeni konu ve soru"]},
- {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 1.5 yayında",d:"1.5 sürümü yayında! Bu sürümde gelenler:",li:["🧮 Formül ve Tarih Kartları: 22 matematik, 20 fizik, 9 kimya formülü ve 42 önemli tarih; \"Kendini test et\" modu","🖨️ Konu özetlerini yazdırma ve PDF olarak kaydetme (cevap anahtarıyla)","🔍 Gelişmiş arama: sınıf, ders ve durum filtreleri; anlatımlarda ve sorularda arama","📚 62 yeni konu, 3–4 cümlelik ayrıntılı anlatımlarla","📖 13 konunun anlatımı genişletildi ve yeni sorular eklendi","📊 Toplam 1.637 konu ve 2.548 soru"]},
- {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.4",d:"Önceki sürüm. 1.4 ile gelenler:",li:["🎬 Anlatımı izle (animasyonlu, sesli, alt yazılı)","🧩 Eşleştirme ve boşluk doldurma oyunları","🎯 Günlük ve haftalık hedefler","📈 Son 7 gün grafiği","🎨 Renk temaları"]},
+ {tag:"Yakında",cls:"soon",e:"🚀",t:"Versiyon 1.7 yakında!",d:"Bir sonraki sürüm üzerinde çalışıyoruz. 1.7 ile gelmesi planlanan yenilikler:",li:["🗂️ Konuları müfredat ünitelerine göre gruplama","🧠 Akıllı tekrar: unutmak üzere olduğun konuları hatırlatma","🔊 Soruları sesli okuma","📖 Eski konuların anlatımlarını uzatma","📚 Daha da fazla yeni konu ve soru"]},
+ {tag:"Yeni sürüm",cls:"new",e:"✨",t:"Versiyon 1.6 yayında",d:"1.6 sürümü yayında! Bu sürümde gelenler:",li:["📊 Ders Analizim: en güçlü ve en zayıf derslerin, derslere göre başarı ve tamamlanma oranı","⚖️ Yeni soru tipi: Doğru mu Yanlış mı?","✍️ Yeni soru tipi: Yazarak Cevapla (şıksız sorular)","⏰ Çalışma hatırlatıcıları ve takvime ekleme (.ics)","🔀 Ders sayfalarında konu sıralama ve hepsini aç/kapat","🏅 2 yeni rozet (toplam 24)","📚 64 yeni konu, 11 konunun anlatımı genişletildi (toplam 1.701 konu, 2.695 soru)"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.5",d:"Önceki sürüm. 1.5 ile gelenler:",li:["🧮 Formül ve tarih kartları","🖨️ Konu özetlerini yazdırma / PDF","🔍 Gelişmiş arama ve filtreler","📖 Ayrıntılı yeni konu anlatımları"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.4",d:"1.4 ile gelenler:",li:["🎬 Anlatımı izle","🧩 Eşleştirme ve boşluk doldurma oyunları","🎯 Hedefler","📈 Son 7 gün grafiği","🎨 Renk temaları"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.3",d:"1.3 ile gelenler:",li:["🏅 Rozetler","📅 Ders Programım","🃏 Bilgi Kartları","🎯 LGS ve TYT tarzı denemeler"]},
- {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.2",d:"1.2 ile gelenler:",li:["⏳ Süreli deneme","❌ Yanlışlarından deneme","▶️ Kaldığın yerden devam et","🧭 İnce üst menü"]},
+ {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.2",d:"1.2 ile gelenler:",li:["⏳ Süreli deneme","❌ Yanlışlarından deneme","▶️ Kaldığın yerden devam et"]},
  {tag:"Eski sürüm",cls:"old",old:1,e:"🗂️",t:"Versiyon 1.1",d:"1.1 ile gelenler:",li:["📝 Deneme Sınavı","⏱️ Pomodoro","⭐ Kaydedilenler","❌ Yanlışlarım","🗒️ Notlarım ve 📊 İstatistikler"]},
  {tag:"Bilgi",cls:"info",e:"📮",t:"Sorun Bildir paneli",d:"Bir hata gördüğünde ya da önerin olduğunda Sorun Bildir sayfasından bize yazabilirsin. Her bildirim siteyi daha iyi yapmamıza yardım ediyor."}
 ];
@@ -2654,6 +2739,7 @@ document.addEventListener("click",e=>{
   if(b.classList.contains("bopt")) return gapAnswer(b);
   if(b.dataset.watch!==undefined) return playTopic(b.dataset.watch);
   if(b.dataset.print!==undefined){const [pg,pi]=b.dataset.print.split("|");return printSubject(pg,+pi)}
+  if(b.dataset.tf!==undefined) return tfAnswer(b);
   if(b.dataset.ftab!==undefined){FTAB=b.dataset.ftab;return formulasPage()}
   if(b.dataset.fflip!==undefined){b.classList.toggle("hid");return}
   if(b.dataset.pl!==undefined) return plCtl(b.dataset.pl);
@@ -2666,6 +2752,16 @@ document.addEventListener("click",e=>{
   if(b.dataset.progdone!==undefined){const x=PROG.find(q=>String(q.id)===b.dataset.progdone);if(x){x.done=!x.done;lsSet("program",PROG)}return progPage()}
   if(b.dataset.progdel!==undefined){PROG=PROG.filter(q=>String(q.id)!==b.dataset.progdel);lsSet("program",PROG);return progPage()}
   const a=b.dataset.act; if(!a) return;
+  if(a==="tfnext"){TF.i++;return tfDraw()}
+  if(a==="tfagain") return tfStart(TF.g,TF.s);
+  if(a==="wrnext"){WR.i++;return wrDraw()}
+  if(a==="wragain") return wrStart(WR.g,WR.s);
+  if(a==="wrshow") return wrCheck(null);
+  if(a==="openall"||a==="closeall"){app.querySelectorAll("details.topic").forEach(d=>d.open=a==="openall");return}
+  if(a==="remsave"){remRead();const fb=document.getElementById("remfb");fb.style.color="var(--green)";fb.textContent=REM.on?"✅ Kaydedildi. Seçtiğin saatte site açıksa sana hatırlatacağız.":"✅ Kaydedildi. Bildirim için 'Site açıkken bildirim göster' kutusunu işaretle.";return}
+  if(a==="remperm"){try{Notification.requestPermission().then(()=>remPage())}catch(e){}return}
+  if(a==="remtest") return remNotify("📚 Ders çalışma zamanı!","Bu bir deneme bildirimidir. Hatırlatıcın çalışıyor!");
+  if(a==="remics") return remICS();
   if(a==="fhide"){FHIDE=!FHIDE;return formulasPage()}
   if(a==="fprint"||a==="doprint"){try{window.print()}catch(e){}return}
   if(a==="magain") return matchStart(MATCH.g,MATCH.s);
@@ -2683,7 +2779,7 @@ document.addEventListener("click",e=>{
   if(a==="pomoreset"){POMO.running=false;clearInterval(POMO.timer);POMO.mode="work";POMO.left=POMO_LEN.work;return pomoDraw()}
   if(a==="pomoskip"){POMO.left=1;return pomoTick()}
   if(a==="clearwrong") return confirmBtn(b,"Emin misin? Tekrar bas",()=>{WRONG={};lsSet("yanlislar",WRONG);wrongPage()});
-  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);["sinavSayisi","kusursuz","kartSayisi","modSinav","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});statsPage()});
+  if(a==="resetall") return confirmBtn(b,"Her şey silinecek. Emin misin? Tekrar bas",()=>{SOLVED=new Set();saveSolved();WRONG={};lsSet("yanlislar",WRONG);ST={answered:0,correct:0,days:[]};lsSet("istatistik",ST);EARNED=[];lsSet("rozetler",EARNED);["sinavSayisi","kusursuz","kartSayisi","modSinav","dersIst","dyFull","yazIyi","hedefGun","hedefHafta","hedefTamam","haftaTamam","oyunSayisi","izleme"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});statsPage()});
 });
 
 // ===== Sürüm 1.3: LGS/TYT modları, rozetler, bilgi kartları, ders programı =====
@@ -2838,7 +2934,7 @@ function shuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random
 function gameDone(){lsSet("oyunSayisi",lsGet("oyunSayisi",0)+1);checkBadges()}
 function gamesPage(){app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › <a href="#araclar">Araçlar</a> › Oyunlar</div>
   <div class="hero" style="background:linear-gradient(135deg,#f59e0b,#ec4899)"><h1>🧩 Oyunlar</h1><p>Oynarken öğren! Her doğru cevap günlük hedefine de sayılır.</p></div>
-  <div class="grid tools"><a class="tile tool" href="#eslestirme"><div class="ico">🔗</div><b>Eşleştirme</b><small>Soruları doğru cevaplarıyla eşleştir</small></a><a class="tile tool" href="#bosluk"><div class="ico">✏️</div><b>Boşluk Doldurma</b><small>Konu cümlelerindeki eksik kelimeyi bul</small></a></div>`}
+  <div class="grid tools"><a class="tile tool" href="#eslestirme"><div class="ico">🔗</div><b>Eşleştirme</b><small>Soruları doğru cevaplarıyla eşleştir</small></a><a class="tile tool" href="#bosluk"><div class="ico">✏️</div><b>Boşluk Doldurma</b><small>Konu cümlelerindeki eksik kelimeyi bul</small></a><a class="tile tool" href="#dogruyanlis"><div class="ico">⚖️</div><b>Doğru mu Yanlış mı?</b><small>Önerilen cevap doğru mu, karar ver</small></a><a class="tile tool" href="#yazili"><div class="ico">✍️</div><b>Yazarak Cevapla</b><small>Şık yok, cevabı kendin yaz</small></a></div>`}
 let MATCH=null;
 function matchSetup(){app.innerHTML=`<div class="crumb"><a href="#oyunlar">Oyunlar</a> › Eşleştirme</div>
   <div class="hero" style="background:linear-gradient(135deg,#f59e0b,#ef4444)"><h1>🔗 Eşleştirme</h1><p>Soldan bir soru seç, sonra sağdan doğru cevabına dokun. Hepsini en az hatayla eşleştir!</p></div>
@@ -2890,7 +2986,7 @@ function gapAnswer(b){const G=GAP;if(!G||G.ans)return;G.ans=true;const it=G.item
   btns[it.opts.indexOf(it.w)].classList.add("ok");if(!ok)b.classList.add("no");if(ok)G.score++;
   app.querySelector(".gap").textContent=it.w;app.querySelector(".gap").classList.add(ok?"gok":"gno");
   const fb=document.getElementById("bfb");fb.textContent=ok?"✅ Doğru!":"❌ Yanlış. Doğru kelime: "+it.w;fb.style.color=ok?"var(--green)":"var(--red)";
-  recordAnswer(ok);setTimeout(checkBadges,0);
+  recordAnswer(ok);subjStat(it.key,ok);setTimeout(checkBadges,0);
   document.getElementById("bnext").innerHTML=`<button class="send" type="button" data-act="bnext">${G.i+1<G.items.length?"Sonraki →":"Sonucu gör 🏁"}</button>`}
 
 // ---- Anlatımı izle (animasyonlu, sesli, alt yazılı) ----
@@ -2992,11 +3088,125 @@ function search(term){
 }
 function hl(text,t){const s=esc(text),i=s.toLocaleLowerCase("tr").indexOf(esc(t));return i<0?s:s.slice(0,i)+"<mark>"+s.slice(i,i+esc(t).length)+"</mark>"+s.slice(i+esc(t).length)}
 
+// ===== Sürüm 1.6: Ders analizi, yeni soru tipleri, hatırlatıcılar, sıralama =====
+BADGES.push(
+ ["dy","⚖️","Doğru mu Yanlış mı?","Doğru-Yanlış oyununda 10'da 10 yap",()=>[lsGet("dyFull",0),1]],
+ ["yaz","✍️","Kalem Ustası","Yazarak Cevapla oyununda en az 8 doğru yap",()=>[lsGet("yazIyi",0),1]]);
+function subjStat(key,ok){if(!key)return;const p=key.split("#")[0].split("|");if(p.length<3)return;const sk=p[0]+"|"+p[1],DS=lsGet("dersIst",{});const r=DS[sk]||(DS[sk]={a:0,c:0});r.a++;if(ok)r.c++;lsSet("dersIst",DS)}
+
+// ---- Ders analizi ----
+let AG="*";
+function analysisPage(){
+  const DS=lsGet("dersIst",{}),rows=[];
+  for(const g in D){if(AG!=="*"&&g!==AG)continue;for(const s in D[g]){const r=DS[g+"|"+s]||{a:0,c:0},tot=D[g][s].length,sv=D[g][s].filter(t=>SOLVED.has(g+"|"+s+"|"+t[0])).length;
+    if(!r.a&&!sv)continue;rows.push({g,s,i:Object.keys(D[g]).indexOf(s),a:r.a,c:r.c,acc:r.a?Math.round(r.c/r.a*100):0,tot,sv,comp:Math.round(sv/tot*100)})}}
+  const ranked=rows.filter(x=>x.a>=3).sort((a,b)=>b.acc-a.acc),best=ranked[0],worst=ranked.length>1?ranked[ranked.length-1]:null;
+  const opt=(v,l)=>`<option value="${v}"${v===AG?" selected":""}>${l}</option>`;
+  const col=p=>p>=80?"var(--green)":p>=50?"#f59e0b":"var(--red)";
+  app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › <a href="#araclar">Araçlar</a> › Ders Analizim</div>
+  <div class="hero" style="background:linear-gradient(135deg,#6366f1,#16a34a)"><h1>📊 Ders Analizim</h1><p>Hangi derste güçlüsün, hangisine daha çok çalışmalısın? Çözdüğün sorulara göre hesaplanır.</p></div>
+  <div class="sfilter"><select id="ag">${opt("*","Tüm sınıflar")}${Object.keys(D).map(g=>opt(g,g+". Sınıf")).join("")}</select></div>`+
+  (rows.length?`<div class="goals">${best?`<div class="about gbox"><div style="font-size:42px">💪</div><h3>En güçlü dersin</h3><b>${best.g}. Sınıf ${subjName(best.s)}</b><small>%${best.acc} başarı · ${best.a} soru</small></div>`:""}${worst&&worst!==best?`<div class="about gbox"><div style="font-size:42px">📌</div><h3>Daha çok çalış</h3><b>${worst.g}. Sınıf ${subjName(worst.s)}</b><small>%${worst.acc} başarı · ${worst.a} soru</small><a class="send" style="text-decoration:none" href="#s${worst.g}-d${worst.i}">Konulara git →</a></div>`:""}</div>
+  <h2>Derslere göre</h2><div class="about atable">`+rows.sort((a,b)=>(b.a?1:0)-(a.a?1:0)||a.acc-b.acc).map(x=>`<a class="arow" href="#s${x.g}-d${x.i}"><b>${ICON[x.s]||"📘"} ${x.g}. Sınıf ${subjName(x.s)}</b>
+    <span class="acell"><small>Başarı</small><div class="prog"><i style="width:${x.acc}%;background:${col(x.acc)}"></i></div><small>${x.a?`%${x.acc} (${x.c}/${x.a})`:"Henüz soru yok"}</small></span>
+    <span class="acell"><small>Tamamlanan konu</small><div class="prog"><i style="width:${x.comp}%"></i></div><small>${x.sv}/${x.tot}</small></span></a>`).join("")+`</div>
+  <div class="note">Sıralama için bir derste en az 3 soru çözmüş olman gerekir. Başarı oranı, ders sayfalarındaki sorular, denemeler ve oyunlardaki cevaplarına göre hesaplanır.</div>`
+  :`<div class="note">Henüz yeterli veri yok. Biraz soru çöz, analizin burada görünsün! <a href="#deneme">📝 Deneme çöz</a></div>`);
+  document.getElementById("ag").onchange=e=>{AG=e.target.value;analysisPage()};
+}
+
+// ---- Doğru mu Yanlış mı? ----
+let TF=null;
+function tfSetup(){app.innerHTML=`<div class="crumb"><a href="#oyunlar">Oyunlar</a> › Doğru mu Yanlış mı?</div>
+  <div class="hero" style="background:linear-gradient(135deg,#16a34a,#ef4444)"><h1>⚖️ Doğru mu Yanlış mı?</h1><p>Her soruda bir cevap önerilir. Önerilen cevap doğru mu, yanlış mı? Hızlı karar ver! Her turda 10 soru var.</p></div>
+  <div class="about rform">${pickerHTML("t")}<button class="send" id="tfstart" type="button">▶ Oyunu başlat</button></div>`;
+  const get=pickerInit("t","sonDY");document.getElementById("tfstart").onclick=()=>{const v=get();tfStart(v.g,v.s)}}
+function tfStart(g,s){const pool=[];addPool(pool,g,s);shuffle(pool);
+  const items=pool.slice(0,10).map(q=>{const truth=Math.random()<0.5,wrong=q.o.map((_,k)=>k).filter(k=>k!==q.a),pi=truth?q.a:wrong[Math.floor(Math.random()*wrong.length)];return{...q,shown:q.o[pi],truth}});
+  TF={g,s,items,i:0,score:0,ans:false};tfDraw()}
+function tfDraw(){const T=TF;
+  if(T.i>=T.items.length){gameDone();if(T.score===T.items.length)lsSet("dyFull",1);checkBadges();
+    app.innerHTML=`<div class="crumb"><a href="#oyunlar">Oyunlar</a> › Doğru mu Yanlış mı?</div><div class="hero" style="background:linear-gradient(135deg,#16a34a,#0ea5e9);text-align:center"><div style="font-size:64px">${T.score===T.items.length?"🏆":T.score>=7?"🎉":"💪"}</div><h1>${T.score} / ${T.items.length} doğru</h1></div>
+    <div class="vids"><button class="send" type="button" data-act="tfagain">🔁 Yeni tur</button><a class="yt alt" href="#dogruyanlis">Başka ders seç</a></div>`;return}
+  const it=T.items[T.i];T.ans=false;
+  app.innerHTML=`<div class="crumb"><a href="#dogruyanlis">Doğru mu Yanlış mı?</a> › ${T.g}. Sınıf · ${subjName(T.s)}</div>
+  <div class="testbar"><b>Soru ${T.i+1} / ${T.items.length}</b><span>✅ ${T.score}</span></div><div class="prog"><i style="width:${Math.round(T.i/T.items.length*100)}%"></i></div>
+  <div class="about"><b style="font-size:20px">${esc(it.q)}</b><div class="tfprop">Önerilen cevap: <b>${esc(it.shown)}</b></div>
+  <div class="tfbtns"><button type="button" class="tfb yes" data-tf="1">✅ Doğru</button><button type="button" class="tfb no" data-tf="0">❌ Yanlış</button></div><div class="fb" id="tffb"></div><div id="tfnext"></div></div>`}
+function tfAnswer(b){const T=TF;if(!T||T.ans)return;T.ans=true;const it=T.items[T.i],said=b.dataset.tf==="1",ok=said===it.truth;if(ok)T.score++;
+  b.classList.add(ok?"ok":"no");const fb=document.getElementById("tffb");fb.textContent=(ok?"✅ Bildin! ":"❌ Olmadı. ")+(it.truth?"Önerilen cevap doğruydu.":"Doğru cevap: "+it.o[it.a]);fb.style.color=ok?"var(--green)":"var(--red)";
+  trackAnswer(it.key,ok,it.q,it.o[it.a]);
+  document.getElementById("tfnext").innerHTML=`<button class="send" type="button" data-act="tfnext">${T.i+1<T.items.length?"Sonraki →":"Sonucu gör 🏁"}</button>`}
+
+// ---- Yazarak Cevapla ----
+let WR=null;
+const normA=x=>String(x).toLocaleLowerCase("tr").replace(/[çğıöşüâîû]/g,c=>({"ç":"c","ğ":"g","ı":"i","ö":"o","ş":"s","ü":"u","â":"a","î":"i","û":"u"})[c]).replace(/[;:!?'"’()°]/g,"").replace(/\.$/,"").replace(/\s+/g," ").trim();
+function wrSetup(){app.innerHTML=`<div class="crumb"><a href="#oyunlar">Oyunlar</a> › Yazarak Cevapla</div>
+  <div class="hero" style="background:linear-gradient(135deg,#0ea5e9,#8b5cf6)"><h1>✍️ Yazarak Cevapla</h1><p>Şık yok! Cevabı kendin yaz. Büyük-küçük harf ve noktalama önemli değil. Her turda 10 soru var.</p></div>
+  <div class="about rform">${pickerHTML("w")}<button class="send" id="wrstart" type="button">▶ Oyunu başlat</button></div>`;
+  const get=pickerInit("w","sonYaz");document.getElementById("wrstart").onclick=()=>{const v=get();wrStart(v.g,v.s)}}
+function wrStart(g,s){const pool=[];addPool(pool,g,s);
+  const ok=pool.filter(q=>{const a=q.o[q.a];return a.length<=28&&a.split(/\s+/).length<=3&&!/hiçbiri|hepsi|ikisi|bilinmez|bilinemez/i.test(a)});
+  if(!ok.length){app.insertAdjacentHTML("beforeend",`<div class="note">Bu derste yazarak cevaplanabilecek kısa cevaplı soru yok, başka bir ders seç.</div>`);return}
+  WR={g,s,items:shuffle(ok).slice(0,10),i:0,score:0,ans:false};wrDraw()}
+function wrDraw(){const W=WR;
+  if(W.i>=W.items.length){gameDone();if(W.score>=8)lsSet("yazIyi",1);checkBadges();
+    app.innerHTML=`<div class="crumb"><a href="#oyunlar">Oyunlar</a> › Yazarak Cevapla</div><div class="hero" style="background:linear-gradient(135deg,#0ea5e9,#16a34a);text-align:center"><div style="font-size:64px">${W.score>=8?"🏆":W.score>=5?"🎉":"💪"}</div><h1>${W.score} / ${W.items.length} doğru</h1></div>
+    <div class="vids"><button class="send" type="button" data-act="wragain">🔁 Yeni tur</button><a class="yt alt" href="#yazili">Başka ders seç</a></div>`;return}
+  const it=W.items[W.i];W.ans=false;
+  app.innerHTML=`<div class="crumb"><a href="#yazili">Yazarak Cevapla</a> › ${W.g}. Sınıf · ${subjName(W.s)}</div>
+  <div class="testbar"><b>Soru ${W.i+1} / ${W.items.length}</b><span>✅ ${W.score}</span></div><div class="prog"><i style="width:${Math.round(W.i/W.items.length*100)}%"></i></div>
+  <form class="about" id="wrform"><b style="font-size:20px">${esc(it.q)}</b><input id="wrin" class="wrin" autocomplete="off" placeholder="Cevabını yaz…"><div class="vids"><button class="send" type="submit">Kontrol et</button><button class="yt alt" type="button" data-act="wrshow">🤷 Bilmiyorum, göster</button></div><div class="fb" id="wrfb"></div><div id="wrnext"></div></form>`;
+  const inp=document.getElementById("wrin");setTimeout(()=>inp.focus(),50);
+  document.getElementById("wrform").onsubmit=e=>{e.preventDefault();if(inp.value.trim())wrCheck(inp.value)}}
+function wrCheck(val){const W=WR;if(!W||W.ans)return;W.ans=true;const it=W.items[W.i],c=it.o[it.a],ok=val!==null&&(normA(val)===normA(c)||normA(val).replace(/ /g,"")===normA(c).replace(/ /g,""));if(ok)W.score++;
+  const fb=document.getElementById("wrfb");fb.textContent=ok?"✅ Doğru!":"❌ Doğru cevap: "+c;fb.style.color=ok?"var(--green)":"var(--red)";
+  const inp=document.getElementById("wrin");inp.disabled=true;inp.classList.add(ok?"ok":"no");
+  trackAnswer(it.key,ok,it.q,c);
+  document.getElementById("wrnext").innerHTML=`<button class="send" type="button" data-act="wrnext">${W.i+1<W.items.length?"Sonraki →":"Sonucu gör 🏁"}</button>`}
+
+// ---- Hatırlatıcılar ----
+let REM=lsGet("hatirlatici",{on:false,time:"19:00",days:[0,1,2,3,4,5,6]});
+const ICSDAY=["MO","TU","WE","TH","FR","SA","SU"];
+function remPage(){const perm=("Notification" in window)?Notification.permission:"yok";
+  app.innerHTML=`<div class="crumb"><a href="#">Ana Sayfa</a> › <a href="#araclar">Araçlar</a> › Hatırlatıcılar</div>
+  <div class="hero" style="background:linear-gradient(135deg,#f59e0b,#8b5cf6)"><h1>⏰ Çalışma Hatırlatıcıları</h1><p>Her gün aynı saatte çalışmak alışkanlık kazandırır. Saatini seç, sana hatırlatalım.</p></div>
+  <div class="about rform"><label>Hatırlatma saati<input type="time" id="rt" value="${REM.time}"></label>
+  <div><b>Günler</b><div class="rdays">${DSHORT.map((d,i)=>`<label class="rday"><input type="checkbox" data-rd="${i}"${REM.days.includes(i)?" checked":""}> ${d}</label>`).join("")}</div></div>
+  <label class="rday"><input type="checkbox" id="ron"${REM.on?" checked":""}> Site açıkken bildirim göster</label>
+  <div class="vids"><button class="send" type="button" data-act="remsave">💾 Kaydet</button>${perm==="default"?`<button class="yt alt" type="button" data-act="remperm">🔔 Bildirim izni ver</button>`:""}<button class="yt alt" type="button" data-act="remtest">🧪 Deneme bildirimi</button></div>
+  <div class="fb" id="remfb"></div></div>
+  <div class="about"><h3>📅 Telefonuna ya da bilgisayarına kalıcı hatırlatıcı ekle</h3>Site kapalıyken de hatırlatma almak için hatırlatıcını takvimine ekle. İndirilen dosyayı açınca telefonunun ya da bilgisayarının takvimi seçtiğin gün ve saatte sana haber verir.
+  <div class="vids"><button class="send" type="button" data-act="remics">📅 Takvime ekle (.ics)</button></div></div>
+  <div class="note">${perm==="denied"?"Bildirim izni kapalı. Tarayıcı ayarlarından bu siteye bildirim izni verebilirsin. ":""}Site içi bildirimler yalnızca site ya da uygulama açıkken çalışır. Kalıcı hatırlatma için takvime ekleme seçeneğini kullan.</div>`;
+}
+function remRead(){const t=document.getElementById("rt");if(!t)return;REM.time=t.value||"19:00";REM.days=[...app.querySelectorAll("[data-rd]")].filter(x=>x.checked).map(x=>+x.dataset.rd);REM.on=document.getElementById("ron").checked;lsSet("hatirlatici",REM)}
+function remNotify(title,body){try{if("Notification" in window&&Notification.permission==="granted"){new Notification(title,{body,icon:"icon-192.png"});return}}catch(e){}toast(`<span style="font-size:28px">⏰</span><span><b>${esc(title)}</b><br>${esc(body)}</span>`)}
+function remTick(){if(!REM.on)return;const n=new Date(),di=(n.getDay()+6)%7,t=dayStr(n),hm=String(n.getHours()).padStart(2,"0")+":"+String(n.getMinutes()).padStart(2,"0");
+  if(!REM.days.includes(di)||hm<REM.time||lsGet("remShown","")===t)return;lsSet("remShown",t);
+  const a=perDay(t).a;remNotify("📚 Ders çalışma zamanı!",a>=GOAL.day?`Bugünkü hedefini tamamladın (${a} soru). Harika gidiyorsun!`:`Bugün ${a} / ${GOAL.day} soru çözdün. Hadi biraz daha çalışalım!`)}
+setInterval(remTick,30000);setTimeout(remTick,3000);
+function remICS(){remRead();const [hh,mm]=REM.time.split(":"),d=new Date(),p=n=>String(n).padStart(2,"0");
+  const start=`${d.getFullYear()}${p(d.getMonth()+1)}${p(d.getDate())}T${p(hh)}${p(mm)}00`,stamp=new Date().toISOString().replace(/[-:]/g,"").split(".")[0]+"Z";
+  const days=(REM.days.length?REM.days:[0,1,2,3,4,5,6]).map(i=>ICSDAY[i]).join(",");
+  const ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Ders Kutuphanesi//TR","CALSCALE:GREGORIAN","BEGIN:VEVENT",`UID:ders-${Date.now()}@derskutuphanesi`,`DTSTAMP:${stamp}`,`DTSTART:${start}`,"DURATION:PT30M",`RRULE:FREQ=WEEKLY;BYDAY=${days}`,"SUMMARY:📚 Ders çalışma zamanı","DESCRIPTION:Ders Kütüphanesi'nde bugünkü hedefini tamamla!","BEGIN:VALARM","TRIGGER:PT0M","ACTION:DISPLAY","DESCRIPTION:Ders çalışma zamanı","END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([ics],{type:"text/calendar"}));a.download="ders-hatirlatici.ics";document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000);
+  const fb=document.getElementById("remfb");if(fb){fb.style.color="var(--green)";fb.textContent="✅ Takvim dosyası indirildi. Açıp takvimine ekleyebilirsin."}}
+
+// ---- Konu sıralama ----
+let SV=lsGet("siralama","def");
+function subjOrder(g,s){const arr=D[g][s].map((t,ti)=>[t,ti]),k=t=>g+"|"+s+"|"+t[0];
+  if(SV==="az")arr.sort((a,b)=>a[0][0].localeCompare(b[0][0],"tr"));
+  else if(SV==="un")arr.sort((a,b)=>(SOLVED.has(k(a[0]))?1:0)-(SOLVED.has(k(b[0]))?1:0));
+  else if(SV==="fav")arr.sort((a,b)=>(FAV.has(k(b[0]))?1:0)-(FAV.has(k(a[0]))?1:0));
+  return arr}
+function sortBar(){const o=(v,l)=>`<option value="${v}"${v===SV?" selected":""}>${l}</option>`;return `<select id="ssort" class="ssort" aria-label="Konuları sırala">${o("def","Sıra: Varsayılan")}${o("az","Sıra: A'dan Z'ye")}${o("un","Önce çözmediklerim")}${o("fav","Önce kaydettiklerim")}</select><button class="mini" type="button" data-act="openall">📂 Hepsini aç</button><button class="mini" type="button" data-act="closeall">📁 Hepsini kapat</button>`}
+
 function home(){
   const st=stats();
   let h=`<div class="hero"><h1>Ders Kütüphanesi 📚</h1><p>1'den 12'ye bütün sınıflar, dersler, konu anlatımları, örnek sorular ve YouTube videoları tek yerde.</p>
   <div class="stats"><div class="stat"><b>12</b>sınıf</div><div class="stat"><b>${st.ders}</b>ders</div><div class="stat"><b>${st.konu}</b>konu</div><div class="stat"><b>${st.soru}</b>soru</div><div class="stat"><b>${SOLVED.size}</b>doğru cevabın</div></div></div>`;
-  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 1.5 yayında! 🎉</b><small>Formül ve tarih kartları, yazdırma, gelişmiş arama ve yeni konular geldi. Versiyon 1.6 yakında →</small></div></a>`;
+  h+=`<a class="banner" href="#duyurular"><span>📢</span><div><b>Versiyon 1.6 yayında! 🎉</b><small>Ders analizi, yeni soru tipleri, hatırlatıcılar ve yeni konular geldi. Versiyon 1.7 yakında →</small></div></a>`;
   const last=lsGet("sonKonu",null);
   if(last&&D[last.g]&&D[last.g][last.s]) h+=`<a class="cont" href="${last.h}"><span>▶️</span><div><b>Kaldığın yerden devam et</b><small>${last.g}. Sınıf · ${subjName(last.s)} · ${D[last.g][last.s].filter(t=>SOLVED.has(last.g+"|"+last.s+"|"+t[0])).length}/${D[last.g][last.s].length} konu tamamlandı</small></div></a>`;
   h+=goalCard();
@@ -3030,8 +3240,9 @@ function subject(g,i){
   const s=Object.keys(D[g])[i]; if(!s) return grade(g);
   lsSet("sonKonu",{h:`#s${g}-d${i}`,g,s,t:Date.now()});
   app.innerHTML=`<div class="crumb"><a href="#">Sınıflar</a> › <a href="#s${g}">${g}. Sınıf</a> › ${subjName(s)}</div>
-  <h2>${ICON[s]||""} ${g}. Sınıf ${subjName(s)}</h2><div class="vids" style="margin:-4px 0 10px"><button class="mini" type="button" data-print="${g}|${i}">🖨️ Konu özetlerini yazdır / PDF</button></div>`+progHTML(D[g][s].filter(t=>SOLVED.has(g+"|"+s+"|"+t[0])).length,D[g][s].length)+D[g][s].map((t,ti)=>topicHTML(g,s,t,ti,ti===0)).join("")+
+  <h2>${ICON[s]||""} ${g}. Sınıf ${subjName(s)}</h2><div class="vids" style="margin:-4px 0 10px"><button class="mini" type="button" data-print="${g}|${i}">🖨️ Konu özetlerini yazdır / PDF</button>${sortBar()}</div>`+progHTML(D[g][s].filter(t=>SOLVED.has(g+"|"+s+"|"+t[0])).length,D[g][s].length)+subjOrder(g,s).map(([t,ti],k)=>topicHTML(g,s,t,ti,k===0)).join("")+
   `<div class="vids" style="margin-top:16px"><a class="yt alt" href="${yt(g+". sınıf "+subjName(s)+" tüm konular")}" target="_blank" rel="noopener">▶ ${g}. Sınıf ${subjName(s)} — tüm konular</a></div>`;
+  const ss=document.getElementById("ssort");if(ss)ss.onchange=e=>{SV=e.target.value;lsSet("siralama",SV);subject(g,i)};
 }
 const ATAM=[
 ["1881","Selanik'te doğdu","Babası Ali Rıza Efendi, annesi Zübeyde Hanım'dır."],
@@ -3090,6 +3301,10 @@ function route(){
   else if(h==="hedefler") goalsPage();
   else if(h==="temalar") themesPage();
   else if(h==="formuller") formulasPage();
+  else if(h==="analiz") analysisPage();
+  else if(h==="dogruyanlis") tfSetup();
+  else if(h==="yazili") wrSetup();
+  else if(h==="hatirlatici") remPage();
   else if(m=h.match(/^s(\d+)-d(\d+)$/)) D[m[1]]?subject(+m[1],+m[2]):home();
   else if(m=h.match(/^s(\d+)$/)) D[m[1]]?grade(+m[1]):home();
   else home();
